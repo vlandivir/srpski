@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-19T22:35:23.928Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="rh2uYp2BK8Ev_F9ps5dr" version="23.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-19T22:45:50.831Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="ORI5h5kscFn2OVXvslWq" version="23.1.5" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="841" dy="586" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="706" dy="492" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -272,7 +272,7 @@
         <mxCell id="BAi89jd5EGfL0doamKMS-69" value="-ovi&lt;br&gt;-evi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="320" y="449" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-92" value="-k&amp;nbsp;➜ -ci -g&amp;nbsp;➜ -zi -h&amp;nbsp;➜ si&lt;br style=&quot;font-size: 10px;&quot;&gt;jezik ➜ jezici&lt;br&gt;izuzetak ➜ izuzeci" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+        <mxCell id="BAi89jd5EGfL0doamKMS-92" value="-k&amp;nbsp;➜ -ci -g&amp;nbsp;&lt;font style=&quot;font-size: 10px;&quot;&gt;➜&lt;/font&gt; -zi -h&amp;nbsp;➜ si&lt;br style=&quot;font-size: 10px;&quot;&gt;jezik ➜ jezici&lt;br&gt;izuzetak ➜ izuzeci" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="80" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-99" value="-k&amp;nbsp;➜ -če -g&amp;nbsp;➜ -že -h&amp;nbsp;➜ še&lt;br&gt;junače, Bože, duše" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
@@ -290,7 +290,7 @@
         <mxCell id="BAi89jd5EGfL0doamKMS-105" value="Muški Množina" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="180" y="675" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-106" value="-k ➜ -cima &lt;br&gt;-g ➜ -zima &lt;br&gt;-h ➜ sima&lt;br&gt;&lt;br&gt;radnicima, psiholozima, tepisima" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+        <mxCell id="BAi89jd5EGfL0doamKMS-106" value="-k ➜ -cima &lt;br&gt;-g ➜ -zima &lt;br&gt;-h ➜ sima&lt;br&gt;&lt;br&gt;radnic ➜ radnicima&lt;br&gt;psiholog ➜ psiholozima&lt;br&gt;tepeh ➜ tepisima" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="695" width="120" height="115" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-111" value="Zemlje" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -305,7 +305,7 @@
         <mxCell id="fJoO8VDyXokNPLIYZir3-3" value="&lt;p style=&quot;line-height: 110%;&quot;&gt;&lt;b&gt;Dodatna&amp;nbsp;A između suglasnika na kraju:&amp;nbsp;&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;sestra ➜ sest&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;a&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ra&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;student ➜ studen&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;a&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ta&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;pismo ➜ pis&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;a&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ma&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="190" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="w5lrp8CAif_9VlZ4OXMN-1" value="PADEŽI" style="shape=offPageConnector;whiteSpace=wrap;html=1;size=0.25;fontStyle=1" parent="1" vertex="1">
+        <mxCell id="w5lrp8CAif_9VlZ4OXMN-1" value="PADEŽI" style="shape=offPageConnector;whiteSpace=wrap;html=1;size=0.25;fontStyle=1;fontSize=20;fillColor=#000000;strokeColor=#000000;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="40" y="10" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="w5lrp8CAif_9VlZ4OXMN-2" value="PROMENE" style="shape=offPageConnector;whiteSpace=wrap;html=1;size=0.25;fontStyle=1" parent="1" vertex="1">
