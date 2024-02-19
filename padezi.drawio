@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-19T22:34:31.313Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="b2cugd2SWSPzHlW0bkJs" version="23.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-19T22:35:23.928Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="rh2uYp2BK8Ev_F9ps5dr" version="23.1.5" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
     <mxGraphModel dx="841" dy="586" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -323,7 +323,7 @@
         <mxCell id="w5lrp8CAif_9VlZ4OXMN-10" value="&lt;b&gt;Izuzeci: &lt;/b&gt;put ➜ putevi&lt;br&gt;sir ➜ sirevi&amp;nbsp; dan ➜ dani&lt;br&gt;konj ➜ konji mrav ➜ mravi&lt;br&gt;zub ➜ zubi&amp;nbsp; sat ➜ sati" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="320" y="120" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-1" value="&lt;b&gt;Izuzeci:&amp;nbsp; &lt;/b&gt;čovek&lt;b&gt;&amp;nbsp;&lt;/b&gt;➜ ljudi&lt;br&gt;lampa ➜ lampi&lt;br&gt;mesec ➜ meseci&lt;br&gt;sat ➜ sati gosti ➜ gostiju&lt;br&gt;oko ➜ ociju prst ➜ prstiju&lt;br&gt;uho ➜ ušiju&lt;br&gt;nokti ➜ noktiju&lt;br&gt;ruka ➜ ruku noga ➜ nogu&lt;br&gt;sluga ➜ slugu" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-1" value="&lt;b&gt;Izuzeci:&amp;nbsp; &lt;/b&gt;čovek&lt;b&gt;&amp;nbsp;&lt;/b&gt;➜ ljudi&lt;br&gt;lampa ➜ lampi&lt;br&gt;mesec ➜ meseci&lt;br&gt;sat ➜ sati gost&amp;nbsp;➜ gostiju&lt;br&gt;oko ➜ ociju prst ➜ prstiju&lt;br&gt;uho ➜ ušiju&lt;br&gt;nokat ➜ noktiju&lt;br&gt;ruka ➜ ruku noga ➜ nogu&lt;br&gt;sluga ➜ slugu" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="180" y="260" width="120" height="110" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-2" value="NOMINATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
