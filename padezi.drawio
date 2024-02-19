@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-19T22:23:05.532Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="Gz-IgKmLqReG-AvjcR-S" version="23.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-19T22:34:31.313Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="b2cugd2SWSPzHlW0bkJs" version="23.1.5" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="654" dy="456" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="841" dy="586" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -284,13 +284,13 @@
         <mxCell id="BAi89jd5EGfL0doamKMS-103" value="Ženski Jednina" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="180" y="500" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-104" value="-ka ➜ -ci -ga ➜ -zi &lt;br&gt;-ha ➜ si&lt;br&gt;Americi, knizi, eposi" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+        <mxCell id="BAi89jd5EGfL0doamKMS-104" value="-ka ➜ -ci -ga ➜ -zi &lt;br&gt;-ha ➜ si&lt;br&gt;&lt;br&gt;Americi, knizi, eposi" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="520" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-105" value="Muški Množina" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="180" y="675" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-106" value="-k ➜ -cima -g ➜ -zima&lt;br&gt;-h ➜ sima&lt;br&gt;radnicima, psiholozima, tepisima" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+        <mxCell id="BAi89jd5EGfL0doamKMS-106" value="-k ➜ -cima &lt;br&gt;-g ➜ -zima &lt;br&gt;-h ➜ sima&lt;br&gt;&lt;br&gt;radnicima, psiholozima, tepisima" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="695" width="120" height="115" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-111" value="Zemlje" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -299,7 +299,7 @@
         <mxCell id="BAi89jd5EGfL0doamKMS-112" value="-ska -ška -čka&lt;br&gt;Poljska ➜ Poljskoj" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="610" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="fJoO8VDyXokNPLIYZir3-2" value="Množina" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="fJoO8VDyXokNPLIYZir3-2" value="Genetiv Množina" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="180" y="170" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="fJoO8VDyXokNPLIYZir3-3" value="&lt;p style=&quot;line-height: 110%;&quot;&gt;&lt;b&gt;Dodatna&amp;nbsp;A između suglasnika na kraju:&amp;nbsp;&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;sestra ➜ sest&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;a&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ra&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;student ➜ studen&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;a&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ta&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;pismo ➜ pis&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;a&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ma&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
@@ -325,6 +325,27 @@
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-1" value="&lt;b&gt;Izuzeci:&amp;nbsp; &lt;/b&gt;čovek&lt;b&gt;&amp;nbsp;&lt;/b&gt;➜ ljudi&lt;br&gt;lampa ➜ lampi&lt;br&gt;mesec ➜ meseci&lt;br&gt;sat ➜ sati gosti ➜ gostiju&lt;br&gt;oko ➜ ociju prst ➜ prstiju&lt;br&gt;uho ➜ ušiju&lt;br&gt;nokti ➜ noktiju&lt;br&gt;ruka ➜ ruku noga ➜ nogu&lt;br&gt;sluga ➜ slugu" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="180" y="260" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-2" value="NOMINATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="60" width="20" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-3" value="AKUZATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="170" width="20" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-4" value="GENETIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="280" width="20" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-5" value="VOKATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="389" width="20" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-6" value="DATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="500" width="20" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-7" value="LOCATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="610" width="20" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-8" value="INSTRUMENTAL" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="720" width="20" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
