@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-19T22:45:50.831Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="ORI5h5kscFn2OVXvslWq" version="23.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-20T19:58:07.824Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="bULsWsfLX0-cNgxVvAdn" version="23.1.5" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="706" dy="492" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="589" dy="410" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -346,6 +346,9 @@
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-8" value="INSTRUMENTAL" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" vertex="1" parent="1">
           <mxGeometry x="460" y="720" width="20" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-14" value="&lt;b&gt;Subjekat:&lt;/b&gt; Ja sam nastavnik u srednjoj školi. Škola je u blizu. Vreme je užasno. Dušan je gladan. Ta zgrada je stara. &lt;br&gt;&lt;b&gt;Sa glagolom biti: &lt;/b&gt;Zovem se Milan. Borko je farmaceut. Ovo je Srbija. Ja sam glumac. Oni su stranci.&lt;br&gt;&lt;b&gt;Pitanja: &lt;/b&gt;Ko je to? ➜ Ovo je moj brat. Sta je ovo? ➜ Ovo je moj domaći zadatak." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="60" width="400" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
