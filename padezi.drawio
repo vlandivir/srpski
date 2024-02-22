@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-22T21:05:12.329Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="MytKlphOrV2ZMz2Klh70" version="23.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-22T21:34:12.510Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="UycU-ZceGWqz2dr-eMzm" version="23.1.5" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
     <mxGraphModel dx="883" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -224,41 +224,17 @@
         <mxCell id="BAi89jd5EGfL0doamKMS-67" value="-o -e" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="80" y="419" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-78" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="449" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-79" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="400" y="449" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-80" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="560" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-81" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="400" y="560" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-82" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="670" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-83" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="400" y="670" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-84" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="780" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-85" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="400" y="780" width="40" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-62" value="-ovima&lt;br&gt;-evima" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="320" y="560" width="40" height="30" as="geometry" />
+          <mxGeometry x="400" y="470" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-63" value="-ovima&lt;br&gt;-evima" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="320" y="670" width="40" height="30" as="geometry" />
+          <mxGeometry x="400" y="520" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-68" value="-ovima&lt;br&gt;-evima" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="320" y="780" width="40" height="30" as="geometry" />
+          <mxGeometry x="400" y="720" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-69" value="-ovi&lt;br&gt;-evi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="320" y="449" width="40" height="30" as="geometry" />
+          <mxGeometry x="400" y="359" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-92" value="-k&amp;nbsp;➜ -ci -g&amp;nbsp;&lt;font style=&quot;font-size: 10px;&quot;&gt;➜&lt;/font&gt; -zi -h&amp;nbsp;➜ si&lt;br style=&quot;font-size: 10px;&quot;&gt;jezik ➜ jezici&lt;br&gt;izuzetak ➜ izuzeci" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="80" width="120" height="70" as="geometry" />
@@ -321,13 +297,13 @@
           <mxGeometry x="460" y="130" width="20" height="90" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-4" value="GENETIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
-          <mxGeometry x="460" y="260" width="20" height="110" as="geometry" />
+          <mxGeometry x="460" y="230" width="20" height="110" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-5" value="VOKATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
-          <mxGeometry x="460" y="389" width="20" height="90" as="geometry" />
+          <mxGeometry x="460" y="350" width="20" height="61" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-6" value="DATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
-          <mxGeometry x="460" y="500" width="20" height="90" as="geometry" />
+          <mxGeometry x="460" y="420" width="20" height="140" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-7" value="LOCATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
           <mxGeometry x="460" y="610" width="20" height="90" as="geometry" />
@@ -348,7 +324,7 @@
           <mxGeometry x="1040" y="180" width="120" height="100" as="geometry" />
         </mxCell>
         <mxCell id="uh2jlfRQcC9aMAu_DCjH-2" value="&lt;b style=&quot;font-size: 9px;&quot;&gt;Predlozi -&amp;nbsp;&lt;/b&gt;&lt;b&gt;blizu, daleko od, iznad, ispod, ispred, iza, oko, pored, između, duž, kod, nasred, od, do, iz:&lt;/b&gt;&amp;nbsp;Vozim od Bosne do Serbije. On je iz Amerike. On živi blizu skole. Sunce je iznad jezera. Auto je ispred čoveka.&amp;nbsp;&lt;br style=&quot;font-size: 9px;&quot;&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Posedovanje: &lt;/b&gt;Pogledaj boju reke. Ulica kralja Aleksandra. To postoji zbog jezera. Kavezi životinja su mali. Voda bazena nije slana.&lt;br style=&quot;font-size: 9px;&quot;&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Nepravi povratni glagol: &lt;/b&gt;sećam se, čuvam se, stidim se, napio sam se, plašim se – Plašim se psa. Sećam se oluje. Napio sam se vina. Stidim se svoje prošlosti.Određen&lt;br style=&quot;font-size: 9px;&quot;&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Određeni&lt;/b&gt;&amp;nbsp;&lt;b style=&quot;font-size: 9px;&quot;&gt;datum: &lt;/b&gt;Ro&lt;span style=&quot;border-color: var(--border-color); font-size: 9px;&quot;&gt;đen sam decembra. To je bilo prvog oktobra. Ići ću sledeće nedelje. Nemoj da putuješ ovog leta.&lt;br style=&quot;font-size: 9px;&quot;&gt;&lt;/span&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Količina:&lt;/b&gt; dvesta grama šećera, malo čokolade, kašika ulja&lt;br style=&quot;font-size: 9px;&quot;&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Pitanja - od koga? od čega?:&amp;nbsp; &lt;/b&gt;Koga se stidiš? ➜ Stidim se svoje porodice. Čiju si majku videla? ➜ Videla sam majku svog prijatelja. Ispred kog hotela si parkiran? ➜ Parkiran sam ispred tvog hotela." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
-          <mxGeometry x="480" y="260" width="540" height="110" as="geometry" />
+          <mxGeometry x="480" y="230" width="540" height="110" as="geometry" />
         </mxCell>
         <mxCell id="uh2jlfRQcC9aMAu_DCjH-3" value="GENETIV" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="280" width="80" height="30" as="geometry" />
@@ -360,13 +336,31 @@
           <mxGeometry x="320" y="200" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ADTaTo-tk-Jg6WtzQs2E-1" value="&lt;b style=&quot;font-size: 9px;&quot;&gt;Primaoc radnje:&lt;/b&gt;&amp;nbsp;Dajem knjigu slonu. Šaljem poklon ženi. Odajem počast jezeru. Nedostaješ ženi. Donosim hranu slonu. Sviđaš se ženi. Dozvolite jezeru da bude čisto. Dugujem to Borku. Govorim ženi. Plati čoveku. Delim hranu ljudima. Uzimam novac ženi. Ostavljam ovo tebi. Pišem ovo njemu. Doniram ovo njoj. Šaljem ovo njima. Nudim ovo Milanu. Prodajem ovo slonu. Pozajmljujem ovo jezeru. Verujem ti (tebi). Narđujem sinu da dođe. &lt;b&gt;+ glagoli (prvo lice) &lt;/b&gt;kažem, obećavam,&amp;nbsp;savetujem, pomažem, pretim, prkosim, pripadam, ugađam, divim se, nadam se, približavam se, radujem se, udvaram se, izbegavam, zahvaljujem, pridružujem se, sviram&lt;br&gt;&lt;b&gt;Izuzetak: &lt;/b&gt;Idem kući&lt;br&gt;&lt;b&gt;Predlozi -&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;prema, ka, slično, shodno, suprotno, uinat&lt;/b&gt;&lt;b&gt;: &lt;/b&gt;Trči prema košarkaškom terenu. Idem prema autobuskoj stanici. Pogledaj ka velikom jezeru. Obukao je slično tom čoveku. Birajte shodno vašem uzrastu. Pobedio je, suprotno očekivanjima. Otvorio sam bar uinat mojim roditeljima.&lt;br&gt;&lt;b&gt;Sa gladolima trebati i sviđati se: &lt;/b&gt;Treba mi (Meni treda). Borku treba piće. Sestri treba odmor. Borku se sviđa čokolada. Komšiji se sviđa novi auto.&lt;div&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Pitanja - kome? čemu?: &lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;Komu duguješ izvinjenje? Čemu se nadaš? Prema čemu je teleskop uperen?&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
-          <mxGeometry x="480" y="500" width="540" height="140" as="geometry" />
+          <mxGeometry x="480" y="420" width="540" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="ADTaTo-tk-Jg6WtzQs2E-2" value="&lt;b&gt;Direktni objekt&lt;span style=&quot;font-size: 9px;&quot;&gt;:&lt;/span&gt;&lt;/b&gt;&amp;nbsp;Imam brata. Imam telefon. Gledam ženu. Volim ovo jezero. Dajem telefom tebi. Donosim cveće svojoj sestri. Šaljem poruku Milanu. Dugujem im novac. Pišem joj pismo. Obećao sam joj telefon. Volim je. &lt;b&gt;+ glagoli (AKU + DAT) &lt;/b&gt;plaćam, odbijam, poklanjam, dozvoljavam, nudim, prodajem, pozajmljujem, vesujem &lt;b&gt;(samo AKU) &lt;/b&gt;čekam, čitam, čujem, čuvam, dobijam, držim, gledam, jedem, pijem, krijem, kuvam, mrzim, nađem, pečem, pevam, pipam, pitam, perem, primam, saznajem, sviram, tražim, vidim, volim, znam.&lt;br&gt;&lt;b&gt;Odredište: &lt;/b&gt;Vozim za Beograd. Idem u Serbiju. Stavila sam telefon u torbicu. Idemo kroz selo. Volim blesavog brata. Gledam stari TV. Imam mlađu sestru. Pronašao je malo jezero.&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Pitanja - koga? šta? koji?:&amp;nbsp;&lt;/b&gt;Koga voliš? ➜ Volim majku. Volim brata. Šta vidiš? Koji predmet voliš? ➜ Volim hemiju" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
+        <mxCell id="ADTaTo-tk-Jg6WtzQs2E-2" value="&lt;b&gt;Direktni objekt&lt;span style=&quot;font-size: 9px;&quot;&gt;:&lt;/span&gt;&lt;/b&gt;&amp;nbsp;Imam brata. Imam telefon. Gledam ženu. Volim ovo jezero. Dajem telefom tebi. Donosim cveće svojoj sestri. Šaljem poruku Milanu. Dugujem im novac. Pišem joj pismo. Obećao sam joj telefon. Volim je. &lt;b&gt;+ glagoli (AKU + DAT) &lt;/b&gt;plaćam, odbijam, poklanjam, dozvoljavam, nudim, prodajem, pozajmljujem, verujem &lt;b&gt;(samo AKU) &lt;/b&gt;čekam, čitam, čujem, čuvam, dobijam, držim, gledam, jedem, pijem, krijem, kuvam, mrzim, nađem, pečem, pevam, pipam, pitam, perem, primam, saznajem, sviram, tražim, vidim, volim, znam.&lt;br&gt;&lt;b&gt;Odredište: &lt;/b&gt;Vozim za Beograd. Idem u Serbiju. Stavila sam telefon u torbicu. Idemo kroz selo. Volim blesavog brata. Gledam stari TV. Imam mlađu sestru. Pronašao je malo jezero.&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Pitanja - koga? šta? koji?:&amp;nbsp;&lt;/b&gt;Koga voliš? ➜ Volim majku. Volim brata. Šta vidiš? Koji predmet voliš? ➜ Volim hemiju" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
           <mxGeometry x="480" y="130" width="540" height="90" as="geometry" />
         </mxCell>
         <mxCell id="QT0mehLF4YGMC2CH4Aby-1" value="Sara baš ima talenta za sve sportove" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="320" y="230" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QT0mehLF4YGMC2CH4Aby-2" value="VOKATIV" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="359" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QT0mehLF4YGMC2CH4Aby-4" value="DATIV" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="470" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QT0mehLF4YGMC2CH4Aby-7" value="LOCATIV" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="520" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QT0mehLF4YGMC2CH4Aby-8" value="INSTR." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="720" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QT0mehLF4YGMC2CH4Aby-9" value="Ona uvek brine o svojim drugovima" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="320" y="550" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QT0mehLF4YGMC2CH4Aby-10" value="Hej, mladi čoveče! Hej, druže! Hej, duše! Hej, prijatelji! Hej, žene! Hej, sela!&lt;br&gt;&lt;b&gt;Imena -o: &lt;/b&gt;Majo, Saro, Jano, Leno, Ivo, Anđo, Ljiljo, Maro, Mašo, Zoko, Ceco, Miro, Goco, Miljo, Vido, Rado, Daro.&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Imena (NOM): &lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;Ana, Anja, Sanja, Sonja, Sandra, Olja, Vesna, Vanja, Dunja, Višnja, Kaća, Lea, Branka, Ljerka, Zorka, Tara, Tina, Lepa, Dragana, Zorana, Jovana, Mirjana, Olivera, Tatjana, Ksenija, Jelena, Aleksandra, Sla&lt;/span&gt;đana, Milena, Goran, Bojana, Svetlana&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Imena -ce: &lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;Jelice, Marice, Milice, Danice, Ljubice, Zorice, Sunčice, Radice, Verice, Olgice&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="480" y="350" width="540" height="61" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
