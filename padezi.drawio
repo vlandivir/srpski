@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-22T21:37:55.666Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="2gc51CwxpVkhIUURdlrG" version="23.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-22T22:17:12.631Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="HsDh-eWzKwbeEKSu8x-8" version="23.1.5" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="883" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="631" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -361,6 +361,9 @@
         </mxCell>
         <mxCell id="QT0mehLF4YGMC2CH4Aby-10" value="Hej, mladi čoveče! Hej, druže! Hej, duše! Hej, prijatelji! Hej, žene! Hej, sela!&lt;br&gt;&lt;b&gt;Imena -o: &lt;/b&gt;Majo, Saro, Jano, Leno, Ivo, Anđo, Ljiljo, Maro, Mašo, Zoko, Ceco, Miro, Goco, Miljo, Vido, Rado, Daro.&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Imena (NOM): &lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;Ana, Anja, Sanja, Sonja, Sandra, Olja, Vesna, Vanja, Dunja, Višnja, Kaća, Lea, Branka, Ljerka, Zorka, Tara, Tina, Lepa, Dragana, Zorana, Jovana, Mirjana, Olivera, Tatjana, Ksenija, Jelena, Aleksandra, Sla&lt;/span&gt;đana, Milena, Goran, Bojana, Svetlana&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Imena -ce: &lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;Jelice, Marice, Milice, Danice, Ljubice, Zorice, Sunčice, Radice, Verice, Olgice&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="480" y="360" width="540" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="QT0mehLF4YGMC2CH4Aby-11" value="&lt;b&gt;Instrument: &lt;/b&gt;Ana je častila Marka ručkom. Tresem košnicu štapom. Ana maše rukom. Kolutaš očima. Lutam ilicama. Ja ću rukovati mašinom. Snabdevam nas alkoholom. Škripi stolicom i nervira nastavnika. Upravljam restoranom. Hvalim se uspehom svog sina. Impressioniran sam tvojim dostignućem! Pokrio je krevet ćebetom. Posluži se kolačićima. Ona dobro vlada engleskim. Častim ga pićem. Oni putuju avijonom. Dolazi kolima. Možeš da isečes to nožem. Hodamo satima. Radim na ovom projektu danima. Jedem viljuškom. Slikao sam te telefnom. Došao sam biciklom." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="480" y="720" width="540" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
