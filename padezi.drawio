@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-21T21:22:59.987Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="zhs7XGKIjmVPi__eCaHW" version="23.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-22T21:05:12.329Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="MytKlphOrV2ZMz2Klh70" version="23.1.5" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="706" dy="492" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="883" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,7 +16,7 @@
         <mxCell id="BAi89jd5EGfL0doamKMS-101" value="Muški" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="180" y="389" width="120" height="21" as="geometry" />
         </mxCell>
-        <mxCell id="BAi89jd5EGfL0doamKMS-87" value="drug ➜ drugovi&lt;br&gt;čaj ➜ čajevi" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+        <mxCell id="BAi89jd5EGfL0doamKMS-87" value="drug ➜ drugovi&lt;br&gt;čaj ➜ čajevi miš ➜ miševi" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="320" y="90" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="z7CCXZcRLEo5i3R6FDuk-22" value="NOMINATIV" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" parent="1" vertex="1">
@@ -207,7 +207,7 @@
           <mxGeometry x="40" y="419" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-59" value="-ove&lt;br&gt;-eve" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="400" y="180" width="40" height="30" as="geometry" />
+          <mxGeometry x="400" y="200" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-61" value="-ova&lt;br&gt;-eva" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="280" width="40" height="30" as="geometry" />
@@ -308,8 +308,8 @@
         <mxCell id="BAi89jd5EGfL0doamKMS-58" value="-ovi&lt;br&gt;-evi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="400" y="60" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="w5lrp8CAif_9VlZ4OXMN-10" value="&lt;b&gt;Izuzeci: &lt;/b&gt;put ➜ putevi&lt;br&gt;sir ➜ sirevi&amp;nbsp; dan ➜ dani&lt;br&gt;konj ➜ konji mrav ➜ mravi&lt;br&gt;zub ➜ zubi&amp;nbsp; sat ➜ sati" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="320" y="120" width="120" height="50" as="geometry" />
+        <mxCell id="w5lrp8CAif_9VlZ4OXMN-10" value="&lt;b&gt;Izuzeci: &lt;/b&gt;put ➜ putevi&lt;br&gt;sir ➜ sirevi&amp;nbsp; dan ➜ dani&lt;br&gt;konj ➜ konji mrav ➜ mravi&lt;br&gt;zub ➜ zubi&amp;nbsp; sat ➜ sati &lt;br&gt;pas ➜ psi" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="320" y="120" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-1" value="&lt;b&gt;Izuzeci:&amp;nbsp; &lt;/b&gt;čovek&lt;b&gt;&amp;nbsp;&lt;/b&gt;➜ ljudi&lt;br&gt;lampa ➜ lampi&lt;br&gt;mesec ➜ meseci&lt;br&gt;sat ➜ sati gost&amp;nbsp;➜ gostiju&lt;br&gt;oko ➜ ociju prst ➜ prstiju&lt;br&gt;uho ➜ ušiju&lt;br&gt;nokat ➜ noktiju&lt;br&gt;ruka ➜ ruku noga ➜ nogu&lt;br&gt;sluga ➜ slugu" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="260" width="120" height="110" as="geometry" />
@@ -354,16 +354,19 @@
           <mxGeometry x="320" y="280" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="uh2jlfRQcC9aMAu_DCjH-4" value="Imena gradova su interesantna." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="320" y="310" width="120" height="60" as="geometry" />
+          <mxGeometry x="320" y="310" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="uh2jlfRQcC9aMAu_DCjH-5" value="AKUZATIV" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="320" y="180" width="80" height="30" as="geometry" />
+          <mxGeometry x="320" y="200" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ADTaTo-tk-Jg6WtzQs2E-1" value="&lt;b style=&quot;font-size: 9px;&quot;&gt;Primaoc radnje:&lt;/b&gt;&amp;nbsp;Dajem knjigu slonu. Šaljem poklon ženi. Odajem počast jezeru. Nedostaješ ženi. Donosim hranu slonu. Sviđaš se ženi. Dozvolite jezeru da bude čisto. Dugujem to Borku. Govorim ženi. Plati čoveku. Delim hranu ljudima. Uzimam novac ženi. Ostavljam ovo tebi. Pišem ovo njemu. Doniram ovo njoj. Šaljem ovo njima. Nudim ovo Milanu. Prodajem ovo slonu. Pozajmljujem ovo jezeru. Verujem ti (tebi). Narđujem sinu da dođe. &lt;b&gt;+ glagoli (prvo lice) &lt;/b&gt;kažem, obećavam,&amp;nbsp;savetujem, pomažem, pretim, prkosim, pripadam, ugađam, divim se, nadam se, približavam se, radujem se, udvaram se, izbegavam, zahvaljujem, pridružujem se, sviram&lt;br&gt;&lt;b&gt;Izuzetak: &lt;/b&gt;Idem kući&lt;br&gt;&lt;b&gt;Predlozi -&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;prema, ka, slično, shodno, suprotno, uinat&lt;/b&gt;&lt;b&gt;: &lt;/b&gt;Trči prema košarkaškom terenu. Idem prema autobuskoj stanici. Pogledaj ka velikom jezeru. Obukao je slično tom čoveku. Birajte shodno vašem uzrastu. Pobedio je, suprotno očekivanjima. Otvorio sam bar uinat mojim roditeljima.&lt;br&gt;&lt;b&gt;Sa gladolima trebati i sviđati se: &lt;/b&gt;Treba mi (Meni treda). Borku treba piće. Sestri treba odmor. Borku se sviđa čokolada. Komšiji se sviđa novi auto.&lt;div&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Pitanja - kome? čemu?: &lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;Komu duguješ izvinjenje? Čemu se nadaš? Prema čemu je teleskop uperen?&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" vertex="1" parent="1">
+        <mxCell id="ADTaTo-tk-Jg6WtzQs2E-1" value="&lt;b style=&quot;font-size: 9px;&quot;&gt;Primaoc radnje:&lt;/b&gt;&amp;nbsp;Dajem knjigu slonu. Šaljem poklon ženi. Odajem počast jezeru. Nedostaješ ženi. Donosim hranu slonu. Sviđaš se ženi. Dozvolite jezeru da bude čisto. Dugujem to Borku. Govorim ženi. Plati čoveku. Delim hranu ljudima. Uzimam novac ženi. Ostavljam ovo tebi. Pišem ovo njemu. Doniram ovo njoj. Šaljem ovo njima. Nudim ovo Milanu. Prodajem ovo slonu. Pozajmljujem ovo jezeru. Verujem ti (tebi). Narđujem sinu da dođe. &lt;b&gt;+ glagoli (prvo lice) &lt;/b&gt;kažem, obećavam,&amp;nbsp;savetujem, pomažem, pretim, prkosim, pripadam, ugađam, divim se, nadam se, približavam se, radujem se, udvaram se, izbegavam, zahvaljujem, pridružujem se, sviram&lt;br&gt;&lt;b&gt;Izuzetak: &lt;/b&gt;Idem kući&lt;br&gt;&lt;b&gt;Predlozi -&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;prema, ka, slično, shodno, suprotno, uinat&lt;/b&gt;&lt;b&gt;: &lt;/b&gt;Trči prema košarkaškom terenu. Idem prema autobuskoj stanici. Pogledaj ka velikom jezeru. Obukao je slično tom čoveku. Birajte shodno vašem uzrastu. Pobedio je, suprotno očekivanjima. Otvorio sam bar uinat mojim roditeljima.&lt;br&gt;&lt;b&gt;Sa gladolima trebati i sviđati se: &lt;/b&gt;Treba mi (Meni treda). Borku treba piće. Sestri treba odmor. Borku se sviđa čokolada. Komšiji se sviđa novi auto.&lt;div&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Pitanja - kome? čemu?: &lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;Komu duguješ izvinjenje? Čemu se nadaš? Prema čemu je teleskop uperen?&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
           <mxGeometry x="480" y="500" width="540" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="ADTaTo-tk-Jg6WtzQs2E-2" value="&lt;b&gt;Direktni objekt&lt;span style=&quot;font-size: 9px;&quot;&gt;:&lt;/span&gt;&lt;/b&gt;&amp;nbsp;Imam brata. Imam telefon. Gledam ženu. Volim ovo jezero. Dajem telefom tebi. Donosim cveće svojoj sestri. Šaljem poruku Milanu. Dugujem im novac. Pišem joj pismo. Obećao sam joj telefon. Volim je. &lt;b&gt;+ glagoli (AKU + DAT) &lt;/b&gt;plaćam, odbijam, poklanjam, dozvoljavam, nudim, prodajem, pozajmljujem, vesujem &lt;b&gt;(samo AKU) &lt;/b&gt;čekam, čitam, čujem, čuvam, dobijam, držim, gledam, jedem, pijem, krijem, kuvam, mrzim, nađem, pečem, pevam, pipam, pitam, perem, primam, saznajem, sviram, tražim, vidim, volim, znam.&lt;br&gt;&lt;b&gt;Odredište: &lt;/b&gt;Vozim za Beograd. Idem u Serbiju. Stavila sam telefon u torbicu. Idemo kroz selo. Volim blesavog brata. Gledam stari TV. Imam mlađu sestru. Pronašao je malo jezero.&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Pitanja - koga? šta? koji?:&amp;nbsp;&lt;/b&gt;Koga voliš? ➜ Volim majku. Volim brata. Šta vidiš? Koji predmet voliš? ➜ Volim hemiju" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" vertex="1" parent="1">
+        <mxCell id="ADTaTo-tk-Jg6WtzQs2E-2" value="&lt;b&gt;Direktni objekt&lt;span style=&quot;font-size: 9px;&quot;&gt;:&lt;/span&gt;&lt;/b&gt;&amp;nbsp;Imam brata. Imam telefon. Gledam ženu. Volim ovo jezero. Dajem telefom tebi. Donosim cveće svojoj sestri. Šaljem poruku Milanu. Dugujem im novac. Pišem joj pismo. Obećao sam joj telefon. Volim je. &lt;b&gt;+ glagoli (AKU + DAT) &lt;/b&gt;plaćam, odbijam, poklanjam, dozvoljavam, nudim, prodajem, pozajmljujem, vesujem &lt;b&gt;(samo AKU) &lt;/b&gt;čekam, čitam, čujem, čuvam, dobijam, držim, gledam, jedem, pijem, krijem, kuvam, mrzim, nađem, pečem, pevam, pipam, pitam, perem, primam, saznajem, sviram, tražim, vidim, volim, znam.&lt;br&gt;&lt;b&gt;Odredište: &lt;/b&gt;Vozim za Beograd. Idem u Serbiju. Stavila sam telefon u torbicu. Idemo kroz selo. Volim blesavog brata. Gledam stari TV. Imam mlađu sestru. Pronašao je malo jezero.&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Pitanja - koga? šta? koji?:&amp;nbsp;&lt;/b&gt;Koga voliš? ➜ Volim majku. Volim brata. Šta vidiš? Koji predmet voliš? ➜ Volim hemiju" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
           <mxGeometry x="480" y="130" width="540" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="QT0mehLF4YGMC2CH4Aby-1" value="Sara baš ima talenta za sve sportove" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="320" y="230" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
