@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-24T20:15:27.738Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="XoWPFj8SXHK957IfBia1" version="23.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-24T20:36:35.601Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="dfCM7xGkRKCelmBTyqP_" version="23.1.6" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="883" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1358" dy="894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -306,7 +306,7 @@
           <mxGeometry x="460" y="430" width="20" height="140" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-7" value="LOCATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
-          <mxGeometry x="460" y="580" width="20" height="90" as="geometry" />
+          <mxGeometry x="460" y="580" width="20" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-8" value="INSTRUMENTAL" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
           <mxGeometry x="460" y="690" width="20" height="120" as="geometry" />
@@ -367,6 +367,9 @@
         </mxCell>
         <mxCell id="lDTSiUvkGt28ZzL0C-TC-1" value="PRIMERI" style="shape=offPageConnector;whiteSpace=wrap;html=1;size=0.25;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="460" y="10" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SCsuLVYZ3zaB3UgAQBAb-1" value="&lt;b style=&quot;font-size: 9px;&quot;&gt;Locacija (predloazi u, na): &lt;/b&gt;&lt;span style=&quot;font-size: 9px;&quot;&gt;Radim u prodavnici. Ja sam u skoli. Živim u grad.&lt;br&gt;&lt;/span&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Gonorim o nekomu, o nečemu: &lt;/b&gt;Pričim o srpskom jeziku. Ne radi se o mojoj porodici. Pričam joj o žurci. Da li žnaš nešto o tom dečku?&lt;br&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Predlozi - prema, pri, po: &lt;/b&gt;Stani tamo, premo mostu. Oni su okrenuli prema severu. Imaš sladoled po majici. Ima puno pasa po kraju. Dosadilo mi je pri kraju. Naočare su pri dnu ranca.&lt;br&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Pitanja - gde? o kome? o čemu?: &lt;/b&gt;Gde si? ➜ Ja sam u Beogradu. O kome pričaš?&amp;nbsp;➜ Pricham o sestri. O čemu pišeš?&amp;nbsp;➜ Pišem o jezeru." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="480" y="580" width="540" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
