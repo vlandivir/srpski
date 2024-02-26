@@ -60,7 +60,6 @@ image_path = 'Pričao_sam_sa_satovima_na_zidu_o_vremenu.webp'  # Update this pat
 output_path = 'Pričao_sam_sa_satovima_na_zidu_o_vremenu_output.webp'  # Update this path
 text = "Pričao sam sa satovima na zidu o vremenu"
 
-# font_path = 'path_to_your_font.ttf'  # Update this path with a font that supports Serbian characters
 font_path = '/System/Library/Fonts/Helvetica.ttc'
 
 # Call the function
