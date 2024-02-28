@@ -10,5 +10,23 @@
         "ru": "Хотя бы погода была хорошей.",
         "sr": "Makar je vreme bilo dobro.",
         "image": "at_least_the_weather_was_good_1709150909.webp"
-    }        
+    },
+    {
+        "en": "There is a flower growing on the windowsill.",
+        "ru": "На подоконнике растет цветок.",
+        "sr": "Na prozorskoj dasci raste cvet.",
+        "image": "there_is_a_flower_growing_on_the_windowsill_1677538821.webp"
+    },
+    {
+        "en": "I decided to quit my job.",
+        "ru": "Я решил уволиться с работы.",
+        "sr": "Odlučio sam da napustim posao.",
+        "image": "i-decided-to-quit-my-job-1709159677.webp"
+    },
+    {
+        "en": "I decided to go for a walk anyway, despite the weather.",
+        "ru": "Я всё же решил пойти на прогулку, несмотря на погоду.",
+        "sr": "Ipak sam odlučio da odem u šetnju, uprkos vremenu.",
+        "image": "i-decided-to-go-for-a-walk-anyway-despite-the-weather-1709160252_extended.webp"
+    }                       
 ]
