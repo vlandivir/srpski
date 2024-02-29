@@ -1,3 +1,4 @@
+import os
 import json
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
@@ -12,40 +13,65 @@ def get_text_dimensions(text_string, font):
     return (text_width, text_height)
 
 def split_string_into_parts(s, n_parts):
-    """
-    Разделить строку `s` на `n_parts` примерно равных частей по пробелам.
+    if n_parts <= 1:
+        return [s]
     
-    :param s: Строка для разделения
-    :param n_parts: Количество частей
-    :return: Список частей строки
-    """
-    # Разбиваем строку на слова
-    words = s.split()
-    
-    # Если количество частей больше количества слов, возвращаем слова (каждое слово в отдельной части)
-    if n_parts >= len(words):
-        return words + [''] * (n_parts - len(words))  # Добавляем пустые строки, если частей должно быть больше
-    
-    # Вычисляем примерное количество слов в каждой части
-    words_per_part = len(words) / n_parts
-    
-    # Разделяем слова по частям
+    # Общая длина строки без учета пробелов для более равномерного деления
+    total_length = len(s.replace(" ", ""))
+    part_length = total_length / n_parts
+
     parts = []
-    current_part = []
-    current_length = 0
-    for word in words:
-        current_part.append(word)
-        current_length += len(word)
+    last_index = 0
+    accumulated_length = 0  # Длина накопленных символов без пробелов
+
+    for i in range(1, n_parts):
+        # Планируемая длина для текущей части
+        current_target = part_length * i
         
-        # Проверяем, достигли ли мы примерной длины текущей части
-        if len(current_part) >= round(words_per_part) and len(parts) < n_parts - 1:
-            parts.append(' '.join(current_part))
-            current_part = []
-    
-    # Добавляем оставшиеся слова в последнюю часть
-    parts.append(' '.join(current_part))
-    
+        while accumulated_length < current_target and last_index < len(s):
+            if s[last_index] != " ":
+                accumulated_length += 1
+            last_index += 1
+
+        # Находим ближайший пробел для разделения
+        space_index = s.find(" ", last_index)
+        if space_index == -1:  # Если пробел не найден, используем длину строки
+            space_index = len(s)
+        
+        # Добавляем часть строки до найденного пробела
+        parts.append(s[:space_index].strip())
+        # Обновляем строку, удаляя добавленную часть
+        s = s[space_index:]
+        
+        last_index = 0  # Сбрасываем индекс для новой подстроки
+
+    # Добавляем оставшуюся часть строки
+    parts.append(s.strip())
+
     return parts
+
+def add_text_properties(text, color, new_image_width, font_48, rows, gaps, colors, fonts):
+    text_width, text_height = get_text_dimensions(text, font_48)
+    rows_count = text_width / (new_image_width - 64)
+
+    if rows_count > 2:
+        font_size = 40
+        rows.extend(split_string_into_parts(text, 2))
+        gaps.extend([(8, font_size + 2), (0, font_size + 2), (0, font_size + 2)])
+        colors.extend([color, color])
+        fonts.extend([font_size, font_size])
+    elif rows_count > 1:
+        font_size = 48
+        rows.extend(split_string_into_parts(text, 2))
+        gaps.extend([(8, font_size + 2), (0, font_size + 2)])
+        colors.extend([color, color])
+        fonts.extend([font_size, font_size])
+    else:
+        font_size = 48
+        rows.extend([text])
+        gaps.extend([(font_size * 0.5, font_size * 1.5 + 2)])
+        colors.extend([color])
+        fonts.extend([font_size])
 
 def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_path):
     original_image = Image.open(image_path)
@@ -83,64 +109,45 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     # Blend this rectangle with the base image
     new_image.paste(rect_image, (0, 0), rect_image)
 
-    font_size = 48
-    font_sr = ImageFont.truetype(font_path, font_size)
+    font_32 = ImageFont.truetype(font_path, 40)
+    font_48 = ImageFont.truetype(font_path, 48)
 
     text_x = 32
     text_y += 16
 
+    # Инициализация списков
     rows = []
     colors = []
     gaps = []
+    fonts = []
 
-    # (230, 230, 250, 225) # Лавандовый
-    # (175, 238, 238, 225) # Бледно-голубой
-    # (255, 218, 185, 225) # Пастельный персик
+    # Параметры
+    lavender = (230, 230, 250, 225)  # Лавандовый
+    pale_blue = (175, 238, 238, 225)  # Бледно-голубой
+    pastel_peach = (255, 218, 185, 225)  # Пастельный персик
 
-    text_width, text_height = get_text_dimensions(text_sr, font_sr)
-    if text_width > new_image.width - 32:
-        rows.extend(split_string_into_parts(text_sr, 2))
-        gaps.extend([(0, font_size + 2), (0, font_size + 2)])
-        colors.extend([(175, 238, 238, 225), (175, 238, 238, 225)])
-    else:
-        rows.extend([text_sr])
-        gaps.extend([(font_size * 0.5, font_size * 1.5 + 2)])
-        colors.extend([(175, 238, 238, 225)])
-
-    text_width, text_height = get_text_dimensions(text_ru, font_sr)
-    if text_width > new_image.width - 32:
-        rows.extend(split_string_into_parts(text_ru, 2))
-        gaps.extend([(8, font_size + 2), (0, font_size + 2)])
-        colors.extend([(230, 230, 250, 225), (230, 230, 250, 225)])
-    else:
-        rows.extend([text_ru])
-        gaps.extend([(font_size * 0.5, font_size * 1.5 + 2)])
-        colors.extend([(230, 230, 250, 225)])
-
-    text_width, text_height = get_text_dimensions(text_en, font_sr)
-    if text_width > new_image.width - 32:
-        rows.extend(split_string_into_parts(text_en, 2))
-        gaps.extend([(8, font_size + 2), (0, font_size + 2)])
-        colors.extend([(255, 218, 185, 225), (255, 218, 185, 225)])
-    else:
-        rows.extend([text_en])
-        gaps.extend([(font_size * 0.5, font_size * 1.5 + 2)])
-        colors.extend([(255, 218, 185, 225)])
+    # Вызов функции для каждого блока текста
+    add_text_properties(text_sr, pale_blue, new_image.width, font_48, rows, gaps, colors, fonts)
+    add_text_properties(text_ru, lavender, new_image.width, font_48, rows, gaps, colors, fonts)
+    add_text_properties(text_en, pastel_peach, new_image.width, font_48, rows, gaps, colors, fonts)
 
     for i, r in enumerate(rows):
         top, bottom = gaps[i]
         text_y += top
-        draw.text((text_x, text_y), r, fill=colors[i], font=font_sr)
+        draw.text((text_x, text_y), r, fill=colors[i], font=(font_48 if fonts[i] == 48 else font_32))
         text_y += bottom
 
     # Save the image
     new_image.save(output_path)
 
-with open('language-images.json', 'r', encoding='utf-8') as file:
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+json_file = os.path.join(script_dir, 'language-images.json')
+with open(json_file, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
-source_folder = 'source-images/'
-result_folder = 'result-images/'
+source_folder = os.path.join(script_dir, 'source-images/')
+result_folder = os.path.join(script_dir, 'result-images/')
 font_path = '/System/Library/Fonts/Helvetica.ttc'
 
 for item in data:
