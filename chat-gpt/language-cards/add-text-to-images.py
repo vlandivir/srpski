@@ -86,7 +86,7 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
 
 
     text_width, text_height = get_text_dimensions(text_sr, font_sr)
-    if text_width > image.width - 16:
+    if text_width > image.width - 32:
         rows.extend(split_string_into_parts(text_sr, 2))
         gaps.extend([(0, font_size + 2), (0, font_size + 2)])
         colors.extend([(175, 238, 238, 225), (175, 238, 238, 225)])
@@ -96,7 +96,7 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
         colors.extend([(175, 238, 238, 225)])
 
     text_width, text_height = get_text_dimensions(text_ru, font_sr)
-    if text_width > image.width - 16:
+    if text_width > image.width - 32:
         rows.extend(split_string_into_parts(text_ru, 2))
         gaps.extend([(8, font_size + 2), (0, font_size + 2)])
         colors.extend([(230, 230, 250, 225), (230, 230, 250, 225)])
@@ -106,7 +106,7 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
         colors.extend([(230, 230, 250, 225)])
 
     text_width, text_height = get_text_dimensions(text_en, font_sr)
-    if text_width > image.width - 16:
+    if text_width > image.width - 32:
         rows.extend(split_string_into_parts(text_en, 2))
         gaps.extend([(8, font_size + 2), (0, font_size + 2)])
         colors.extend([(255, 218, 185, 225), (255, 218, 185, 225)])
