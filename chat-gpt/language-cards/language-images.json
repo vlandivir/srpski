@@ -1,5 +1,11 @@
 [
     {
+        "en": "I talked with the clocks on the wall about time",
+        "ru": "Я разговаривал со часами на стене о времени",
+        "sr": "Pričao sam sa satovima na zidu o vremenu",
+        "image": "i-talked-with-the-clocks-on-the-wall-about-time-1709000000.webp"
+    },
+    {
         "en": "After breaking his leg, he walked on crutches for several weeks.",
         "ru": "После перелома ноги он ходил на костылях несколько недель.",
         "sr": "Nakon što je slomio nogu, hodao je na štakama nekoliko nedelja.",
@@ -70,5 +76,11 @@
         "ru": "После тренировки так хочу спать.",
         "sr": "Posle treninga tako želim da spavam.",
         "image": "i-feel-so-sleepy-after-the-workout-1709167200.webp"
-    }                
+    },
+    {
+        "en": "I love drinking milk while listening to calm music.",
+        "ru": "Люблю пить молоко, слушая спокойную музыку.",
+        "sr": "Volim da pijem mleko dok slušam mirnu muziku.",
+        "image": "i-love-drinking-milk-while-listening-to-calm-music-1709167786.webp"
+    }                    
 ]
