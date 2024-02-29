@@ -28,5 +28,23 @@
         "ru": "Я всё же решил пойти на прогулку, несмотря на погоду.",
         "sr": "Ipak sam odlučio da odem u šetnju, uprkos vremenu.",
         "image": "i-decided-to-go-for-a-walk-anyway-despite-the-weather-1709160252_extended.webp"
-    }                       
+    },
+    {
+        "en": "Even though it's cold outside, I will still go for a walk.",
+        "ru": "Хотя на улице холодно, я всё равно пойду гулять.",
+        "sr": "Iako je napolju hladno, ja ću ipak ići u šetnju.",
+        "image": "even-though-its-cold-outside-i-will-still-go-for-a-walk-1677602414.webp"
+    },
+    {
+        "en": "Even though I prefer Italian cuisine, today I decided to try Japanese.",
+        "ru": "Хотя я предпочитаю итальянскую кухню, сегодня я решил попробовать японскую.",
+        "sr": "Iako preferiram italijansku kuhinju, danas sam odlučio da probam japansku.",
+        "image": "even-though-i-prefer-italian-cuisine-today-i-decided-to-try-japanese-1709162213.webp"
+    },
+    {
+        "en": "This will be my first trip abroad.",
+        "ru": "Это будет мое первое путешествие за границу.",
+        "sr": "Biće ovo moje prvo putovanje u inostranstvo.",
+        "image": "this-will-be-my-first-trip-abroad_1709163936.webp"
+    }                                   
 ]

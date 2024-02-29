@@ -58,7 +58,7 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     rect_image = Image.new('RGBA', image.size, (0, 0, 0, 0))
     rect_draw = ImageDraw.Draw(rect_image)
 
-    opacity = int(255 * 0.6)
+    opacity = int(255 * 0.8)
     text_y = image.height * 3 / 4 - 8;
     rect_draw.rounded_rectangle(
         [8, text_y, image.width - 8, image.height - 8], 
@@ -77,28 +77,49 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     text_y += 16
 
     rows = []
+    colors = []
+    gaps = []
+
+    # (230, 230, 250, 225) # Лавандовый
+    # (175, 238, 238, 225) # Бледно-голубой
+    # (255, 218, 185, 225) # Пастельный персик
+
 
     text_width, text_height = get_text_dimensions(text_sr, font_sr)
     if text_width > image.width - 16:
         rows.extend(split_string_into_parts(text_sr, 2))
+        gaps.extend([(0, font_size + 2), (0, font_size + 2)])
+        colors.extend([(175, 238, 238, 225), (175, 238, 238, 225)])
     else:
-        rows.extend([text_sr, '\n'])
+        rows.extend([text_sr])
+        gaps.extend([(font_size * 0.5, font_size * 1.5 + 2)])
+        colors.extend([(175, 238, 238, 225)])
 
     text_width, text_height = get_text_dimensions(text_ru, font_sr)
     if text_width > image.width - 16:
         rows.extend(split_string_into_parts(text_ru, 2))
+        gaps.extend([(8, font_size + 2), (0, font_size + 2)])
+        colors.extend([(230, 230, 250, 225), (230, 230, 250, 225)])
     else:
-        rows.extend([text_ru, '\n'])
+        rows.extend([text_ru])
+        gaps.extend([(font_size * 0.5, font_size * 1.5 + 2)])
+        colors.extend([(230, 230, 250, 225)])
 
-    text_width, text_height = get_text_dimensions(text_ru, font_sr)
+    text_width, text_height = get_text_dimensions(text_en, font_sr)
     if text_width > image.width - 16:
         rows.extend(split_string_into_parts(text_en, 2))
+        gaps.extend([(8, font_size + 2), (0, font_size + 2)])
+        colors.extend([(255, 218, 185, 225), (255, 218, 185, 225)])
     else:
-        rows.extend([text_en, '\n'])
+        rows.extend([text_en])
+        gaps.extend([(font_size * 0.5, font_size * 1.5 + 2)])
+        colors.extend([(255, 218, 185, 225)])
 
     for i, r in enumerate(rows):
-        draw.text((text_x, text_y), r, fill=text_color, font=font_sr)
-        text_y += font_size + 2 + (8 if i % 2 == 1 else 0)
+        top, bottom = gaps[i]
+        text_y += top
+        draw.text((text_x, text_y), r, fill=colors[i], font=font_sr)
+        text_y += bottom
 
     # Save the image
     image.save(output_path)
@@ -120,4 +141,3 @@ for item in data:
 
     # Call the function
     add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_path)
-
