@@ -1,0 +1,27 @@
+a b c č ć d dž đ e f g h i j k l lj m n nj o p r s š t u v z ž
+A B C Č Ć D DŽ Đ E F G H I J K L LJ M N NJ O P R S Š T U V Z Ž
+
+fleksibilan - гибкий - flexible  
+iznerviran - раздраженный - irritated  
+kreativan - креативный - creative  
+lenj - ленивый - lazy  
+ljut - сердитый - angry  
+nezavisan - независимый - independent  
+nestrpljiv - нетерпеливый - impatient  
+optimističan - оптимистичный - optimistic  
+odgovoran - ответственный - responsible  
+opušten - расслабленный - relaxed  
+otvoren - открытый - open  
+radoznao - любопытный - curious  
+samopouzdan - самоуверенный - confident  
+sebičan - эгоистичный - selfish  
+smiren - спокойный - calm  
+stabilan - стабильный - stable  
+škrt - скупой - stingy  
+tačan - пунктуальный - punctual  
+tvrdoglav - упрямый - stubborn  
+uzbuđen - возбужденный - excited  
+veseo - веселый - cheerful  
+zaljublen - влюбленный - in love  
+zatvoren - закрытый - closed  
+zbunjen - смущенный - confused
