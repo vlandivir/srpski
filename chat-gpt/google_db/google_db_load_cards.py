@@ -4,8 +4,6 @@ import time
 from sys import getsizeof
 from pympler import asizeof
 
-from oauth2client.service_account import ServiceAccountCredentials
-
 from google_db_api import get_gspread_client
 
 client = get_gspread_client()
@@ -15,14 +13,16 @@ sheet_name = 'Cards'
 
 start_time = time.time()
 
-sheet = client.open_by_key(sheet_id).worksheet(sheet_name)
-data = sheet.get_all_records()
+worksheet = client.open_by_key(sheet_id).worksheet(sheet_name)
+data = worksheet.get_all_records()
 
 elapsed_time = time.time() - start_time
 
 json_string = json.dumps(data, indent=0) # indent=4 делает вывод читаемым
 size_sys = getsizeof(json_string)
 size_pympler = asizeof.asizeof(data)
+
+print(data)
 
 print(f'Data string count: {len(data)}')
 print(f'Load time: {elapsed_time} seconds')
