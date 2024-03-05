@@ -51,9 +51,9 @@ gc = gspread.authorize(credentials)
 
 # Открытие таблицы по URL
 sh = gc.open_by_url(spreadsheet_url)
-worksheet = sh.sheet1
+worksheet = sh.worksheet('Cards')
 
-required_headers = ["en", "ru", "sr", "image"]
+required_headers = ['en', 'ru', 'sr', 'image']
 add_missing_columns(worksheet, required_headers)
 
 json_file = os.path.join(current_dir, '..', 'language-cards', 'language-images.json')
