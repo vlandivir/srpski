@@ -1,4 +1,5 @@
 import os
+import json
 import random
 
 from dotenv import load_dotenv
@@ -12,6 +13,10 @@ token = os.getenv("TEST_BOT_TOKEN", token) # for local run python3 telegram-bot/
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 cards_path = os.path.join(current_dir, 'release-cards')
+cards_file = os.path.join(current_dir, 'language-images.json')
+
+with open(cards_file, 'r', encoding='utf-8') as file:
+    cards_data = json.load(file)
 
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print(update)
@@ -19,15 +24,16 @@ async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(f'Hello {update.effective_user.first_name}')
 
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    filename = random.choice(os.listdir(cards_path))
+    random_card = random.choice(cards_data)
+    filename = random_card['image']
     filepath = os.path.join(cards_path, filename)
-    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("Next", callback_data='next_card')]])
+    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton('Next', callback_data='next_card')]])
 
     await context.bot.send_photo(
         chat_id=update.effective_chat.id,
         photo=open(filepath, 'rb'),
         reply_markup=keyboard,
-        caption=filepath,
+        caption=random_card['ru'],
         has_spoiler=True,
     )
 

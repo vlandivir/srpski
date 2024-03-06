@@ -1,11 +1,29 @@
 ## Srpski
 
-### Docker
+### Test
 ```
-VLANDIVIR_BOT_TOKEN=$(grep VLANDIVIR_BOT_TOKEN .env | cut -d '=' -f2) \
-docker build --build-arg VLANDIVIR_BOT_TOKEN="${VLANDIVIR_BOT_TOKEN}" -t vlandivir_bot .
+python3 chat-gpt/language-cards/add-text-to-images.py
+cp chat-gpt/language-cards/language-images.json telegram-bot/language-images.json
 
+export VLANDIVIR_BOT_TOKEN=$(grep TEST_BOT_TOKEN .env | cut -d '=' -f2)
+
+docker build --build-arg VLANDIVIR_BOT_TOKEN="${VLANDIVIR_BOT_TOKEN}" -t vlandivir_bot .
 docker stop vlandivir_bot && docker rm vlandivir_bot && docker run --name vlandivir_bot vlandivir_bot
+```
+
+### Release
+```
+export VLANDIVIR_BOT_TOKEN=$(grep VLANDIVIR_BOT_TOKEN .env | cut -d '=' -f2)
+
+docker build --build-arg VLANDIVIR_BOT_TOKEN="${VLANDIVIR_BOT_TOKEN}" -t vlandivir_bot .
+docker tag vlandivir_bot registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062341
+docker push registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062341
+
+# On DO Droplet
+docker pull registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062341
+docker stop vlandivir_bot
+docker rm vlandivir_bot
+docker run -d -p 80:80 --name vlandivir_bot registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062341
 ```
 
 ### Digital Ocean
@@ -17,8 +35,6 @@ doctl auth init
 
 # create registry in DO
 doctl registry login
-
-registry.digitalocean.com/
 
 docker tag vlandivir_bot registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062207
 docker push registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062207

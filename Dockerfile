@@ -7,8 +7,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY telegram-bot/vlandivir_bot.py .
-COPY telegram-bot/release-cards ./release-cards
+COPY telegram-bot .
 
 ARG VLANDIVIR_BOT_TOKEN
 ENV VLANDIVIR_BOT_TOKEN=${VLANDIVIR_BOT_TOKEN}
