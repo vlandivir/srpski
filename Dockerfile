@@ -8,10 +8,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY telegram-bot/vlandivir_bot.py .
-COPY chat-gpt/language-cards/result-images ./result-images
+COPY telegram-bot/release-cards ./release-cards
 
 ARG VLANDIVIR_BOT_TOKEN
 ENV VLANDIVIR_BOT_TOKEN=${VLANDIVIR_BOT_TOKEN}
-ENV CARDS_PATH="result-images"
 
 CMD ["python", "vlandivir_bot.py"]

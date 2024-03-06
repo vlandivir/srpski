@@ -8,10 +8,10 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Callb
 
 load_dotenv(".env")
 token = os.getenv("VLANDIVIR_BOT_TOKEN")
+token = os.getenv("TEST_BOT_TOKEN", token) # for local run python3 telegram-bot/vlandivir_bot.py
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-local_cards_path = os.path.join(current_dir, '..', 'chat-gpt', 'language-cards', 'result-images')
-cards_path = os.getenv("CARDS_PATH", local_cards_path)
+cards_path = os.path.join(current_dir, 'release-cards')
 
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print(update)

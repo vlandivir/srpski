@@ -6,6 +6,7 @@
 __pycache__
 
 **/result-images
+**/release-*/
 **/old-20240229-source-images
 
 keys

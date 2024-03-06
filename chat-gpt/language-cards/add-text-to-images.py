@@ -15,7 +15,7 @@ def get_text_dimensions(text_string, font):
 def split_string_into_parts(s, n_parts):
     if n_parts <= 1:
         return [s]
-    
+
     # Общая длина строки без учета пробелов для более равномерного деления
     total_length = len(s.replace(" ", ""))
     part_length = total_length / n_parts
@@ -27,7 +27,7 @@ def split_string_into_parts(s, n_parts):
     for i in range(1, n_parts):
         # Планируемая длина для текущей части
         current_target = part_length * i
-        
+
         while accumulated_length < current_target and last_index < len(s):
             if s[last_index] != " ":
                 accumulated_length += 1
@@ -37,12 +37,12 @@ def split_string_into_parts(s, n_parts):
         space_index = s.find(" ", last_index)
         if space_index == -1:  # Если пробел не найден, используем длину строки
             space_index = len(s)
-        
+
         # Добавляем часть строки до найденного пробела
         parts.append(s[:space_index].strip())
         # Обновляем строку, удаляя добавленную часть
         s = s[space_index:]
-        
+
         last_index = 0  # Сбрасываем индекс для новой подстроки
 
     # Добавляем оставшуюся часть строки
@@ -101,8 +101,8 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     opacity = int(255 * 0.8)
     text_y = new_image.height * 3 / 4 - 8
     rect_draw.rounded_rectangle(
-        [8, text_y, new_image.width - 8, new_image.height - 8], 
-        fill=(0, 0, 0, opacity), 
+        [8, text_y, new_image.width - 8, new_image.height - 8],
+        fill=(0, 0, 0, opacity),
         radius=16
     )
 
@@ -147,7 +147,7 @@ with open(json_file, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 source_folder = os.path.join(script_dir, 'source-images/')
-result_folder = os.path.join(script_dir, 'result-images/')
+result_folder = os.path.join(script_dir, '..', '..', 'telegram-bot/' 'release-cards/')
 font_path = '/System/Library/Fonts/Helvetica.ttc'
 
 for item in data:
