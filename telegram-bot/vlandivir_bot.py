@@ -9,6 +9,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Callb
 load_dotenv(".env")
 token = os.getenv("VLANDIVIR_BOT_TOKEN")
 current_dir = os.path.dirname(os.path.abspath(__file__))
+
 local_cards_path = os.path.join(current_dir, '..', 'chat-gpt', 'language-cards', 'result-images')
 cards_path = os.getenv("CARDS_PATH", local_cards_path)
 
@@ -21,7 +22,14 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     filename = random.choice(os.listdir(cards_path))
     filepath = os.path.join(cards_path, filename)
     keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("Next", callback_data='next_card')]])
-    await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(filepath, 'rb'), reply_markup=keyboard)
+
+    await context.bot.send_photo(
+        chat_id=update.effective_chat.id,
+        photo=open(filepath, 'rb'),
+        reply_markup=keyboard,
+        caption=filepath,
+        has_spoiler=True,
+    )
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query

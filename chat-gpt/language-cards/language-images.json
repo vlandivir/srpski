@@ -172,5 +172,17 @@
         "ru": "Когда я болен, я не иду на тренировку.",
         "sr": "Kada sam bolestan, ne idem na trening.",
         "image": "when-im-sick-i-dont-go-to-training-1709409626.webp"
-    }                
+    },
+    {
+        "en": "I love looking for concert tickets",
+        "ru": "Люблю искать билеты на концерты",
+        "sr": "Volim da tražim karte za koncerte",
+        "image": "i-love-looking-for-concert-tickets-1709734455.webp"
+    },
+    {
+        "en": "I always check the list before I check in my luggage.",
+        "ru": "Я всегда проверяю список, прежде чем сдать багаж.",
+        "sr": "Uvek proveravam spisak pre nego što predam prtljag.",
+        "image": "i-always-check-the-list-before-i-check-in-my-luggage-1709735409.webp"
+    }
 ]
