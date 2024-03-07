@@ -184,5 +184,71 @@
         "ru": "Я всегда проверяю список, прежде чем сдать багаж.",
         "sr": "Uvek proveravam spisak pre nego što predam prtljag.",
         "image": "i-always-check-the-list-before-i-check-in-my-luggage-1709735409.webp"
+    },
+    {
+        "en": "See you tomorrow.",
+        "ru": "Увидимся завтра.",
+        "sr": "Vidimo se sutra.",
+        "image": "see-you-tomorrow-1709816794.webp"
+    },
+    {
+        "en": "See you later.",
+        "ru": "Увидимся позже.",
+        "sr": "Vidimo se kasnije.",
+        "image": "see-you-later-1709817403.webp"
+    },
+    {
+        "en": "I have to go now.",
+        "ru": "Мне нужно идти сейчас.",
+        "sr": "Moram da idem sada.",
+        "image": "i-have-to-go-now-1709817753.webp"
+    },
+    {
+        "en": "Let me introduce myself.",
+        "ru": "Позвольте представиться.",
+        "sr": "Dozvolite da se predstavim.",
+        "image": "let-me-introduce-myself-1709822216.webp"
+    },
+    {
+        "en": "Who is the lady in the white dress?",
+        "ru": "Кто та дама в белом платье?",
+        "sr": "Ko je dama u beloj haljini?",
+        "image": "who-is-the-lady-in-the-white-dress-1709822655.webp"
+    },
+    {
+        "en": "Could you introduce me to her?",
+        "ru": "Можешь ли ты познакомить меня с ней?",
+        "sr": "Da li me možeš upoznati sa njom?",
+        "image": "could-you-introduce-me-to-her-1709827856.webp"
+    },
+    {
+        "en": "Ana, let me introduce my friend to you.",
+        "ru": "Ана, позволь мне представить тебе моего друга.",
+        "sr": "Ana, dozvoli mi da ti predstavim svog prijatelja.",
+        "image": "ana-let-me-introduce-my-friend-to-you-1709828417.webp"
+    },
+    {
+        "en": "How old are you?",
+        "ru": "Сколько тебе лет?",
+        "sr": "Koliko imaš godina?",
+        "image": "how-old-are-you-1709828671.webp"
+    },
+    {
+        "en": "I am 33 years old.",
+        "ru": "Мне 33 года.",
+        "sr": "Imam 33 godine.",
+        "image": "i-am-33-years-old-1709828969.webp"
+    },
+    {
+        "en": "I am two years younger than my brother.",
+        "ru": "Я на два года младше своего брата.",
+        "sr": "Ja sam dve godine mlađi od mog brata.",
+        "image": "i-am-two-years-younger-than-my-brother-1709829232.webp"
+    },
+    {
+        "en": "Mr. Davis is still in his thirties.",
+        "ru": "Мистер Дэвис все еще в своих тридцати.",
+        "sr": "Gospodin Dejvis je još u svojim tridesetim.",
+        "image": "mr-davis-is-still-in-his-thirties-1709829410.webp"
     }
 ]

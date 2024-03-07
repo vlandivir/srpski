@@ -1,0 +1,81 @@
+Good morning = Dobro jutro
+Good afternoon = Dobar dan
+Good evening = Dobro veče
+Hello = Zdravo
+Hello = Ćao
+Are you Mike? = Da li si ti Majk?
+Yes, I am. = Jesam.
+No, I am not. = Nisam.
+I am Tom. = Ja sam Tom.
+How is Ana? = Kako je Ana?
+How is your wife? = Kako je tvoja žena?
+How is your husband? = Kako je tvoj muž?
+She is very well, thank you. = Ona je vrlo dobro, hvala.
+How are you? = Kako si?
+Fine, thanks. And you? = Dobro, hvala. A ti?
+I am fine, too. = I ja sam dobro.
+Good night = Laku noć
+Goodbye = Doviđenja
+See you tomorrow. = Vidimo se sutra.
+See you later. = Vidimo se kasnije.
+I have to go now. = Moram da idem sada.
+Let me introduce myself. = Dozvolite da se predstavim.
+What's your name? = Kako se zoveš?
+My name is Tom. = Zovem se Tom.
+Call me Tom. = Zovi me Tom.
+What is your family name? = Kako se prezivaš?
+My family name is Johnson. = Prezivam se Džonson.
+This is Jack. = Ovo je Džek.
+He is my colleague. = On je moj kolega.
+Nice to meet you. = Drago mi je.
+Who is the lady in the white dress? = Ko je dama u beloj haljini?
+Could you introduce me to her? = Da li me možeš upoznati sa njom?
+Ana, let me introduce my friend to you. = Ana, dozvoli mi da ti predstavim svog prijatelja.
+How old are you? = Koliko imaš godina?
+I am 33 years old. = Imam 33 godine.
+I am two years younger than my brother. = Ja sam dve godine mlađi od mog brata.
+Mr. Davis is still in his thirties. = Gospodin Dejvis je još u svojim tridesetim.
+My elder brother is one year older than her husband. = Moj stariji brat je jednu godinu stariji od njenog muža.
+
+My father is over 80 years old. = Moj otac ima više od 80 godina.
+They will have a party for their wedding anniversary. = Oni će imati žurku povodom njihove godišnjice braka.
+He looks much younger than he is. = On izgleda puno mlađe nego što jeste.
+I came here when I was 22. = Došao sam ovde kada sam imao 22 godine.
+I started going to school at the age of 7. = Pošao sam u školu sa 7 godina.
+He is still a boy after all. = On je ipak samo dečak.
+Most of them are less than 25. = Većina njih ima manje od 25 godina.
+I guess he is about 40. = Pretpostavljam da ima oko 40 godina.
+He is the youngest in the family. = On je najmlađi u porodici.
+She is going to be 20 next month. = Ona će napuniti 20 godina sledećeg meseca.
+Where are you from? = Odakle si?
+Which city are you from? = Iz kog si grada?
+
+###
+
+My elder brother is one year older than her husband. = Moj stariji brat je jednu godinu stariji od njenog muža.
+
+Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
+
+1. Возьми текст из первой строки. Это пара на английском и сербском языках
+
+2. Проверь, есть ли в исходных фразах ошибки и исправь их. Напиши какие ошибки ты нашёл.
+
+3. Переведи слово или выражение на русский язык.
+
+4. Сгенерируй timestamp в секундах.
+
+5. Выбери имя для картинки – сгенерированная английская фраза, в которой все буквы приведены к нижнему регистру, а пробелы заменены дефисом. Исключи из имени запятые, точки, восклицательные и вопросительные знаки. Добавть к имени timestamp в секундах, который сгенерирован раньше.
+
+6. Проверь, что имя соответствует критериям. Оно получено из английской фразы заменой пробелов на дефисы. Оно содержит timestamp в секундах.
+
+7. Сделай иллюстрацию к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате webp. На картинке не используй надписи. Отношение сторон 1 к 1.
+
+8. Составь json такого формата. Замени плейсхолдеры в квадратных скобках соответствующими значениями. Для картинки используй имя c расширением, без пути.
+{
+    "en": "[ENGLISH_PHRASE]",
+    "ru": "[RUSSIAN_PHRASE]",
+    "sr": "[SERBIAN_PHRASE]",
+    "image": "[IMAGE_NAME]",
+}
+
+9. Используй для картинки выбранное имя и дай ссылку на её скачивание
