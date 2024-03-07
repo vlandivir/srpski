@@ -4,6 +4,8 @@ import random
 
 from dotenv import load_dotenv
 
+from google_db_load_cards import get_cards
+
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
 
@@ -13,27 +15,42 @@ token = os.getenv("TEST_BOT_TOKEN", token) # for local run python3 telegram-bot/
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 cards_path = os.path.join(current_dir, 'release-cards')
-cards_file = os.path.join(current_dir, 'language-images.json')
+cards_files = os.listdir(cards_path)
+cards_data = get_cards()
+filtered_cards = [card for card in cards_data if card['image'] in cards_files]
 
-with open(cards_file, 'r', encoding='utf-8') as file:
-    cards_data = json.load(file)
+chats = {}
 
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print(update)
     print(context)
     await update.message.reply_text(f'Hello {update.effective_user.first_name}')
+    chat_key = f'chat_{update.effective_chat.id}'
+    if chats.get(chat_key):
+        await update.message.reply_text(f'{chats[chat_key]}')
 
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    random_card = random.choice(cards_data)
-    filename = random_card['image']
+    chat_id = update.effective_chat.id
+    chat_key = f'chat_{chat_id}'
+    if not chats.get(chat_key) or chats[chat_key]["pointer"] >= len(filtered_cards):
+        cards_order = list(range(0, len(filtered_cards) - 1))
+        random.shuffle(cards_order)
+        chats[chat_key] = {"cards_order": cards_order, "pointer": 0}
+
+    current_chat = chats[chat_key]
+    card_num = current_chat["cards_order"][current_chat["pointer"]]
+    next_card = filtered_cards[card_num]
+    chats[chat_key]["pointer"] += 1
+
+    filename = next_card['image']
     filepath = os.path.join(cards_path, filename)
     keyboard = InlineKeyboardMarkup([[InlineKeyboardButton('Next', callback_data='next_card')]])
 
     await context.bot.send_photo(
-        chat_id=update.effective_chat.id,
+        chat_id=chat_id,
         photo=open(filepath, 'rb'),
         reply_markup=keyboard,
-        caption=random_card['ru'],
+        caption=next_card['ru'],
         has_spoiler=True,
     )
 
