@@ -2,6 +2,8 @@
 
 FROM python:3.9-slim
 
+COPY keys/srpski-data-e364d16a7d45.json keys/srpski-data-e364d16a7d45.json
+
 WORKDIR /app
 
 COPY requirements.txt .

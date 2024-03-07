@@ -2,9 +2,6 @@
 
 ### Test
 ```
-python3 chat-gpt/language-cards/add-text-to-images.py
-cp chat-gpt/language-cards/language-images.json telegram-bot/language-images.json
-
 export VLANDIVIR_BOT_TOKEN=$(grep TEST_BOT_TOKEN .env | cut -d '=' -f2)
 
 docker build --build-arg VLANDIVIR_BOT_TOKEN="${VLANDIVIR_BOT_TOKEN}" -t vlandivir_bot .
