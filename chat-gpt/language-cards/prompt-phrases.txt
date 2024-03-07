@@ -36,11 +36,11 @@ I am 33 years old. = Imam 33 godine.
 I am two years younger than my brother. = Ja sam dve godine mlađi od mog brata.
 Mr. Davis is still in his thirties. = Gospodin Dejvis je još u svojim tridesetim.
 My elder brother is one year older than her husband. = Moj stariji brat je jednu godinu stariji od njenog muža.
-
 My father is over 80 years old. = Moj otac ima više od 80 godina.
 They will have a party for their wedding anniversary. = Oni će imati žurku povodom njihove godišnjice braka.
 He looks much younger than he is. = On izgleda puno mlađe nego što jeste.
 I came here when I was 22. = Došao sam ovde kada sam imao 22 godine.
+
 I started going to school at the age of 7. = Pošao sam u školu sa 7 godina.
 He is still a boy after all. = On je ipak samo dečak.
 Most of them are less than 25. = Većina njih ima manje od 25 godina.
@@ -52,7 +52,7 @@ Which city are you from? = Iz kog si grada?
 
 ###
 
-My elder brother is one year older than her husband. = Moj stariji brat je jednu godinu stariji od njenog muža.
+I came here when I was 22. = Došao sam ovde kada sam imao 22 godine.
 
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
 

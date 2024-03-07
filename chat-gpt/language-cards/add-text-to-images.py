@@ -158,5 +158,5 @@ for item in data:
     text_ru = item['ru']
     output_path = result_folder + item['image']
 
-    # Call the function
-    add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_path)
+    if not os.path.exists(output_path):
+        add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_path)

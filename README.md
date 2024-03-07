@@ -1,26 +1,19 @@
 ## Srpski
 
-### Test
+### Update inages
 ```
-export VLANDIVIR_BOT_TOKEN=$(grep TEST_BOT_TOKEN .env | cut -d '=' -f2)
+python3 chat-gpt/language-cards/add-text-to-images.py
+python3 chat-gpt/google_db/google_db_save_cards.py
+```
 
-docker build --build-arg VLANDIVIR_BOT_TOKEN="${VLANDIVIR_BOT_TOKEN}" -t vlandivir_bot .
-docker stop vlandivir_bot && docker rm vlandivir_bot && docker run --name vlandivir_bot vlandivir_bot
+### Local Docker Test
+```
+./run-docker.sh
 ```
 
 ### Release
 ```
-export VLANDIVIR_BOT_TOKEN=$(grep VLANDIVIR_BOT_TOKEN .env | cut -d '=' -f2)
-
-docker build --build-arg VLANDIVIR_BOT_TOKEN="${VLANDIVIR_BOT_TOKEN}" -t vlandivir_bot .
-docker tag vlandivir_bot registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062341
-docker push registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062341
-
-# On DO Droplet
-docker pull registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062341
-docker stop vlandivir_bot
-docker rm vlandivir_bot
-docker run -d -p 80:80 --name vlandivir_bot registry.digitalocean.com/vlandivir-main/vlandivir_bot:202403062341
+./run-production-deploy.sh
 ```
 
 ### Digital Ocean

@@ -10,6 +10,8 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
 
 load_dotenv(".env")
+TAG_NAME = os.getenv("TAG_NAME")
+
 token = os.getenv("VLANDIVIR_BOT_TOKEN")
 token = os.getenv("TEST_BOT_TOKEN", token) # for local run python3 telegram-bot/vlandivir_bot.py
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -24,7 +26,7 @@ chats = {}
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print(update)
     print(context)
-    await update.message.reply_text(f'Hello {update.effective_user.first_name}')
+    await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}')
     chat_key = f'chat_{update.effective_chat.id}'
     if chats.get(chat_key):
         await update.message.reply_text(f'{chats[chat_key]}')
