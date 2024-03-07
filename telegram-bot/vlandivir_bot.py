@@ -26,7 +26,7 @@ chats = {}
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print(update)
     print(context)
-    await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}')
+    await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}-{len(filtered_cards)}')
     chat_key = f'chat_{update.effective_chat.id}'
     if chats.get(chat_key):
         await update.message.reply_text(f'{chats[chat_key]}')
