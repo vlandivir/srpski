@@ -40,7 +40,6 @@ My father is over 80 years old. = Moj otac ima više od 80 godina.
 They will have a party for their wedding anniversary. = Oni će imati žurku povodom njihove godišnjice braka.
 He looks much younger than he is. = On izgleda puno mlađe nego što jeste.
 I came here when I was 22. = Došao sam ovde kada sam imao 22 godine.
-
 I started going to school at the age of 7. = Pošao sam u školu sa 7 godina.
 He is still a boy after all. = On je ipak samo dečak.
 Most of them are less than 25. = Većina njih ima manje od 25 godina.
@@ -52,7 +51,7 @@ Which city are you from? = Iz kog si grada?
 
 ###
 
-I came here when I was 22. = Došao sam ovde kada sam imao 22 godine.
+I guess he is about 40. = Pretpostavljam da ima oko 40 godina.
 
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
 
