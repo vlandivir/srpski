@@ -1,0 +1,131 @@
+What is your nationality? = Koje si nacionalnosti?
+What is the population of your country? = Koliko stanovnika ima tvoja zemlja?
+What is the capital of your country? = Koji je glavni grad tvoje zemlje?
+Are you a foreigner? = Da li si ti stranac?
+I am from Spain. = Ja sam iz Španije.
+I was born in England and brought up in America. = Ja sam rođen u Engleskoj a odrastao sam u Americi.
+How many states are there in your country? = Koliko država ima u vašoj zemlji?
+The capital of my country is Paris. = Glavni grad moje zemlje je Pariz.
+My country is rich in natural resources. = Moja zemlja je bogata u prirodnim resursima.
+That nation is famous for its tourism. = Ta nacija je poznata po turizmu.
+What do you do? = Čime se baviš?
+I am a lawyer. = Ja sam advokat.
+What does he do? = Čime se on bavi?
+He is a photographer. = On je fotograf.
+Who are you? = Ko si ti?
+I am Jelena. = Ja sam Jelena.
+Who is that man over there? = Ko je onaj čovek tamo?
+He is Tom. = On je Tom.
+Is that boy a university student? = Da li je onaj dečko student?
+Is he a pupil? = Da li je on učenik?
+No, he isn't. = Nije.
+Can she be a teacher? = Da li ona može da bude nastavnik?
+Yes, I think so. = Mislim da da.
+I really don't know. = Zaista ne znam.
+I have no idea. = Nemam pojma.
+Is this your bag? No, it isn’t. = Da li je ovo tvoja torba? Nije.
+Whose cellphone is this? = Čiji je ovo telefon?
+This is my cellphone. = Ovo je moj telefon.
+Is that an apple? = Da li je to jabuka?
+No, it isn't. It is a pear. = Nije. To je kruška.
+What is this? = Šta je ovo?
+What is that? = Šta je to?
+This is a pencil. = Ovo je olovka.
+That is an apple. = To je jabuka.
+Which is the right size? = Koja je prava veličina?
+Where is the post office? = Gde je pošta?
+How big is your house? = Koliko je velika tvoja kuća?
+How long is the street? = Koliko je duga ulica?
+What is the name of the dog? = Koje je ime psa?
+How do you say that in Serbian? = Kako se to kaže na srpskom?
+What is the color of your shoes? = Koja je boja tvojih cipela?
+Is this yours? = Da li je ovo tvoje?
+Is this your pen? = Da li je ovo tvoja olovka?
+I have a red pen. = Ja imam crvenu olovku.
+Where is my bag? = Gde je moja torba?
+Where are my things? = Gde su moje stvari?
+It is on the desk. = Na stolu je.
+It is over there. = Tamo je.
+Is this notebook yours? = Da li je ova sveska tvoja?
+Some of this is mine. = Nešto od ovoga je moje.
+
+###
+
+What is your nationality? = Koje si nacionalnosti?
+What is the population of your country? = Koliko stanovnika ima tvoja zemlja?
+What is the capital of your country? = Koji je glavni grad tvoje zemlje?
+Are you a foreigner? = Da li si ti stranac?
+I am from Spain. = Ja sam iz Španije.
+I was born in England and brought up in America. = Ja sam rođen u Engleskoj a odrastao sam u Americi.
+How many states are there in your country? = Koliko država ima u vašoj zemlji?
+The capital of my country is Paris. = Glavni grad moje zemlje je Pariz.
+My country is rich in natural resources. = Moja zemlja je bogata u prirodnim resursima.
+That nation is famous for its tourism. = Ta nacija je poznata po turizmu.
+What do you do? = Čime se baviš?
+I am a lawyer. = Ja sam advokat.
+What does he do? = Čime se on bavi?
+He is a photographer. = On je fotograf.
+Who are you? = Ko si ti?
+I am Jelena. = Ja sam Jelena.
+Who is that man over there? = Ko je onaj čovek tamo?
+He is Tom. = On je Tom.
+Is that boy a university student? = Da li je onaj dečko student?
+Is he a pupil? = Da li je on učenik?
+No, he isn't. = Nije.
+Can she be a teacher? = Da li ona može da bude nastavnik?
+Yes, I think so. = Mislim da da.
+I really don't know. = Zaista ne znam.
+I have no idea. = Nemam pojma.
+Is this your bag? No, it isn’t. = Da li je ovo tvoja torba? Nije.
+Whose cellphone is this? = Čiji je ovo telefon?
+This is my cellphone. = Ovo je moj telefon.
+Is that an apple? = Da li je to jabuka?
+No, it isn't. It is a pear. = Nije. To je kruška.
+What is this? = Šta je ovo?
+What is that? = Šta je to?
+This is a pencil. = Ovo je olovka.
+That is an apple. = To je jabuka.
+Which is the right size? = Koja je prava veličina?
+Where is the post office? = Gde je pošta?
+How big is your house? = Koliko je velika tvoja kuća?
+How long is the street? = Koliko je duga ulica?
+What is the name of the dog? = Koje je ime psa?
+How do you say that in Serbian? = Kako se to kaže na srpskom?
+What is the color of your shoes? = Koja je boja tvojih cipela?
+Is this yours? = Da li je ovo tvoje?
+Is this your pen? = Da li je ovo tvoja olovka?
+I have a red pen. = Ja imam crvenu olovku.
+Where are my things? = Gde su moje stvari?
+It is over there. = Tamo je.
+Is this notebook yours? = Da li je ova sveska tvoja?
+Some of this is mine. = Nešto od ovoga je moje.
+
+Where is my bag? = Gde je moja torba?
+It is on the desk. = Na stolu je.
+
+ИНСТРУКЦИИ:
+Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
+
+1. Возьми текст из первых 1-2 строк (да начала инструкций). Это пара фраз на английском и сербском языках или маленький диалог
+
+2. Проверь, есть ли в исходных фразах ошибки и исправь их. Напиши какие ошибки ты нашёл.
+
+3. Переведи слово или выражение на русский язык.
+
+4. Сгенерируй timestamp в секундах.
+
+5. Выбери имя для картинки – сгенерированная английская фраза, в которой все буквы приведены к нижнему регистру, а пробелы заменены дефисом. Исключи из имени запятые, точки, восклицательные и вопросительные знаки. Добавть к имени timestamp в секундах, который сгенерирован раньше.
+
+6. Проверь, что имя соответствует критериям. Оно получено из английской фразы заменой пробелов на дефисы. Оно содержит timestamp в секундах.
+
+7. Сделай иллюстрацию к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате webp. На картинке не используй надписи. Отношение сторон 1 к 1.
+
+8. Составь json такого формата. Замени плейсхолдеры в квадратных скобках соответствующими значениями. Для картинки используй имя c расширением, без пути.
+{
+    "en": "[ENGLISH_PHRASE]",
+    "ru": "[RUSSIAN_PHRASE]",
+    "sr": "[SERBIAN_PHRASE]",
+    "image": "[IMAGE_NAME]",
+}
+
+9. Используй для картинки выбранное имя и дай ссылку на её скачивание

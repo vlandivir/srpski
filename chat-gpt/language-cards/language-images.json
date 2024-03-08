@@ -328,5 +328,23 @@
         "ru": "Я предполагаю, что ему около 40.",
         "sr": "Pretpostavljam da ima oko 40 godina.",
         "image": "i-guess-he-is-about-40-1709855045.webp"
+    },
+    {
+        "en": "Where is my bag? It is on the desk.",
+        "ru": "Где моя сумка? Она на столе.",
+        "sr": "Gde je moja torba? Na stolu je.",
+        "image": "where-is-my-bag-it-is-on-the-desk1709915955.webp"
+    },
+    {
+        "en": ["Where are my things?", "It is over there."],
+        "ru": ["Где мои вещи?", "Там."],
+        "sr": ["Gde su moje stvari?", "Tamo je."],
+        "image": "where-are-my-things-1709919228.webp"
+    },
+    {
+        "en": "Is this yours? Some of this is mine.",
+        "ru": "Это твое? Часть из этого мое.",
+        "sr": "Da li je ovo tvoje? Nešto od ovoga je moje.",
+        "image": "is-this-yours-some-of-this-is-mine-1709919541.webp"
     }
 ]

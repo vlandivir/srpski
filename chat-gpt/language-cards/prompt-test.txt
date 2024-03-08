@@ -1,0 +1,211 @@
+    {
+        "en": "They will have a party for their wedding anniversary.",
+        "ru": "Они будут праздновать свою годовщину свадьбы.",
+        "sr": "Oni će imati žurku povodom njihove godišnjice braka.",
+        "image": "they-will-have-a-party-for-their-wedding-anniversary-1709850768.webp"
+    },
+    {
+        "en": "He looks much younger than he is.",
+        "ru": "Он выглядит гораздо моложе своих лет.",
+        "sr": "On izgleda puno mlađe nego što jeste.",
+        "image": "he-looks-much-younger-than-he-is-1709851086.webp"
+    },
+    {
+        "en": "I came here when I was 22.",
+        "ru": "Я приехал сюда, когда мне было 22 года.",
+        "sr": "Došao sam ovde kada sam imao 22 godine.",
+        "image": "i-came-here-when-i-was-22-1709851433.webp"
+    },
+    {
+        "en": "He is still a boy after all",
+        "ru": "Он ведь всё ещё мальчик",
+        "sr": "On je ipak samo dečak",
+        "image": "he-is-still-a-boy-after-all-1709852998.webp"
+    },
+    {
+        "en": "Most of them are less than 25.",
+        "ru": "Большинство из них младше 25 лет.",
+        "sr": "Većina njih ima manje od 25 godina.",
+        "image": "most-of-them-are-less-than-25-1709853171.webp"
+    },
+    {
+        "en": "Which city are you from?",
+        "ru": "Из какого ты города?",
+        "sr": "Iz kog si grada?",
+        "image": "which-city-are-you-from-1709853457.webp"
+    },
+    {
+        "en": "Where are you from?",
+        "ru": "Откуда ты?",
+        "sr": "Odakle si?",
+        "image": "where-are-you-from-1678296063.webp"
+    },
+    {
+        "en": "She is going to be 20 next month.",
+        "ru": "Ей исполнится 20 лет в следующем месяце.",
+        "sr": "Ona će napuniti 20 godina sledećeg meseca.",
+        "image": "she-is-going-to-be-20-next-month-1709854096.webp"
+    },
+    {
+        "en": "He is the youngest in the family.",
+        "ru": "Он самый младший в семье.",
+        "sr": "On je najmlađi u porodici.",
+        "image": "he-is-the-youngest-in-the-family-1709854709.webp"
+    },
+    {
+        "en": "I guess he is about 40.",
+        "ru": "Я предполагаю, что ему около 40.",
+        "sr": "Pretpostavljam da ima oko 40 godina.",
+        "image": "i-guess-he-is-about-40-1709855045.webp"
+    }
+
+Сделай тест по сербскому языку на подстановку слов на основе списка объектов выше.
+
+Замени одно из слов (не цифру и не числительное!) в сербской фразе на пропуск. Предложи кроме правильного варианта три других, подходящих по смыслу, но неверных, например:
+- слова несогласованы по лицу и числу
+- выбрано неверное время для глагола
+- слове допущена граматическая ошибка
+- использован неверный падеж
+– неправильный род существительного
+- ошибка в употреблении предлога
+- неправильная степень сравнения прилагательных и наречий
+- ошибка в употреблении частиц
+- неправильное употребление модальных глаголов
+- ошибки в употреблении времени и аспекта глагола
+- ошибки в порядке слов (в этом случае надо пропустить несколько слов и предложить варианты с разным порядком)
+- неправильное использование местоимений
+- ошибки в сочетаемости слов
+
+Варианты должны подбираться так, чтобы верным был только один из них!
+
+Проверь, что только 1 вариант является верным!
+
+Используй разные категории ошибок
+
+Запиши результат в виде json с объектами такого вида
+
+{
+    "image": "Соответствующее изображение из исходного json",
+    "sr": "Исходное предложение с пропущенным словом",
+    "answers": ["правильный вариант", "ошибка 1", "ошибка 2", "ошибка 3"],
+    "category": "категория ошибки",
+}
+
+Выведи только json, без дополнительных комментариев
+
+###
+
+[
+    {
+        "image": "they-will-have-a-party-for-their-wedding-anniversary-1709850768.webp",
+        "sr": "Oni će imati žurku povodom njihove _________ braka.",
+        "answers": ["godišnjice", "godinu", "godine", "godišnjoj"],
+        "category": "неправильный падеж"
+    },
+    {
+        "image": "he-looks-much-younger-than-he-is-1709851086.webp",
+        "sr": "On izgleda puno mlađe _______ što jeste.",
+        "answers": ["nego", "kao", "od", "pre"],
+        "category": "ошибка в употреблении предлога"
+    },
+    {
+        "image": "i-came-here-when-i-was-22-1709851433.webp",
+        "sr": "Došao sam ovde kada sam imao 22 _______.",
+        "answers": ["godine", "godina", "godinu", "god"],
+        "category": "неправильный род существительного"
+    },
+    {
+        "image": "he-is-still-a-boy-after-all-1709852998.webp",
+        "sr": "On je ipak samo _______.",
+        "answers": ["dečak", "devojčica", "čovek", "dama"],
+        "category": "неправильный род существительного"
+    },
+    {
+        "image": "most-of-them-are-less-than-25-1709853171.webp",
+        "sr": "Većina njih ima manje _______ 25 godina.",
+        "answers": ["od", "nego", "kao", "pri"],
+        "category": "ошибка в употреблении предлога"
+    },
+    {
+        "image": "which-city-are-you-from-1709853457.webp",
+        "sr": "Iz _______ si grada?",
+        "answers": ["kog", "koji", "koja", "koje"],
+        "category": "неправильный падеж"
+    },
+    {
+        "image": "where-are-you-from-1678296063.webp",
+        "sr": "Odakle _______?",
+        "answers": ["si", "jesi", "budeš", "imaš"],
+        "category": "слова несогласованы по лицу и числу"
+    },
+    {
+        "image": "she-is-going-to-be-20-next-month-1709854096.webp",
+        "sr": "Ona će napuniti 20 godina _______ meseca.",
+        "answers": ["sledećeg", "sledeći", "prošlog", "prošli"],
+        "category": "неправильный падеж"
+    },
+    {
+        "image": "he-is-the-youngest-in-the-family-1709854709.webp",
+        "sr": "On je _______ u porodici.",
+        "answers": ["najmlađi", "mlađi", "stariji", "najstariji"],
+        "category": "неправильная степень сравнения прилагательных и наречий"
+    },
+    {
+        "image": "i-guess-he-is-about-40-1709855045.webp",
+        "sr": "Pretpostavljam da ima _______ 40 godina.",
+        "answers": ["oko", "preko", "pod", "do"],
+        "category": "ошибка в употреблении предлога"
+    }
+]
+
+###
+
+Odlučili smo da ostanemo u hotelu jer je veoma udoban.
+Kada tražite smeštaj u planinama, važno je uzeti u obzir vremenske uslove.
+Kada sam bolestan, ne idem na trening.
+Volim da tražim karte za koncerte
+Uvek proveravam spisak pre nego što predam prtljag.
+Vidimo se sutra.
+Vidimo se kasnije.
+Moram da idem sada.
+Dozvolite da se predstavim.
+Ko je dama u beloj haljini?
+Da li me možeš upoznati sa njom?
+Ana, dozvoli mi da ti predstavim svog prijatelja.
+
+Сделай тест по сербскому языку на подстановку слов на основе предложений выше.
+
+Замени одно из слов на пропуск. Предложи кроме правильного варианта три других, подходящих по смыслу, но неверных с точки зрения граматики. Например:
+- слова несогласованы по лицу и числу
+- выбрано неверное время для глагола
+- слове допущена граматическая ошибка
+- использован неверный падеж
+– неправильный род существительного
+- ошибка в употреблении предлога
+- неправильная степень сравнения прилагательных и наречий
+- ошибка в употреблении частиц
+- неправильное употребление модальных глаголов
+- ошибки в употреблении времени и аспекта глагола
+- ошибки в порядке слов (в этом случае надо пропустить несколько слов и предложить варианты с разным порядком)
+- неправильное использование местоимений
+- ошибки в сочетаемости слов
+
+Варианты должны подбираться так, чтобы верным был только один из них!
+
+Старайся использовать разные категории ошибок
+
+Запиши результат в виде строк такого формата
+
+"Исходное предложение с пропущенным словом", "правильный вариант", "ошибка 1", "ошибка 2", "ошибка 3", "категория ошибки"
+
+"Odlučili smo da ostanemo u hotelu jer je veoma ________.", "udoban", "udobni", "udobno", "udobne", "неправильный род существительного"
+"Kada tražite smeštaj u planinama, važno je uzeti u ________ vremenske uslove.", "obzir", "obzire", "obziri", "obzoru", "неправильный падеж"
+"Kada sam bolestan, ne ________ na trening.", "idem", "ide", "idu", "idi", "слова несогласованы по лицу и числу"
+"Volim da ________ karte za koncerte.", "tražim", "traži", "tražimo", "tražiš", "слова несогласованы по лицу и числу"
+"Uvek proveravam spisak pre nego što ________ prtljag.", "predam", "preda", "predaju", "predaš", "слова несогласованы по лицу и числу"
+"Vidimo se ________.", "sutra", "sutrašnji", "sutrašnje", "sutrašnjeg", "неправильное употребление времени и аспекта глагола"
+"Moram da ________ sada.", "idem", "ide", "idi", "idu", "слова несогласованы по лицу и числу"
+"Dozvolite da se ________.", "predstavim", "predstaviš", "predstavi", "predstavimo", "слова несогласованы по лицу и числу"
+"Ko je dama u ________ haljini?", "beloj", "bela", "beli", "belo", "неправильный падеж"
+"Da li me možeš ________ sa njom?", "upoznati", "upozna", "upoznaju", "upoznamo", "слова несогласованы по лицу и числу"
+"Ana, dozvoli mi da ti ________ svog prijatelja.", "predstavim", "predstavljam", "predstavi", "predstavlja", "слова несогласованы по лицу и числу"
