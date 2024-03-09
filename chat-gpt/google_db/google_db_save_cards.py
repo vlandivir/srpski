@@ -19,17 +19,13 @@ def update_or_add_rows(worksheet, data):
 
 
 def add_missing_columns(worksheet, required_columns):
-    # Получаем текущие заголовки
     existing_headers = worksheet.row_values(1)
     current_cols = len(existing_headers)
 
-    # Проверяем и добавляем недостающие заголовки
     for column_name in required_columns:
         if column_name not in existing_headers:
-            # Добавляем новую колонку (в gspread нет прямой функции для этого, поэтому мы добавляем ячейку в новую колонку)
             current_cols += 1
             worksheet.update_cell(1, current_cols, column_name)
-
 
 client = get_gspread_client()
 
