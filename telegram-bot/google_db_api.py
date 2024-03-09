@@ -1,4 +1,5 @@
 import os
+import json
 import gspread
 
 from datetime import datetime
@@ -82,6 +83,10 @@ def update_sheet_with_dict(spreadsheet_id, worksheet_title, data_dict):
     existing_rows = sheet.get_all_records()
     existing_keys = {row['key']: row for row in existing_rows}
 
+    key_to_row_number = {}
+    for index, row in enumerate(existing_rows, start=2):  # Начинаем с 2, т.к. 1 - это заголовок
+        key_to_row_number[row['key']] = index
+
     row_index = len(existing_rows) + 2  # Начальный индекс для новых строк (учитывая заголовок)
     for key, value in data_dict.items():
         if isinstance(value, dict):
@@ -91,13 +96,13 @@ def update_sheet_with_dict(spreadsheet_id, worksheet_title, data_dict):
         if key in existing_keys:
             existing_row = existing_keys[key]
             if existing_row['value'] != value:
-                cell_range = f"B{existing_row['row']}:C{existing_row['row']}"
+                cell_range = f"B{key_to_row_number[key]}:C{key_to_row_number[key]}"
                 sheet.update(cell_range, [[value, update_time]])
         else:
             sheet.append_row([key, value, update_time], table_range=f"A{row_index}")
             row_index += 1
 
     updated_rows = sheet.get_all_records()
-    updated_dict = {row['key']: row['value'] for row in updated_rows}
-    return updated_dict
+    updated_dict = {row['key']: json.loads(row['value']) if row['value'].startswith('{') else row['value'] for row in updated_rows}
 
+    return updated_dict

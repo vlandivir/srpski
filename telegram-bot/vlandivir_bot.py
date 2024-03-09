@@ -1,5 +1,4 @@
 import os
-import json
 import random
 
 from dotenv import load_dotenv
@@ -44,22 +43,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if not chats.get(chat_key) or chats[chat_key]['pointer'] >= len(filtered_cards):
         cards_order = list(range(0, len(filtered_cards) - 1))
         random.shuffle(cards_order)
-        chats[chat_key] = { 'cards_order': cards_order, 'pointer': 0 }
-
-    if update.message:
-        user = update.message.from_user
-    elif update.callback_query:
-        user = update.callback_query.from_user
-
-    if user:
-        user_dict = {
-            'id': user.id,
-            'first_name': user.first_name,
-            'last_name': user.last_name,
-            'username': user.username,
-            'language_code': user.language_code
-        }
-        get_or_create_chat_data(chat_key, user_dict)
+        chats[chat_key] = { 'cards_order': cards_order[:20], 'pointer': 0 }
 
     current_chat = chats[chat_key]
     card_num = current_chat['cards_order'][current_chat['pointer']]
@@ -77,6 +61,23 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         caption=next_card['ru'],
         has_spoiler=True,
     )
+
+    if update.message:
+        user = update.message.from_user
+    elif update.callback_query:
+        user = update.callback_query.from_user
+
+    if user:
+        user_dict = {
+            'id': user.id,
+            'first_name': user.first_name,
+            'last_name': user.last_name,
+            'username': user.username,
+            'language_code': user.language_code,
+            'current_set': chats[chat_key],
+        }
+        data = get_or_create_chat_data(chat_key, user_dict)
+        print(data)
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
