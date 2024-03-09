@@ -4,6 +4,7 @@ import random
 
 from dotenv import load_dotenv
 
+from google_db_api import create_or_get_google_sheet
 from google_db_load_cards import get_cards
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
@@ -30,6 +31,7 @@ async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_key = f'chat_{update.effective_chat.id}'
     if chats.get(chat_key):
         await update.message.reply_text(f'{chats[chat_key]}')
+    print(create_or_get_google_sheet(chat_key))
 
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_id = update.effective_chat.id

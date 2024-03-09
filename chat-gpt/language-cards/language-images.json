@@ -346,5 +346,11 @@
         "ru": "Это твое? Часть из этого мое.",
         "sr": "Da li je ovo tvoje? Nešto od ovoga je moje.",
         "image": "is-this-yours-some-of-this-is-mine-1709919541.webp"
+    },
+    {
+        "en": "Is this your pen? I have a red pen.",
+        "ru": "Это твоя ручка? У меня есть красная ручка.",
+        "sr": "Da li je ovo tvoja olovka? Ja imam crvenu olovku.",
+        "image": "is-this-your-pen-i-have-a-red-pen-1709920176.webp"
     }
 ]

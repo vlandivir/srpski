@@ -82,9 +82,7 @@ This is my cellphone. = Ovo je moj telefon.
 Is that an apple? = Da li je to jabuka?
 No, it isn't. It is a pear. = Nije. To je kruška.
 What is this? = Šta je ovo?
-What is that? = Šta je to?
 This is a pencil. = Ovo je olovka.
-That is an apple. = To je jabuka.
 Which is the right size? = Koja je prava veličina?
 Where is the post office? = Gde je pošta?
 How big is your house? = Koliko je velika tvoja kuća?
@@ -92,21 +90,14 @@ How long is the street? = Koliko je duga ulica?
 What is the name of the dog? = Koje je ime psa?
 How do you say that in Serbian? = Kako se to kaže na srpskom?
 What is the color of your shoes? = Koja je boja tvojih cipela?
-Is this yours? = Da li je ovo tvoje?
-Is this your pen? = Da li je ovo tvoja olovka?
-I have a red pen. = Ja imam crvenu olovku.
-Where are my things? = Gde su moje stvari?
-It is over there. = Tamo je.
 Is this notebook yours? = Da li je ova sveska tvoja?
-Some of this is mine. = Nešto od ovoga je moje.
 
-Where is my bag? = Gde je moja torba?
-It is on the desk. = Na stolu je.
+What is that? = Šta je to? That is an apple. = To je jabuka.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
 
-1. Возьми текст из первых 1-2 строк (да начала инструкций). Это пара фраз на английском и сербском языках или маленький диалог
+1. Возьми ВЕСЬ текст из первых строк, до ИНСТРУКЦИИ. Это пара фраз на английском и сербском языках или маленький диалог
 
 2. Проверь, есть ли в исходных фразах ошибки и исправь их. Напиши какие ошибки ты нашёл.
 
