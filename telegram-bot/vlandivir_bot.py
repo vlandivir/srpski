@@ -28,7 +28,7 @@ def get_chat_key(id):
     return f'chat_{ENVIRONMENT.lower()}_{id}'
 
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    print(update)
+    # print(update)
     await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}-{len(filtered_cards)}')
 
     chat_id = update.effective_chat.id
@@ -37,13 +37,18 @@ async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await update.message.reply_text(chats[chat_key])
 
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    print(update)
+    # print(update)
     chat_id = update.effective_chat.id
     chat_key = get_chat_key(chat_id)
-    if not chats.get(chat_key) or chats[chat_key]['pointer'] >= len(filtered_cards):
-        cards_order = list(range(0, len(filtered_cards) - 1))
-        random.shuffle(cards_order)
-        chats[chat_key] = { 'cards_order': cards_order[:20], 'pointer': 0 }
+    if not chats.get(chat_key) or chats[chat_key]['pointer'] >= len(chats[chat_key]['cards_order']):
+        sheet_data = get_or_create_chat_data(chat_key, {})
+        current_set = sheet_data.get('current_set', False)
+        if current_set and current_set.get('pointer', 0) < len(current_set.get('cards_order', [])):
+            chats[chat_key] = current_set
+        else:
+            cards_order = list(range(0, len(filtered_cards) - 1))
+            random.shuffle(cards_order)
+            chats[chat_key] = { 'cards_order': cards_order[:20], 'pointer': 0 }
 
     current_chat = chats[chat_key]
     card_num = current_chat['cards_order'][current_chat['pointer']]
@@ -77,6 +82,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             'current_set': chats[chat_key],
         }
         data = get_or_create_chat_data(chat_key, user_dict)
+        print('')
         print(data)
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

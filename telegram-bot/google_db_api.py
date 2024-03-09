@@ -87,11 +87,12 @@ def update_sheet_with_dict(spreadsheet_id, worksheet_title, data_dict):
     for index, row in enumerate(existing_rows, start=2):  # Начинаем с 2, т.к. 1 - это заголовок
         key_to_row_number[row['key']] = index
 
+    update_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     row_index = len(existing_rows) + 2  # Начальный индекс для новых строк (учитывая заголовок)
     for key, value in data_dict.items():
         if isinstance(value, dict):
-            value = str(value)
-        update_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            value = json.dumps(value)
 
         if key in existing_keys:
             existing_row = existing_keys[key]
@@ -103,6 +104,11 @@ def update_sheet_with_dict(spreadsheet_id, worksheet_title, data_dict):
             row_index += 1
 
     updated_rows = sheet.get_all_records()
-    updated_dict = {row['key']: json.loads(row['value']) if row['value'].startswith('{') else row['value'] for row in updated_rows}
+    updated_dict = {
+        row['key']: json.loads(row['value'])
+        if isinstance(row['value'], str) and row['value'].startswith('{')
+        else row['value']
+        for row in updated_rows
+    }
 
     return updated_dict
