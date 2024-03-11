@@ -352,5 +352,11 @@
         "ru": "Это твоя ручка? У меня есть красная ручка.",
         "sr": "Da li je ovo tvoja olovka? Ja imam crvenu olovku.",
         "image": "is-this-your-pen-i-have-a-red-pen-1709920176.webp"
+    },
+    {
+        "en": "What is that? = That is an apple.",
+        "ru": "Что это? = Это яблоко.",
+        "sr": "Šta je to? = To je jabuka.",
+        "image": "what-is-that-that-is-an-apple-1709920538.webp"
     }
 ]

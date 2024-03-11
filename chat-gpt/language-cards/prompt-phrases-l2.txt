@@ -81,8 +81,6 @@ Whose cellphone is this? = Čiji je ovo telefon?
 This is my cellphone. = Ovo je moj telefon.
 Is that an apple? = Da li je to jabuka?
 No, it isn't. It is a pear. = Nije. To je kruška.
-What is this? = Šta je ovo?
-This is a pencil. = Ovo je olovka.
 Which is the right size? = Koja je prava veličina?
 Where is the post office? = Gde je pošta?
 How big is your house? = Koliko je velika tvoja kuća?
@@ -92,7 +90,7 @@ How do you say that in Serbian? = Kako se to kaže na srpskom?
 What is the color of your shoes? = Koja je boja tvojih cipela?
 Is this notebook yours? = Da li je ova sveska tvoja?
 
-What is that? = Šta je to? That is an apple. = To je jabuka.
+What is this? = Šta je ovo? This is a pencil. = Ovo je olovka.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

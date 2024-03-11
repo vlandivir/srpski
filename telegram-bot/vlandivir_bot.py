@@ -3,6 +3,8 @@ import random
 
 from dotenv import load_dotenv
 
+from postgres_db import create_or_update_db
+
 from google_db_load_cards import get_cards
 from google_db_chats import get_or_create_chat_data
 
@@ -12,6 +14,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Callb
 load_dotenv('.env')
 TAG_NAME = os.getenv('TAG_NAME')
 ENVIRONMENT = os.getenv('ENVIRONMENT', 'LOCAL')
+POSTGRES_CONNECTION_STRING = os.getenv('POSTGRES_CONNECTION_STRING')
 
 token = os.getenv('VLANDIVIR_BOT_TOKEN')
 token = os.getenv('TEST_BOT_TOKEN', token) # for local run python3 telegram-bot/vlandivir_bot.py
@@ -23,6 +26,8 @@ cards_data = get_cards()
 filtered_cards = [card for card in cards_data if card['image'] in cards_files]
 
 chats = {}
+
+create_or_update_db()
 
 def get_chat_key(id):
     return f'chat_{ENVIRONMENT.lower()}_{id}'
