@@ -46,7 +46,7 @@ def get_or_create_google_sheet(file_name):
     files = response.get('files', [])
 
     if files:
-        print(f'File already exists. ID: {files[0].get('id')}')
+        print(f'File already exists. ID: {files[0].get("id")}')
         return { 'id': files[0].get('id'), 'is_new': False }
 
     file_metadata = {

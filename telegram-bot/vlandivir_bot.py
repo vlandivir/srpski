@@ -46,14 +46,14 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_id = update.effective_chat.id
     chat_key = get_chat_key(chat_id)
     if not chats.get(chat_key) or chats[chat_key]['pointer'] >= len(chats[chat_key]['cards_order']):
-        sheet_data = get_or_create_chat_data(chat_key, {})
-        current_set = sheet_data.get('current_set', False)
-        if current_set and current_set.get('pointer', 0) < len(current_set.get('cards_order', [])):
-            chats[chat_key] = current_set
-        else:
-            cards_order = list(range(0, len(filtered_cards) - 1))
-            random.shuffle(cards_order)
-            chats[chat_key] = { 'cards_order': cards_order[:20], 'pointer': 0 }
+        # sheet_data = get_or_create_chat_data(chat_key, {})
+        # current_set = sheet_data.get('current_set', False)
+        # if current_set and current_set.get('pointer', 0) < len(current_set.get('cards_order', [])):
+        #     chats[chat_key] = current_set
+        # else:
+        cards_order = list(range(0, len(filtered_cards) - 1))
+        random.shuffle(cards_order)
+        chats[chat_key] = { 'cards_order': cards_order[:20], 'pointer': 0 }
 
     current_chat = chats[chat_key]
     card_num = current_chat['cards_order'][current_chat['pointer']]
@@ -86,9 +86,8 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             'language_code': user.language_code,
             'current_set': chats[chat_key],
         }
-        data = get_or_create_chat_data(chat_key, user_dict)
-        print('')
-        print(data)
+        # data = get_or_create_chat_data(chat_key, user_dict)
+        # print(data)
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
