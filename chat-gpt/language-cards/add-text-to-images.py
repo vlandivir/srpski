@@ -51,6 +51,7 @@ def split_string_into_parts(s, n_parts):
     return parts
 
 def add_text_properties(text, color, new_image_width, font_48, rows, gaps, colors, fonts):
+    print(text)
     text_width, text_height = get_text_dimensions(text, font_48)
     rows_count = text_width / (new_image_width - 64)
 

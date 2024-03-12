@@ -1,4 +1,5 @@
 import os
+import json
 import logging
 
 from dotenv import load_dotenv
@@ -16,8 +17,10 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 certificate = os.path.join(current_dir, '..', 'keys', 'ca-certificate.crt')
 engine = create_engine(POSTGRES_CONNECTION_STRING, connect_args={
     'sslmode': 'verify-full',
-    'sslrootcert': certificate
+    'sslrootcert': certificate,
 })
+
+autocommit_engine = engine.execution_options(isolation_level="AUTOCOMMIT")
 
 def get_table_name(table_name):
     return f'public.{ENVIRONMENT.lower()}_{table_name}'
@@ -39,20 +42,20 @@ def create_or_update_db():
         connection.commit()
 
 def get_or_create_user(user):
-    select_query = text(f'select * from {get_table_name('users')} where id = :id')
+    select_query = text(f"select * from {get_table_name('users')} where id = :id")
     insert_query = text(f"""
         insert into {get_table_name('users')}
-            (id, first_name, last_name, username, language_code, current_set)
-        values (:id, :first_name, :last_name, :username, :language_code, :current_set)
+            (id, first_name, last_name, username, language_code)
+        values (:id, :first_name, :last_name, :username, :language_code)
     """)
 
-    with engine.connect() as connection:
+    with autocommit_engine.connect() as connection:
         result = connection.execute(select_query, user).fetchone()
         if result:
-            return dict(result)
+            return result._asdict()
         else:
             try:
-                connection.execute(insert_query, {**{'current_set': None}, **user})
+                connection.execute(insert_query, user)
                 return user
             except Exception as e:
                 print(f"Error occurred: {e}")
@@ -62,9 +65,10 @@ def update_user_current_set(user, current_set):
     update_query = text(f"""
         update {get_table_name('users')} set current_set = :current_set where id = :id
     """)
-    with engine.connect() as connection:
+    with autocommit_engine.connect() as connection:
         try:
-            connection.execute(update_query, {**user, 'current_set': current_set})
+            print('BEFORE UPDATE')
+            connection.execute(update_query, {**user, 'current_set': json.dumps(current_set)})
             return user
         except Exception as e:
             print(f"Error occurred: {e}")

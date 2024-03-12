@@ -253,7 +253,7 @@
     },
     {
         "en": "My elder brother is one year older than her husband.",
-        "ru": "старший брат",
+        "ru": "Мой старший брат на год старше её мужа.",
         "sr": "Moj stariji brat je jednu godinu stariji od njenog muža.",
         "image": "my-elder-brother-is-one-year-older-than-her-husband-1709847783.webp"
     },
@@ -336,9 +336,9 @@
         "image": "where-is-my-bag-it-is-on-the-desk1709915955.webp"
     },
     {
-        "en": ["Where are my things?", "It is over there."],
-        "ru": ["Где мои вещи?", "Там."],
-        "sr": ["Gde su moje stvari?", "Tamo je."],
+        "en": "Where are my things? It is over there.",
+        "ru": "Где мои вещи? Там.",
+        "sr": "Gde su moje stvari? Tamo je.",
         "image": "where-are-my-things-1709919228.webp"
     },
     {

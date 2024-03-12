@@ -84,10 +84,11 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if chats[chat_key]['pointer'] >= len(chats[chat_key]['cards_order']):
         chats[chat_key] = create_new_set(user)
 
-    current_chat = chats[chat_key]
-    card_num = current_chat['cards_order'][current_chat['pointer']]
+    current_set = chats[chat_key]
+    card_num = current_set['cards_order'][current_set['pointer']]
     next_card = filtered_cards[card_num]
     chats[chat_key]['pointer'] += 1
+    update_user_current_set(user, current_set)
 
     filename = next_card['image']
     filepath = os.path.join(cards_path, filename)
