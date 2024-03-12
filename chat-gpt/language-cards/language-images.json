@@ -358,5 +358,71 @@
         "ru": "Что это? = Это яблоко.",
         "sr": "Šta je to? = To je jabuka.",
         "image": "what-is-that-that-is-an-apple-1709920538.webp"
+    },
+    {
+        "en": "What is this? This is a pencil.",
+        "ru": "Что это? Это карандаш.",
+        "sr": "Šta je ovo? Ovo je olovka.",
+        "image": "what-is-this-this-is-a-pencil-1710113813.webp"
+    },
+    {
+        "en": "Is that an apple? No, it isn't. It is a pear.",
+        "ru": "Это яблоко? Нет, это не яблоко. Это груша.",
+        "sr": "Da li je to jabuka? Nije. To je kruška.",
+        "image": "is-that-an-apple-no-it-isnt-it-is-a-pear-1710278633.webp"
+    },
+    {
+        "en": "Is this notebook yours?",
+        "ru": "Эта тетрадь твоя?",
+        "sr": "Da li je ova sveska tvoja?",
+        "image": "is-this-notebook-yours-1710280084.webp"
+    },
+    {
+        "en": "What is the color of your shoes?",
+        "ru": "Какой цвет твоих туфель?",
+        "sr": "Koja je boja tvojih cipela?",
+        "image": "what-is-the-color-of-your-shoes-1710280277.webp"
+    },
+    {
+        "en": "How do you say that in Serbian?",
+        "ru": "Как это сказать по-сербски?",
+        "sr": "Kako se to kaže na srpskom?",
+        "image": "how-do-you-say-that-in-serbian-1710280913.webp"
+    },
+    {
+        "en": "What is the name of the dog?",
+        "ru": "Какое имя у собаки?",
+        "sr": "Koje je ime psa?",
+        "image": "what-is-the-name-of-the-dog-1710281342.webp"
+    },
+    {
+        "en": "How long is the street?",
+        "ru": "Какова длина улицы?",
+        "sr": "Koliko je duga ulica?",
+        "image": "how-long-is-the-street-1710282522.webp"
+    },
+    {
+        "en": "How big is your house?",
+        "ru": "Какова площадь вашего дома?",
+        "sr": "Koliko je velika tvoja kuća?",
+        "image": "how-big-is-your-house-1710282816.webp"
+    },
+    {
+        "en": "Where is the post office?",
+        "ru": "Где почта?",
+        "sr": "Gde je pošta?",
+        "image": "where-is-the-post-office-1710283068.webp"
+    },
+    {
+        "en": "Whose cellphone is this? This is my cellphone.",
+        "ru": "Чей это телефон? Это мой телефон.",
+        "sr": "Čiji je ovo telefon? Ovo je moj telefon.",
+        "image": "whose-cellphone-is-this-this-is-my-cellphone-1710283319.webp"
+    },
+    {
+        "en": "Which is the right size?",
+        "ru": "Какой правильный размер?",
+        "sr": "Koja je prava veličina?",
+        "image": "which-is-the-right-size-1710284665.webp"
     }
 ]

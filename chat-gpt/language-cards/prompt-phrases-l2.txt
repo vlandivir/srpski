@@ -52,10 +52,10 @@ Some of this is mine. = Nešto od ovoga je moje.
 ###
 
 What is your nationality? = Koje si nacionalnosti?
+I am from Spain. = Ja sam iz Španije.
 What is the population of your country? = Koliko stanovnika ima tvoja zemlja?
 What is the capital of your country? = Koji je glavni grad tvoje zemlje?
 Are you a foreigner? = Da li si ti stranac?
-I am from Spain. = Ja sam iz Španije.
 I was born in England and brought up in America. = Ja sam rođen u Engleskoj a odrastao sam u Americi.
 How many states are there in your country? = Koliko država ima u vašoj zemlji?
 The capital of my country is Paris. = Glavni grad moje zemlje je Pariz.
@@ -77,20 +77,8 @@ Yes, I think so. = Mislim da da.
 I really don't know. = Zaista ne znam.
 I have no idea. = Nemam pojma.
 Is this your bag? No, it isn’t. = Da li je ovo tvoja torba? Nije.
-Whose cellphone is this? = Čiji je ovo telefon?
-This is my cellphone. = Ovo je moj telefon.
-Is that an apple? = Da li je to jabuka?
-No, it isn't. It is a pear. = Nije. To je kruška.
-Which is the right size? = Koja je prava veličina?
-Where is the post office? = Gde je pošta?
-How big is your house? = Koliko je velika tvoja kuća?
-How long is the street? = Koliko je duga ulica?
-What is the name of the dog? = Koje je ime psa?
-How do you say that in Serbian? = Kako se to kaže na srpskom?
-What is the color of your shoes? = Koja je boja tvojih cipela?
-Is this notebook yours? = Da li je ova sveska tvoja?
 
-What is this? = Šta je ovo? This is a pencil. = Ovo je olovka.
+Which is the right size? = Koja je prava veličina?
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
@@ -107,7 +95,7 @@ What is this? = Šta je ovo? This is a pencil. = Ovo je olovka.
 
 6. Проверь, что имя соответствует критериям. Оно получено из английской фразы заменой пробелов на дефисы. Оно содержит timestamp в секундах.
 
-7. Сделай иллюстрацию к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате webp. На картинке не используй надписи. Отношение сторон 1 к 1.
+7. Сделай иллюстрацию к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате webp. На картинке не используй надписи. Отношение сторон 1 к 1. Используйте яркую и насыщенную цветовую палитру, чтобы придать изображению живость и выразительность. Стиль рисования должен быть простым, но детализированным, с акцентом на чёткие линии и контрастные цвета, чтобы подчеркнуть основные черты и создать лёгкое ощущение глубины. Фон оставьте минималистичным или однотонным, чтобы основной объект оставался в фокусе внимания. Этот стиль идеально подходит для создания изображений, которые должны быть весёлыми, живыми и легко узнаваемыми.
 
 8. Составь json такого формата. Замени плейсхолдеры в квадратных скобках соответствующими значениями. Для картинки используй имя c расширением, без пути.
 {

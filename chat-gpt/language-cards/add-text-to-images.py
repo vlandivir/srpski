@@ -151,8 +151,17 @@ source_folder = os.path.join(script_dir, 'source-images/')
 result_folder = os.path.join(script_dir, '..', '..', 'telegram-bot/' 'release-cards/')
 font_path = '/System/Library/Fonts/Helvetica.ttc'
 
+release_folder = os.path.join(script_dir, 'release-images/')
+
 for item in data:
     image_path = source_folder + item['image']
+
+    if not os.path.exists(image_path):
+        image_path = release_folder + item['image']
+
+    if not os.path.exists(image_path):
+        print(f'Error: source image not found ${item['image']}')
+        continue
 
     text_sr = item['sr']
     text_en = item['en']
