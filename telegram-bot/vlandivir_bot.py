@@ -3,10 +3,9 @@ import random
 
 from dotenv import load_dotenv
 
-from postgres_db import create_or_update_db
+from postgres_db import create_or_update_db, get_or_create_user, update_user_current_set
 
 from google_db_load_cards import get_cards
-from google_db_chats import get_or_create_chat_data
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
@@ -33,7 +32,6 @@ def get_chat_key(id):
     return f'chat_{ENVIRONMENT.lower()}_{id}'
 
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    # print(update)
     await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}-{len(filtered_cards)}')
 
     chat_id = update.effective_chat.id
@@ -41,19 +39,50 @@ async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if chats.get(chat_key):
         await update.message.reply_text(chats[chat_key])
 
+def get_user_from_update(update: Update):
+    if update.message:
+        user = update.message.from_user
+    elif update.callback_query:
+        user = update.callback_query.from_user
+
+    if not user:
+        return None
+
+    return {
+        'id': str(user.id),
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'username': user.username,
+        'language_code': user.language_code,
+    }
+
+def create_new_set(user):
+    cards_order = list(range(0, len(filtered_cards) - 1))
+    random.shuffle(cards_order)
+    current_set = { 'cards_order': cards_order[:20], 'pointer': 0 }
+    update_user_current_set(user, current_set)
+    return current_set
+
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    # print(update)
+    user = get_user_from_update(update)
+    if not user:
+        return None
+
     chat_id = update.effective_chat.id
     chat_key = get_chat_key(chat_id)
-    if not chats.get(chat_key) or chats[chat_key]['pointer'] >= len(chats[chat_key]['cards_order']):
-        # sheet_data = get_or_create_chat_data(chat_key, {})
-        # current_set = sheet_data.get('current_set', False)
-        # if current_set and current_set.get('pointer', 0) < len(current_set.get('cards_order', [])):
-        #     chats[chat_key] = current_set
-        # else:
-        cards_order = list(range(0, len(filtered_cards) - 1))
-        random.shuffle(cards_order)
-        chats[chat_key] = { 'cards_order': cards_order[:20], 'pointer': 0 }
+
+    if not chats.get(chat_key):
+        user = get_or_create_user(user)
+        if not user:
+            return None
+
+        if user.get('current_set'):
+            chats[chat_key] = user.get('current_set')
+        else:
+            chats[chat_key] = create_new_set(user)
+
+    if chats[chat_key]['pointer'] >= len(chats[chat_key]['cards_order']):
+        chats[chat_key] = create_new_set(user)
 
     current_chat = chats[chat_key]
     card_num = current_chat['cards_order'][current_chat['pointer']]
@@ -71,23 +100,6 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         caption=next_card['ru'],
         has_spoiler=True,
     )
-
-    if update.message:
-        user = update.message.from_user
-    elif update.callback_query:
-        user = update.callback_query.from_user
-
-    if user:
-        user_dict = {
-            'id': user.id,
-            'first_name': user.first_name,
-            'last_name': user.last_name,
-            'username': user.username,
-            'language_code': user.language_code,
-            'current_set': chats[chat_key],
-        }
-        # data = get_or_create_chat_data(chat_key, user_dict)
-        # print(data)
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
