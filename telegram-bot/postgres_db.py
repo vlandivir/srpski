@@ -67,7 +67,6 @@ def update_user_current_set(user, current_set):
     """)
     with autocommit_engine.connect() as connection:
         try:
-            print('BEFORE UPDATE')
             connection.execute(update_query, {**user, 'current_set': json.dumps(current_set)})
             return user
         except Exception as e:

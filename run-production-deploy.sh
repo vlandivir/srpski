@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Generate a tag name based on the current date and time (YYYYMMDDHHMM)
 TAG_NAME=$(date +%Y%m%d%H%M)
@@ -8,7 +9,7 @@ SERVER_IP=$(grep DIGITAL_OCEAN_IP .env | cut -d '=' -f2)
 
 # Extract VLANDIVIR_BOT_TOKEN from .env
 VLANDIVIR_BOT_TOKEN=$(grep VLANDIVIR_BOT_TOKEN .env | cut -d '=' -f2)
-export POSTGRES_CONNECTION_STRING=$(grep POSTGRES_CONNECTION_STRING .env | cut -d '=' -f2)
+POSTGRES_CONNECTION_STRING=$(grep POSTGRES_CONNECTION_STRING .env | cut -d '=' -f2)
 
 docker build \
   --build-arg VLANDIVIR_BOT_TOKEN="${VLANDIVIR_BOT_TOKEN}" \
