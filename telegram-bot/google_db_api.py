@@ -2,6 +2,7 @@ import os
 import json
 import gspread
 
+from functools import cache
 from datetime import datetime
 
 from googleapiclient.discovery import build
@@ -10,17 +11,11 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 FOLDER_ID = '1UP-LExkCE0jJDQ3NSnlyNXzFv86eIoiJ'
 
-GSPREAD_CLIENT = None
-
 current_dir = os.path.dirname(os.path.abspath(__file__))
 SERVICE_ACCOUNT_FILE = os.path.join(current_dir, '..', 'keys', 'srpski-data-e364d16a7d45.json')
 
+@cache
 def get_gspread_client():
-    global GSPREAD_CLIENT
-
-    if GSPREAD_CLIENT is not None:
-        return GSPREAD_CLIENT
-
     scope = [
         'https://spreadsheets.google.com/feeds',
         'https://www.googleapis.com/auth/spreadsheets',
@@ -29,9 +24,7 @@ def get_gspread_client():
     ]
 
     creds = ServiceAccountCredentials.from_json_keyfile_name(SERVICE_ACCOUNT_FILE, scope)
-    GSPREAD_CLIENT = gspread.authorize(creds)
-
-    return GSPREAD_CLIENT
+    return gspread.authorize(creds)
 
 def get_or_create_google_sheet(file_name):
     credentials = Credentials.from_service_account_file(
