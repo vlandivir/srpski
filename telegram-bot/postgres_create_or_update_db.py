@@ -35,7 +35,7 @@ create_table_cards = text(f"""
     END;
     $$ LANGUAGE plpgsql;
 
-    CREATE TRIGGER update_cards_updated_at BEFORE UPDATE
+    CREATE OR REPLACE TRIGGER update_cards_updated_at BEFORE UPDATE
     ON {get_table_name('cards')} FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column();
 

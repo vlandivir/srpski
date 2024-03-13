@@ -67,3 +67,12 @@ def update_user_current_set(user, current_set):
         except Exception as e:
             print(f"Error occurred: {e}")
             return None
+
+def get_all_cards():
+    engine = get_pg_engine()
+
+    with engine.connect() as connection:
+        result = connection.execute(text(f"SELECT * FROM {get_table_name('cards')};"))
+        rows = result.fetchall()
+        rows_as_dicts = [row._asdict() for row in rows]
+        return rows_as_dicts
