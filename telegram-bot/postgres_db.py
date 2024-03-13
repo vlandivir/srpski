@@ -26,7 +26,7 @@ def get_table_name(table_name):
     return f'public.{ENVIRONMENT.lower()}_{table_name}'
 
 def create_or_update_db():
-    create_table_chats = text(f"""
+    create_table_users = text(f"""
         CREATE TABLE IF NOT EXISTS {get_table_name('users')} (
             id VARCHAR(255) PRIMARY KEY,
             first_name VARCHAR(255),
@@ -35,11 +35,42 @@ def create_or_update_db():
             language_code CHAR(2),
             current_set JSONB
         );
+        COMMIT;
+    """)
+
+    create_table_cards = text(f"""
+        CREATE TABLE IF NOT EXISTS {get_table_name('cards')} (
+            en TEXT NOT NULL,
+            ru TEXT NOT NULL,
+            sr TEXT NOT NULL,
+            image VARCHAR(255) UNIQUE,
+            generated_at BIGINT NOT NULL,
+            tags TEXT[],
+            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (image)
+        );
+
+        CREATE OR REPLACE FUNCTION update_updated_at_column()
+        RETURNS TRIGGER AS $$
+        BEGIN
+            NEW.updated_at = CURRENT_TIMESTAMP;
+            RETURN NEW;
+        END;
+        $$ LANGUAGE plpgsql;
+
+        CREATE TRIGGER update_cards_updated_at BEFORE UPDATE
+        ON {get_table_name('cards')} FOR EACH ROW
+        EXECUTE FUNCTION update_updated_at_column();
+
+        CREATE INDEX IF NOT EXISTS cards_generated_at_idx ON {get_table_name('cards')} (generated_at);
+
+        COMMIT;
     """)
 
     with engine.connect() as connection:
-        connection.execute(create_table_chats)
-        connection.commit()
+        connection.execute(create_table_users)
+        connection.execute(create_table_cards)
 
 def get_or_create_user(user):
     select_query = text(f"select * from {get_table_name('users')} where id = :id")

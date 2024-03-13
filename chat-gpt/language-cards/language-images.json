@@ -424,5 +424,11 @@
         "ru": "Какой правильный размер?",
         "sr": "Koja je prava veličina?",
         "image": "which-is-the-right-size-1710284665.webp"
+    },
+    {
+        "en": "I have no idea.",
+        "ru": "Понятия не имею.",
+        "sr": "Nemam pojma.",
+        "image": "i-have-no-idea-1710286151.webp"
     }
 ]
