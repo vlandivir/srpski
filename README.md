@@ -7,7 +7,7 @@ https://www.clarin.si/kontext/query?corpname=classlaweb_sr – Serbian corpora w
 ### Update inages
 ```
 python3 chat-gpt/language-cards/add-text-to-images.py
-python3 chat-gpt/google_db/google_db_save_cards.py
+python3 telegram-bot/tools_insert_cards.py
 ```
 
 ### Local Docker Test

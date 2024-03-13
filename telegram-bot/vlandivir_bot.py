@@ -25,6 +25,10 @@ cards_files = os.listdir(cards_path)
 cards_data = get_all_cards()
 filtered_cards = [card for card in cards_data if card['image'] in cards_files]
 
+cards_index = {}
+for card in filtered_cards:
+    cards_index[card['generated_at']] = card
+
 chats = {}
 
 def get_chat_key(id):
@@ -58,7 +62,8 @@ def get_user_from_update(update: Update):
 def create_new_set(user):
     cards_order = list(range(0, len(filtered_cards) - 1))
     random.shuffle(cards_order)
-    current_set = { 'cards_order': cards_order[:20], 'pointer': 0 }
+    card_ids = list(map(lambda x: filtered_cards[x]['generated_at'], cards_order[:20]))
+    current_set = { 'cards_order': card_ids, 'pointer': 0 }
     update_user_current_set(user, current_set)
     return current_set
 
@@ -85,7 +90,10 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     current_set = chats[chat_key]
     card_num = current_set['cards_order'][current_set['pointer']]
-    next_card = filtered_cards[card_num]
+    next_card = cards_index.get(
+        card_num,
+        filtered_cards[card_num if card_num < len(filtered_cards) else 0]
+    )
     chats[chat_key]['pointer'] += 1
     update_user_current_set(user, current_set)
 

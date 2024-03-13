@@ -46,6 +46,8 @@ def insert_cards(table_name):
         connection.execute(query, insert_data_list)
 
 def main():
+    insert_cards('prod_cards')
+    insert_cards('docker_cards')
     insert_cards(get_table_name('cards'))
 
 if __name__ == '__main__':
