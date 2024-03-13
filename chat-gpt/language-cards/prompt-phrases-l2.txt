@@ -75,10 +75,8 @@ No, he isn't. = Nije.
 Can she be a teacher? = Da li ona može da bude nastavnik?
 Yes, I think so. = Mislim da da.
 I really don't know. = Zaista ne znam.
-I have no idea. = Nemam pojma.
-Is this your bag? No, it isn’t. = Da li je ovo tvoja torba? Nije.
 
-Which is the right size? = Koja je prava veličina?
+Is this your bag? No, it isn’t. = Da li je ovo tvoja torba? Nije.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

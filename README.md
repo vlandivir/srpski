@@ -1,5 +1,9 @@
 ## Srpski
 
+### Links
+
+https://www.clarin.si/kontext/query?corpname=classlaweb_sr – Serbian corpora with search
+
 ### Update inages
 ```
 python3 chat-gpt/language-cards/add-text-to-images.py

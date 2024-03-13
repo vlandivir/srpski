@@ -3,7 +3,8 @@ import random
 
 from dotenv import load_dotenv
 
-from postgres_db import create_or_update_db, get_or_create_user, update_user_current_set
+from postgres_db import get_or_create_user, update_user_current_set
+from postgres_create_or_update_db import create_or_update_db
 
 from google_db_load_cards import get_cards
 
