@@ -76,3 +76,6 @@ def get_all_cards():
         rows = result.fetchall()
         rows_as_dicts = [row._asdict() for row in rows]
         return rows_as_dicts
+
+# {get_table_name('user_card_responses')}
+# def insert_user_card_responces

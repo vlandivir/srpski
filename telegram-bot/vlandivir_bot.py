@@ -99,7 +99,16 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     filename = next_card['image']
     filepath = os.path.join(cards_path, filename)
-    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton('Next', callback_data='next_card')]])
+    fileid = next_card.get('generated_at', 0)
+
+    keyboard = InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton('🔴 ???', callback_data=f'button_complex:{fileid}'),
+            InlineKeyboardButton('🟡 Hard ', callback_data=f'button_hard:{fileid}'),
+            InlineKeyboardButton('🟢 Ok', callback_data=f'button_ok:{fileid}'),
+            InlineKeyboardButton('🔵 Easy', callback_data=f'button_easy:{fileid}'),
+        ],
+    ])
 
     await context.bot.send_photo(
         chat_id=chat_id,
@@ -109,9 +118,17 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         has_spoiler=True,
     )
 
-async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def next_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
     await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
+    await send_card(update, context)
+
+
+async def button_next(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    query = update.callback_query
+    await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
+
+    print(update)
     await send_card(update, context)
 
 def main():
@@ -120,7 +137,12 @@ def main():
     app.add_handler(CommandHandler('hello', say_hello))
     app.add_handler(CommandHandler('card', send_card))
 
-    app.add_handler(CallbackQueryHandler(button, pattern='^next_card$'))
+    app.add_handler(CallbackQueryHandler(button_next, pattern='^button_complex:'))
+    app.add_handler(CallbackQueryHandler(button_next, pattern='^button_hard:'))
+    app.add_handler(CallbackQueryHandler(button_next, pattern='^button_ok:'))
+    app.add_handler(CallbackQueryHandler(button_next, pattern='^button_easy:'))
+
+    app.add_handler(CallbackQueryHandler(next_card, pattern='^next_card$'))
 
     app.run_polling()
 

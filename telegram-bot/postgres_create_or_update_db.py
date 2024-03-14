@@ -44,9 +44,25 @@ create_table_cards = text(f"""
     COMMIT;
 """)
 
+create_table_user_card_responses = text(f"""
+    CREATE TABLE IF NOT EXISTS {get_table_name('user_card_responses')} (
+        user_id VARCHAR(255) NOT NULL,
+        card_image VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+        user_response TEXT NOT NULL,
+        card_weight FLOAT NOT NULL DEFAULT 1024,
+        PRIMARY KEY (user_id, card_image, created_at),
+        FOREIGN KEY (user_id) REFERENCES {get_table_name('users')}(id),
+        FOREIGN KEY (card_image) REFERENCES {get_table_name('cards')}(image)
+    );
+
+    COMMIT;
+""")
+
 def create_or_update_db():
     engine = get_pg_engine(False)
 
     with engine.connect() as connection:
         connection.execute(create_table_users)
         connection.execute(create_table_cards)
+        connection.execute(create_table_user_card_responses)

@@ -1,0 +1,50 @@
+CREATE TABLE IF NOT EXISTS users (
+    id VARCHAR(255) PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    username VARCHAR(255),
+    language_code CHAR(2),
+    current_set JSONB
+);
+
+CREATE TABLE IF NOT EXISTS cards (
+    en TEXT NOT NULL,
+    ru TEXT NOT NULL,
+    sr TEXT NOT NULL,
+    image VARCHAR(255) UNIQUE,
+    generated_at BIGINT NOT NULL,
+    tags TEXT[],
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (image)
+);
+
+У меня есть пара таблиц структура которых описана выше.
+
+Надо создать новую таблицу (если её ещё нет), в которой будут учитываться ответы пользователя на карточки.
+
+Таблица – это журнал в который будут добавляться записи и не будут меняться
+
+Нужны следующие поля
+- id пользователя
+- id карточки
+- timestamp
+- ответ пользователя (строка)
+- вес карточки после ответа (число с плавающей точкой) начальное значение 1024
+
+Создай составной индекс (пользователь, карточка, timestamp) Нужно будет выбирать список карточек с последними ответами.
+
+Именно этот набор (пользователь, карточка, timestamp) будет уникальным
+
+>>
+
+CREATE TABLE IF NOT EXISTS user_card_responses (
+    user_id VARCHAR(255) NOT NULL,
+    card_image VARCHAR(255) NOT NULL,
+    response_timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    user_response TEXT NOT NULL,
+    card_weight FLOAT NOT NULL DEFAULT 1024,
+    PRIMARY KEY (user_id, card_image, response_timestamp),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (card_image) REFERENCES cards(image)
+);
