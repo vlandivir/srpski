@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS {get_table_name('cards')} (
+    en TEXT NOT NULL,
+    ru TEXT NOT NULL,
+    sr TEXT NOT NULL,
+    image VARCHAR(255) UNIQUE,
+    generated_at BIGINT NOT NULL,
+    tags TEXT[],
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (image)
+);
+
+CREATE TABLE IF NOT EXISTS {get_table_name('user_card_responses')} (
+    user_id VARCHAR(255) NOT NULL,
+    card_image VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    user_response TEXT NOT NULL,
+    card_weight FLOAT NOT NULL DEFAULT 1024,
+    PRIMARY KEY (user_id, card_image, created_at),
+    FOREIGN KEY (user_id) REFERENCES {get_table_name('users')}(id),
+    FOREIGN KEY (card_image) REFERENCES {get_table_name('cards')}(image)
+);
+
+Напиши функицию, которая принимает user_id, generated_at, user_response
+
+user_response может принимать одно из значений complex, hard, ok, easy
+
+Если в таблице user_card_responses нет записи для соответствующей картинки её надо добавить
+
+Если запись для соответствующей картинки есть, то надо добавить новую на основе последней у которой card_weight меняется по следующему правилу
+user_response = complex – увеличить в 4 раза
+user_responce = hard – увеличить в 2 раза
+user_responce = ok – уменьшить в 2 раза
+user_responce = easy – уменьшить в 4 раза
+
+Код надо написать с использованием raw queries для sqlalchemy

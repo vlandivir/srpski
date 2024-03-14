@@ -77,5 +77,50 @@ def get_all_cards():
         rows_as_dicts = [row._asdict() for row in rows]
         return rows_as_dicts
 
-# {get_table_name('user_card_responses')}
-# def insert_user_card_responces
+def update_user_card_response(user_id, generated_at, user_response):
+    engine = get_pg_engine()
+
+    response_weight_multipliers = {
+        'button_complex': 4,
+        'button_hard': 2,
+        'button_ok': 0.5,
+        'button_easy': 0.25,
+    }
+
+    with engine.connect() as connection:
+        card_image_query = text(f"""
+            SELECT image FROM {get_table_name('cards')}
+            WHERE generated_at = :generated_at
+            LIMIT 1
+        """)
+        card_image_result = connection.execute(card_image_query, {"generated_at": int(generated_at)}).mappings().first()
+        if not card_image_result:
+            return
+
+        print(card_image_result)
+        card_image = card_image_result['image']
+
+        latest_response_query = text(f"""
+            SELECT card_weight, card_image FROM {get_table_name('user_card_responses')}
+            WHERE user_id = :user_id AND card_image = :card_image
+            ORDER BY created_at DESC
+            LIMIT 1
+        """)
+        latest_response = connection.execute(latest_response_query, {"user_id": user_id, "card_image": card_image}).mappings().first()
+
+        if latest_response:
+            new_weight = latest_response['card_weight'] * response_weight_multipliers[user_response]
+        else:
+            new_weight = 1024 * response_weight_multipliers[user_response]
+
+        insert_response_query = text(f"""
+            INSERT INTO {get_table_name('user_card_responses')} (user_id, card_image, user_response, card_weight)
+            VALUES (:user_id, :card_image, :user_response, :new_weight)
+        """)
+
+        connection.execute(insert_response_query, {
+            "user_id": user_id,
+            "card_image": card_image,
+            "user_response": user_response,
+            "new_weight": new_weight
+        })

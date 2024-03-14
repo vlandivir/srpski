@@ -3,7 +3,7 @@ import random
 
 from dotenv import load_dotenv
 
-from postgres_db import get_or_create_user, update_user_current_set, get_all_cards
+from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response
 from postgres_create_or_update_db import create_or_update_db
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
@@ -108,6 +108,9 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             InlineKeyboardButton('🟢 Ok', callback_data=f'button_ok:{fileid}'),
             InlineKeyboardButton('🔵 Easy', callback_data=f'button_easy:{fileid}'),
         ],
+        [
+            InlineKeyboardButton('Skip', callback_data=f'button_next'),
+        ]
     ])
 
     await context.bot.send_photo(
@@ -118,7 +121,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         has_spoiler=True,
     )
 
-async def next_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def button_next_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
     await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
     await send_card(update, context)
@@ -127,6 +130,10 @@ async def next_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def button_next(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
     await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
+
+    user = get_user_from_update(update)
+    data = query.data.split(':')
+    update_user_card_response(user['id'], data[1], data[0])
 
     print(update)
     await send_card(update, context)
@@ -142,7 +149,7 @@ def main():
     app.add_handler(CallbackQueryHandler(button_next, pattern='^button_ok:'))
     app.add_handler(CallbackQueryHandler(button_next, pattern='^button_easy:'))
 
-    app.add_handler(CallbackQueryHandler(next_card, pattern='^next_card$'))
+    app.add_handler(CallbackQueryHandler(button_next_card, pattern='^button_next$'))
 
     app.run_polling()
 
