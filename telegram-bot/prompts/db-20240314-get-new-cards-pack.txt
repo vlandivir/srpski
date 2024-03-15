@@ -1,0 +1,32 @@
+CREATE TABLE IF NOT EXISTS {get_table_name('cards')} (
+    en TEXT NOT NULL,
+    ru TEXT NOT NULL,
+    sr TEXT NOT NULL,
+    image VARCHAR(255) UNIQUE,
+    generated_at BIGINT NOT NULL,
+    tags TEXT[],
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (image)
+);
+
+CREATE TABLE IF NOT EXISTS {get_table_name('user_card_responses')} (
+    user_id VARCHAR(255) NOT NULL,
+    card_image VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    user_response TEXT NOT NULL,
+    card_weight FLOAT NOT NULL DEFAULT 1024,
+    PRIMARY KEY (user_id, card_image, created_at),
+    FOREIGN KEY (user_id) REFERENCES {get_table_name('users')}(id),
+    FOREIGN KEY (card_image) REFERENCES {get_table_name('cards')}(image)
+);
+
+Напиши функцию get-new-cards-pack, которая принимает на вход user_id
+
+Выбирает из таблицы {get_table_name('user_card_responses')} 20 случайных карточек, на которые пользователь не отвечал в течение последних N часов. Карточки надо выбирать с учетом из веса. Чем больше вес, тем больше вероятность попадания карточки в выборку
+
+На втором этапе из таблицы {get_table_name('cards')} выбираются карточки отобранные на первом этапе и в дополнение в ним случайные карточки. В итоге нужно вернуть набор из 21 записи. Нужно вернуть только поле generated_at
+
+Функция должна возвращать массив из 21 элемента
+
+Код надо написать с использованием raw queries для sqlalchemy

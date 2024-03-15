@@ -1,15 +1,19 @@
 import os
 import json
+import random
 import logging
 
 from functools import cache
 from dotenv import load_dotenv
+
+from datetime import datetime, timedelta
 
 from sqlalchemy import create_engine, text
 
 load_dotenv('.env')
 POSTGRES_CONNECTION_STRING = os.getenv('POSTGRES_CONNECTION_STRING')
 ENVIRONMENT = os.getenv('ENVIRONMENT', 'LOCAL')
+BLOCK_HOURS = int(os.getenv('BLOCK_HOURS', '12'))
 
 logging.basicConfig()
 logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
@@ -124,3 +128,35 @@ def update_user_card_response(user_id, generated_at, user_response):
             "user_response": user_response,
             "new_weight": new_weight
         })
+
+def get_new_cards_pack(user_id):
+    engine = get_pg_engine()
+
+    n_hours_ago = datetime.now() - timedelta(hours=BLOCK_HOURS)
+    select_images_query = text(f"""
+        with candidate_cards as (
+            select c.image, c.generated_at, ucr.user_id, ucr.created_at,
+                    case when ucr.user_id is null then 1
+                        when ucr.created_at > :n_hours_ago then -1
+                        else card_weight
+                    end as corrected_weight
+                from {get_table_name('cards')} c
+                left join {get_table_name('user_card_responses')} ucr
+                on c.image = ucr.card_image and ucr.user_id = :user_id
+                order by generated_at
+        )
+        select generated_at
+            from candidate_cards
+            order by random() * corrected_weight
+            desc limit 20;
+    """)
+
+    with engine.connect() as connection:
+        result = connection.execute(
+            select_images_query,
+            {'user_id': user_id, 'n_hours_ago': n_hours_ago}
+        ).fetchall()
+
+    cards_list = [row._asdict()['generated_at'] for row in result]
+    random.shuffle(cards_list)
+    return cards_list

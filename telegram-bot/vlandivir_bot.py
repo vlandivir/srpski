@@ -3,7 +3,7 @@ import random
 
 from dotenv import load_dotenv
 
-from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response
+from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response, get_new_cards_pack
 from postgres_create_or_update_db import create_or_update_db
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
@@ -60,9 +60,7 @@ def get_user_from_update(update: Update):
     }
 
 def create_new_set(user):
-    cards_order = list(range(0, len(filtered_cards) - 1))
-    random.shuffle(cards_order)
-    card_ids = list(map(lambda x: filtered_cards[x]['generated_at'], cards_order[:20]))
+    card_ids = get_new_cards_pack(user['id'])
     current_set = { 'cards_order': card_ids, 'pointer': 0 }
     update_user_current_set(user, current_set)
     return current_set
@@ -126,7 +124,6 @@ async def button_next_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
     await send_card(update, context)
 
-
 async def button_next(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
     await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
@@ -134,8 +131,6 @@ async def button_next(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     user = get_user_from_update(update)
     data = query.data.split(':')
     update_user_card_response(user['id'], data[1], data[0])
-
-    print(update)
     await send_card(update, context)
 
 def main():
