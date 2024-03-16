@@ -23,13 +23,6 @@ def get_do_space_client():
     return client
 
 def file_exists_in_do_space(bucket_name, file_path):
-    print('!!!')
-    print(bucket_name)
-    print(file_path)
-    print('!!!')
-
-    return True
-
     client = get_do_space_client()
     response = client.list_objects_v2(Bucket=bucket_name, Prefix=file_path)
     for obj in response.get('Contents', []):
