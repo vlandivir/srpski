@@ -16,6 +16,8 @@ docker build \
   --build-arg TAG_NAME="${TAG_NAME}" \
   --build-arg ENVIRONMENT="PROD" \
   --build-arg POSTGRES_CONNECTION_STRING="${POSTGRES_CONNECTION_STRING}" \
+  --build-arg DO_SPACES_ACCESS_KEY="${DO_SPACES_ACCESS_KEY}" \
+  --build-arg DO_SPACES_SECRET_KEY="${DO_SPACES_SECRET_KEY}" \
   -t vlandivir_bot .
 
 docker tag vlandivir_bot registry.digitalocean.com/vlandivir-main/vlandivir_bot:$TAG_NAME

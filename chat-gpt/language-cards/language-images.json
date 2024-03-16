@@ -436,5 +436,47 @@
         "ru": "Это твоя сумка? Нет, не моя.",
         "sr": "Da li je ovo tvoja torba? Nije.",
         "image": "is-this-your-bag-no-it-isnt-1710347606.webp"
+    },
+    {
+        "en": "I really don't know.",
+        "ru": "Я действительно не знаю.",
+        "sr": "Zaista ne znam.",
+        "image": "i-really-dont-know-1710464286.webp"
+    },
+    {
+        "en": "Can she be a teacher? Yes, I think so.",
+        "ru": "Может ли она быть учителем? Да, я так думаю.",
+        "sr": "Da li ona može da bude nastavnik? Mislim da da.",
+        "image": "can-she-be-a-teacher-yes-i-think-so-1710464448.webp"
+    },
+    {
+        "en": "Is he a pupil? No, he isn't.",
+        "ru": "Он ученик? Нет, не ученик.",
+        "sr": "Da li je on učenik? Nije.",
+        "image": "is-he-a-pupil-no-he-isnt-1710464678.webp"
+    },
+    {
+        "en": "Who is that man over there? He is Tom.",
+        "ru": "Кто тот человек там? Это Том.",
+        "sr": "Ko je onaj čovek tamo? On je Tom.",
+        "image": "who-is-that-man-over-there-1710495773.webp"
+    },
+    {
+        "en": "What does he do? He is a photographer.",
+        "ru": "Чем он занимается? Он фотограф.",
+        "sr": "Čime se on bavi? On je fotograf.",
+        "image": "he-is-a-photographer-1710496115.webp"
+    },
+    {
+        "en": "What do you do? I am a lawyer.",
+        "ru": "Чем ты занимаешься? Я юрист.",
+        "sr": "Čime se baviš? Ja sam advokat.",
+        "image": "i-am-a-lawyer-1710496437.webp"
+    },
+    {
+        "en": "What is your nationality?",
+        "ru": "Какая у вас национальность?",
+        "sr": "Koje si nacionalnosti?",
+        "image": "what-is-your-nationality-1710497474.webp"
     }
 ]

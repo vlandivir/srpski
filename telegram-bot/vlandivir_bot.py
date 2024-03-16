@@ -1,8 +1,8 @@
 import os
-import random
 
 from dotenv import load_dotenv
 
+from do_space import file_exists_in_do_space
 from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response, get_new_cards_pack
 from postgres_create_or_update_db import create_or_update_db
 
@@ -19,14 +19,9 @@ token = os.getenv('TEST_BOT_TOKEN', token) # for local run python3 telegram-bot/
 
 create_or_update_db()
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-cards_path = os.path.join(current_dir, 'release-cards')
-cards_files = os.listdir(cards_path)
 cards_data = get_all_cards()
-filtered_cards = [card for card in cards_data if card['image'] in cards_files]
-
 cards_index = {}
-for card in filtered_cards:
+for card in cards_data:
     cards_index[card['generated_at']] = card
 
 chats = {}
@@ -34,8 +29,17 @@ chats = {}
 def get_chat_key(id):
     return f'chat_{ENVIRONMENT.lower()}_{id}'
 
+async def update_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    global cards_data, cards_index
+    cards_data = get_all_cards()
+    cards_index = {}
+    for card in cards_data:
+        cards_index[card['generated_at']] = card
+
+    await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}-{len(cards_data)}')
+
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}-{len(filtered_cards)}')
+    await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}-{len(cards_data)}')
 
     chat_id = update.effective_chat.id
     chat_key = get_chat_key(chat_id)
@@ -90,13 +94,12 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     card_num = current_set['cards_order'][current_set['pointer']]
     next_card = cards_index.get(
         card_num,
-        filtered_cards[card_num if card_num < len(filtered_cards) else 0]
+        cards_data[card_num if card_num < len(cards_data) else 0]
     )
     chats[chat_key]['pointer'] += 1
     update_user_current_set(user, current_set)
 
     filename = next_card['image']
-    filepath = os.path.join(cards_path, filename)
     fileid = next_card.get('generated_at', 0)
 
     keyboard = InlineKeyboardMarkup([
@@ -111,9 +114,13 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         ]
     ])
 
+    if not file_exists_in_do_space('vlandivir', f'srpski/{filename}'):
+        await send_card(update, context)
+        return
+
     await context.bot.send_photo(
         chat_id=chat_id,
-        photo=open(filepath, 'rb'),
+        photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{filename}',
         reply_markup=keyboard,
         caption=next_card['ru'],
         has_spoiler=True,
@@ -138,6 +145,7 @@ def main():
 
     app.add_handler(CommandHandler('hello', say_hello))
     app.add_handler(CommandHandler('card', send_card))
+    app.add_handler(CommandHandler('update', update_cards))
 
     app.add_handler(CallbackQueryHandler(button_next, pattern='^button_complex:'))
     app.add_handler(CallbackQueryHandler(button_next, pattern='^button_hard:'))

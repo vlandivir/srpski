@@ -51,7 +51,6 @@ Some of this is mine. = Nešto od ovoga je moje.
 
 ###
 
-What is your nationality? = Koje si nacionalnosti?
 I am from Spain. = Ja sam iz Španije.
 What is the population of your country? = Koliko stanovnika ima tvoja zemlja?
 What is the capital of your country? = Koji je glavni grad tvoje zemlje?
@@ -61,22 +60,10 @@ How many states are there in your country? = Koliko država ima u vašoj zemlji?
 The capital of my country is Paris. = Glavni grad moje zemlje je Pariz.
 My country is rich in natural resources. = Moja zemlja je bogata u prirodnim resursima.
 That nation is famous for its tourism. = Ta nacija je poznata po turizmu.
-What do you do? = Čime se baviš?
-I am a lawyer. = Ja sam advokat.
-What does he do? = Čime se on bavi?
-He is a photographer. = On je fotograf.
 Who are you? = Ko si ti?
 I am Jelena. = Ja sam Jelena.
-Who is that man over there? = Ko je onaj čovek tamo?
-He is Tom. = On je Tom.
 Is that boy a university student? = Da li je onaj dečko student?
-Is he a pupil? = Da li je on učenik?
-No, he isn't. = Nije.
-Can she be a teacher? = Da li ona može da bude nastavnik?
-Yes, I think so. = Mislim da da.
-I really don't know. = Zaista ne znam.
 
-Is this your bag? No, it isn’t. = Da li je ovo tvoja torba? Nije.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
