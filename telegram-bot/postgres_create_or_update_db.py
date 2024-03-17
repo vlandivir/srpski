@@ -3,6 +3,8 @@ from sqlalchemy import text
 from postgres_db import get_pg_engine, get_table_name
 
 create_table_users = text(f"""
+    ROLLBACK;
+
     CREATE TABLE IF NOT EXISTS {get_table_name('users')} (
         id VARCHAR(255) PRIMARY KEY,
         first_name VARCHAR(255),
@@ -59,10 +61,37 @@ create_table_user_card_responses = text(f"""
     COMMIT;
 """)
 
+create_table_db_history = text(f"""
+    CREATE TABLE IF NOT EXISTS {get_table_name('db_history')} (
+        version INTEGER PRIMARY KEY,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+
+    INSERT INTO {get_table_name('db_history')} (version) VALUES (1);
+
+    COMMIT;
+""")
+
+select_db_version =  text(f"""
+    select max(version) from {get_table_name('db_history')};
+""")
+
 def create_or_update_db():
     engine = get_pg_engine(False)
 
     with engine.connect() as connection:
-        connection.execute(create_table_users)
-        connection.execute(create_table_cards)
-        connection.execute(create_table_user_card_responses)
+        current_version = 0
+
+        try:
+            current_version = connection.execute(select_db_version).scalar()
+        except Exception as e:
+            # do nothing
+            print(e)
+
+        print(f'DB VERSION: {current_version}')
+
+        if current_version == 0:
+            connection.execute(create_table_users)
+            connection.execute(create_table_cards)
+            connection.execute(create_table_user_card_responses)
+            connection.execute(create_table_db_history)
