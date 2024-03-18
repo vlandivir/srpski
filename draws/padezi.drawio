@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T22:51:52.918Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="_QC2d1yviV29YZ12QUDc" version="23.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-18T22:51:24.524Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="Oj1-SV9lzJy8wUq0ubXA" version="23.1.7" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="1039" dy="684" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="883" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -287,11 +287,11 @@
         <mxCell id="w5lrp8CAif_9VlZ4OXMN-10" value="&lt;b&gt;Izuzeci: &lt;/b&gt;put ➜ putevi&lt;br&gt;sir ➜ sirevi&amp;nbsp; dan ➜ dani&lt;br&gt;konj ➜ konji mrav ➜ mravi&lt;br&gt;zub ➜ zubi&amp;nbsp; sat ➜ sati &lt;br&gt;pas ➜ psi" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="320" y="120" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-1" value="&lt;b&gt;Izuzeci:&amp;nbsp; &lt;/b&gt;čovek&lt;b&gt;&amp;nbsp;&lt;/b&gt;➜ ljudi&lt;br&gt;lampa ➜ lampi&lt;br&gt;mesec ➜ meseci&lt;br&gt;sat ➜ sati gost&amp;nbsp;➜ gostiju&lt;br&gt;oko ➜ ociju prst ➜ prstiju&lt;br&gt;uho ➜ ušiju&lt;br&gt;nokat ➜ noktiju&lt;br&gt;ruka ➜ ruku noga ➜ nogu&lt;br&gt;sluga ➜ slugu" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-1" value="&lt;b&gt;Izuzeci:&amp;nbsp; &lt;/b&gt;čovek&lt;b&gt;&amp;nbsp;&lt;/b&gt;➜ ljudi&lt;br&gt;lampa ➜ lampi&lt;br&gt;mesec ➜ meseci&lt;br&gt;sat ➜ sati gost&amp;nbsp;➜ gostiju&lt;br&gt;oko ➜ očiju prst ➜ prstiju&lt;br&gt;uho (uvo) ➜ ušiju&lt;br&gt;nokat ➜ noktiju&lt;br&gt;ruka ➜ ruku noga ➜ nogu&lt;br&gt;sluga ➜ slugu" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="260" width="120" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-2" value="NOMINATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
-          <mxGeometry x="460" y="60" width="20" height="60" as="geometry" />
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-2" value="NOM" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
+          <mxGeometry x="460" y="60" width="20" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-3" value="AKUZATIV" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
           <mxGeometry x="460" y="130" width="20" height="100" as="geometry" />
@@ -311,8 +311,8 @@
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-8" value="INSTRUMENTAL" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;horizontal=0;" parent="1" vertex="1">
           <mxGeometry x="460" y="690" width="20" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-14" value="&lt;b style=&quot;font-size: 9px;&quot;&gt;Subjekat:&lt;/b&gt; Ja sam nastavnik u srednjoj školi. Škola je u blizu. Vreme je užasno. Dušan je gladan. Ta zgrada je stara. &lt;br style=&quot;font-size: 9px;&quot;&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Sa glagolom biti: &lt;/b&gt;Zovem se Milan. Borko je farmaceut. Ovo je Srbija. Ja sam glumac. Oni su stranci.&lt;br style=&quot;font-size: 9px;&quot;&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Pitanja - ko? šta?: &lt;/b&gt;Ko je to? ➜ Ovo je moj brat. Šta je ovo? ➜ Ovo je moj domaći zadatak.&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
-          <mxGeometry x="480" y="60" width="540" height="60" as="geometry" />
+        <mxCell id="Pf-PKDTKtpDQkGUhiAqp-14" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;vršilac radnje / nosilac situacije ➜&amp;nbsp;&lt;b style=&quot;font-size: 10px;&quot;&gt;Miša&lt;/b&gt; uci matematiku. Miša je &lt;b style=&quot;font-size: 10px;&quot;&gt;student&lt;/b&gt;. &lt;b style=&quot;font-size: 10px;&quot;&gt;Naš&lt;/b&gt; Miša je &lt;b style=&quot;font-size: 10px;&quot;&gt;odličan&lt;/b&gt; student. Marko Kraljević, &lt;b style=&quot;font-size: 10px;&quot;&gt;poznata istorijska ličnost&lt;/b&gt;, opevan je u mnogim narodnim pesmama.&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;Pitanja - ko? šta?: &lt;/b&gt;Ko je to? ➜ Ovo je moj brat. Šta je ovo? ➜ Ovo je moj domaći zadatak.&amp;nbsp;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="480" y="60" width="540" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-16" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;N&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;span style=&quot;font-size: 10px; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;b style=&quot;font-size: 10px;&quot;&gt;i&lt;/b&gt;&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;G&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;b style=&quot;font-size: 10px;&quot;&gt;i&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre; font-weight: bold;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;b style=&quot;font-size: 10px;&quot;&gt;i&lt;/b&gt;&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;D&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;b style=&quot;font-size: 10px;&quot;&gt;i&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre; font-weight: bold;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;ljubav&lt;/font&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;ima&lt;/b&gt;&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;A&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;b&gt;i&lt;/b&gt;&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;V&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;b&gt;i&lt;/b&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;/span&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;i&lt;/b&gt;&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;I&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;b&gt;i&lt;/b&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;/span&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;ima&lt;/b&gt;&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;L&lt;/b&gt;&lt;span style=&quot;font-size: 10px; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;b&gt;i&lt;/b&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ljubav&lt;/span&gt;&lt;b style=&quot;font-size: 10px;&quot;&gt;ima&lt;/b&gt;&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;/font&gt;" style="rounded=0;html=1;align=left;fontSize=10;fontFamily=Helvetica;spacing=2;" parent="1" vertex="1">
           <mxGeometry x="1040" y="30" width="120" height="100" as="geometry" />
@@ -371,9 +371,6 @@
         <mxCell id="SCsuLVYZ3zaB3UgAQBAb-1" value="&lt;b style=&quot;font-size: 9px;&quot;&gt;Locacija (predloazi u, na): &lt;/b&gt;&lt;span style=&quot;font-size: 9px;&quot;&gt;Radim u prodavnici. Ja sam u skoli. Živim u grad.&lt;br&gt;&lt;/span&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Gonorim o nekomu, o nečemu: &lt;/b&gt;Pričim o srpskom jeziku. Ne radi se o mojoj porodici. Pričam joj o žurci. Da li žnaš nešto o tom dečku?&lt;br&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Predlozi - prema, pri, po: &lt;/b&gt;Stani tamo, premo mostu. Oni su okrenuli prema severu. Imaš sladoled po majici. Ima puno pasa po kraju. Dosadilo mi je pri kraju. Naočare su pri dnu ranca.&lt;br&gt;&lt;b style=&quot;font-size: 9px;&quot;&gt;Pitanja - gde? o kome? o čemu?: &lt;/b&gt;Gde si? ➜ Ja sam u Beogradu. O kome pričaš?&amp;nbsp;➜ Pricham o sestri. O čemu pišeš?&amp;nbsp;➜ Pišem o jezeru." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
           <mxGeometry x="480" y="580" width="540" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="k5CSX4Lu9ogysojjoo4v-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="k5CSX4Lu9ogysojjoo4v-1" target="uh2jlfRQcC9aMAu_DCjH-1" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="k5CSX4Lu9ogysojjoo4v-1" value="Brat" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1040" y="219" width="120" height="21" as="geometry" />
         </mxCell>
@@ -404,10 +401,10 @@
         <mxCell id="k5CSX4Lu9ogysojjoo4v-13" value="Ćebe" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1040" y="649" width="120" height="21" as="geometry" />
         </mxCell>
-        <mxCell id="R1ojqt--zH14BER3qFAF-1" value="Doneli mnogo voća slonovima." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+        <mxCell id="R1ojqt--zH14BER3qFAF-1" value="Doneli mnogo voća slonovima." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="320" y="469.5" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="R1ojqt--zH14BER3qFAF-2" value="Pričao sam sa satovima na zidu o vremenu." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+        <mxCell id="R1ojqt--zH14BER3qFAF-2" value="Pričao sam sa satovima na zidu o vremenu." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="320" y="630" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
