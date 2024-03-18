@@ -478,5 +478,11 @@
         "ru": "Какая у вас национальность?",
         "sr": "Koje si nacionalnosti?",
         "image": "what-is-your-nationality-1710497474.webp"
+    },
+    {
+        "en": "Who are you? I am Jelena.",
+        "ru": "Кто ты? Я — Елена.",
+        "sr": "Ko si ti? Ja sam Jelena.",
+        "image": "who-are-you-i-am-jelena-1710637192.webp"
     }
 ]
