@@ -164,6 +164,5 @@ def get_new_cards_pack(user_id):
             {'user_id': user_id, 'n_hours_ago': n_hours_ago}
         ).fetchall()
 
-    cards_list = [row._asdict()['generated_at'] for row in result]
-    random.shuffle(cards_list)
+    cards_list = [[row_dict['generated_at'], row_dict['card_weight']] for row_dict in (row._asdict() for row in result)]
     return cards_list

@@ -64,8 +64,17 @@ def get_user_from_update(update: Update):
     }
 
 def create_new_set(user):
-    card_ids = get_new_cards_pack(user['id'])
-    current_set = { 'cards_order': card_ids, 'pointer': 0 }
+    cards_order_with_weight = get_new_cards_pack(user['id'])
+    cards_order =  [x[0] for x in cards_order_with_weight]
+
+    current_set = {
+        'cards_order': cards_order,
+        'cards_order_with_weight': cards_order_with_weight,
+        'pointer': 0,
+    }
+
+    print(current_set)
+
     update_user_current_set(user, current_set)
     return current_set
 
@@ -78,6 +87,25 @@ async def new_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_key = get_chat_key(chat_id)
     chats[chat_key] = create_new_set(user)
     await update.message.reply_text(chats[chat_key])
+
+def progress_bar(weight):
+    red_square = '🟥'
+    yellow_square = '🟨'
+    green_square = '🟩'
+    blue_square = '🟦'
+    black_square = '⬛'
+
+    squares = [red_square] * 2 + [yellow_square] * 3 + [green_square] * 3 + [blue_square] * 2
+
+    if weight > 1024:
+        return red_square + black_square * 9
+    elif weight == 0:
+        return black_square * 10
+    elif 0 < weight <= 1:
+        return ''.join(squares)
+    else:
+        painted_squares = min(10, max(1, 10 - int(weight).bit_length() + 1))
+        return ''.join(squares[:painted_squares]) + black_square * (10 - painted_squares)
 
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user = get_user_from_update(update)
@@ -101,7 +129,12 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         chats[chat_key] = create_new_set(user)
 
     current_set = chats[chat_key]
-    card_num = current_set['cards_order'][current_set['pointer']]
+
+    if (current_set.get('cards_order_with_weight')):
+        card_num, card_weight = current_set['cards_order_with_weight'][current_set['pointer']]
+    else:
+        card_num = current_set['cards_order'][current_set['pointer']]
+
     next_card = cards_index.get(
         card_num,
         cards_data[card_num if card_num < len(cards_data) else 0]
@@ -128,11 +161,14 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await send_card(update, context)
         return
 
+    caption = f"{progress_bar(card_weight)}\n" if card_weight is not None else ''
+    caption += next_card['ru']
+
     await context.bot.send_photo(
         chat_id=chat_id,
         photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{filename}',
         reply_markup=keyboard,
-        caption=next_card['ru'],
+        caption=caption,
         has_spoiler=True,
     )
 
