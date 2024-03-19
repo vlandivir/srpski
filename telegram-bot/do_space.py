@@ -39,8 +39,6 @@ def upload_files_to_digital_ocean_spaces(bucket_name, do_folder, local_folder):
             if not file_exists_in_do_space(bucket_name, do_path):
                 client.upload_file(local_path, bucket_name, do_path, ExtraArgs={'ACL': 'public-read'})
                 print(f"File {filename} uploaded to {do_path}")
-            else:
-                print(f"File {filename} already exists in {do_path}. Skipping upload.")
     except FileNotFoundError:
         print("The specified folder does not exist")
     except NoCredentialsError:
