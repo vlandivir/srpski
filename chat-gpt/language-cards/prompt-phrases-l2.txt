@@ -49,21 +49,7 @@ It is over there. = Tamo je.
 Is this notebook yours? = Da li je ova sveska tvoja?
 Some of this is mine. = Nešto od ovoga je moje.
 
-###
-
-I am from Spain. = Ja sam iz Španije.
-What is the population of your country? = Koliko stanovnika ima tvoja zemlja?
-What is the capital of your country? = Koji je glavni grad tvoje zemlje?
-Are you a foreigner? = Da li si ti stranac?
-I was born in England and brought up in America. = Ja sam rođen u Engleskoj a odrastao sam u Americi.
-How many states are there in your country? = Koliko država ima u vašoj zemlji?
-The capital of my country is Paris. = Glavni grad moje zemlje je Pariz.
-My country is rich in natural resources. = Moja zemlja je bogata u prirodnim resursima.
 That nation is famous for its tourism. = Ta nacija je poznata po turizmu.
-Who are you? = Ko si ti?
-I am Jelena. = Ja sam Jelena.
-Is that boy a university student? = Da li je onaj dečko student?
-
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

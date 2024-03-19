@@ -484,5 +484,53 @@
         "ru": "Кто ты? Я — Елена.",
         "sr": "Ko si ti? Ja sam Jelena.",
         "image": "who-are-you-i-am-jelena-1710637192.webp"
+    },
+    {
+        "en": "I am from Spain.",
+        "ru": "Я из Испании.",
+        "sr": "Ja sam iz Španije.",
+        "image": "i-am-from-spain-1710886792.webp"
+    },
+    {
+        "en": "What is the population of your country?",
+        "ru": "Какова численность населения твоей страны?",
+        "sr": "Koliko stanovnika ima tvoja zemlja?",
+        "image": "what-is-the-population-of-your-country-1710887033.webp"
+    },
+    {
+        "en": "What is the capital of your country?",
+        "ru": "Какова столица твоей страны?",
+        "sr": "Koji je glavni grad tvoje zemlje?",
+        "image": "what-is-the-capital-of-your-country-1710887629.webp"
+    },
+    {
+        "en": "Are you a foreigner?",
+        "ru": "Ты иностранец?",
+        "sr": "Da li si ti stranac?",
+        "image": "are-you-a-foreigner-1710888377.webp"
+    },
+    {
+        "en": "I was born in England and brought up in America.",
+        "ru": "Я родился в Англии и вырос в Америке.",
+        "sr": "Ja sam rođen u Engleskoj a odrastao sam u Americi.",
+        "image": "i-was-born-in-england-and-brought-up-in-america-1710888545.webp"
+    },
+    {
+        "en": "The capital of my country is Paris.",
+        "ru": "Столица моей страны - Париж.",
+        "sr": "Glavni grad moje zemlje je Pariz.",
+        "image": "the-capital-of-my-country-is-paris-1710888754.webp"
+    },
+    {
+        "en": "My country is rich in natural resources.",
+        "ru": "Моя страна богата природными ресурсами.",
+        "sr": "Moja zemlja je bogata u prirodnim resursima.",
+        "image": "my-country-is-rich-in-natural-resources-1710888935.webp"
+    },
+    {
+        "en": "Is that boy a university student?",
+        "ru": "Этот мальчик студент университета?",
+        "sr": "Da li je onaj dečko student?",
+        "image": "is-that-boy-a-university-student-1710889425.webp"
     }
 ]
