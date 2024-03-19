@@ -50,3 +50,28 @@ select generated_at
   -0.0995985854825927 | what-is-this-this-is-a-pencil-1710113813.webp                |   1710113813 | 150847737 | 2024-03-14 23:37:19.000328+00 |               -1
   -0.6360658325601387 | i-have-no-idea-1710286151.webp                               |   1710286151 | 150847737 | 2024-03-14 23:51:50.383003+00 |               -1
   -0.7225224470237728 | where-is-my-bag-it-is-on-the-desk1709915955.webp             |   1709915955 | 150847737 | 2024-03-14 23:46:39.965835+00 |               -1
+
+select count(*) from prod_cards;
+
+with
+last_card_responses as (
+    select distinct on (card_image) *
+    from prod_user_card_responses
+    order by card_image, created_at desc
+),
+candidate_cards as (
+    select c.image, c.generated_at, ucr.card_weight, ucr.user_id, ucr.created_at,
+            case when ucr.user_id is null then 100
+                when ucr.created_at > '2024-03-19 00:00:00' then -1 / card_weight
+                else card_weight
+            end as corrected_weight
+        from prod_cards c
+        left join last_card_responses ucr
+        on c.image = ucr.card_image
+        order by generated_at
+)
+select random() * corrected_weight as rnd, *
+    from candidate_cards
+    order by 1 desc
+    limit 20
+;

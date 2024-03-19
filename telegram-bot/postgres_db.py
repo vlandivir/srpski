@@ -134,21 +134,28 @@ def get_new_cards_pack(user_id):
 
     n_hours_ago = datetime.now() - timedelta(hours=BLOCK_HOURS)
     select_images_query = text(f"""
-        with candidate_cards as (
-            select c.image, c.generated_at, ucr.user_id, ucr.created_at,
-                    case when ucr.user_id is null then 1
-                        when ucr.created_at > :n_hours_ago then -1
+        with
+        last_card_responses as (
+            select distinct on (card_image) *
+            from {get_table_name('user_card_responses')}
+            order by card_image, created_at desc
+        ),
+        candidate_cards as (
+            select c.image, c.generated_at, ucr.card_weight, ucr.user_id, ucr.created_at,
+                    case when ucr.user_id is null then 100
+                        when ucr.created_at > '2024-03-19 00:00:00' then -1 / card_weight
                         else card_weight
                     end as corrected_weight
                 from {get_table_name('cards')} c
-                left join {get_table_name('user_card_responses')} ucr
-                on c.image = ucr.card_image and ucr.user_id = :user_id
+                left join last_card_responses ucr
+                on c.image = ucr.card_image
                 order by generated_at
         )
-        select generated_at
+        select random() * corrected_weight as rnd, *
             from candidate_cards
-            order by random() * corrected_weight
-            desc limit 20;
+            order by 1 desc
+            limit 20
+        ;
     """)
 
     with engine.connect() as connection:

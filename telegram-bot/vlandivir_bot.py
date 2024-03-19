@@ -69,6 +69,16 @@ def create_new_set(user):
     update_user_current_set(user, current_set)
     return current_set
 
+async def new_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    user = get_user_from_update(update)
+    if not user:
+        return None
+
+    chat_id = update.effective_chat.id
+    chat_key = get_chat_key(chat_id)
+    chats[chat_key] = create_new_set(user)
+    await update.message.reply_text(chats[chat_key])
+
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user = get_user_from_update(update)
     if not user:
@@ -146,6 +156,7 @@ def main():
     app.add_handler(CommandHandler('hello', say_hello))
     app.add_handler(CommandHandler('card', send_card))
     app.add_handler(CommandHandler('update', update_cards))
+    app.add_handler(CommandHandler('new', new_cards))
 
     app.add_handler(CallbackQueryHandler(button_next, pattern='^button_complex:'))
     app.add_handler(CallbackQueryHandler(button_next, pattern='^button_hard:'))
