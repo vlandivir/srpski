@@ -182,7 +182,7 @@ def get_user_stats (user_id):
                 DATE(created_at) AS response_date,
                 user_response,
                 ROW_NUMBER() OVER (PARTITION BY user_id, card_image, DATE(created_at) ORDER BY created_at DESC) AS rank
-            FROM prod_user_card_responses
+            FROM {get_table_name('user_card_responses')}
             WHERE user_id = :user_id AND DATE(created_at) BETWEEN CURRENT_DATE - INTERVAL '1 day' AND CURRENT_DATE
         ),
         filtered_responses AS (
@@ -212,5 +212,5 @@ def get_user_stats (user_id):
             {'user_id': user_id}
         ).fetchall()
 
-    result_dicts = [{key: float(value) if isinstance(value, Decimal) else value for key, value in row._asdict().items()} for row in result]
+    result_dicts = [{key: int(value) if isinstance(value, Decimal) else value for key, value in row._asdict().items()} for row in result]
     return result_dicts

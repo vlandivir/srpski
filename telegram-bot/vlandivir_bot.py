@@ -128,6 +128,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     if chats[chat_key]['pointer'] >= len(chats[chat_key]['cards_order']):
         chats[chat_key] = create_new_set(user)
+        await context.bot.send_message(chat_id=chat_id, text=prepare_user_stats(user['id']))
 
     current_set = chats[chat_key]
 
@@ -188,12 +189,19 @@ async def button_next(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     update_user_card_response(user['id'], data[1], data[0])
     await send_card(update, context)
 
+def prepare_user_stats(user_id: str) -> str:
+    return '\n'.join([
+        f"{s.get('response_date','')} 🔴 {s.get('complex','')}  🟡 {s.get('hard','')} 🟢 {s.get('ok','')} 🔵 {s.get('easy','')}"
+        for s in get_user_stats(user_id)
+    ])
+
 async def user_stats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user = get_user_from_update(update)
     if not user:
         return None
 
-    await update.message.reply_text(json.dumps(get_user_stats(user['id']), indent=2))
+    # await update.message.reply_text(json.dumps(get_user_stats(user['id']), indent=2))
+    await update.message.reply_text(prepare_user_stats(user['id']))
 
 def main():
     app = ApplicationBuilder().token(token).build()
