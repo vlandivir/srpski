@@ -51,7 +51,6 @@ I am sorry, I don't have an appointment. = Žao mi je, nemam zakazano.
 
 ###
 
-Is this your wallet? = Da li je ovo tvoj novčanik?
 I would like the one on the right. = Želeo bih ovo sa desne strane.
 Do you know anything about this? = Da li znaš nešto o ovome?
 Do you know where I put my bag? = Da li znaš gde sam stavio torbu?
@@ -93,13 +92,7 @@ The meeting will start soon. = Sastanak će početi uskoro.
 It is not 5 o'clock. = Nije pet sati.
 It is 6 o'clock on my watch. = Šest je sati na mom satu.
 My watch is 3 minutes fast. = Moj sat žuri tri minuta.
-We must arrive there on time. = Mi moramo da stignemo tamo na vreme.
-There are only 3 minutes left. = Ostalo je još samo tri minuta.
-The meeting has been postponed. = Sastanak je odložen.
-The flight is delayed. = Let je odložen.
-Can you finish this project before the deadline? = Da li možeš da završiš ovaj projekat pre roka?
 
-Hello, can I see Mr. Marko? = Zdravo, da li mogu da vidim gospodina Marka?
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

@@ -550,5 +550,53 @@
         "ru": "У вас запланирована встреча? Извините, у меня нет запланированной встречи.",
         "sr": "Da li imate zakazano? Žao mi je, nemam zakazano.",
         "image": "do-you-have-an-appointment-i-am-sorry-i-dont-have-an-appointment-1710935405.webp"
+    },
+    {
+        "en": "Hello, can I see Mr. Marko?",
+        "ru": "Здравствуйте, могу ли я увидеть господина Марка?",
+        "sr": "Zdravo, da li mogu da vidim gospodina Marka?",
+        "image": "hello-can-i-see-mr-marko_1710945963.webp"
+    },
+    {
+        "en": "Can you finish this project before the deadline?",
+        "ru": "Можешь ли ты закончить этот проект до дедлайна?",
+        "sr": "Da li možeš da završiš ovaj projekat pre roka?",
+        "image": "can-you-finish-this-project-before-the-deadline-1710946169.webp"
+    },
+    {
+        "en": "The flight is delayed.",
+        "ru": "Рейс задержан.",
+        "sr": "Let je odložen.",
+        "image": "the-flight-is-delayed-1710947989.webp"
+    },
+    {
+        "en": "The meeting has been postponed.",
+        "ru": "Собрание было перенесено.",
+        "sr": "Sastanak je odložen.",
+        "image": "the-meeting-has-been-postponed-1710948439.webp"
+    },
+    {
+        "en": "There are only 3 minutes left.",
+        "ru": "Осталось всего три минуты.",
+        "sr": "Ostalo je još samo tri minuta.",
+        "image": "there-are-only-3-minutes-left-1710949184.webp"
+    },
+    {
+        "en": "We must arrive there on time.",
+        "ru": "Мы должны прибыть туда вовремя.",
+        "sr": "Mi moramo da stignemo tamo na vreme.",
+        "image": "we-must-arrive-there-on-time-1710954035.webp"
+    },
+    {
+        "en": "My watch is 3 minutes fast",
+        "ru": "Мои часы спешат на три минуты",
+        "sr": "Moj sat žuri tri minuta",
+        "image": "my-watch-is-3-minutes-fast-1710955430.webp"
+    },
+    {
+        "en": "It is 6 o'clock on my watch.",
+        "ru": "Шесть часов по моим часам",
+        "sr": "Šest je sati na mom satu",
+        "image": "it-is-6-oclock-on-my-watch-1710955655.webp"
     }
 ]
