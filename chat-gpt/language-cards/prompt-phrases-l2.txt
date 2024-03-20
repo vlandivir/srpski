@@ -49,6 +49,8 @@ It is over there. = Tamo je.
 Is this notebook yours? = Da li je ova sveska tvoja?
 Some of this is mine. = Nešto od ovoga je moje.
 
+###
+
 That nation is famous for its tourism. = Ta nacija je poznata po turizmu.
 
 ИНСТРУКЦИИ:

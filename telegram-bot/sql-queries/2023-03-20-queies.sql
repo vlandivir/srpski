@@ -1,0 +1,1 @@
+select * from prod_user_card_responses where card_image like '%8417.webp' order by created_at;

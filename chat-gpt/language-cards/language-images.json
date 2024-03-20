@@ -532,5 +532,23 @@
         "ru": "Этот мальчик студент университета?",
         "sr": "Da li je onaj dečko student?",
         "image": "is-that-boy-a-university-student-1710889425.webp"
+    },
+    {
+        "en": "That nation is famous for its tourism.",
+        "ru": "Эта нация известна своим туризмом.",
+        "sr": "Ta nacija je poznata po turizmu.",
+        "image": "that-nation-is-famous-for-its-tourism-1710934194.webp"
+    },
+    {
+        "en": "Is this your wallet?",
+        "ru": "Это твой кошелек?",
+        "sr": "Da li je ovo tvoj novčanik?",
+        "image": "is-this-your-wallet-1710935136.webp"
+    },
+    {
+        "en": "Do you have an appointment? I am sorry, I don't have an appointment.",
+        "ru": "У вас запланирована встреча? Извините, у меня нет запланированной встречи.",
+        "sr": "Da li imate zakazano? Žao mi je, nemam zakazano.",
+        "image": "do-you-have-an-appointment-i-am-sorry-i-dont-have-an-appointment-1710935405.webp"
     }
 ]

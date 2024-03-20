@@ -51,7 +51,6 @@ def split_string_into_parts(s, n_parts):
     return parts
 
 def add_text_properties(text, color, new_image_width, font_48, rows, gaps, colors, fonts):
-    print(text)
     text_width, text_height = get_text_dimensions(text, font_48)
     rows_count = text_width / (new_image_width - 64)
 
@@ -131,6 +130,8 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     add_text_properties(text_sr, pale_blue, new_image.width, font_48, rows, gaps, colors, fonts)
     add_text_properties(text_ru, lavender, new_image.width, font_48, rows, gaps, colors, fonts)
     add_text_properties(text_en, pastel_peach, new_image.width, font_48, rows, gaps, colors, fonts)
+
+    print(f"{text_sr} {text_ru} {text_en}")
 
     for i, r in enumerate(rows):
         top, bottom = gaps[i]

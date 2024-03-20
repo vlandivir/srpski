@@ -117,6 +117,9 @@ def update_user_card_response(user_id, generated_at, user_response):
         else:
             new_weight = 1024 * response_weight_multipliers[user_response]
 
+        if new_weight >= 256 and (user_response == 'button_ok' or user_response == 'button_easy'):
+            new_weight = new_weight / 2
+
         insert_response_query = text(f"""
             INSERT INTO {get_table_name('user_card_responses')} (user_id, card_image, user_response, card_weight)
             VALUES (:user_id, :card_image, :user_response, :new_weight)
