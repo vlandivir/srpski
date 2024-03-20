@@ -1,9 +1,10 @@
 import os
+import json
 
 from dotenv import load_dotenv
 
 from do_space import file_exists_in_do_space
-from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response, get_new_cards_pack
+from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response, get_new_cards_pack, get_user_stats
 from postgres_create_or_update_db import create_or_update_db
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
@@ -187,6 +188,13 @@ async def button_next(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     update_user_card_response(user['id'], data[1], data[0])
     await send_card(update, context)
 
+async def user_stats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    user = get_user_from_update(update)
+    if not user:
+        return None
+
+    await update.message.reply_text(json.dumps(get_user_stats(user['id']), indent=2))
+
 def main():
     app = ApplicationBuilder().token(token).build()
 
@@ -194,6 +202,7 @@ def main():
     app.add_handler(CommandHandler('card', send_card))
     app.add_handler(CommandHandler('update', update_cards))
     app.add_handler(CommandHandler('new', new_cards))
+    app.add_handler(CommandHandler('stats', user_stats))
 
     app.add_handler(CallbackQueryHandler(button_next, pattern='^button_complex:'))
     app.add_handler(CallbackQueryHandler(button_next, pattern='^button_hard:'))

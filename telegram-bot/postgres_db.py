@@ -3,8 +3,9 @@ import json
 import random
 import logging
 
-from functools import cache
+from decimal import Decimal
 from dotenv import load_dotenv
+from functools import cache
 
 from datetime import datetime, timedelta
 
@@ -170,33 +171,46 @@ def get_new_cards_pack(user_id):
     cards_list = [[row_dict['generated_at'], row_dict['card_weight']] for row_dict in (row._asdict() for row in result)]
     return cards_list
 
-# def get_new_cards_pack(user_id):
-#     WITH ranked_responses AS (
-#     SELECT
-#         user_id,
-#         card_image,
-#         DATE(created_at) AS response_date,
-#         user_response,
-#         ROW_NUMBER() OVER (PARTITION BY user_id, card_image, DATE(created_at) ORDER BY created_at DESC) AS rank
-#     FROM prod_user_card_responses
-#     WHERE DATE(created_at) BETWEEN CURRENT_DATE - INTERVAL '1 day' AND CURRENT_DATE
-#     ),
-#     filtered_responses AS (
-#     SELECT
-#         response_date,
-#         user_response,
-#         COUNT(card_image) AS cards_per_response
-#     FROM ranked_responses
-#     WHERE rank = 1
-#     AND user_response IN ('button_easy', 'button_ok', 'button_hard', 'button_complex')
-#     GROUP BY response_date, user_response
-#     )
-#     SELECT
-#     response_date,
-#     SUM(CASE WHEN user_response = 'button_easy' THEN cards_per_response ELSE 0 END) AS easy_cards,
-#     SUM(CASE WHEN user_response = 'button_ok' THEN cards_per_response ELSE 0 END) AS ok_cards,
-#     SUM(CASE WHEN user_response = 'button_hard' THEN cards_per_response ELSE 0 END) AS hard_cards,
-#     SUM(CASE WHEN user_response = 'button_complex' THEN cards_per_response ELSE 0 END) AS complex_cards
-#     FROM filtered_responses
-#     GROUP BY response_date
-#     ORDER BY response_date;
+def get_user_stats (user_id):
+    engine = get_pg_engine()
+
+    get_stats_query = text(f"""
+        WITH ranked_responses AS (
+            SELECT
+                user_id,
+                card_image,
+                DATE(created_at) AS response_date,
+                user_response,
+                ROW_NUMBER() OVER (PARTITION BY user_id, card_image, DATE(created_at) ORDER BY created_at DESC) AS rank
+            FROM prod_user_card_responses
+            WHERE user_id = :user_id AND DATE(created_at) BETWEEN CURRENT_DATE - INTERVAL '1 day' AND CURRENT_DATE
+        ),
+        filtered_responses AS (
+            SELECT
+                response_date,
+                user_response,
+                COUNT(card_image) AS cards_per_response
+            FROM ranked_responses
+            WHERE rank = 1
+                AND user_response IN ('button_easy', 'button_ok', 'button_hard', 'button_complex')
+            GROUP BY response_date, user_response
+        )
+        SELECT
+            TO_CHAR(response_date, 'YYYY-MM-DD') as response_date,
+            SUM(CASE WHEN user_response = 'button_complex' THEN cards_per_response ELSE 0 END) AS complex,
+            SUM(CASE WHEN user_response = 'button_hard' THEN cards_per_response ELSE 0 END) AS hard,
+            SUM(CASE WHEN user_response = 'button_ok' THEN cards_per_response ELSE 0 END) AS ok,
+            SUM(CASE WHEN user_response = 'button_easy' THEN cards_per_response ELSE 0 END) AS easy
+            FROM filtered_responses
+        GROUP BY response_date
+        ORDER BY response_date;
+    """)
+
+    with engine.connect() as connection:
+        result = connection.execute(
+            get_stats_query,
+            {'user_id': user_id}
+        ).fetchall()
+
+    result_dicts = [{key: float(value) if isinstance(value, Decimal) else value for key, value in row._asdict().items()} for row in result]
+    return result_dicts
