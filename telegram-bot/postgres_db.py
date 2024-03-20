@@ -142,7 +142,7 @@ def get_new_cards_pack(user_id):
         last_card_responses as (
             select distinct on (card_image) *
             from {get_table_name('user_card_responses')}
-            where ucr.user_id = :user_id
+            where user_id = :user_id
             order by card_image, created_at desc
         ),
         candidate_cards as (
