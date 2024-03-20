@@ -130,6 +130,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     current_set = chats[chat_key]
 
+    card_weight = None
     if (current_set.get('cards_order_with_weight')):
         card_num, card_weight = current_set['cards_order_with_weight'][current_set['pointer']]
     else:
