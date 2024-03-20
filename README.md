@@ -1,10 +1,15 @@
-## Srpski
+# Srpski
 
-### Links
+## To Do
+- Try to edit something from the phone
+
+## Links
 
 https://www.clarin.si/kontext/query?corpname=classlaweb_sr – Serbian corpora with search
 
-### Update inages
+## How to use
+
+### Update images
 ```
 python3 chat-gpt/language-cards/add-text-to-images.py
 python3 telegram-bot/tools_insert_cards.py
