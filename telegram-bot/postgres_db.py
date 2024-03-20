@@ -196,7 +196,7 @@ def get_user_stats (user_id):
             GROUP BY response_date, user_response
         )
         SELECT
-            TO_CHAR(response_date, 'YYYY-MM-DD') as response_date,
+            TO_CHAR(response_date, 'DD Mon') as response_date,
             SUM(CASE WHEN user_response = 'button_complex' THEN cards_per_response ELSE 0 END) AS complex,
             SUM(CASE WHEN user_response = 'button_hard' THEN cards_per_response ELSE 0 END) AS hard,
             SUM(CASE WHEN user_response = 'button_ok' THEN cards_per_response ELSE 0 END) AS ok,
