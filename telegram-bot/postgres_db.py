@@ -142,6 +142,7 @@ def get_new_cards_pack(user_id):
         last_card_responses as (
             select distinct on (card_image) *
             from {get_table_name('user_card_responses')}
+            where ucr.user_id = :user_id
             order by card_image, created_at desc
         ),
         candidate_cards as (
@@ -152,7 +153,7 @@ def get_new_cards_pack(user_id):
                     end as corrected_weight
                 from {get_table_name('cards')} c
                 left join last_card_responses ucr
-                on c.image = ucr.card_image and ucr.user_id = :user_id
+                on c.image = ucr.card_image
                 order by generated_at
         )
         select random() * corrected_weight as rnd, *
