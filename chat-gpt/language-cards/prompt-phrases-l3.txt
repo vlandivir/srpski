@@ -90,9 +90,9 @@ What were you doing there? = Šta si radio tamo?
 It is 4 o'clock. = Četiri sata je.
 The meeting will start soon. = Sastanak će početi uskoro.
 It is not 5 o'clock. = Nije pet sati.
-It is 6 o'clock on my watch. = Šest je sati na mom satu.
-My watch is 3 minutes fast. = Moj sat žuri tri minuta.
 
+
+It is 6 o'clock on my watch. = Šest je sati na mom satu.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
