@@ -8,7 +8,7 @@ from postgres_db import get_or_create_user, update_user_current_set, get_all_car
 from postgres_create_or_update_db import create_or_update_db
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, Filters
 
 load_dotenv('.env')
 TAG_NAME = os.getenv('TAG_NAME')
@@ -156,7 +156,9 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             InlineKeyboardButton('🔵 Easy', callback_data=f'button_easy:{fileid}'),
         ],
         [
-            InlineKeyboardButton('Skip', callback_data=f'button_next'),
+            # InlineKeyboardButton('❌ Skip', callback_data=f'button_next'),
+            InlineKeyboardButton('⏩ Skip', callback_data=f'button_next_card'),
+            InlineKeyboardButton('⬇️ More', callback_data=f'more_next'),
         ]
     ])
 
@@ -180,7 +182,7 @@ async def button_next_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
     await send_card(update, context)
 
-async def button_next(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def button_card_response(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
     await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
 
@@ -200,8 +202,30 @@ async def user_stats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
     if not user:
         return None
 
-    # await update.message.reply_text(json.dumps(get_user_stats(user['id']), indent=2))
     await update.message.reply_text(prepare_user_stats(user['id']))
+
+async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    user = get_user_from_update(update)
+    if not user:
+        return None
+
+    chat_id = update.effective_chat.id
+
+    keyboard = InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton('Учить карточки', callback_data=f'button_next'),
+            InlineKeyboardButton('Подробная справка', callback_data=f'button_help'),
+        ]
+    ])
+
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text='Бот помогает учить сербский язык, используя flash cards',
+        reply_markup=keyboard
+    )
+
+async def oops_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text('Ой, здесь пока ничего нет...')
 
 def main():
     app = ApplicationBuilder().token(token).build()
@@ -212,12 +236,16 @@ def main():
     app.add_handler(CommandHandler('new', new_cards))
     app.add_handler(CommandHandler('stats', user_stats))
 
-    app.add_handler(CallbackQueryHandler(button_next, pattern='^button_complex:'))
-    app.add_handler(CallbackQueryHandler(button_next, pattern='^button_hard:'))
-    app.add_handler(CallbackQueryHandler(button_next, pattern='^button_ok:'))
-    app.add_handler(CallbackQueryHandler(button_next, pattern='^button_easy:'))
-
+    app.add_handler(CallbackQueryHandler(button_card_response, pattern='^button_complex:'))
+    app.add_handler(CallbackQueryHandler(button_card_response, pattern='^button_hard:'))
+    app.add_handler(CallbackQueryHandler(button_card_response, pattern='^button_ok:'))
+    app.add_handler(CallbackQueryHandler(button_card_response, pattern='^button_easy:'))
     app.add_handler(CallbackQueryHandler(button_next_card, pattern='^button_next$'))
+
+    app.add_handler(CallbackQueryHandler(oops_handler, pattern='^button_help$'))
+
+
+    app.add_handler(MessageHandler(Filters.all, default_handler))
 
     app.run_polling()
 

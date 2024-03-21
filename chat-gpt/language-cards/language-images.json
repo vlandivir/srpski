@@ -598,5 +598,35 @@
         "ru": "Шесть часов по моим часам",
         "sr": "Šest je sati na mom satu",
         "image": "it-is-6-oclock-on-my-watch-1710955655.webp"
+    },
+    {
+        "en": "The meeting will start soon.",
+        "ru": "Собрание начнется скоро",
+        "sr": "Sastanak će početi uskoro.",
+        "image": "the-meeting-will-start-soon-1711017655.webp"
+    },
+    {
+        "en": "What were you doing there?",
+        "ru": "Что ты делал там?",
+        "sr": "Šta si radio tamo?",
+        "image": "what-were-you-doing-there-1711032460.webp"
+    },
+    {
+        "en": "Do you know the exact date?",
+        "ru": "Ты знаешь точную дату?",
+        "sr": "Da li znaš tačan datum?",
+        "image": "do-you-know-the-exact-date-1711033727.webp"
+    },
+    {
+        "en": "We will see each other tomorrow.",
+        "ru": "Мы увидимся завтра.",
+        "sr": "Mi ćemo se videti sutra.",
+        "image": "we-will-see-each-other-tomorrow-1711034325.webp"
+    },
+    {
+        "en": "I will be back in 5 days.",
+        "ru": "Я вернусь через пять дней.",
+        "sr": "Ja ću se vratiti za pet dana.",
+        "image": "i-will-be-back-in-5-days-1711058243.webp"
     }
 ]

@@ -149,7 +149,7 @@ with open(json_file, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 source_folder = os.path.join(script_dir, 'source-images/')
-result_folder = os.path.join(script_dir, '..', '..', 'telegram-bot/' 'release-cards/')
+result_folder = os.path.join(script_dir, '..', 'release-cards/')
 font_path = '/System/Library/Fonts/Helvetica.ttc'
 
 release_folder = os.path.join(script_dir, 'release-images/')

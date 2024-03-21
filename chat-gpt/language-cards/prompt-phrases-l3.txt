@@ -83,16 +83,8 @@ Where were you born? = Gde si rođen?
 When were you born? = Kada si rođen?
 I was born on August 1st. = Ja sam rođen prvog avgusta.
 Please check the date. = Molim te, proveri datum.
+
 I will be back in 5 days. = Ja ću se vratiti za pet dana.
-We will see each other tomorrow. = Mi ćemo se videti sutra.
-Do you know the exact date? = Da li znaš tačan datum?
-What were you doing there? = Šta si radio tamo?
-It is 4 o'clock. = Četiri sata je.
-The meeting will start soon. = Sastanak će početi uskoro.
-It is not 5 o'clock. = Nije pet sati.
-
-
-It is 6 o'clock on my watch. = Šest je sati na mom satu.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
