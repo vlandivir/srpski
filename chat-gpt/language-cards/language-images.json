@@ -628,5 +628,17 @@
         "ru": "Я вернусь через пять дней.",
         "sr": "Ja ću se vratiti za pet dana.",
         "image": "i-will-be-back-in-5-days-1711058243.webp"
+    },
+    {
+        "en": "When were you born? I was born on August 1st.",
+        "ru": "Когда ты родился? Я родился первого августа.",
+        "sr": "Kada si rođen? Ja sam rođen prvog avgusta.",
+        "image": "i-was-born-on-august-1st-1711062277.webp"
+    },
+    {
+        "en": "What is the date today? It is March the 16th.",
+        "ru": "Какой сегодня день? Какой сегодня день?",
+        "sr": "Koji je danas datum? Šesnaesti je mart.",
+        "image": "what-is-the-date-today-it-is-march-the-16th-1711063255.webp"
     }
 ]

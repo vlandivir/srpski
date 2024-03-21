@@ -54,11 +54,6 @@ I am sorry, I don't have an appointment. = Žao mi je, nemam zakazano.
 I would like the one on the right. = Želeo bih ovo sa desne strane.
 Do you know anything about this? = Da li znaš nešto o ovome?
 Do you know where I put my bag? = Da li znaš gde sam stavio torbu?
-Yes, this is mine. = Da, ovo je moje.
-What is the date today? = Koji je danas datum?
-It is March the 16th. = Šesnaesti je mart.
-What day is it today? = Koji je danas dan?
-Today is Tuesday. = Danas je utorak.
 What month is it? = Koji je mesec?
 It is October. = Oktobar je.
 What year is it? = Koja je godina?
@@ -80,11 +75,13 @@ What time? = Koje vreme?
 Which days? = Kojim danima?
 You name the time. = Ti reci vreme.
 Where were you born? = Gde si rođen?
-When were you born? = Kada si rođen?
-I was born on August 1st. = Ja sam rođen prvog avgusta.
 Please check the date. = Molim te, proveri datum.
 
-I will be back in 5 days. = Ja ću se vratiti za pet dana.
+What is the date today? = Koji je danas datum?
+It is March the 16th. = Šesnaesti je mart.
+
+What day is it today? = Koji je danas dan?
+Today is Tuesday. = Danas je utorak.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
