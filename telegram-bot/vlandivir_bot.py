@@ -157,8 +157,8 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         ],
         [
             # InlineKeyboardButton('❌ Skip', callback_data=f'button_next'),
-            InlineKeyboardButton('⏩ Skip', callback_data=f'button_next_card'),
-            InlineKeyboardButton('⬇️ More', callback_data=f'more_next'),
+            InlineKeyboardButton('⏩ Skip', callback_data=f'button_next'),
+            InlineKeyboardButton('⬇️ More', callback_data=f'button_more'),
         ]
     ])
 
@@ -225,7 +225,11 @@ async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     )
 
 async def oops_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text('Ой, здесь пока ничего нет...')
+    chat_id = update.effective_chat.id
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text='Ой, здесь пока ничего нет...',
+    )
 
 def main():
     app = ApplicationBuilder().token(token).build()
@@ -243,7 +247,7 @@ def main():
     app.add_handler(CallbackQueryHandler(button_next_card, pattern='^button_next$'))
 
     app.add_handler(CallbackQueryHandler(oops_handler, pattern='^button_help$'))
-
+    app.add_handler(CallbackQueryHandler(oops_handler, pattern='^button_more$'))
 
     app.add_handler(MessageHandler(filters.ALL, default_handler))
 
