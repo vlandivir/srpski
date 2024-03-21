@@ -8,7 +8,7 @@ from postgres_db import get_or_create_user, update_user_current_set, get_all_car
 from postgres_create_or_update_db import create_or_update_db
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, Filters
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, filters
 
 load_dotenv('.env')
 TAG_NAME = os.getenv('TAG_NAME')
@@ -245,7 +245,7 @@ def main():
     app.add_handler(CallbackQueryHandler(oops_handler, pattern='^button_help$'))
 
 
-    app.add_handler(MessageHandler(Filters.all, default_handler))
+    app.add_handler(MessageHandler(filters.ALL, default_handler))
 
     app.run_polling()
 
