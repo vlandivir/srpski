@@ -51,16 +51,11 @@ I am sorry, I don't have an appointment. = Žao mi je, nemam zakazano.
 
 ###
 
-I would like the one on the right. = Želeo bih ovo sa desne strane.
 Do you know anything about this? = Da li znaš nešto o ovome?
 Do you know where I put my bag? = Da li znaš gde sam stavio torbu?
-What month is it? = Koji je mesec?
-It is October. = Oktobar je.
 What year is it? = Koja je godina?
 It is 2022. = Dve hiljade dvadeset druga je.
 It has been four years since we saw each other. = Prošlo je četiri godine od kad smo se videli.
-Does the store open at 8 in the morning on weekdays? = Da li se radnja otvara u osam ujutru radnim danima?
-It opens at 9 AM on weekdays. = Otvara se u devet ujutru radnim danima.
 It opens at 10 AM on weekends. = Otvara se u 10 ujutru vikendom.
 I will work for the next 5 days. = Ja ću raditi narednih pet dana.
 What did you do last week? = Šta si radio prošle nedelje?
@@ -69,19 +64,12 @@ What will you do tomorrow? = Šta ćeš raditi sutra?
 What will you do the day after tomorrow? = Šta ćeš raditi prekosutra?
 Today is Wednesday. = Danas je sreda.
 Yesterday was Monday. = Juče je bio ponedeljak.
-How long will the discount last? = Koliko će trajati popust?
-It will last for two days. = Trajaće dva dana.
 What time? = Koje vreme?
 Which days? = Kojim danima?
 You name the time. = Ti reci vreme.
 Where were you born? = Gde si rođen?
 Please check the date. = Molim te, proveri datum.
 
-What is the date today? = Koji je danas datum?
-It is March the 16th. = Šesnaesti je mart.
-
-What day is it today? = Koji je danas dan?
-Today is Tuesday. = Danas je utorak.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

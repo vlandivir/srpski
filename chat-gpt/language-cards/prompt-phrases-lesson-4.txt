@@ -54,8 +54,6 @@ I pick up my son from school. = Pokupim sina iz škole.
 He is on the phone. = On je na telefonu.
 Sorry, Mr. Peter cannot see you now. = Izvinite, gospodin Petar Vas ne može primiti sada.
 Would you wait here for a minute? = Da li biste sačekali ovde jedan minut?
-Would you like anything to drink? = Da li biste želeli nešto da popijete?
-I would like some tea, please. = Želeo bih čaj, molim Vas.
 The client has come to see you. = Klijent je došao da Vas vidi.
 You may go in now. = Možete ući sada.
 Nice to see you, my old friend. = Drago mi je da te vidim, stari prijatelju.
@@ -75,8 +73,6 @@ How can I improve my Serbian? = Kako mogu da unapredim svoj srpski jezik?
 I have some difficulty expressing myself. = Imam poteškoća da se izrazim.
 Do you like traveling? = Da li voliš da putuješ?
 Yes, I like it very much. = Da, volim puno.
-What are you doing? = Šta radiš?
-I am cooking. = Kuvam.
 I am reading a book. = Čitam knjigu.
 Are you watching TV now? = Da li gledaš TV sada?
 I am watching a documentary. = Gledam dokumentarac.
@@ -86,8 +82,6 @@ I will go to a concert. = Ići ću na koncert.
 I will go out with friends. = Izaći ću sa prijateljima.
 Who are you writing to? = Kome pišeš?
 I am writing to a friend. = Pišem prijatelju.
-Where are you going? = Gde ideš?
-I am going to work. = Idem na posao.
 I get up at seven every morning. = Ustajem u sedam svako jutro.
 I wake my daughter up. = Budim svoju kćerku.
 I am taking a shower. = Tuširam se.
@@ -100,8 +94,8 @@ I read the newspaper. = Čitam novine.
 I dress my sister and wash her hands and her face. = Obučem sestru i operem joj ruke i umijem je.
 I get to my office at 8:30. = Dolazim u kancelariju u pola devet.
 I leave the office at 6. = Izlazim iz kancelarije u šest.
-I pick up my son from school. = Pokupim sina iz škole.
 
+Would you like anything to drink? = Da li biste želeli nešto da popijete? I would like some tea, please. = Želeo bih čaj, molim Vas.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

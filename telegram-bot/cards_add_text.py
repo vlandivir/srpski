@@ -1,5 +1,3 @@
-import os
-import json
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
 #https://levelup.gitconnected.com/how-to-properly-calculate-text-size-in-pil-images-17a2cc6f51fd
@@ -16,16 +14,14 @@ def split_string_into_parts(s, n_parts):
     if n_parts <= 1:
         return [s]
 
-    # Общая длина строки без учета пробелов для более равномерного деления
     total_length = len(s.replace(" ", ""))
     part_length = total_length / n_parts
 
     parts = []
     last_index = 0
-    accumulated_length = 0  # Длина накопленных символов без пробелов
+    accumulated_length = 0
 
     for i in range(1, n_parts):
-        # Планируемая длина для текущей части
         current_target = part_length * i
 
         while accumulated_length < current_target and last_index < len(s):
@@ -33,19 +29,15 @@ def split_string_into_parts(s, n_parts):
                 accumulated_length += 1
             last_index += 1
 
-        # Находим ближайший пробел для разделения
         space_index = s.find(" ", last_index)
-        if space_index == -1:  # Если пробел не найден, используем длину строки
+        if space_index == -1:
             space_index = len(s)
 
-        # Добавляем часть строки до найденного пробела
         parts.append(s[:space_index].strip())
-        # Обновляем строку, удаляя добавленную часть
         s = s[space_index:]
 
-        last_index = 0  # Сбрасываем индекс для новой подстроки
+        last_index = 0
 
-    # Добавляем оставшуюся часть строки
     parts.append(s.strip())
 
     return parts
@@ -73,9 +65,7 @@ def add_text_properties(text, color, new_image_width, font_48, rows, gaps, color
         colors.extend([color])
         fonts.extend([font_size])
 
-def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_path):
-    original_image = Image.open(image_path)
-
+def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     new_height = int(original_image.height * 4 / 3)
     new_image = Image.new("RGB", (original_image.width, new_height))
 
@@ -84,11 +74,8 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     reflected_new = original_image.transpose(Image.FLIP_TOP_BOTTOM)
     reflected_blurred_new = reflected_new.filter(ImageFilter.GaussianBlur(15))
 
-    # Вычисление области, куда будет вставлено размытое отражение
     reflection_height_new = new_height - original_image.height
     reflected_blurred_resized_new = reflected_blurred_new.resize((original_image.width, reflection_height_new))
-
-    # Вставка размытого отражения в нижнюю часть нового холста
     new_image.paste(reflected_blurred_resized_new, (0, original_image.height))
 
     # Initialize the drawing context
@@ -109,7 +96,7 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     # Blend this rectangle with the base image
     new_image.paste(rect_image, (0, 0), rect_image)
 
-    font_32 = ImageFont.truetype(font_path, 40)
+    font_40 = ImageFont.truetype(font_path, 40)
     font_48 = ImageFont.truetype(font_path, 48)
 
     text_x = 32
@@ -136,38 +123,7 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     for i, r in enumerate(rows):
         top, bottom = gaps[i]
         text_y += top
-        draw.text((text_x, text_y), r, fill=colors[i], font=(font_48 if fonts[i] == 48 else font_32))
+        draw.text((text_x, text_y), r, fill=colors[i], font=(font_48 if fonts[i] == 48 else font_40))
         text_y += bottom
 
-    # Save the image
-    new_image.save(output_path)
-
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-json_file = os.path.join(script_dir, 'language-images.json')
-with open(json_file, 'r', encoding='utf-8') as file:
-    data = json.load(file)
-
-source_folder = os.path.join(script_dir, 'source-images/')
-result_folder = os.path.join(script_dir, '..', '..', 'release-cards/')
-font_path = os.path.join(script_dir, 'NimbusSanLRegular.ttf')
-
-release_folder = os.path.join(script_dir, 'release-images/')
-
-for item in data:
-    image_path = source_folder + item['image']
-
-    if not os.path.exists(image_path):
-        image_path = release_folder + item['image']
-
-    if not os.path.exists(image_path):
-        print(f'Error: source image not found {item['image']}')
-        continue
-
-    text_sr = item['sr']
-    text_en = item['en']
-    text_ru = item['ru']
-    output_path = result_folder + item['image']
-
-    if not os.path.exists(output_path):
-        add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_path)
+    return new_image

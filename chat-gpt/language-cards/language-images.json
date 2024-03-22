@@ -354,9 +354,9 @@
         "image": "is-this-your-pen-i-have-a-red-pen-1709920176.webp"
     },
     {
-        "en": "What is that? = That is an apple.",
-        "ru": "Что это? = Это яблоко.",
-        "sr": "Šta je to? = To je jabuka.",
+        "en": "What is that? That is an apple.",
+        "ru": "Что это? Это яблоко.",
+        "sr": "Šta je to? To je jabuka.",
         "image": "what-is-that-that-is-an-apple-1709920538.webp"
     },
     {
@@ -367,7 +367,7 @@
     },
     {
         "en": "Is that an apple? No, it isn't. It is a pear.",
-        "ru": "Это яблоко? Нет, это не яблоко. Это груша.",
+        "ru": "Это яблоко? Нет. Это груша.",
         "sr": "Da li je to jabuka? Nije. To je kruška.",
         "image": "is-that-an-apple-no-it-isnt-it-is-a-pear-1710278633.webp"
     },
@@ -433,7 +433,7 @@
     },
     {
         "en": "Is this your bag? No, it isn’t.",
-        "ru": "Это твоя сумка? Нет, не моя.",
+        "ru": "Это твоя сумка? Нет.",
         "sr": "Da li je ovo tvoja torba? Nije.",
         "image": "is-this-your-bag-no-it-isnt-1710347606.webp"
     },
@@ -445,13 +445,13 @@
     },
     {
         "en": "Can she be a teacher? Yes, I think so.",
-        "ru": "Может ли она быть учителем? Да, я так думаю.",
+        "ru": "Может ли она быть учителем? Думаю, да",
         "sr": "Da li ona može da bude nastavnik? Mislim da da.",
         "image": "can-she-be-a-teacher-yes-i-think-so-1710464448.webp"
     },
     {
         "en": "Is he a pupil? No, he isn't.",
-        "ru": "Он ученик? Нет, не ученик.",
+        "ru": "Он ученик? Нет.",
         "sr": "Da li je on učenik? Nije.",
         "image": "is-he-a-pupil-no-he-isnt-1710464678.webp"
     },
@@ -637,8 +637,62 @@
     },
     {
         "en": "What is the date today? It is March the 16th.",
-        "ru": "Какой сегодня день? Какой сегодня день?",
+        "ru": "Какой сегодня день? Шестнадцатое марта.",
         "sr": "Koji je danas datum? Šesnaesti je mart.",
         "image": "what-is-the-date-today-it-is-march-the-16th-1711063255.webp"
+    },
+    {
+        "en": "What day is it today? Today is Tuesday.",
+        "ru": "Какой сегодня день? Сегодня вторник.",
+        "sr": "Koji je danas dan? Danas je utorak.",
+        "image": "what-day-is-it-today-today-is-tuesday-1711063820.webp"
+    },
+    {
+        "en": "Where are you going? I am going to work.",
+        "ru": "Куда ты идешь? Я иду на работу.",
+        "sr": "Gde ideš? Idem na posao.",
+        "image": "where-are-you-going-i-am-going-to-work-1711064465.webp"
+    },
+    {
+        "en": "I pick up my son from school.",
+        "ru": "Забираю сына из школы",
+        "sr": "Pokupam sina iz škole",
+        "image": "i-pick-up-my-son-from-school-1711108343.webp"
+    },
+    {
+        "en": "How long will the discount last? It will last for two days.",
+        "ru": "Как долго будет длиться скидка? Она будет длиться два дня.",
+        "sr": "Koliko će trajati popust? Trajaće dva dana.",
+        "image": "how-long-will-the-discount-last-it-will-last-for-two-days-1711114226.webp"
+    },
+    {
+        "en": "Does the store open at 8 in the morning on weekdays? It opens at 9 AM on weekdays.",
+        "ru": "Магазин открывается в 8 утра по будням? Он открывается в 9 утра по будням.",
+        "sr": "Da li se radnja otvara u osam ujutru radnim danima? Otvara se u devet ujutru radnim danima.",
+        "image": "does-the-store-open-at-8-in-the-morning-on-weekdays-it-opens-at-9-am-on-weekdays-1711115111.webp"
+    },
+    {
+        "en": "What month is it? It is October.",
+        "ru": "Какой сейчас месяц? Сейчас октябрь.",
+        "sr": "Koji je mesec? Oktobar je.",
+        "image": "what-month-is-it-it-is-october-1711115580.webp"
+    },
+    {
+        "en": "I would like the one on the right.",
+        "ru": "Я бы хотел это с правой стороны.",
+        "sr": "Želeo bih ovo sa desne strane.",
+        "image": "i-would-like-the-one-on-the-right-1711117921.webp"
+    },
+    {
+        "en": "What are you doing? I am cooking.",
+        "ru": "Что делаешь? Я готовлю.",
+        "sr": "Šta radiš? Kuvam.",
+        "image": "what-are-you-doing-i-am-cooking-1711118782.webp"
+    },
+    {
+        "en": "Would you like anything to drink? I would like some tea, please.",
+        "ru": "Будете что-нибудь пить? Я бы хотел чаю, пожалуйста.",
+        "sr": "Da li biste želeli nešto da popijete? Želeo bih čaj, molim Vas.",
+        "image": "would-you-like-anything-to-drink-i-would-like-some-tea-please-1711119850.webp"
     }
 ]
