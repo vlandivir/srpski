@@ -1,0 +1,698 @@
+[
+    {
+        "en": "I talked with the clocks on the wall about time",
+        "ru": "Я разговаривал с часами на стене о времени",
+        "sr": "Pričao sam sa satovima na zidu o vremenu",
+        "image": "i-talked-with-the-clocks-on-the-wall-about-time-1709000000.webp"
+    },
+    {
+        "en": "After breaking his leg, he walked on crutches for several weeks.",
+        "ru": "После перелома ноги он ходил на костылях несколько недель.",
+        "sr": "Nakon što je slomio nogu, hodao je na štakama nekoliko nedelja.",
+        "image": "after-breaking-his-leg-he-walked-on-crutches-for-several-weeks-1709135469.webp"
+    },
+    {
+        "en": "At least the weather was good.",
+        "ru": "Хотя бы погода была хорошей.",
+        "sr": "Makar je vreme bilo dobro.",
+        "image": "at_least_the_weather_was_good_1709150909.webp"
+    },
+    {
+        "en": "There is a flower growing on the windowsill.",
+        "ru": "На подоконнике растет цветок.",
+        "sr": "Na prozorskoj dasci raste cvet.",
+        "image": "there_is_a_flower_growing_on_the_windowsill_1677538821.webp"
+    },
+    {
+        "en": "I decided to quit my job.",
+        "ru": "Я решил уволиться с работы.",
+        "sr": "Odlučio sam da napustim posao.",
+        "image": "i-decided-to-quit-my-job-1709159677.webp"
+    },
+    {
+        "en": "I decided to go for a walk anyway, despite the weather.",
+        "ru": "Я всё же решил пойти на прогулку, несмотря на погоду.",
+        "sr": "Ipak sam odlučio da odem u šetnju, uprkos vremenu.",
+        "image": "i-decided-to-go-for-a-walk-anyway-despite-the-weather-1709160252.webp"
+    },
+    {
+        "en": "Even though it's cold outside, I will still go for a walk.",
+        "ru": "Хотя на улице холодно, я всё равно пойду гулять.",
+        "sr": "Iako je napolju hladno, ja ću ipak ići u šetnju.",
+        "image": "even-though-its-cold-outside-i-will-still-go-for-a-walk-1677602414.webp"
+    },
+    {
+        "en": "Even though I prefer Italian cuisine, today I decided to try Japanese.",
+        "ru": "Хотя я предпочитаю итальянскую кухню, сегодня я решил попробовать японскую.",
+        "sr": "Iako preferiram italijansku kuhinju, danas sam odlučio da probam japansku.",
+        "image": "even-though-i-prefer-italian-cuisine-today-i-decided-to-try-japanese-1709162213.webp"
+    },
+    {
+        "en": "This will be my first trip abroad.",
+        "ru": "Это будет мое первое путешествие за границу.",
+        "sr": "Biće ovo moje prvo putovanje u inostranstvo.",
+        "image": "this-will-be-my-first-trip-abroad_1709163936.webp"
+    },
+    {
+        "en": "This creature lives only in clean water.",
+        "ru": "Это существо живёт только в чистой воде.",
+        "sr": "Ovo biće živi samo u čistoj vodi.",
+        "image": "this-creature-lives-only-in-clean-water-1709165254.webp"
+    },
+    {
+        "en": "On New Year's, every creature in the forest awaits miracles.",
+        "ru": "На Новый год каждое существо в лесу ожидает чудес.",
+        "sr": "Na Novu Godinu, svako biće u šumi čeka čuda.",
+        "image": "on-new-years-every-creature-in-the-forest-awaits-miracles_1709166013.webp"
+    },
+    {
+        "en": "At midnight, we decided to order pizza because we were hungry.",
+        "ru": "В полночь мы решили заказать пиццу, потому что были голодны.",
+        "sr": "U ponoć smo odlučili da naručimo picu jer smo bili gladni.",
+        "image": "a_simple_sketch_of_two_friends_deciding_to_order_pizza_because_we_were_hungry_1677539257.webp"
+    },
+    {
+        "en": "I feel so sleepy after the workout.",
+        "ru": "После тренировки так хочу спать.",
+        "sr": "Posle treninga tako želim da spavam.",
+        "image": "i-feel-so-sleepy-after-the-workout-1709167200.webp"
+    },
+    {
+        "en": "I love drinking milk while listening to calm music.",
+        "ru": "Люблю пить молоко, слушая спокойную музыку.",
+        "sr": "Volim da pijem mleko dok slušam mirnu muziku.",
+        "image": "i-love-drinking-milk-while-listening-to-calm-music-1709167786.webp"
+    },
+    {
+        "en": "We need to work to get ready for the holiday.",
+        "ru": "Надо работать, чтобы успеть подготовиться к празднику.",
+        "sr": "Moramo raditi da bismo se pripremili za praznik.",
+        "image": "we-need-to-work-to-get-ready-for-the-holiday-1709207086.webp"
+    },
+    {
+        "en": "For Halloween, we decided to use magic to decorate the house.",
+        "ru": "На Хэллоуин мы решили использовать магию для украшения дома.",
+        "sr": "Za Noć veštica smo odlučili da koristimo magiju za ukrašavanje kuće.",
+        "image": "for-halloween-we-decided-to-use-magic-to-decorate-the-house-1709208164.webp"
+    },
+    {
+        "en": "Sometimes the internet seems like magic.",
+        "ru": "Иногда интернет кажется магией.",
+        "sr": "Ponekad internet izgleda kao magija.",
+        "image": "sometimes-the-internet-seems-like-magic-1709207757.webp"
+    },
+    {
+        "en": "Let's watch the match and order pizza.",
+        "ru": "Давай посмотрим матч и закажем пиццу.",
+        "sr": "Hajde da pratimo utakmicu i naručimo picu.",
+        "image": "lets-watch-the-match-and-order-pizza-1709209092.webp"
+    },
+    {
+        "en": "It's funny when people wear summer clothes in winter.",
+        "ru": "Это смешно, когда люди носят летнюю одежду зимой.",
+        "sr": "Smešno je kada ljudi nose letnju odeću zimi.",
+        "image": "its-funny-when-people-wear-summer-clothes-in-winter-1709220577.webp"
+    },
+    {
+        "en": "I ordered a new bicycle online.",
+        "ru": "Я заказал новый велосипед через интернет.",
+        "sr": "Naručio sam novi bicikl preko interneta.",
+        "image": "i-ordered-a-new-bicycle-online-1709222004.webp"
+    },
+    {
+        "en": "Lately, there are more beggars at the subway, the crisis has affected everyone.",
+        "ru": "В последнее время все больше нищих у метро, кризис затронул всех.",
+        "sr": "U poslednje vreme sve više prosjaka kod metroa, kriza je pogodila sve.",
+        "image": "lately-there-are-more-beggars-at-the-subway-the-economic-crisis-has-affected-everyone-1709224278.webp"
+    },
+    {
+        "en": "I've been longing to start exercising.",
+        "ru": "Я долго желал начать заниматься спортом.",
+        "sr": "Dugo sam priželjkivao da počnem sa vežbanjem.",
+        "image": "i-ve-been-longing-to-start-exercising-1709230186.webp"
+    },
+    {
+        "en": "When it's snowing outside, I always want to drink hot chocolate.",
+        "ru": "Когда на улице идет снег, всегда хочется пить горячий шоколад.",
+        "sr": "Kada napolju pada sneg, uvek želim da pijem vruću čokoladu.",
+        "image": "when-its-snowing-outside-i-always-want-to-drink-hot-chocolate-1709237792.webp"
+    },
+    {
+        "en": "Such rain was customary for this time of year.",
+        "ru": "Такой дождь был обычным для этого времени года.",
+        "sr": "Takva kiša je bila uobičajena za ovo doba godine.",
+        "image": "such-rain-was-customary-for-this-time-of-year-1709246693.webp"
+    },
+    {
+        "en": "Sometimes, the plot twist happens just when you least expect it.",
+        "ru": "Иногда, неожиданный поворот сюжета случается, когда ты меньше всего его ждешь.",
+        "sr": "Ponekad se zaplet dešava baš kada ga najmanje očekuješ.",
+        "image": "sometimes-the-plot-twist-happens-just-when-you-least-expect-it-1709238254.webp"
+    },
+    {
+        "en": "Before the flight, I need to check in my luggage.",
+        "ru": "Перед вылетом я должен сдать багаж.",
+        "sr": "Pre leta moram predati prtljag.",
+        "image": "before-the-flight-i-need-to-check-in-my-luggage-1709250521.webp"
+    },
+    {
+        "en": "We decided to stay at the hotel because it's very cozy.",
+        "ru": "Решили остаться в отеле, потому что он очень уютный.",
+        "sr": "Odlučili smo da ostanemo u hotelu jer je veoma udoban.",
+        "image": "we-decided-to-stay-at-the-hotel-because-its-very-cozy-1709252032.webp"
+    },
+    {
+        "en": "When looking for accommodation in the mountains, it's important to consider the weather conditions.",
+        "ru": "При поиске жилья в горах важно учитывать погодные условия.",
+        "sr": "Kada tražite smeštaj u planinama, važno je uzeti u obzir vremenske uslove.",
+        "image": "when-looking-for-accommodation-in-the-mountains-its-important-to-consider-the-weather-conditions-1709298152.webp"
+    },
+    {
+        "en": "When I'm sick, I don't go to training.",
+        "ru": "Когда я болен, я не иду на тренировку.",
+        "sr": "Kada sam bolestan, ne idem na trening.",
+        "image": "when-im-sick-i-dont-go-to-training-1709409626.webp"
+    },
+    {
+        "en": "I love looking for concert tickets",
+        "ru": "Люблю искать билеты на концерты",
+        "sr": "Volim da tražim karte za koncerte",
+        "image": "i-love-looking-for-concert-tickets-1709734455.webp"
+    },
+    {
+        "en": "I always check the list before I check in my luggage.",
+        "ru": "Я всегда проверяю список, прежде чем сдать багаж.",
+        "sr": "Uvek proveravam spisak pre nego što predam prtljag.",
+        "image": "i-always-check-the-list-before-i-check-in-my-luggage-1709735409.webp"
+    },
+    {
+        "en": "See you tomorrow.",
+        "ru": "Увидимся завтра.",
+        "sr": "Vidimo se sutra.",
+        "image": "see-you-tomorrow-1709816794.webp"
+    },
+    {
+        "en": "See you later.",
+        "ru": "Увидимся позже.",
+        "sr": "Vidimo se kasnije.",
+        "image": "see-you-later-1709817403.webp"
+    },
+    {
+        "en": "I have to go now.",
+        "ru": "Мне нужно идти сейчас.",
+        "sr": "Moram da idem sada.",
+        "image": "i-have-to-go-now-1709817753.webp"
+    },
+    {
+        "en": "Let me introduce myself.",
+        "ru": "Позвольте представиться.",
+        "sr": "Dozvolite da se predstavim.",
+        "image": "let-me-introduce-myself-1709822216.webp"
+    },
+    {
+        "en": "Who is the lady in the white dress?",
+        "ru": "Кто та дама в белом платье?",
+        "sr": "Ko je dama u beloj haljini?",
+        "image": "who-is-the-lady-in-the-white-dress-1709822655.webp"
+    },
+    {
+        "en": "Could you introduce me to her?",
+        "ru": "Можешь ли ты познакомить меня с ней?",
+        "sr": "Da li me možeš upoznati sa njom?",
+        "image": "could-you-introduce-me-to-her-1709827856.webp"
+    },
+    {
+        "en": "Ana, let me introduce my friend to you.",
+        "ru": "Ана, позволь мне представить тебе моего друга.",
+        "sr": "Ana, dozvoli mi da ti predstavim svog prijatelja.",
+        "image": "ana-let-me-introduce-my-friend-to-you-1709828417.webp"
+    },
+    {
+        "en": "How old are you?",
+        "ru": "Сколько тебе лет?",
+        "sr": "Koliko imaš godina?",
+        "image": "how-old-are-you-1709828671.webp"
+    },
+    {
+        "en": "I am 33 years old.",
+        "ru": "Мне 33 года.",
+        "sr": "Imam 33 godine.",
+        "image": "i-am-33-years-old-1709828969.webp"
+    },
+    {
+        "en": "I am two years younger than my brother.",
+        "ru": "Я на два года младше своего брата.",
+        "sr": "Ja sam dve godine mlađi od mog brata.",
+        "image": "i-am-two-years-younger-than-my-brother-1709829232.webp"
+    },
+    {
+        "en": "Mr. Davis is still in his thirties.",
+        "ru": "Мистер Дэвис все еще в своих тридцати.",
+        "sr": "Gospodin Dejvis je još u svojim tridesetim.",
+        "image": "mr-davis-is-still-in-his-thirties-1709829410.webp"
+    },
+    {
+        "en": "My elder brother is one year older than her husband.",
+        "ru": "Мой старший брат на год старше её мужа.",
+        "sr": "Moj stariji brat je jednu godinu stariji od njenog muža.",
+        "image": "my-elder-brother-is-one-year-older-than-her-husband-1709847783.webp"
+    },
+    {
+        "en": "My father is over 80 years old.",
+        "ru": "Мой отец старше 80 лет.",
+        "sr": "Moj otac ima više od 80 godina.",
+        "image": "my-father-is-over-80-years-old-1709850582.webp"
+    },
+    {
+        "en": "They will have a party for their wedding anniversary.",
+        "ru": "У них будет вечеринка по поводу годовщины свадьбы.",
+        "sr": "Oni će imati žurku povodom njihove godišnjice braka.",
+        "image": "they-will-have-a-party-for-their-wedding-anniversary-1709850768.webp"
+    },
+    {
+        "en": "He looks much younger than he is.",
+        "ru": "Он выглядит гораздо моложе своих лет.",
+        "sr": "On izgleda puno mlađe nego što jeste.",
+        "image": "he-looks-much-younger-than-he-is-1709851086.webp"
+    },
+    {
+        "en": "I came here when I was 22.",
+        "ru": "Я приехал сюда, когда мне было 22 года.",
+        "sr": "Došao sam ovde kada sam imao 22 godine.",
+        "image": "i-came-here-when-i-was-22-1709851433.webp"
+    },
+    {
+        "en": "I started going to school at the age of 7.",
+        "ru": "Я пошёл в школу в 7 лет.",
+        "sr": "Pošao sam u školu sa 7 godina.",
+        "image": "i-started-going-to-school-at-the-age-of-7-1709852703.webp"
+    },
+    {
+        "en": "He is still a boy after all",
+        "ru": "Он ведь всё ещё мальчик",
+        "sr": "On je ipak samo dečak",
+        "image": "he-is-still-a-boy-after-all-1709852998.webp"
+    },
+    {
+        "en": "Most of them are less than 25.",
+        "ru": "Большинство из них младше 25 лет.",
+        "sr": "Većina njih ima manje od 25 godina.",
+        "image": "most-of-them-are-less-than-25-1709853171.webp"
+    },
+    {
+        "en": "Which city are you from?",
+        "ru": "Из какого ты города?",
+        "sr": "Iz kog si grada?",
+        "image": "which-city-are-you-from-1709853457.webp"
+    },
+    {
+        "en": "Where are you from?",
+        "ru": "Откуда ты?",
+        "sr": "Odakle si?",
+        "image": "where-are-you-from-1678296063.webp"
+    },
+    {
+        "en": "She is going to be 20 next month.",
+        "ru": "Ей исполнится 20 лет в следующем месяце.",
+        "sr": "Ona će napuniti 20 godina sledećeg meseca.",
+        "image": "she-is-going-to-be-20-next-month-1709854096.webp"
+    },
+    {
+        "en": "He is the youngest in the family.",
+        "ru": "Он самый младший в семье.",
+        "sr": "On je najmlađi u porodici.",
+        "image": "he-is-the-youngest-in-the-family-1709854709.webp"
+    },
+    {
+        "en": "I guess he is about 40.",
+        "ru": "Я предполагаю, что ему около 40.",
+        "sr": "Pretpostavljam da ima oko 40 godina.",
+        "image": "i-guess-he-is-about-40-1709855045.webp"
+    },
+    {
+        "en": "Where is my bag? It is on the desk.",
+        "ru": "Где моя сумка? Она на столе.",
+        "sr": "Gde je moja torba? Na stolu je.",
+        "image": "where-is-my-bag-it-is-on-the-desk1709915955.webp"
+    },
+    {
+        "en": "Where are my things? It is over there.",
+        "ru": "Где мои вещи? Там.",
+        "sr": "Gde su moje stvari? Tamo je.",
+        "image": "where-are-my-things-1709919228.webp"
+    },
+    {
+        "en": "Is this yours? Some of this is mine.",
+        "ru": "Это твое? Часть из этого мое.",
+        "sr": "Da li je ovo tvoje? Nešto od ovoga je moje.",
+        "image": "is-this-yours-some-of-this-is-mine-1709919541.webp"
+    },
+    {
+        "en": "Is this your pen? I have a red pen.",
+        "ru": "Это твоя ручка? У меня есть красная ручка.",
+        "sr": "Da li je ovo tvoja olovka? Ja imam crvenu olovku.",
+        "image": "is-this-your-pen-i-have-a-red-pen-1709920176.webp"
+    },
+    {
+        "en": "What is that? That is an apple.",
+        "ru": "Что это? Это яблоко.",
+        "sr": "Šta je to? To je jabuka.",
+        "image": "what-is-that-that-is-an-apple-1709920538.webp"
+    },
+    {
+        "en": "What is this? This is a pencil.",
+        "ru": "Что это? Это карандаш.",
+        "sr": "Šta je ovo? Ovo je olovka.",
+        "image": "what-is-this-this-is-a-pencil-1710113813.webp"
+    },
+    {
+        "en": "Is that an apple? No, it isn't. It is a pear.",
+        "ru": "Это яблоко? Нет. Это груша.",
+        "sr": "Da li je to jabuka? Nije. To je kruška.",
+        "image": "is-that-an-apple-no-it-isnt-it-is-a-pear-1710278633.webp"
+    },
+    {
+        "en": "Is this notebook yours?",
+        "ru": "Эта тетрадь твоя?",
+        "sr": "Da li je ova sveska tvoja?",
+        "image": "is-this-notebook-yours-1710280084.webp"
+    },
+    {
+        "en": "What is the color of your shoes?",
+        "ru": "Какой цвет твоих туфель?",
+        "sr": "Koja je boja tvojih cipela?",
+        "image": "what-is-the-color-of-your-shoes-1710280277.webp"
+    },
+    {
+        "en": "How do you say that in Serbian?",
+        "ru": "Как это сказать по-сербски?",
+        "sr": "Kako se to kaže na srpskom?",
+        "image": "how-do-you-say-that-in-serbian-1710280913.webp"
+    },
+    {
+        "en": "What is the name of the dog?",
+        "ru": "Какое имя у собаки?",
+        "sr": "Koje je ime psa?",
+        "image": "what-is-the-name-of-the-dog-1710281342.webp"
+    },
+    {
+        "en": "How long is the street?",
+        "ru": "Какова длина улицы?",
+        "sr": "Koliko je duga ulica?",
+        "image": "how-long-is-the-street-1710282522.webp"
+    },
+    {
+        "en": "How big is your house?",
+        "ru": "Насколько большой твой дом?",
+        "sr": "Koliko je velika tvoja kuća?",
+        "image": "how-big-is-your-house-1710282816.webp"
+    },
+    {
+        "en": "Where is the post office?",
+        "ru": "Где почта?",
+        "sr": "Gde je pošta?",
+        "image": "where-is-the-post-office-1710283068.webp"
+    },
+    {
+        "en": "Whose cellphone is this? This is my cellphone.",
+        "ru": "Чей это телефон? Это мой телефон.",
+        "sr": "Čiji je ovo telefon? Ovo je moj telefon.",
+        "image": "whose-cellphone-is-this-this-is-my-cellphone-1710283319.webp"
+    },
+    {
+        "en": "Which is the right size?",
+        "ru": "Какой правильный размер?",
+        "sr": "Koja je prava veličina?",
+        "image": "which-is-the-right-size-1710284665.webp"
+    },
+    {
+        "en": "I have no idea.",
+        "ru": "Понятия не имею.",
+        "sr": "Nemam pojma.",
+        "image": "i-have-no-idea-1710286151.webp"
+    },
+    {
+        "en": "Is this your bag? No, it isn’t.",
+        "ru": "Это твоя сумка? Нет.",
+        "sr": "Da li je ovo tvoja torba? Nije.",
+        "image": "is-this-your-bag-no-it-isnt-1710347606.webp"
+    },
+    {
+        "en": "I really don't know.",
+        "ru": "Я действительно не знаю.",
+        "sr": "Zaista ne znam.",
+        "image": "i-really-dont-know-1710464286.webp"
+    },
+    {
+        "en": "Can she be a teacher? Yes, I think so.",
+        "ru": "Может ли она быть учителем? Думаю, да",
+        "sr": "Da li ona može da bude nastavnik? Mislim da da.",
+        "image": "can-she-be-a-teacher-yes-i-think-so-1710464448.webp"
+    },
+    {
+        "en": "Is he a pupil? No, he isn't.",
+        "ru": "Он ученик? Нет.",
+        "sr": "Da li je on učenik? Nije.",
+        "image": "is-he-a-pupil-no-he-isnt-1710464678.webp"
+    },
+    {
+        "en": "Who is that man over there? He is Tom.",
+        "ru": "Кто тот человек там? Это Том.",
+        "sr": "Ko je onaj čovek tamo? On je Tom.",
+        "image": "who-is-that-man-over-there-1710495773.webp"
+    },
+    {
+        "en": "What does he do? He is a photographer.",
+        "ru": "Чем он занимается? Он фотограф.",
+        "sr": "Čime se on bavi? On je fotograf.",
+        "image": "he-is-a-photographer-1710496115.webp"
+    },
+    {
+        "en": "What do you do? I am a lawyer.",
+        "ru": "Чем ты занимаешься? Я юрист.",
+        "sr": "Čime se baviš? Ja sam advokat.",
+        "image": "i-am-a-lawyer-1710496437.webp"
+    },
+    {
+        "en": "What is your nationality?",
+        "ru": "Какая у вас национальность?",
+        "sr": "Koje si nacionalnosti?",
+        "image": "what-is-your-nationality-1710497474.webp"
+    },
+    {
+        "en": "Who are you? I am Jelena.",
+        "ru": "Кто ты? Я — Елена.",
+        "sr": "Ko si ti? Ja sam Jelena.",
+        "image": "who-are-you-i-am-jelena-1710637192.webp"
+    },
+    {
+        "en": "I am from Spain.",
+        "ru": "Я из Испании.",
+        "sr": "Ja sam iz Španije.",
+        "image": "i-am-from-spain-1710886792.webp"
+    },
+    {
+        "en": "What is the population of your country?",
+        "ru": "Какова численность населения твоей страны?",
+        "sr": "Koliko stanovnika ima tvoja zemlja?",
+        "image": "what-is-the-population-of-your-country-1710887033.webp"
+    },
+    {
+        "en": "What is the capital of your country?",
+        "ru": "Какова столица твоей страны?",
+        "sr": "Koji je glavni grad tvoje zemlje?",
+        "image": "what-is-the-capital-of-your-country-1710887629.webp"
+    },
+    {
+        "en": "Are you a foreigner?",
+        "ru": "Ты иностранец?",
+        "sr": "Da li si ti stranac?",
+        "image": "are-you-a-foreigner-1710888377.webp"
+    },
+    {
+        "en": "I was born in England and brought up in America.",
+        "ru": "Я родился в Англии и вырос в Америке.",
+        "sr": "Ja sam rođen u Engleskoj a odrastao sam u Americi.",
+        "image": "i-was-born-in-england-and-brought-up-in-america-1710888545.webp"
+    },
+    {
+        "en": "The capital of my country is Paris.",
+        "ru": "Столица моей страны - Париж.",
+        "sr": "Glavni grad moje zemlje je Pariz.",
+        "image": "the-capital-of-my-country-is-paris-1710888754.webp"
+    },
+    {
+        "en": "My country is rich in natural resources.",
+        "ru": "Моя страна богата природными ресурсами.",
+        "sr": "Moja zemlja je bogata u prirodnim resursima.",
+        "image": "my-country-is-rich-in-natural-resources-1710888935.webp"
+    },
+    {
+        "en": "Is that boy a university student?",
+        "ru": "Этот мальчик студент университета?",
+        "sr": "Da li je onaj dečko student?",
+        "image": "is-that-boy-a-university-student-1710889425.webp"
+    },
+    {
+        "en": "That nation is famous for its tourism.",
+        "ru": "Эта нация известна своим туризмом.",
+        "sr": "Ta nacija je poznata po turizmu.",
+        "image": "that-nation-is-famous-for-its-tourism-1710934194.webp"
+    },
+    {
+        "en": "Is this your wallet?",
+        "ru": "Это твой кошелек?",
+        "sr": "Da li je ovo tvoj novčanik?",
+        "image": "is-this-your-wallet-1710935136.webp"
+    },
+    {
+        "en": "Do you have an appointment? I am sorry, I don't have an appointment.",
+        "ru": "У вас запланирована встреча? Извините, у меня нет запланированной встречи.",
+        "sr": "Da li imate zakazano? Žao mi je, nemam zakazano.",
+        "image": "do-you-have-an-appointment-i-am-sorry-i-dont-have-an-appointment-1710935405.webp"
+    },
+    {
+        "en": "Hello, can I see Mr. Marko?",
+        "ru": "Здравствуйте, могу ли я увидеть господина Марка?",
+        "sr": "Zdravo, da li mogu da vidim gospodina Marka?",
+        "image": "hello-can-i-see-mr-marko_1710945963.webp"
+    },
+    {
+        "en": "Can you finish this project before the deadline?",
+        "ru": "Можешь ли ты закончить этот проект до дедлайна?",
+        "sr": "Da li možeš da završiš ovaj projekat pre roka?",
+        "image": "can-you-finish-this-project-before-the-deadline-1710946169.webp"
+    },
+    {
+        "en": "The flight is delayed.",
+        "ru": "Рейс задержан.",
+        "sr": "Let je odložen.",
+        "image": "the-flight-is-delayed-1710947989.webp"
+    },
+    {
+        "en": "The meeting has been postponed.",
+        "ru": "Собрание было перенесено.",
+        "sr": "Sastanak je odložen.",
+        "image": "the-meeting-has-been-postponed-1710948439.webp"
+    },
+    {
+        "en": "There are only 3 minutes left.",
+        "ru": "Осталось всего три минуты.",
+        "sr": "Ostalo je još samo tri minuta.",
+        "image": "there-are-only-3-minutes-left-1710949184.webp"
+    },
+    {
+        "en": "We must arrive there on time.",
+        "ru": "Мы должны прибыть туда вовремя.",
+        "sr": "Mi moramo da stignemo tamo na vreme.",
+        "image": "we-must-arrive-there-on-time-1710954035.webp"
+    },
+    {
+        "en": "My watch is 3 minutes fast",
+        "ru": "Мои часы спешат на три минуты",
+        "sr": "Moj sat žuri tri minuta",
+        "image": "my-watch-is-3-minutes-fast-1710955430.webp"
+    },
+    {
+        "en": "It is 6 o'clock on my watch.",
+        "ru": "Шесть часов по моим часам",
+        "sr": "Šest je sati na mom satu",
+        "image": "it-is-6-oclock-on-my-watch-1710955655.webp"
+    },
+    {
+        "en": "The meeting will start soon.",
+        "ru": "Собрание начнется скоро",
+        "sr": "Sastanak će početi uskoro.",
+        "image": "the-meeting-will-start-soon-1711017655.webp"
+    },
+    {
+        "en": "What were you doing there?",
+        "ru": "Что ты делал там?",
+        "sr": "Šta si radio tamo?",
+        "image": "what-were-you-doing-there-1711032460.webp"
+    },
+    {
+        "en": "Do you know the exact date?",
+        "ru": "Ты знаешь точную дату?",
+        "sr": "Da li znaš tačan datum?",
+        "image": "do-you-know-the-exact-date-1711033727.webp"
+    },
+    {
+        "en": "We will see each other tomorrow.",
+        "ru": "Мы увидимся завтра.",
+        "sr": "Mi ćemo se videti sutra.",
+        "image": "we-will-see-each-other-tomorrow-1711034325.webp"
+    },
+    {
+        "en": "I will be back in 5 days.",
+        "ru": "Я вернусь через пять дней.",
+        "sr": "Ja ću se vratiti za pet dana.",
+        "image": "i-will-be-back-in-5-days-1711058243.webp"
+    },
+    {
+        "en": "When were you born? I was born on August 1st.",
+        "ru": "Когда ты родился? Я родился первого августа.",
+        "sr": "Kada si rođen? Ja sam rođen prvog avgusta.",
+        "image": "i-was-born-on-august-1st-1711062277.webp"
+    },
+    {
+        "en": "What is the date today? It is March the 16th.",
+        "ru": "Какой сегодня день? Шестнадцатое марта.",
+        "sr": "Koji je danas datum? Šesnaesti je mart.",
+        "image": "what-is-the-date-today-it-is-march-the-16th-1711063255.webp"
+    },
+    {
+        "en": "What day is it today? Today is Tuesday.",
+        "ru": "Какой сегодня день? Сегодня вторник.",
+        "sr": "Koji je danas dan? Danas je utorak.",
+        "image": "what-day-is-it-today-today-is-tuesday-1711063820.webp"
+    },
+    {
+        "en": "Where are you going? I am going to work.",
+        "ru": "Куда ты идешь? Я иду на работу.",
+        "sr": "Gde ideš? Idem na posao.",
+        "image": "where-are-you-going-i-am-going-to-work-1711064465.webp"
+    },
+    {
+        "en": "I pick up my son from school.",
+        "ru": "Забираю сына из школы",
+        "sr": "Pokupam sina iz škole",
+        "image": "i-pick-up-my-son-from-school-1711108343.webp"
+    },
+    {
+        "en": "How long will the discount last? It will last for two days.",
+        "ru": "Как долго будет длиться скидка? Она будет длиться два дня.",
+        "sr": "Koliko će trajati popust? Trajaće dva dana.",
+        "image": "how-long-will-the-discount-last-it-will-last-for-two-days-1711114226.webp"
+    },
+    {
+        "en": "Does the store open at 8 in the morning on weekdays? It opens at 9 AM on weekdays.",
+        "ru": "Магазин открывается в 8 утра по будням? Он открывается в 9 утра по будням.",
+        "sr": "Da li se radnja otvara u osam ujutru radnim danima? Otvara se u devet ujutru radnim danima.",
+        "image": "does-the-store-open-at-8-in-the-morning-on-weekdays-it-opens-at-9-am-on-weekdays-1711115111.webp"
+    },
+    {
+        "en": "What month is it? It is October.",
+        "ru": "Какой сейчас месяц? Сейчас октябрь.",
+        "sr": "Koji je mesec? Oktobar je.",
+        "image": "what-month-is-it-it-is-october-1711115580.webp"
+    },
+    {
+        "en": "I would like the one on the right.",
+        "ru": "Я бы хотел это с правой стороны.",
+        "sr": "Želeo bih ovo sa desne strane.",
+        "image": "i-would-like-the-one-on-the-right-1711117921.webp"
+    },
+    {
+        "en": "What are you doing? I am cooking.",
+        "ru": "Что делаешь? Я готовлю.",
+        "sr": "Šta radiš? Kuvam.",
+        "image": "what-are-you-doing-i-am-cooking-1711118782.webp"
+    },
+    {
+        "en": "Would you like anything to drink? I would like some tea, please.",
+        "ru": "Будете что-нибудь пить? Я бы хотел чаю, пожалуйста.",
+        "sr": "Da li biste želeli nešto da popijete? Želeo bih čaj, molim Vas.",
+        "image": "would-you-like-anything-to-drink-i-would-like-some-tea-please-1711119850.webp"
+    }
+]

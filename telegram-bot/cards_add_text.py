@@ -100,7 +100,7 @@ def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     font_48 = ImageFont.truetype(font_path, 48)
 
     text_x = 32
-    text_y += 16
+    text_y += 0
 
     # Инициализация списков
     rows = []
@@ -118,12 +118,12 @@ def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     add_text_properties(text_ru, lavender, new_image.width, font_48, rows, gaps, colors, fonts)
     add_text_properties(text_en, pastel_peach, new_image.width, font_48, rows, gaps, colors, fonts)
 
-    print(f"{text_sr} {text_ru} {text_en}")
-
+    print('\n\n')
     for i, r in enumerate(rows):
         top, bottom = gaps[i]
         text_y += top
         draw.text((text_x, text_y), r, fill=colors[i], font=(font_48 if fonts[i] == 48 else font_40))
         text_y += bottom
+        print (r, top, bottom, fonts[i])
 
     return new_image

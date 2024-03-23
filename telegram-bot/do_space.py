@@ -16,9 +16,10 @@ DO_SPACES_SECRET_KEY = os.getenv('DO_SPACES_SECRET_KEY')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 font_path = os.path.join(script_dir, 'NimbusSanLRegular.ttf')
-# json_file = os.path.join(script_dir, 'language-images.json')
-# with open(json_file, 'r', encoding='utf-8') as file:
-#     data = json.load(file)
+
+json_file = os.path.join(script_dir, 'language-images.json')
+with open(json_file, 'r', encoding='utf-8') as file:
+    cards_data = json.load(file)
 
 @cache
 def get_do_space_client():
@@ -62,17 +63,16 @@ def add_text_to_image_do(bucket_name, source_folder, target_folder, image_name):
     image_content = image_obj['Body'].read()
     original_image = Image.open(io.BytesIO(image_content))
 
-    new_image = add_text_to_image(original_image, 'text_sr', 'text_en', 'text_ru', font_path)
+    card = next((obj for obj in cards_data if obj['image'] == image_name), None)
+    new_image = add_text_to_image(original_image, card['sr'], card['en'], card['ru'], font_path)
 
     img_byte_arr = io.BytesIO()
     new_image.save(img_byte_arr, format='WEBP')
     img_byte_arr = img_byte_arr.getvalue()
 
     print(image_name)
-
-    # uncomment to save file
-    new_image.save(f'./{image_name}')
-    # client.put_object(Bucket=bucket_name, Key=image_key, Body=img_byte_arr, ACL='public-read', ContentType='image/webp')
+    # new_image.save(os.path.join(script_dir, '..', 'temp', image_name));
+    client.put_object(Bucket=bucket_name, Key=f'{target_folder}{image_name}', Body=img_byte_arr, ACL='public-read', ContentType='image/webp')
 
 def sync_missing_cards(bucket_name, source_folder, target_folder):
     client = get_do_space_client()
@@ -82,10 +82,10 @@ def sync_missing_cards(bucket_name, source_folder, target_folder):
     source_file_names = {file['Key'].split('/')[-1] for file in source_files}
     target_file_names = {file['Key'].split('/')[-1] for file in target_files}
 
+    print(target_file_names - source_file_names)
+
     print(len(source_file_names), len(target_file_names))
     missing_files = source_file_names - target_file_names
 
     for file_path in missing_files:
-        print(file_path)
         add_text_to_image_do(bucket_name, source_folder, target_folder, file_path)
-        break

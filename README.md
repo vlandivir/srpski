@@ -11,9 +11,10 @@ https://www.clarin.si/kontext/query?corpname=classlaweb_sr – Serbian corpora w
 
 ### Update images
 ```
-python3 chat-gpt/language-cards/add-text-to-images.py
-python3 telegram-bot/tools_insert_cards.py
+## python3 chat-gpt/language-cards/add-text-to-images.py
 python3 telegram-bot/tools_upload_images_to_storage.py
+python3 telegram-bot/tools_insert_cards.py
+python3 telegram-bot/tools_sync_cards.py
 ```
 
 ### Local Docker Test
