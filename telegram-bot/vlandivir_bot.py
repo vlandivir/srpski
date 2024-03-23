@@ -3,12 +3,15 @@ import json
 
 from dotenv import load_dotenv
 
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, filters
+
+from telegram_bot_helpers import common_button_handler
+from telegram_bot_messages import create_progress_bar
+
 from do_space import file_exists_in_do_space
 from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response, get_new_cards_pack, get_user_stats
 from postgres_create_or_update_db import create_or_update_db
-
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, filters
 
 load_dotenv('.env')
 TAG_NAME = os.getenv('TAG_NAME')
@@ -37,7 +40,7 @@ async def update_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     for card in cards_data:
         cards_index[card['generated_at']] = card
 
-    await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}-{len(cards_data)}')
+    await update.message.reply_text(f'{TAG_NAME}-{len(cards_data)}')
 
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(f'Hello {update.effective_user.first_name}. {TAG_NAME}-{len(cards_data)}')
@@ -45,24 +48,7 @@ async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_id = update.effective_chat.id
     chat_key = get_chat_key(chat_id)
     if chats.get(chat_key):
-        await update.message.reply_text(chats[chat_key])
-
-def get_user_from_update(update: Update):
-    if update.message:
-        user = update.message.from_user
-    elif update.callback_query:
-        user = update.callback_query.from_user
-
-    if not user:
-        return None
-
-    return {
-        'id': str(user.id),
-        'first_name': user.first_name,
-        'last_name': user.last_name,
-        'username': user.username,
-        'language_code': user.language_code,
-    }
+        await update.message.reply_text(json.dumps(chats[chat_key], indent=2))
 
 def create_new_set(user):
     cards_order_with_weight = get_new_cards_pack(user['id'])
@@ -79,41 +65,9 @@ def create_new_set(user):
     update_user_current_set(user, current_set)
     return current_set
 
-async def new_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user = get_user_from_update(update)
-    if not user:
-        return None
-
-    chat_id = update.effective_chat.id
-    chat_key = get_chat_key(chat_id)
-    chats[chat_key] = create_new_set(user)
-    await update.message.reply_text(chats[chat_key])
-
-def progress_bar(weight):
-    red_square = '🟥'
-    yellow_square = '🟨'
-    green_square = '🟩'
-    blue_square = '🟦'
-    black_square = '⬛'
-
-    squares = [red_square] * 2 + [yellow_square] * 3 + [green_square] * 3 + [blue_square] * 2
-
-    if weight > 1024:
-        return red_square + black_square * 9
-    elif weight == 0:
-        return black_square * 10
-    elif 0 < weight <= 1:
-        return ''.join(squares)
-    else:
-        painted_squares = min(10, max(1, 10 - int(weight).bit_length() + 1))
-        return ''.join(squares[:painted_squares]) + black_square * (10 - painted_squares)
-
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user = get_user_from_update(update)
-    if not user:
-        return None
+    user, chat_id = common_button_handler(update)
 
-    chat_id = update.effective_chat.id
     chat_key = get_chat_key(chat_id)
 
     if not chats.get(chat_key):
@@ -166,7 +120,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await send_card(update, context)
         return
 
-    caption = f"{progress_bar(card_weight)}\n" if card_weight is not None else ''
+    caption = f"{create_progress_bar(card_weight)}\n" if card_weight is not None else ''
     caption += next_card['ru']
 
     await context.bot.send_photo(
@@ -179,14 +133,12 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def button_next_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
-    await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
+    await query.answer()
     await send_card(update, context)
 
 async def button_card_response(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
-    await query.answer()  # Ответ на callback, чтобы убрать часики ожидания на кнопке
-
-    user = get_user_from_update(update)
+    user, chat_id = common_button_handler(update)
     data = query.data.split(':')
     update_user_card_response(user['id'], data[1], data[0])
     await send_card(update, context)
@@ -197,19 +149,8 @@ def prepare_user_stats(user_id: str) -> str:
         for s in get_user_stats(user_id)
     ])
 
-async def user_stats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user = get_user_from_update(update)
-    if not user:
-        return None
-
-    await update.message.reply_text(prepare_user_stats(user['id']))
-
 async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user = get_user_from_update(update)
-    if not user:
-        return None
-
-    chat_id = update.effective_chat.id
+    user, chat_id = common_button_handler(update)
 
     keyboard = InlineKeyboardMarkup([
         [
@@ -231,14 +172,49 @@ async def oops_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         text='Ой, здесь пока ничего нет...',
     )
 
+async def button_more(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    user, chat_id = common_button_handler(update)
+
+    keyboard_rows = []
+    keyboard_rows.append(
+        [
+            InlineKeyboardButton('Stats', callback_data=f'button_stats'),
+            InlineKeyboardButton('New cards', callback_data=f'button_new_cards'),
+        ]
+    )
+
+    keyboard = InlineKeyboardMarkup(keyboard_rows)
+
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text='Что желаете?',
+        reply_markup=keyboard
+    )
+
+async def button_new_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    user, chat_id = common_button_handler(update)
+
+    chat_key = get_chat_key(chat_id)
+    chats[chat_key] = create_new_set(user)
+
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=json.dumps(chats[chat_key], indent=2)
+    )
+
+async def button_stats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    user, chat_id = common_button_handler(update)
+
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=prepare_user_stats(user['id'])
+    )
+
 def main():
     app = ApplicationBuilder().token(token).build()
 
     app.add_handler(CommandHandler('hello', say_hello))
-    app.add_handler(CommandHandler('card', send_card))
     app.add_handler(CommandHandler('update', update_cards))
-    app.add_handler(CommandHandler('new', new_cards))
-    app.add_handler(CommandHandler('stats', user_stats))
 
     app.add_handler(CallbackQueryHandler(button_card_response, pattern='^button_complex:'))
     app.add_handler(CallbackQueryHandler(button_card_response, pattern='^button_hard:'))
@@ -247,7 +223,10 @@ def main():
     app.add_handler(CallbackQueryHandler(button_next_card, pattern='^button_next$'))
 
     app.add_handler(CallbackQueryHandler(oops_handler, pattern='^button_help$'))
-    app.add_handler(CallbackQueryHandler(oops_handler, pattern='^button_more$'))
+
+    app.add_handler(CallbackQueryHandler(button_more, pattern='^button_more$'))
+    app.add_handler(CallbackQueryHandler(button_stats, pattern='^button_stats$'))
+    app.add_handler(CallbackQueryHandler(button_new_cards, pattern='^button_new_cards$'))
 
     app.add_handler(MessageHandler(filters.ALL, default_handler))
 
