@@ -1,5 +1,4 @@
 import os
-import json
 
 from dotenv import load_dotenv
 
@@ -9,10 +8,11 @@ from telegram.ext import (
     CallbackQueryHandler, MessageHandler, filters
 )
 
+from telegram_bot_helpers import common_button_handler
+from telegram_bot_new_card_conversation import get_new_card_conversation_handler
 from telegram_bot_cards import (
     update_cards, say_hello, button_next_card, button_card_response, button_new_cards, button_stats
 )
-from telegram_bot_helpers import common_button_handler
 
 from postgres_create_or_update_db import create_or_update_db
 
@@ -57,6 +57,13 @@ async def button_more(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         ]
     )
 
+    if (user['id'] == '150847737'):
+        keyboard_rows.append(
+        [
+            InlineKeyboardButton('Add card', callback_data=f'button_add_card'),
+        ]
+    )
+
     keyboard = InlineKeyboardMarkup(keyboard_rows)
 
     await context.bot.send_message(
@@ -82,6 +89,8 @@ def main():
     app.add_handler(CallbackQueryHandler(button_more, pattern='^button_more$'))
     app.add_handler(CallbackQueryHandler(button_stats, pattern='^button_stats$'))
     app.add_handler(CallbackQueryHandler(button_new_cards, pattern='^button_new_cards$'))
+
+    app.add_handler(get_new_card_conversation_handler())
 
     app.add_handler(MessageHandler(filters.ALL, default_handler))
 

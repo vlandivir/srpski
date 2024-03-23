@@ -80,8 +80,6 @@ I am listening to the radio. = Slušam radio.
 What will you do this weekend? = Šta ćeš raditi ovog vikenda?
 I will go to a concert. = Ići ću na koncert.
 I will go out with friends. = Izaći ću sa prijateljima.
-Who are you writing to? = Kome pišeš?
-I am writing to a friend. = Pišem prijatelju.
 I get up at seven every morning. = Ustajem u sedam svako jutro.
 I wake my daughter up. = Budim svoju kćerku.
 I am taking a shower. = Tuširam se.
@@ -95,7 +93,7 @@ I dress my sister and wash her hands and her face. = Obučem sestru i operem joj
 I get to my office at 8:30. = Dolazim u kancelariju u pola devet.
 I leave the office at 6. = Izlazim iz kancelarije u šest.
 
-Would you like anything to drink? = Da li biste želeli nešto da popijete? I would like some tea, please. = Želeo bih čaj, molim Vas.
+Who are you writing to? = Kome pišeš? I am writing to a friend. = Pišem prijatelju.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
