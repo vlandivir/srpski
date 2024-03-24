@@ -1,4 +1,3 @@
-Do you know anything about this? = Da li znaš nešto o ovome?
 Do you know where I put my bag? = Da li znaš gde sam stavio torbu?
 What year is it? = Koja je godina?
 It is 2022. = Dve hiljade dvadeset druga je.
@@ -16,13 +15,11 @@ Which days? = Kojim danima?
 You name the time. = Ti reci vreme.
 Where were you born? = Gde si rođen?
 Please check the date. = Molim te, proveri datum.
-
 He is on the phone. = On je na telefonu.
 Sorry, Mr. Peter cannot see you now. = Izvinite, gospodin Petar Vas ne može primiti sada.
 Would you wait here for a minute? = Da li biste sačekali ovde jedan minut?
 The client has come to see you. = Klijent je došao da Vas vidi.
 You may go in now. = Možete ući sada.
-Nice to see you, my old friend. = Drago mi je da te vidim, stari prijatelju.
 How have you been these years? = Kako si bio ovih godina?
 Do you still remember high school? = Da li se i dalje sećaš srednje škole?
 You have changed a little. = Malo si se promenio.
@@ -36,21 +33,62 @@ How long have you studied English? = Koliko dugo učiš engleski?
 How can I improve my Serbian? = Kako mogu da unapredim svoj srpski jezik?
 I have some difficulty expressing myself. = Imam poteškoća da se izrazim.
 I am reading a book. = Čitam knjigu.
-Are you watching TV now? = Da li gledaš TV sada?
-I am watching a documentary. = Gledam dokumentarac.
 I am listening to the radio. = Slušam radio.
 I get up at seven every morning. = Ustajem u sedam svako jutro.
 I wake my daughter up. = Budim svoju kćerku.
 I put on a bit of makeup. = Malo se našminkam.
 I wash my face. = Umijem se.
-I make breakfast for the family. = Pravim doručak za porodicu.
 I go downstairs and have my breakfast. = Silazim dole i doručkujem.
-I dress my sister and wash her hands and her face. = Obučem sestru i operem joj ruke i umijem je.
 I get to my office at 8:30. = Dolazim u kancelariju u pola devet.
 I leave the office at 6. = Izlazim iz kancelarije u šest.
+I go to bed at 11:30. = Idem u krevet u pola dvanaest.
+What do you do in your free time? = Šta radiš u slobodno vreme?
+I like playing basketball. = Volim da igram košarku.
+I like listening to jazz music. = Volim da slušam džez muziku.
+Where do you have lunch? = Gde ručaš?
+What did you have for lunch? = Šta si ručao?
+I had fried chicken and a hot dog. = Jeo sam prženu piletinu i viršlu.
+When do you get up everyday? = Kada ustaješ svakog dana?
+I usually get up at 7 o'clock. = Obično ustajem u sedam.
+What do you do at work? = Šta radiš na poslu?
+I type a little. = Malo kucam.
+What time do you start working? = Kada počinješ da radiš?
+I start working at 9 o'clock. = Počinjem da radim u devet.
+When did you get up yesterday morning? = Kada si ustao juče ujutru?
+I woke up at about six. = Probudio sam se oko šest.
+I did not sleep well. = Nisam spavao dobro.
+I was reading a book in bed. = Čitao sam knjigu u krevetu.
+I slept soundly all night. = Spavao sam čvrsto celu noć.
+I woke up at seven and got up right away. = Probudio sam se u sedam i odmah ustao.
+I was 10 minutes late. = Zakasnio sam deset minuta.
+I arrived just on time. = Stigao sam baš na vreme.
+I had my breakfast on the way. = Doručkovao sam usput.
+I hurried to my office. = Požurio sam u kancelariju.
+I had lunch with a friend of mine. = Ručao sam sa prijateljem.
+I finished my work at 5 PM. = Završio sam posao u pet popodne.
+I stayed and did some extra work. = Ostao sam i radio neki dodatni posao.
+Hi, Carl, it is really you? = Zdravo, Karl, da li si to stvarno ti?
+Hi, Maria. Nice to see you again. = Ćao, Marija. Drago mi je da te opet vidim.
+It has been a whole year since I saw you. = Prošla je cela godina od kad sam te video.
+How have you been these days? = Kako si ovih dana?
+Not bad. = Nije loše.
+Have you seen Ana lately? = Da li si video Anu skoro?
+No, I have no contact with her. = Ne, nemam kontakt sa njom.
+I heard she got married last month. = Čuo sam da se udala prošlog meseca.
+That is nice. Sorry, I have to go now. = To je lepo. Izvini, moram da idem sada.
+So do I. See you later. Give my best to your family. = I ja. Vidimo se kasnije. Pozdravi porodicu.
+Are there any tickets left? = Ima li još karata?
+I have some left. = Ostalo mi je nešto.
+Do you have an eraser? I need it. = Da li imaš gumicu? Treba mi.
+If you have more, please give me some. = Ako imaš još, molim te daj mi malo.
+Do you have a digital camera? = Da li imaš digitalnu kameru?
+Do you have my book? = Da li je kod tebe moja knjiga?
+Yes, I have your pen, too. = Da, kod mene je i tvoja olovka.
+He has that document, doesn't he? = On ima taj dokument, zar ne?
+No, he doesn't. = Nema.
+Did you bring a toothbrush? = Da li si poneo četkicu za zube?
 
-
-Do you speak Serbian? = Da li pričaš srpski? I speak Serbian a little. = Pričam srpski pomalo.
+What time do you finish work? = U koliko sati završavaš posao? I finish my work at 5 PM. = Završavam posao u pet popodne.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
