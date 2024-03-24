@@ -1,0 +1,80 @@
+Do you know anything about this? = Da li znaš nešto o ovome?
+Do you know where I put my bag? = Da li znaš gde sam stavio torbu?
+What year is it? = Koja je godina?
+It is 2022. = Dve hiljade dvadeset druga je.
+It has been four years since we saw each other. = Prošlo je četiri godine od kad smo se videli.
+It opens at 10 AM on weekends. = Otvara se u 10 ujutru vikendom.
+I will work for the next 5 days. = Ja ću raditi narednih pet dana.
+What did you do last week? = Šta si radio prošle nedelje?
+Did you have a good time? = Da li si se dobro proveo?
+What will you do tomorrow? = Šta ćeš raditi sutra?
+What will you do the day after tomorrow? = Šta ćeš raditi prekosutra?
+Today is Wednesday. = Danas je sreda.
+Yesterday was Monday. = Juče je bio ponedeljak.
+What time? = Koje vreme?
+Which days? = Kojim danima?
+You name the time. = Ti reci vreme.
+Where were you born? = Gde si rođen?
+Please check the date. = Molim te, proveri datum.
+
+He is on the phone. = On je na telefonu.
+Sorry, Mr. Peter cannot see you now. = Izvinite, gospodin Petar Vas ne može primiti sada.
+Would you wait here for a minute? = Da li biste sačekali ovde jedan minut?
+The client has come to see you. = Klijent je došao da Vas vidi.
+You may go in now. = Možete ući sada.
+Nice to see you, my old friend. = Drago mi je da te vidim, stari prijatelju.
+How have you been these years? = Kako si bio ovih godina?
+Do you still remember high school? = Da li se i dalje sećaš srednje škole?
+You have changed a little. = Malo si se promenio.
+He speaks German fluently. = On tečno priča nemački.
+Your English is very good. = Tvoj engleski je veoma dobar.
+You speak English pretty well. = Ti pričaš engleski veoma dobro.
+Your pronounciation is excellent. = Tvoj izgovor je odličan.
+Are you a native English speaker? = Da li ti je maternji jezik engleski?
+My native language is Spanish. = Moj maternji jezik je španski.
+How long have you studied English? = Koliko dugo učiš engleski?
+How can I improve my Serbian? = Kako mogu da unapredim svoj srpski jezik?
+I have some difficulty expressing myself. = Imam poteškoća da se izrazim.
+I am reading a book. = Čitam knjigu.
+Are you watching TV now? = Da li gledaš TV sada?
+I am watching a documentary. = Gledam dokumentarac.
+I am listening to the radio. = Slušam radio.
+I get up at seven every morning. = Ustajem u sedam svako jutro.
+I wake my daughter up. = Budim svoju kćerku.
+I put on a bit of makeup. = Malo se našminkam.
+I wash my face. = Umijem se.
+I make breakfast for the family. = Pravim doručak za porodicu.
+I go downstairs and have my breakfast. = Silazim dole i doručkujem.
+I dress my sister and wash her hands and her face. = Obučem sestru i operem joj ruke i umijem je.
+I get to my office at 8:30. = Dolazim u kancelariju u pola devet.
+I leave the office at 6. = Izlazim iz kancelarije u šest.
+
+
+Do you speak Serbian? = Da li pričaš srpski? I speak Serbian a little. = Pričam srpski pomalo.
+
+ИНСТРУКЦИИ:
+Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
+
+1. Возьми ВЕСЬ текст из первых строк, до ИНСТРУКЦИИ. Это пара фраз на английском и сербском языках или маленький диалог
+
+2. Проверь, есть ли в исходных фразах ошибки и исправь их. Напиши какие ошибки ты нашёл.
+
+3. Переведи слово или выражение на русский язык.
+
+4. Сгенерируй timestamp в секундах.
+
+5. Выбери имя для картинки – сгенерированная английская фраза, в которой все буквы приведены к нижнему регистру, а пробелы заменены дефисом. Исключи из имени запятые, точки, восклицательные и вопросительные знаки. Добавть к имени timestamp в секундах, который сгенерирован раньше.
+
+6. Проверь, что имя соответствует критериям. Оно получено из английской фразы заменой пробелов на дефисы. Оно содержит timestamp в секундах.
+
+7. Сделай иллюстрацию в формате JPG к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате JPG. На картинке не используй надписи. Отношение сторон 1 к 1. Стиль рисования должен быть простым, но детализированным, с акцентом на чёткие линии и контрастные цвета, чтобы подчеркнуть основные черты и создать лёгкое ощущение глубины. Фон оставьте минималистичным или однотонным, чтобы основной объект оставался в фокусе внимания. Этот стиль идеально подходит для создания изображений, которые должны быть весёлыми, живыми и легко узнаваемыми.
+
+8. Если картинка не в формате JPG, то конвертируй её в этот формат. Дай ссылку на скачивание картинки.
+
+9. Составь json такого формата. Замени плейсхолдеры в квадратных скобках соответствующими значениями. Используй полные фразы для генерации json. Для картинки используй выбранное имя c расширением, без пути.
+{
+    "en": "[ENGLISH_PHRASE]",
+    "ru": "[RUSSIAN_PHRASE]",
+    "sr": "[SERBIAN_PHRASE]",
+    "image": "[IMAGE_NAME]",
+}
