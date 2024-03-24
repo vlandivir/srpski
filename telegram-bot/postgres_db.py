@@ -1,6 +1,5 @@
 import os
 import json
-import random
 import logging
 
 from decimal import Decimal

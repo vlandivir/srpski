@@ -32,8 +32,6 @@ def insert_cards(table_name):
         }
         insert_data_list.append(insert_data)
 
-    print(insert_data_list[0])
-
     query = text(f"""
         INSERT INTO {table_name} (en, ru, sr, image, generated_at, created_at, updated_at)
         VALUES (:en, :ru, :sr, :image, :generated_at, :created_at, :updated_at)

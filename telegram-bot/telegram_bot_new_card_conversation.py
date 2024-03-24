@@ -16,7 +16,8 @@ from telegram.ext import (
     MessageHandler,
 )
 
-from do_space import get_do_space_client
+from do_space import add_text_to_image_do, get_do_space_client
+from postgres_db_cards import insert_new_card
 
 WAITING_FOR_TEXT, WAITING_FOR_IMAGE = range(2)
 
@@ -44,17 +45,16 @@ async def text_received(update: Update, context: CallbackContext) -> int:
         return ConversationHandler.END
 
 async def photo_received(update: Update, context: CallbackContext) -> int:
-    print('!!!')
-    print(context)
-    print(context.user_data)
-    print('!!!')
+    data = context.user_data.get('data')
+    if data is None:
+        await update.message.reply_text('Не получилось прочитать данные пользователя')
+        return ConversationHandler.END
 
-    filename = context.user_data.get('data').get('image')
+    filename = data.get('image')
 
     photo = update.message.photo[-1]
     photo_file = await context.bot.get_file(photo.file_id)
 
-    # Использование временного файла для сохранения изображения
     with NamedTemporaryFile(delete=False) as tmp_file:
         await photo_file.download_to_drive(
             tmp_file.name,
@@ -79,16 +79,17 @@ async def photo_received(update: Update, context: CallbackContext) -> int:
     bucket_name = 'vlandivir'
     object_name = 'srpski-sources/' + filename
 
-    print(object_name)
-
     try:
         client.put_object(Bucket=bucket_name, Key=object_name, Body=output_stream.getvalue())
         print(f"Файл {filename} успешно загружен.")
     except Exception as e:
         print(f"Ошибка при загрузке файла: {e}")
 
-    await update.message.reply_text('Картинка получена и обработана. Можете отправить новый текст.')
-    return ConversationHandler.END
+    add_text_to_image_do(bucket_name, 'srpski-sources/', 'srpski/', filename, data)
+    insert_new_card(data)
+
+    await update.message.reply_text(f'Картинка получена и обработана - {filename}. Можно снова отправить текст')
+    return WAITING_FOR_TEXT
 
 # Обработчик команды /cancel
 def cancel(update: Update, context: CallbackContext) -> int:

@@ -56,14 +56,15 @@ def upload_files_to_digital_ocean_spaces(bucket_name, do_folder, local_folder):
     except NoCredentialsError:
         print("Credentials not available")
 
-def add_text_to_image_do(bucket_name, source_folder, target_folder, image_name):
+def add_text_to_image_do(bucket_name, source_folder, target_folder, image_name, card = None):
     client = get_do_space_client()
 
     image_obj = client.get_object(Bucket=bucket_name, Key=f'{source_folder}{image_name}')
     image_content = image_obj['Body'].read()
     original_image = Image.open(io.BytesIO(image_content))
 
-    card = next((obj for obj in cards_data if obj['image'] == image_name), None)
+    if card is None:
+        card = next((obj for obj in cards_data if obj['image'] == image_name), None)
     new_image = add_text_to_image(original_image, card['sr'], card['en'], card['ru'], font_path)
 
     img_byte_arr = io.BytesIO()
