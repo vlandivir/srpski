@@ -19,10 +19,10 @@ def get_user_from_update(update: Update):
         'language_code': user.language_code,
     }
 
-def common_button_handler(update: Update) -> Tuple[Dict[str, any], int]:
+async def common_button_handler(update: Update) -> Tuple[Dict[str, any], int]:
     query = update.callback_query
     if query is not None:
-        query.answer()
+        await query.answer()
 
     user = get_user_from_update(update)
     chat_id = update.effective_chat.id

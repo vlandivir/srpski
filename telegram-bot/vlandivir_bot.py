@@ -9,7 +9,8 @@ from telegram.ext import (
 )
 
 from telegram_bot_helpers import common_button_handler
-from telegram_bot_new_card_conversation import get_new_card_conversation_handler
+from telegram_bot_conversation_new_card import get_new_card_conversation_handler
+from telegram_bot_conversation_hide_card import get_hide_card_conversation_handler
 from telegram_bot_cards import (
     update_cards, say_hello, button_next_card, button_card_response, button_new_cards, button_stats
 )
@@ -24,13 +25,16 @@ token = os.getenv('TEST_BOT_TOKEN', token) # for local run python3 telegram-bot/
 create_or_update_db()
 
 async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user, chat_id = common_button_handler(update)
+    user, chat_id = await common_button_handler(update)
 
     keyboard = InlineKeyboardMarkup([
         [
             InlineKeyboardButton('Учить карточки', callback_data=f'button_next'),
+            InlineKeyboardButton('Статистика', callback_data=f'button_stats'),
+        ],
+        [
             InlineKeyboardButton('Подробная справка', callback_data=f'button_help'),
-        ]
+        ],
     ])
 
     await context.bot.send_message(
@@ -44,32 +48,6 @@ async def oops_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     await context.bot.send_message(
         chat_id=chat_id,
         text='Ой, здесь пока ничего нет...',
-    )
-
-async def button_more(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user, chat_id = common_button_handler(update)
-
-    keyboard_rows = []
-    keyboard_rows.append(
-        [
-            InlineKeyboardButton('Stats', callback_data=f'button_stats'),
-            InlineKeyboardButton('New cards', callback_data=f'button_new_cards'),
-        ]
-    )
-
-    if (user['id'] == '150847737'):
-        keyboard_rows.append(
-        [
-            InlineKeyboardButton('Add card', callback_data=f'button_add_card'),
-        ]
-    )
-
-    keyboard = InlineKeyboardMarkup(keyboard_rows)
-
-    await context.bot.send_message(
-        chat_id=chat_id,
-        text='Что желаете?',
-        reply_markup=keyboard
     )
 
 def main():
@@ -86,11 +64,11 @@ def main():
 
     app.add_handler(CallbackQueryHandler(oops_handler, pattern='^button_help$'))
 
-    app.add_handler(CallbackQueryHandler(button_more, pattern='^button_more$'))
     app.add_handler(CallbackQueryHandler(button_stats, pattern='^button_stats$'))
     app.add_handler(CallbackQueryHandler(button_new_cards, pattern='^button_new_cards$'))
 
     app.add_handler(get_new_card_conversation_handler())
+    app.add_handler(get_hide_card_conversation_handler())
 
     app.add_handler(MessageHandler(filters.ALL, default_handler))
 

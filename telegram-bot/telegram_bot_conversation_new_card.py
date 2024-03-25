@@ -92,8 +92,12 @@ async def photo_received(update: Update, context: CallbackContext) -> int:
     return WAITING_FOR_TEXT
 
 # Обработчик команды /cancel
-def cancel(update: Update, context: CallbackContext) -> int:
-    update.message.reply_text('Операция отменена.')
+async def cancel(update: Update, context: CallbackContext) -> int:
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text='Операция отменена.',
+    )
+
     return ConversationHandler.END
 
 def get_new_card_conversation_handler():

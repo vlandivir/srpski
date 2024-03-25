@@ -89,6 +89,7 @@ def update_user_card_response(user_id, generated_at, user_response):
         'button_hard': 2,
         'button_ok': 0.5,
         'button_easy': 0.25,
+        'button_hide': 1,
     }
 
     with engine.connect() as connection:
@@ -105,14 +106,19 @@ def update_user_card_response(user_id, generated_at, user_response):
         card_image = card_image_result['image']
 
         latest_response_query = text(f"""
-            SELECT card_weight, card_image FROM {get_table_name('user_card_responses')}
+            SELECT card_weight, card_image, user_response
+            FROM {get_table_name('user_card_responses')}
             WHERE user_id = :user_id AND card_image = :card_image
             ORDER BY created_at DESC
             LIMIT 1
         """)
+
         latest_response = connection.execute(latest_response_query, {"user_id": user_id, "card_image": card_image}).mappings().first()
 
         if latest_response:
+            if latest_response['user_response'] == 'button_hide':
+                return
+
             new_weight = latest_response['card_weight'] * response_weight_multipliers[user_response]
         else:
             new_weight = 1024 * response_weight_multipliers[user_response]
@@ -145,7 +151,7 @@ def get_new_cards_pack(user_id):
             order by card_image, created_at desc
         ),
         candidate_cards as (
-            select c.image, c.generated_at, ucr.card_weight, ucr.user_id, ucr.created_at,
+            select c.image, c.generated_at, ucr.card_weight, ucr.user_id, ucr.created_at, ucr.user_response,
                     case when ucr.user_id is null then 100
                         when ucr.created_at > :n_hours_ago then -1 / card_weight
                         else card_weight
@@ -157,6 +163,7 @@ def get_new_cards_pack(user_id):
         )
         select random() * corrected_weight as rnd, *
             from candidate_cards
+            where coalesce(user_response, '') != 'button_hide'
             order by 1 desc
             limit 20
         ;

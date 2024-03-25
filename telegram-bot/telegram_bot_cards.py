@@ -7,7 +7,7 @@ from do_space import file_exists_in_do_space
 from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response, get_new_cards_pack, get_user_stats
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, filters
+from telegram.ext import ContextTypes
 
 from telegram_bot_helpers import common_button_handler
 from telegram_bot_messages import create_progress_bar
@@ -47,7 +47,7 @@ def prepare_user_stats(user_id: str) -> str:
     ])
 
 async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user, chat_id = common_button_handler(update)
+    user, chat_id = await common_button_handler(update)
 
     chat_key = get_chat_key(chat_id)
 
@@ -81,21 +81,30 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     update_user_current_set(user, current_set)
 
     filename = next_card['image']
-    fileid = next_card.get('generated_at', 0)
+    file_id = next_card.get('generated_at', 0)
 
-    keyboard = InlineKeyboardMarkup([
+    keyboard_markup = [
         [
-            InlineKeyboardButton('🔴 ???', callback_data=f'button_complex:{fileid}'),
-            InlineKeyboardButton('🟡 Hard ', callback_data=f'button_hard:{fileid}'),
-            InlineKeyboardButton('🟢 Ok', callback_data=f'button_ok:{fileid}'),
-            InlineKeyboardButton('🔵 Easy', callback_data=f'button_easy:{fileid}'),
-        ],
-        [
-            # InlineKeyboardButton('❌ Skip', callback_data=f'button_next'),
-            InlineKeyboardButton('⏩ Skip', callback_data=f'button_next'),
-            InlineKeyboardButton('⬇️ More', callback_data=f'button_more'),
+            InlineKeyboardButton('🔴 ???', callback_data=f'button_complex:{file_id}'),
+            InlineKeyboardButton('🟡 Hard ', callback_data=f'button_hard:{file_id}'),
+            InlineKeyboardButton('🟢 Ok', callback_data=f'button_ok:{file_id}'),
+            InlineKeyboardButton('🔵 Easy', callback_data=f'button_easy:{file_id}'),
         ]
-    ])
+    ]
+
+    second_row = [
+        InlineKeyboardButton('❌ Hide', callback_data=f'button_hide:{file_id}'),
+        InlineKeyboardButton('⏩ Skip', callback_data=f'button_next'),
+    ]
+
+    if (user['id'] == '150847737'):
+        keyboard_markup.append([
+            InlineKeyboardButton('🔄 Ref', callback_data=f'button_new_cards'),
+            InlineKeyboardButton('➕ Add', callback_data=f'button_add_card'),
+        ])
+
+    keyboard_markup.append(second_row)
+    keyboard = InlineKeyboardMarkup(keyboard_markup)
 
     if not file_exists_in_do_space('vlandivir', f'srpski/{filename}'):
         await send_card(update, context)
@@ -138,13 +147,13 @@ async def button_next_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
 async def button_card_response(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
-    user, chat_id = common_button_handler(update)
+    user, chat_id = await common_button_handler(update)
     data = query.data.split(':')
     update_user_card_response(user['id'], data[1], data[0])
     await send_card(update, context)
 
 async def button_new_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user, chat_id = common_button_handler(update)
+    user, chat_id = await common_button_handler(update)
 
     chat_key = get_chat_key(chat_id)
     chats[chat_key] = create_new_set(user)
@@ -155,9 +164,11 @@ async def button_new_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     )
 
 async def button_stats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user, chat_id = common_button_handler(update)
+    user, chat_id = await common_button_handler(update)
+
+    text = prepare_user_stats(user['id'])
 
     await context.bot.send_message(
         chat_id=chat_id,
-        text=prepare_user_stats(user['id'])
+        text=text or 'Ответьте на несколько карточек, чтобы получить статистику'
     )
