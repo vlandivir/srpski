@@ -72,11 +72,8 @@ Hi, Maria. Nice to see you again. = Ćao, Marija. Drago mi je da te opet vidim.
 It has been a whole year since I saw you. = Prošla je cela godina od kad sam te video.
 How have you been these days? = Kako si ovih dana?
 Not bad. = Nije loše.
-Have you seen Ana lately? = Da li si video Anu skoro?
-No, I have no contact with her. = Ne, nemam kontakt sa njom.
 I heard she got married last month. = Čuo sam da se udala prošlog meseca.
 That is nice. Sorry, I have to go now. = To je lepo. Izvini, moram da idem sada.
-So do I. See you later. Give my best to your family. = I ja. Vidimo se kasnije. Pozdravi porodicu.
 Are there any tickets left? = Ima li još karata?
 I have some left. = Ostalo mi je nešto.
 Do you have an eraser? I need it. = Da li imaš gumicu? Treba mi.
@@ -88,7 +85,7 @@ He has that document, doesn't he? = On ima taj dokument, zar ne?
 No, he doesn't. = Nema.
 Did you bring a toothbrush? = Da li si poneo četkicu za zube?
 
-What time do you finish work? = U koliko sati završavaš posao? I finish my work at 5 PM. = Završavam posao u pet popodne.
+Have you seen Ana lately? = Da li si video Anu skoro? No, I have no contact with her. = Ne, nemam kontakt sa njom.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
@@ -99,20 +96,13 @@ What time do you finish work? = U koliko sati završavaš posao? I finish my wor
 
 3. Переведи слово или выражение на русский язык.
 
-4. Сгенерируй timestamp в секундах.
+4. Сделай иллюстрацию в формате JPG к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате JPG. На картинке не используй надписи. Отношение сторон 1 к 1. Стиль рисования должен быть простым, но детализированным, с акцентом на чёткие линии и контрастные цвета, чтобы подчеркнуть основные черты и создать лёгкое ощущение глубины. Фон оставьте минималистичным или однотонным, чтобы основной объект оставался в фокусе внимания. Этот стиль идеально подходит для создания изображений, которые должны быть весёлыми, живыми и легко узнаваемыми.
 
-5. Выбери имя для картинки – сгенерированная английская фраза, в которой все буквы приведены к нижнему регистру, а пробелы заменены дефисом. Исключи из имени запятые, точки, восклицательные и вопросительные знаки. Добавть к имени timestamp в секундах, который сгенерирован раньше.
+5. Если картинка не в формате JPG, то конвертируй её в этот формат. Дай ссылку на скачивание картинки.
 
-6. Проверь, что имя соответствует критериям. Оно получено из английской фразы заменой пробелов на дефисы. Оно содержит timestamp в секундах.
-
-7. Сделай иллюстрацию в формате JPG к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате JPG. На картинке не используй надписи. Отношение сторон 1 к 1. Стиль рисования должен быть простым, но детализированным, с акцентом на чёткие линии и контрастные цвета, чтобы подчеркнуть основные черты и создать лёгкое ощущение глубины. Фон оставьте минималистичным или однотонным, чтобы основной объект оставался в фокусе внимания. Этот стиль идеально подходит для создания изображений, которые должны быть весёлыми, живыми и легко узнаваемыми.
-
-8. Если картинка не в формате JPG, то конвертируй её в этот формат. Дай ссылку на скачивание картинки.
-
-9. Составь json такого формата. Замени плейсхолдеры в квадратных скобках соответствующими значениями. Используй полные фразы для генерации json. Для картинки используй выбранное имя c расширением, без пути.
+6. Составь json такого формата. Замени плейсхолдеры в квадратных скобках соответствующими значениями. Используй полные фразы из первой строки для генерации json.
 {
     "en": "[ENGLISH_PHRASE]",
     "ru": "[RUSSIAN_PHRASE]",
-    "sr": "[SERBIAN_PHRASE]",
-    "image": "[IMAGE_NAME]",
+    "sr": "[SERBIAN_PHRASE]"
 }
