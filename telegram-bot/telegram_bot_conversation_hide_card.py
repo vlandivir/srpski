@@ -27,10 +27,10 @@ async def ask_confirmation(update: Update, context: CallbackContext) -> int:
     file_id = query.data.split(':')[1]
     context.user_data['file_id'] = file_id
 
-    keyboard = [
-        [InlineKeyboardButton('❌ Hide', callback_data='confirm_delete')],
-        [InlineKeyboardButton('Отмена', callback_data='cancel_delete')]
-    ]
+    keyboard = [[
+        InlineKeyboardButton('❌ Hide', callback_data='confirm_delete'),
+        InlineKeyboardButton('Отмена', callback_data='cancel_delete')
+    ]]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 

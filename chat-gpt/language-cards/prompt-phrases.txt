@@ -62,13 +62,10 @@ I slept soundly all night. = Spavao sam čvrsto celu noć.
 I woke up at seven and got up right away. = Probudio sam se u sedam i odmah ustao.
 I was 10 minutes late. = Zakasnio sam deset minuta.
 I arrived just on time. = Stigao sam baš na vreme.
-I had my breakfast on the way. = Doručkovao sam usput.
 I hurried to my office. = Požurio sam u kancelariju.
 I had lunch with a friend of mine. = Ručao sam sa prijateljem.
 I finished my work at 5 PM. = Završio sam posao u pet popodne.
 I stayed and did some extra work. = Ostao sam i radio neki dodatni posao.
-Hi, Carl, it is really you? = Zdravo, Karl, da li si to stvarno ti?
-Hi, Maria. Nice to see you again. = Ćao, Marija. Drago mi je da te opet vidim.
 It has been a whole year since I saw you. = Prošla je cela godina od kad sam te video.
 How have you been these days? = Kako si ovih dana?
 Not bad. = Nije loše.
@@ -85,7 +82,6 @@ He has that document, doesn't he? = On ima taj dokument, zar ne?
 No, he doesn't. = Nema.
 Did you bring a toothbrush? = Da li si poneo četkicu za zube?
 
-Have you seen Ana lately? = Da li si video Anu skoro? No, I have no contact with her. = Ne, nemam kontakt sa njom.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
