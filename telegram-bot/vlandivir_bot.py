@@ -36,6 +36,7 @@ sentry_sdk.init(
     # of sampled transactions.
     # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
+    enable_tracing=True,
     environment=ENVIRONMENT,
     release=TAG_NAME,
 )
