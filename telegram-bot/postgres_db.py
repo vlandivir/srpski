@@ -190,7 +190,7 @@ def get_user_stats (user_id):
                 user_response,
                 ROW_NUMBER() OVER (PARTITION BY user_id, card_image, DATE(created_at) ORDER BY created_at DESC) AS rank
             FROM {get_table_name('user_card_responses')}
-            WHERE user_id = :user_id AND DATE(created_at) BETWEEN CURRENT_DATE - INTERVAL '1 day' AND CURRENT_DATE
+            WHERE user_id = :user_id AND DATE(created_at) BETWEEN CURRENT_DATE - INTERVAL '4 day' AND CURRENT_DATE
         ),
         filtered_responses AS (
             SELECT

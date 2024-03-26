@@ -63,7 +63,12 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     if chats[chat_key]['pointer'] >= len(chats[chat_key]['cards_order']):
         chats[chat_key] = create_new_set(user)
-        await context.bot.send_message(chat_id=chat_id, text=prepare_user_stats(user['id']))
+        await context.bot.send_message(
+            chat_id=chat_id,
+            text=prepare_user_stats(user['id']),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⏩ Continue', callback_data=f'button_next')]])
+        )
+        return
 
     current_set = chats[chat_key]
 
