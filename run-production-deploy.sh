@@ -12,6 +12,7 @@ VLANDIVIR_BOT_TOKEN=$(grep VLANDIVIR_BOT_TOKEN .env | cut -d '=' -f2)
 POSTGRES_CONNECTION_STRING=$(grep POSTGRES_CONNECTION_STRING .env | cut -d '=' -f2)
 DO_SPACES_ACCESS_KEY=$(grep DO_SPACES_ACCESS_KEY .env | cut -d '=' -f2)
 DO_SPACES_SECRET_KEY=$(grep DO_SPACES_SECRET_KEY .env | cut -d '=' -f2)
+SENTRY_DSN=$(grep SENTRY_DSN .env | cut -d '=' -f2)
 
 docker build \
   --build-arg VLANDIVIR_BOT_TOKEN="${VLANDIVIR_BOT_TOKEN}" \
@@ -20,6 +21,7 @@ docker build \
   --build-arg POSTGRES_CONNECTION_STRING="${POSTGRES_CONNECTION_STRING}" \
   --build-arg DO_SPACES_ACCESS_KEY="${DO_SPACES_ACCESS_KEY}" \
   --build-arg DO_SPACES_SECRET_KEY="${DO_SPACES_SECRET_KEY}" \
+  --build-arg SENTRY_DSN="${SENTRY_DSN}" \
   -t vlandivir_bot .
 
 docker tag vlandivir_bot registry.digitalocean.com/vlandivir-main/vlandivir_bot:$TAG_NAME

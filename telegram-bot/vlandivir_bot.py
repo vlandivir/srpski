@@ -1,4 +1,5 @@
 import os
+import sentry_sdk
 
 from dotenv import load_dotenv
 
@@ -19,8 +20,25 @@ from postgres_create_or_update_db import create_or_update_db
 
 load_dotenv('.env')
 
+
 token = os.getenv('VLANDIVIR_BOT_TOKEN')
 token = os.getenv('TEST_BOT_TOKEN', token) # for local run python3 telegram-bot/vlandivir_bot.py
+
+SENTRY_DSN = os.getenv('SENTRY_DSN')
+ENVIRONMENT = os.getenv('ENVIRONMENT', 'LOCAL')
+TAG_NAME = os.getenv('TAG_NAME', 'LOCAL')
+sentry_sdk.init(
+    dsn=SENTRY_DSN,
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production.
+    profiles_sample_rate=1.0,
+    environment=ENVIRONMENT,
+    release=TAG_NAME,
+)
 
 create_or_update_db()
 
@@ -64,6 +82,8 @@ async def oops_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     )
 
 def main():
+    sentry_sdk.capture_message('Application start', level='info')
+
     app = ApplicationBuilder().token(token).build()
 
     app.add_handler(CommandHandler('hello', say_hello))
