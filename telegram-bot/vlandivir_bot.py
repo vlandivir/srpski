@@ -12,7 +12,7 @@ from telegram_bot_helpers import common_button_handler
 from telegram_bot_conversation_new_card import get_new_card_conversation_handler
 from telegram_bot_conversation_hide_card import get_hide_card_conversation_handler
 from telegram_bot_cards import (
-    update_cards, say_hello, button_next_card, button_card_response, button_new_cards, button_stats
+    get_card_by_id, update_cards, say_hello, button_next_card, button_card_response, button_new_cards, button_stats
 )
 
 from postgres_create_or_update_db import create_or_update_db
@@ -26,6 +26,19 @@ create_or_update_db()
 
 async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user, chat_id = await common_button_handler(update)
+
+    user_text = update.message.text
+    is_digit = user_text.isdigit()
+
+    if is_digit:
+        card_id = int(user_text)
+        card = get_card_by_id(card_id)
+        if card is not None:
+            await context.bot.send_photo(
+                chat_id=chat_id,
+                photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{card['image']}',
+            )
+            return
 
     keyboard = InlineKeyboardMarkup([
         [

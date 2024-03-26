@@ -25,6 +25,9 @@ chats = {}
 def get_chat_key(id):
     return f'chat_{id}'
 
+def get_card_by_id(card_id):
+    return cards_index.get(card_id, None)
+
 def create_new_set(user):
     cards_order_with_weight = get_new_cards_pack(user['id'])
     cards_order =  [x[0] for x in cards_order_with_weight]
