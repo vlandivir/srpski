@@ -34,3 +34,27 @@ def insert_new_card(data):
             """)
 
             connection.execute(insert_query, insert_data)
+
+def update_card(id, data):
+    engine = get_pg_engine()
+
+    update_data = {
+        'id': id,
+        'updated_at': datetime.now(),
+        **data
+    }
+
+    with engine.connect() as connection:
+        table_names = ['docker_cards', 'local_cards', 'prod_cards']
+
+        for table_name in table_names:
+            update_query = text(f"""
+                update {table_name}
+                set en=:en, ru=:ru, sr=:sr, updated_at=:updated_at
+                where generated_at=:id
+                returning image
+            """)
+
+            image = connection.execute(update_query, update_data)
+
+    return image.scalar_one_or_none()

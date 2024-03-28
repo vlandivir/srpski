@@ -1,6 +1,7 @@
 import os
 import json
 import logging
+import sentry_sdk
 
 from decimal import Decimal
 from dotenv import load_dotenv
@@ -170,10 +171,11 @@ def get_new_cards_pack(user_id):
     """)
 
     with engine.connect() as connection:
-        result = connection.execute(
-            select_images_query,
-            {'user_id': user_id, 'n_hours_ago': n_hours_ago}
-        ).fetchall()
+        with sentry_sdk.start_transaction(name="get_new_cards_pack"):
+            result = connection.execute(
+                select_images_query,
+                {'user_id': user_id, 'n_hours_ago': n_hours_ago}
+            ).fetchall()
 
     cards_list = [[row_dict['generated_at'], row_dict['card_weight']] for row_dict in (row._asdict() for row in result)]
     return cards_list

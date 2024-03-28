@@ -12,6 +12,8 @@ from telegram.ext import (
 from telegram_bot_helpers import common_button_handler
 from telegram_bot_conversation_new_card import get_new_card_conversation_handler
 from telegram_bot_conversation_hide_card import get_hide_card_conversation_handler
+from telegram_bot_conversation_update_card import get_update_card_conversation_handler
+
 from telegram_bot_cards import (
     get_card_by_id, update_cards, say_hello, button_next_card, button_card_response, button_new_cards, button_stats
 )
@@ -53,9 +55,13 @@ async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         card_id = int(user_text)
         card = get_card_by_id(card_id)
         if card is not None:
+            keyboard = [[InlineKeyboardButton("Отправить JSON", callback_data=f'update_card:{card_id}')]]
+            reply_markup = InlineKeyboardMarkup(keyboard)
+
             await context.bot.send_photo(
                 chat_id=chat_id,
                 photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{card['image']}',
+                reply_markup=reply_markup
             )
             return
 
@@ -103,6 +109,7 @@ def main():
 
     app.add_handler(get_new_card_conversation_handler())
     app.add_handler(get_hide_card_conversation_handler())
+    app.add_handler(get_update_card_conversation_handler())
 
     app.add_handler(MessageHandler(filters.ALL, default_handler))
 

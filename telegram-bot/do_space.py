@@ -72,7 +72,6 @@ def add_text_to_image_do(bucket_name, source_folder, target_folder, image_name, 
     img_byte_arr = img_byte_arr.getvalue()
 
     print(image_name)
-    # new_image.save(os.path.join(script_dir, '..', 'temp', image_name));
     client.put_object(Bucket=bucket_name, Key=f'{target_folder}{image_name}', Body=img_byte_arr, ACL='public-read', ContentType='image/webp')
 
 def sync_missing_cards(bucket_name, source_folder, target_folder):
