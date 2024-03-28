@@ -50,9 +50,9 @@ def split_string_into_parts(s, n_parts):
 
     return parts
 
-def add_text_properties(text, color, new_image_width, font_48, rows, gaps, colors, fonts):
+def add_text_properties(text, color, image_width, font_48, rows, gaps, colors, fonts):
     text_width, text_height = get_text_dimensions(text, font_48)
-    rows_count = text_width / (new_image_width - 64)
+    rows_count = text_width / (image_width - 128)
 
     if rows_count > 2:
         font_size = 40
@@ -109,7 +109,7 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     # Blend this rectangle with the base image
     new_image.paste(rect_image, (0, 0), rect_image)
 
-    font_32 = ImageFont.truetype(font_path, 40)
+    font_40 = ImageFont.truetype(font_path, 40)
     font_48 = ImageFont.truetype(font_path, 48)
 
     text_x = 32
@@ -136,7 +136,7 @@ def add_text_to_image(image_path, output_path, text_sr, text_en, text_ru, font_p
     for i, r in enumerate(rows):
         top, bottom = gaps[i]
         text_y += top
-        draw.text((text_x, text_y), r, fill=colors[i], font=(font_48 if fonts[i] == 48 else font_32))
+        draw.text((text_x, text_y), r, fill=colors[i], font=(font_48 if fonts[i] == 48 else font_40))
         text_y += bottom
 
     # Save the image
