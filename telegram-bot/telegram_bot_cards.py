@@ -2,6 +2,7 @@ import os
 import json
 
 from dotenv import load_dotenv
+from datetime import datetime
 
 from do_space import file_exists_in_do_space
 from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response, get_new_cards_pack, get_user_stats
@@ -121,9 +122,11 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     caption = f"{create_progress_bar(card_weight)}\n" if card_weight is not None else ''
     caption += next_card['ru']
 
+    upts = str(int(card['updated_at'].timestamp())) if isinstance(card['updated_at'], datetime) else ''
+
     await context.bot.send_photo(
         chat_id=chat_id,
-        photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{filename}',
+        photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{filename}?upts={upts}',
         reply_markup=keyboard,
         caption=caption,
         has_spoiler=True,

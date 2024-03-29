@@ -1,6 +1,7 @@
 import os
 import sentry_sdk
 
+from datetime import datetime
 from dotenv import load_dotenv
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
@@ -56,11 +57,13 @@ async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         card = get_card_by_id(card_id)
         if card is not None:
             keyboard = [[InlineKeyboardButton("Отправить JSON", callback_data=f'update_card:{card_id}')]]
-            reply_markup = InlineKeyboardMarkup(keyboard)
+            reply_markup = InlineKeyboardMarkup(keyboard) if (user['id'] == '150847737') else None
+
+            upts = str(int(card['updated_at'].timestamp())) if isinstance(card['updated_at'], datetime) else ''
 
             await context.bot.send_photo(
                 chat_id=chat_id,
-                photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{card['image']}',
+                photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{card['image']}?upts={upts}',
                 reply_markup=reply_markup
             )
             return
