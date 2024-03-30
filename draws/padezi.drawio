@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-30T12:31:34.334Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="09a2iMeXWWXZUSdmdRL4" version="24.2.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-30T12:32:36.312Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="GIPJ1EyNNMhfR2vA03-9" version="24.2.1" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="608" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="504" dy="355" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -210,7 +210,7 @@
           <mxGeometry x="400" y="190" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-61" value="-ova&lt;br&gt;-eva" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="400" y="270" width="40" height="30" as="geometry" />
+          <mxGeometry x="400" y="280" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-64" value="-i" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="40" y="449" width="40" height="30" as="geometry" />
@@ -327,10 +327,10 @@
           <mxGeometry x="480" y="240" width="540" height="150" as="geometry" />
         </mxCell>
         <mxCell id="uh2jlfRQcC9aMAu_DCjH-3" value="GENETIV" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="320" y="270" width="80" height="30" as="geometry" />
+          <mxGeometry x="320" y="280" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="uh2jlfRQcC9aMAu_DCjH-4" value="Imena gradova su interesantna." style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="320" y="300" width="120" height="40" as="geometry" />
+          <mxGeometry x="320" y="310" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="uh2jlfRQcC9aMAu_DCjH-5" value="AKUZATIV" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="190" width="80" height="30" as="geometry" />
