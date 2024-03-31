@@ -36,8 +36,6 @@ I am reading a book. = Čitam knjigu.
 I am listening to the radio. = Slušam radio.
 I get up at seven every morning. = Ustajem u sedam svako jutro.
 I wake my daughter up. = Budim svoju kćerku.
-I put on a bit of makeup. = Malo se našminkam.
-I wash my face. = Umijem se.
 I go downstairs and have my breakfast. = Silazim dole i doručkujem.
 I get to my office at 8:30. = Dolazim u kancelariju u pola devet.
 I leave the office at 6. = Izlazim iz kancelarije u šest.
@@ -78,12 +76,10 @@ I had thought he knew the time of the meeting. = Mislio sam da on zna vreme sast
 We have known each other for ten years. = Znamo se deset godina.
 Have you seen Mr. Smith recently? = Da li si skoro video gospodina Smita?
 They have been working on this project since last year. = Oni rade na ovom projektu od prošle godine.
-I have been listening to the radio all night. = Slušam radio celu noć.
 He used to live in my neighborhood. = On je živeo u mom kraju.
 The movie began as soon as we got here. = Film je počeo čim smo stigli.
 It has been a long time since I got here. = Prošlo je dosta vremena od kako sam došao.
 They expected me to go with them. = Očekivali su da idem sa njima.
-There is something wrong with the phone. = Nešto nije u redu sa telefonom.
 Would you answer the phone please? = Hoćete li se javiti na telefon molim vas?
 I want to make a long distance call. = Želim da obavim međugradski poziv.
 Would you tell Ana that I called? = Hoćeš li reći Ani da sam zvao?
@@ -99,6 +95,8 @@ Make me a cup of tea will you? = Skuvaj mi šolju čaja hoćeš li?
 Call me tomorrow if you have time. = Pozovi me sutra ako budeš imao vremena.
 Would you please open the window for me? = Hoćete li otvoriti prozor molim Vas?
 Will you stay there for long? = Hoćeš li ostati tamo dugo?
+
+I have been listening to the radio all night. = Slušam radio celu noć.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
