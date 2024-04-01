@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-31T17:51:03.575Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="-xw0RkabzDuuhe8lXuF6" version="24.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-01T07:54:27.041Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="LkvGPZmkGGeyKMyRiRDk" version="24.0.7" type="github">
   <diagram name="Page-1" id="QJoDa5Xf5KZHRKWnFKj4">
-    <mxGraphModel dx="883" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="491" dy="323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -207,7 +207,7 @@
           <mxGeometry x="40" y="419" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-59" value="-ove&lt;br&gt;-eve" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="400" y="190" width="40" height="30" as="geometry" />
+          <mxGeometry x="400" y="200" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="BAi89jd5EGfL0doamKMS-61" value="-ova&lt;br&gt;-eva" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="280" width="40" height="30" as="geometry" />
@@ -284,8 +284,8 @@
         <mxCell id="BAi89jd5EGfL0doamKMS-58" value="-ovi&lt;br&gt;-evi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="400" y="60" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="w5lrp8CAif_9VlZ4OXMN-10" value="&lt;b&gt;Izuzeci: &lt;/b&gt;put ➜ putevi&lt;br&gt;sir ➜ sirevi&amp;nbsp; dan ➜ dani&lt;br&gt;konj ➜ konji mrav ➜ mravi&lt;br&gt;zub ➜ zubi&amp;nbsp; sat ➜ sati &lt;br&gt;pas ➜ psi" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="320" y="120" width="120" height="60" as="geometry" />
+        <mxCell id="w5lrp8CAif_9VlZ4OXMN-10" value="&lt;b&gt;Izuzeci: &lt;/b&gt;put ➜ putevi&lt;br&gt;sir ➜ sirevi&amp;nbsp; dan ➜ dani&lt;br&gt;konj ➜ konji pas ➜ psi&lt;br&gt;mrav ➜ mravi zub ➜ zubi" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="320" y="120" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="Pf-PKDTKtpDQkGUhiAqp-1" value="&lt;b&gt;Izuzeci:&amp;nbsp; &lt;/b&gt;čovek&lt;b&gt;&amp;nbsp;&lt;/b&gt;➜ ljudi&lt;br&gt;lampa ➜ lampi&lt;br&gt;mesec ➜ meseci&lt;br&gt;sat ➜ sati gost&amp;nbsp;➜ gostiju&lt;br&gt;oko ➜ očiju prst ➜ prstiju&lt;br&gt;uho (uvo) ➜ ušiju&lt;br&gt;nokat ➜ noktiju&lt;br&gt;ruka ➜ ruku noga ➜ nogu&lt;br&gt;sluga ➜ slugu" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="180" y="260" width="120" height="110" as="geometry" />
@@ -333,7 +333,7 @@
           <mxGeometry x="320" y="310" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="uh2jlfRQcC9aMAu_DCjH-5" value="AKUZATIV" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="320" y="190" width="80" height="30" as="geometry" />
+          <mxGeometry x="320" y="200" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ADTaTo-tk-Jg6WtzQs2E-1" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Pitanja - kome? čemu?:&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;Komu duguješ izvinjenje? Čemu se nadaš? Prema čemu je teleskop uperen?&lt;/span&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;b&gt;Predlozi -&amp;nbsp;&lt;/b&gt;k (ka), prema, uprkos, nasuprot&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;● namena ➜ Pokloniću &lt;b&gt;sestri&lt;/b&gt; knjigu na rođendan. &amp;nbsp; &amp;nbsp;● pravac kretanja ➜ Pošao je &lt;b&gt;svojim prijateljima&lt;/b&gt; u selo. Voz je jurio &lt;b&gt;ka Beogradu&lt;/b&gt;. &amp;nbsp; &amp;nbsp;● nosilac stanja ➜ &lt;b&gt;Marku&lt;/b&gt; se spava &amp;nbsp; &amp;nbsp;● etički (dativ interesovanja) ➜ Kako si &lt;b&gt;mi&lt;/b&gt;?● dopusno ➜ Izašli su &lt;b&gt;uprkos očevoj zabrani&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" parent="1" vertex="1">
           <mxGeometry x="480" y="479" width="540" height="89" as="geometry" />
@@ -342,7 +342,7 @@
           <mxGeometry x="480" y="130" width="540" height="100" as="geometry" />
         </mxCell>
         <mxCell id="QT0mehLF4YGMC2CH4Aby-1" value="Sara baš ima talenta za sve sportove" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="320" y="220" width="120" height="40" as="geometry" />
+          <mxGeometry x="320" y="230" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QT0mehLF4YGMC2CH4Aby-2" value="VOKATIV" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="389" width="80" height="30" as="geometry" />
