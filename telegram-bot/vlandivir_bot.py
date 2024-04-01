@@ -15,14 +15,15 @@ from telegram_bot_conversation_new_card import get_new_card_conversation_handler
 from telegram_bot_conversation_hide_card import get_hide_card_conversation_handler
 from telegram_bot_conversation_update_card import get_update_card_conversation_handler
 
+from telegram_bot_messages import create_progress_bar
 from telegram_bot_cards import (
     get_card_by_id, update_cards, say_hello, button_next_card, button_card_response, button_new_cards, button_stats
 )
 
 from postgres_create_or_update_db import create_or_update_db
+from postgres_db_cards import get_card_with_weight
 
 load_dotenv('.env')
-
 
 token = os.getenv('VLANDIVIR_BOT_TOKEN')
 token = os.getenv('TEST_BOT_TOKEN', token) # for local run python3 telegram-bot/vlandivir_bot.py
@@ -61,10 +62,16 @@ async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
             upts = str(int(card['updated_at'].timestamp())) if isinstance(card['updated_at'], datetime) else ''
 
+            card_with_weight = get_card_with_weight(user['id'], card_id)
+            card_weight = card_with_weight.get('card_weight', None)
+            caption = f"{create_progress_bar(card_weight)}\n" if card_weight is not None else ''
+            caption += f"{str(card_weight)}"
+
             await context.bot.send_photo(
                 chat_id=chat_id,
                 photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{card['image']}?upts={upts}',
-                reply_markup=reply_markup
+                reply_markup=reply_markup,
+                caption=caption
             )
             return
 
