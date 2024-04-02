@@ -89,14 +89,12 @@ I have to hang up now. = Moram da spustim slušalicu.
 He is not in. May I take a message? = Nije tu. Mogu li da mu prenesem poruku?
 Would you mind closing the door for me? = Hoćeš li da zatvoriš vrata?
 Please give me a hand. = Molim te pomozi mi.
-Get me my coat please. = Daj mi kaput molim te.
 I am sorry. I am engaged now. = Žao mi je. Sada sam zauzet.
 Make me a cup of tea will you? = Skuvaj mi šolju čaja hoćeš li?
-Call me tomorrow if you have time. = Pozovi me sutra ako budeš imao vremena.
 Would you please open the window for me? = Hoćete li otvoriti prozor molim Vas?
 Will you stay there for long? = Hoćeš li ostati tamo dugo?
 
-I have been listening to the radio all night. = Slušam radio celu noć.
+Get me my coat please. = Daj mi kaput molim te.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

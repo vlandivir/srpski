@@ -33,6 +33,9 @@ def get_pg_engine(autocommit = True):
 
     return engine
 
+def get_key_name(key_name):
+    return f'{ENVIRONMENT.lower()}_{key_name}'
+
 def get_table_name(table_name):
     return f'public.{ENVIRONMENT.lower()}_{table_name}'
 
