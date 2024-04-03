@@ -85,7 +85,7 @@ def get_all_cards():
         rows_as_dicts = [row._asdict() for row in rows]
         return rows_as_dicts
 
-def update_user_card_response(user_id, id, user_response):
+def update_user_card_response(user_id, card_id, user_response):
     engine = get_pg_engine()
 
     response_weight_multipliers = {
@@ -98,7 +98,7 @@ def update_user_card_response(user_id, id, user_response):
 
     with engine.connect() as connection:
         latest_response_query = text(f"""
-            SELECT card_weight, id, user_response
+            SELECT card_weight, card_id, user_response
             FROM {get_table_name('user_card_responses')}
             WHERE user_id = :user_id AND card_id = :card_id
             ORDER BY created_at DESC
@@ -106,7 +106,7 @@ def update_user_card_response(user_id, id, user_response):
         """)
 
         latest_response = connection.execute(
-            latest_response_query, {"user_id": user_id, "card_id": id}
+            latest_response_query, {"user_id": user_id, "card_id": card_id}
         ).mappings().first()
 
         if latest_response:
@@ -121,13 +121,14 @@ def update_user_card_response(user_id, id, user_response):
             new_weight = new_weight / 2
 
         insert_response_query = text(f"""
-            INSERT INTO {get_table_name('user_card_responses')} (user_id, card_id, user_response, card_weight)
-            VALUES (:user_id, :card_id, :user_response, :new_weight)
+            INSERT INTO {get_table_name('user_card_responses')} (user_id, card_id, card_image, user_response, card_weight)
+            VALUES (:user_id, :card_id, :card_image, :user_response, :new_weight)
         """)
 
         connection.execute(insert_response_query, {
             "user_id": user_id,
-            "card_id": id,
+            "card_id": card_id,
+            "card_image": f"image_{card_id}",
             "user_response": user_response,
             "new_weight": new_weight
         })
@@ -152,7 +153,7 @@ def get_new_cards_pack(user_id):
                     end as corrected_weight
                 from {get_table_name('cards')} c
                 left join last_card_responses ucr
-                on c.image = ucr.card_id
+                on c.id = ucr.card_id
         )
         select random() * corrected_weight as rnd, *
             from candidate_cards

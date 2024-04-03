@@ -99,8 +99,6 @@ async def oops_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     )
 
 def main():
-    sentry_sdk.capture_message('Application start', level='info')
-
     app = ApplicationBuilder().token(token).build()
 
     app.add_handler(CommandHandler('hello', say_hello))
