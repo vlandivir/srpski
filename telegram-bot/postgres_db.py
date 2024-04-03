@@ -97,27 +97,17 @@ def update_user_card_response(user_id, id, user_response):
     }
 
     with engine.connect() as connection:
-        card_image_query = text(f"""
-            SELECT image FROM {get_table_name('cards')}
-            WHERE id = :id
-            LIMIT 1
-        """)
-        card_image_result = connection.execute(card_image_query, {"id": int(id)}).mappings().first()
-        if not card_image_result:
-            return
-
-        print(card_image_result)
-        card_image = card_image_result['image']
-
         latest_response_query = text(f"""
-            SELECT card_weight, card_image, user_response
+            SELECT card_weight, id, user_response
             FROM {get_table_name('user_card_responses')}
-            WHERE user_id = :user_id AND card_image = :card_image
+            WHERE user_id = :user_id AND card_id = :card_id
             ORDER BY created_at DESC
             LIMIT 1
         """)
 
-        latest_response = connection.execute(latest_response_query, {"user_id": user_id, "card_image": card_image}).mappings().first()
+        latest_response = connection.execute(
+            latest_response_query, {"user_id": user_id, "card_id": id}
+        ).mappings().first()
 
         if latest_response:
             if latest_response['user_response'] == 'button_hide':
@@ -131,13 +121,13 @@ def update_user_card_response(user_id, id, user_response):
             new_weight = new_weight / 2
 
         insert_response_query = text(f"""
-            INSERT INTO {get_table_name('user_card_responses')} (user_id, card_image, user_response, card_weight)
-            VALUES (:user_id, :card_image, :user_response, :new_weight)
+            INSERT INTO {get_table_name('user_card_responses')} (user_id, card_id, user_response, card_weight)
+            VALUES (:user_id, :card_id, :user_response, :new_weight)
         """)
 
         connection.execute(insert_response_query, {
             "user_id": user_id,
-            "card_image": card_image,
+            "card_id": id,
             "user_response": user_response,
             "new_weight": new_weight
         })
@@ -149,10 +139,10 @@ def get_new_cards_pack(user_id):
     select_images_query = text(f"""
         with
         last_card_responses as (
-            select distinct on (card_image) *
+            select distinct on (card_id) *
             from {get_table_name('user_card_responses')}
             where user_id = :user_id
-            order by card_image, created_at desc
+            order by card_id, created_at desc
         ),
         candidate_cards as (
             select c.image, c.id, ucr.card_weight, ucr.user_id, ucr.created_at, ucr.user_response,
@@ -162,7 +152,7 @@ def get_new_cards_pack(user_id):
                     end as corrected_weight
                 from {get_table_name('cards')} c
                 left join last_card_responses ucr
-                on c.image = ucr.card_image
+                on c.image = ucr.card_id
         )
         select random() * corrected_weight as rnd, *
             from candidate_cards
@@ -189,10 +179,10 @@ def get_user_stats (user_id):
         WITH ranked_responses AS (
             SELECT
                 user_id,
-                card_image,
+                card_id,
                 DATE(created_at) AS response_date,
                 user_response,
-                ROW_NUMBER() OVER (PARTITION BY user_id, card_image, DATE(created_at) ORDER BY created_at DESC) AS rank
+                ROW_NUMBER() OVER (PARTITION BY user_id, card_id, DATE(created_at) ORDER BY created_at DESC) AS rank
             FROM {get_table_name('user_card_responses')}
             WHERE user_id = :user_id AND DATE(created_at) BETWEEN CURRENT_DATE - INTERVAL '4 day' AND CURRENT_DATE
         ),
@@ -200,7 +190,7 @@ def get_user_stats (user_id):
             SELECT
                 response_date,
                 user_response,
-                COUNT(card_image) AS cards_per_response
+                COUNT(card_id) AS cards_per_response
             FROM ranked_responses
             WHERE rank = 1
                 AND user_response IN ('button_easy', 'button_ok', 'button_hard', 'button_complex')
