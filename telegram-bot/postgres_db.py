@@ -85,7 +85,7 @@ def get_all_cards():
         rows_as_dicts = [row._asdict() for row in rows]
         return rows_as_dicts
 
-def update_user_card_response(user_id, generated_at, user_response):
+def update_user_card_response(user_id, id, user_response):
     engine = get_pg_engine()
 
     response_weight_multipliers = {
@@ -99,10 +99,10 @@ def update_user_card_response(user_id, generated_at, user_response):
     with engine.connect() as connection:
         card_image_query = text(f"""
             SELECT image FROM {get_table_name('cards')}
-            WHERE generated_at = :generated_at
+            WHERE id = :id
             LIMIT 1
         """)
-        card_image_result = connection.execute(card_image_query, {"generated_at": int(generated_at)}).mappings().first()
+        card_image_result = connection.execute(card_image_query, {"id": int(id)}).mappings().first()
         if not card_image_result:
             return
 
@@ -155,7 +155,7 @@ def get_new_cards_pack(user_id):
             order by card_image, created_at desc
         ),
         candidate_cards as (
-            select c.image, c.generated_at, ucr.card_weight, ucr.user_id, ucr.created_at, ucr.user_response,
+            select c.image, c.id, ucr.card_weight, ucr.user_id, ucr.created_at, ucr.user_response,
                     case when ucr.user_id is null then 100
                         when ucr.created_at > :n_hours_ago then -1 / card_weight
                         else card_weight
@@ -163,7 +163,6 @@ def get_new_cards_pack(user_id):
                 from {get_table_name('cards')} c
                 left join last_card_responses ucr
                 on c.image = ucr.card_image
-                order by generated_at
         )
         select random() * corrected_weight as rnd, *
             from candidate_cards
@@ -180,7 +179,7 @@ def get_new_cards_pack(user_id):
                 {'user_id': user_id, 'n_hours_ago': n_hours_ago}
             ).fetchall()
 
-    cards_list = [[row_dict['generated_at'], row_dict['card_weight']] for row_dict in (row._asdict() for row in result)]
+    cards_list = [[row_dict['id'], row_dict['card_weight']] for row_dict in (row._asdict() for row in result)]
     return cards_list
 
 def get_user_stats (user_id):

@@ -19,7 +19,7 @@ TAG_NAME = os.getenv('TAG_NAME')
 cards_data = get_all_cards()
 cards_index = {}
 for card in cards_data:
-    cards_index[card['generated_at']] = card
+    cards_index[card['id']] = card
 
 chats = {}
 
@@ -90,7 +90,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     update_user_current_set(user, current_set)
 
     filename = next_card['image']
-    file_id = next_card.get('generated_at', 0)
+    file_id = next_card.get('id', 0)
 
     keyboard_markup = [
         [
@@ -139,7 +139,7 @@ async def update_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     cards_data = get_all_cards()
     cards_index = {}
     for card in cards_data:
-        cards_index[card['generated_at']] = card
+        cards_index[card['id']] = card
 
     await update.message.reply_text(f'{TAG_NAME}-{len(cards_data)}')
 

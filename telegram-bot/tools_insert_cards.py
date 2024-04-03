@@ -18,7 +18,7 @@ def insert_cards(table_name):
 
     for data in data_array:
         match = re.search(r'(\d+)\.webp$', data['image'])
-        generated_at = int(match.group(1)) if match else 0
+        id = int(match.group(1)) if match else 0
         current_timestamp = datetime.now()
 
         insert_data = {
@@ -26,15 +26,15 @@ def insert_cards(table_name):
             'ru': data['ru'],
             'sr': data['sr'],
             'image': data['image'],
-            'generated_at': generated_at,
+            'id': id,
             'created_at': current_timestamp,
             'updated_at': current_timestamp
         }
         insert_data_list.append(insert_data)
 
     query = text(f"""
-        INSERT INTO {table_name} (en, ru, sr, image, generated_at, created_at, updated_at)
-        VALUES (:en, :ru, :sr, :image, :generated_at, :created_at, :updated_at)
+        INSERT INTO {table_name} (id, en, ru, sr, image, generated_at, created_at, updated_at)
+        VALUES (:id, :en, :ru, :sr, :image, :id, :created_at, :updated_at)
         ON CONFLICT (image) DO NOTHING;
     """)
 

@@ -41,3 +41,11 @@ add_card_id = text(f"""
 # -------
 #    151
 # (1 row)
+
+# defaultdb=> select count(*) from prod_cards;
+# -[ RECORD 1 ]
+# count | 166
+
+# defaultdb=> select count(*) from prod_user_card_responses;
+# -[ RECORD 1 ]
+# count | 1092

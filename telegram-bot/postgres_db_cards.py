@@ -12,7 +12,8 @@ def insert_new_card(data):
     engine = get_pg_engine()
 
     match = re.search(r'(\d+)\.webp$', data['image'])
-    generated_at = int(match.group(1)) if match else 0
+    id = int(match.group(1)) if match else 0
+
     current_timestamp = datetime.now()
 
     insert_data = {
@@ -20,9 +21,9 @@ def insert_new_card(data):
         'ru': data['ru'],
         'sr': data['sr'],
         'image': data['image'],
-        'generated_at': generated_at,
         'created_at': current_timestamp,
-        'updated_at': current_timestamp
+        'updated_at': current_timestamp,
+        'id': id,
     }
 
     with engine.connect() as connection:
@@ -30,8 +31,8 @@ def insert_new_card(data):
 
         for table_name in table_names:
             insert_query = text(f"""
-                INSERT INTO {table_name} (en, ru, sr, image, generated_at, created_at, updated_at)
-                VALUES (:en, :ru, :sr, :image, :generated_at, :created_at, :updated_at)
+                INSERT INTO {table_name} (id, en, ru, sr, image, generated_at, created_at, updated_at)
+                VALUES (:id, :en, :ru, :sr, :image, :id, :created_at, :updated_at)
                 ON CONFLICT (image) DO NOTHING;
             """)
 
@@ -53,7 +54,7 @@ def update_card(id, data):
             update_query = text(f"""
                 update {table_name}
                 set en=:en, ru=:ru, sr=:sr, updated_at=:updated_at
-                where generated_at=:id
+                where id=:id
                 returning image
             """)
 
@@ -74,7 +75,7 @@ def get_card_with_weight(user_id, card_id):
             from {get_table_name('cards')} c
             left join {get_table_name('user_card_responses')} ucr
             on c.image = ucr.card_image
-            where c.generated_at = :card_id and ucr.user_id = :user_id
+            where c.id = :card_id and ucr.user_id = :user_id
             order by ucr.created_at desc
             limit 1
         ;
