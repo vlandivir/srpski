@@ -16,12 +16,13 @@ from telegram_bot_messages import create_progress_bar
 load_dotenv('.env')
 TAG_NAME = os.getenv('TAG_NAME')
 
-cards_data = get_all_cards()
 cards_index = {}
-for card in cards_data:
-    cards_index[card['id']] = card
-
 chats = {}
+
+def init_cards_cache():
+    cards_data = get_all_cards()
+    for card in cards_data:
+        cards_index[card['id']] = card
 
 def get_chat_key(id):
     return f'chat_{id}'

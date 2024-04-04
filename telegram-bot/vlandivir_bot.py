@@ -17,7 +17,8 @@ from telegram_bot_conversation_update_card import get_update_card_conversation_h
 
 from telegram_bot_messages import create_progress_bar
 from telegram_bot_cards import (
-    get_card_by_id, update_cards, say_hello, button_next_card, button_card_response, button_new_cards, button_stats
+    init_cards_cache, get_card_by_id, update_cards,
+    say_hello, button_next_card, button_card_response, button_new_cards, button_stats
 )
 
 from postgres_create_or_update_db import create_or_update_db
@@ -46,6 +47,7 @@ sentry_sdk.init(
 )
 
 create_or_update_db()
+init_cards_cache()
 
 async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user, chat_id = await common_button_handler(update)
