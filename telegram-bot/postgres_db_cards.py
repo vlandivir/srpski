@@ -74,8 +74,8 @@ def get_card_with_weight(user_id, card_id):
             end as corrected_weight
             from {get_table_name('cards')} c
             left join {get_table_name('user_card_responses')} ucr
-            on c.id = ucr.card_id
-            where c.id = :card_id and ucr.user_id = :user_id
+            on c.id = ucr.card_id and ucr.user_id = :user_id
+            where c.id = :card_id
             order by ucr.created_at desc
             limit 1
         ;
