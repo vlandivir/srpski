@@ -33,7 +33,7 @@ def insert_new_card(data):
             insert_query = text(f"""
                 INSERT INTO {table_name} (id, en, ru, sr, image, generated_at, created_at, updated_at)
                 VALUES (:id, :en, :ru, :sr, :image, :id, :created_at, :updated_at)
-                ON CONFLICT (image) DO NOTHING;
+                ON CONFLICT (id) DO NOTHING;
             """)
 
             connection.execute(insert_query, insert_data)

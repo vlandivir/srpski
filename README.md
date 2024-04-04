@@ -5,7 +5,7 @@
 
 ## Links
 
-https://www.clarin.si/kontext/query?corpname=classlaweb_sr – Serbian corpora with search
+https://www.clarin.si/kontext/query?corpname=srwac – Serbian corpora with search
 
 ## How to use
 
