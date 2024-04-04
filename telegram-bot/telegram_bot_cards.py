@@ -18,9 +18,12 @@ TAG_NAME = os.getenv('TAG_NAME')
 
 cards_index = {}
 chats = {}
+cards_data = {}
 
 def init_cards_cache():
+    global cards_data, cards_index
     cards_data = get_all_cards()
+    cards_index = {}
     for card in cards_data:
         cards_index[card['id']] = card
 
@@ -136,12 +139,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 # HANDLERS
 
 async def update_cards(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    global cards_data, cards_index
-    cards_data = get_all_cards()
-    cards_index = {}
-    for card in cards_data:
-        cards_index[card['id']] = card
-
+    init_cards_cache()
     await update.message.reply_text(f'{TAG_NAME}-{len(cards_data)}')
 
 async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

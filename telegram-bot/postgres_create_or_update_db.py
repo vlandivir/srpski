@@ -29,5 +29,5 @@ def create_or_update_db():
             connection.execute(migrations.migrations_001_initial.create_table_user_card_responses)
             connection.execute(migrations.migrations_001_initial.create_table_db_history)
 
-        if current_version == 1 and get_table_name('db_history') == 'public.local_db_history':
+        if current_version == 1:
             connection.execute(migrations.migrations_002_card_id.add_card_id)
