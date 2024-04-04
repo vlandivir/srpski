@@ -126,7 +126,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     caption = f"{create_progress_bar(card_weight)}\n" if card_weight is not None else ''
     caption += next_card['ru']
 
-    upts = str(int(card['updated_at'].timestamp())) if isinstance(card['updated_at'], datetime) else ''
+    upts = str(int(next_card['updated_at'].timestamp())) if isinstance(next_card['updated_at'], datetime) else ''
 
     await context.bot.send_photo(
         chat_id=chat_id,
