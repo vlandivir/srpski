@@ -93,12 +93,31 @@ async def default_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         reply_markup=keyboard
     )
 
+async def button_help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    chat_id = update.effective_chat.id
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text='Бот помогает учить сербский язык (и может быть английский)'
+        '\nДля изучения используются flash карточки, которые состоят из картинки, шкалы прогресса, текста и набора кнопок'
+        '\nЧастота отображения карточек зависит от того насколько хорошо они изучены. В первую очередь отображаются карточки которые пока вызывают сложности, потом новые, а после них хорошо изученные'
+        '\nКарточки показываются блоками по 20 штук, выбираются случайно с частотой '
+        '\n\nДля оценки своего прогресса нажмите на одну из кнопок с цветными маркерами'
+        '\n🔴 ??? – Фраза на карточке совершенно непонятна'
+        '\n🟡 Hard – Трудно вспомнить, как сказать фразу, забытые некоторые слова или грамматические конструкции'
+        '\n🟢 Ok – Фраза понятна и вспоминается без особого труда'
+        '\n🔵 Easy – Всё очень просто, фраза известна и понятна'
+        '\n❌ Hide – Можете убрать карточку, которая вам не нравится или хорошо изучена. Больше Вы её не увидите'
+        '\n⏩ Skip – Пропустить карточку'
+        '\n\nПосле каждой пачки отображается статистика за сегодняший и 4 предыдущих дня'
+    )
+
 async def oops_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_id = update.effective_chat.id
     await context.bot.send_message(
         chat_id=chat_id,
         text='Ой, здесь пока ничего нет...',
     )
+
 
 def main():
     app = ApplicationBuilder().token(token).build()
@@ -112,7 +131,7 @@ def main():
     app.add_handler(CallbackQueryHandler(button_card_response, pattern='^button_easy:'))
     app.add_handler(CallbackQueryHandler(button_next_card, pattern='^button_next$'))
 
-    app.add_handler(CallbackQueryHandler(oops_handler, pattern='^button_help$'))
+    app.add_handler(CallbackQueryHandler(button_help, pattern='^button_help$'))
 
     app.add_handler(CallbackQueryHandler(button_stats, pattern='^button_stats$'))
     app.add_handler(CallbackQueryHandler(button_new_cards, pattern='^button_new_cards$'))
