@@ -134,10 +134,8 @@ Where is Green Street? = Gde je Zelena ulica?
 Where are the stairs? = Gde su stepenice?
 It is just around the corner. = To je odmah iza ugla.
 Go down the street and it will be on your right side. = Idite niz ulicu i biće sa vaše desne strane.
-Can you tell me how to get to the post office? = Možete li mi reći kako da dođem do pošte?
-Go on for about 200 meters it will be on your left side. = Idite oko dvesta metara bi će na vašoj levoj strani.
 
-Madam could you tell me where the supermarket is? = Gospođo možete li mi reći gde je supermarket? Go straight ahead and turn right at the third intersection. = Idite pravo i skrenite desno na trećoj raskrsnici.
+Can you tell me how to get to the post office? = Možete li mi reći kako da dođem do pošte? Go on for about 200 meters it will be on your left side. = Idite oko dvesta metara bi će na vašoj levoj strani.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
