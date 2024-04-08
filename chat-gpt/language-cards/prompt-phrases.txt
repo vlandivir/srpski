@@ -89,7 +89,6 @@ I am sorry. I am engaged now. = Žao mi je. Sada sam zauzet.
 Make me a cup of tea will you? = Skuvaj mi šolju čaja hoćeš li?
 Would you please open the window for me? = Hoćete li otvoriti prozor molim Vas?
 Will you stay there for long? = Hoćeš li ostati tamo dugo?
-
 Doesn't Carol live there? = Zar Kerol ne živi tamo?
 Yes she lives just across the street. = Da ona živi preko puta ulice.
 How long has she lived there? = Koliko dugo živi tamo?
@@ -134,8 +133,49 @@ Where is Green Street? = Gde je Zelena ulica?
 Where are the stairs? = Gde su stepenice?
 It is just around the corner. = To je odmah iza ugla.
 Go down the street and it will be on your right side. = Idite niz ulicu i biće sa vaše desne strane.
+Which one is Mr. Smith's office? = Koja je kancelarija gospodina Smita?
+It is room 893 on the 23rd floor. = To je soba 893 na 23. spratu.
+Thank you for the directions. = Hvala Vam na uputstvima.
+Are you married? = Jesi li u braku?
+I am single. = Ja sam singl.
+Do you live with your parents? = Da li živiš sa roditeljima?
+No, I live in my own apartment. = Ne, ja živim u svom stanu.
+I have rented a small apartment. = Iznajmio sam mali stan.
+I live in a house. = Ja živim u kući.
+You have a younger sister, don't you? = Imaš mlađu sestru, zar ne?
+How is your family? = Kako je tvoja porodica?
+She is engaged to Charlie. = Ona je verena za Čarlija.
+She is married. = Ona je udata.
+How long have you been married? = Koliko dugo ste u braku?
+We have been married for 5 years. = Mi smo u braku pet godina.
+They are divorced. = Oni su razvedeni.
+My parents got married in 1994. = Moji roditelji su se venčali 1994.
+Charlie has his own family now. = Čarli sada ima svoju porodicu.
+Mary gave birth to a baby last month. = Meri je rodila bebu prošlog meseca.
+My aunt will come to live with me for a while. = Moja tetka će doći da živi kod mene neko vreme.
+His wife died a year ago, now he lives alone. = Žena mu je umrla pre godinu dana, sada živi sam.
+How will you spend the evening? = Kako ćeš provesti veče?
+I will probably stay home and watch TV. = Verovatno ću ostati kod kuće i gledati TV.
+What will you do about it? = Šta ćeš uraditi povodom toga?
+What do you want to do after graduation? = Šta želiš da radiš nakon diplomiranja?
+I will study more. = Učiću još.
+What time are you going to leave for the airport? = U koliko sati ideš na aerodrom?
+Is he coming to dinner? = Da li on dolazi na večeru?
+I am going to the post office. = Idem u poštu.
+Will you go with me? = Da li ćeš ići sa mnom?
+They will discuss it at the meeting next Monday. = Oni će razgovarati o tome na sastanku sledećeg ponedeljka.
+I will be waiting for you at the restaurant. = Čekaću te u restoranu.
+I will call you when I get home. = Nazvaću te kad dođem kući.
+What is your plan for the summer holiday? = Kakav je tvoj plan za letnji raspust?
+Will you go to Greece? = Da li ćeš ići u Grčku?
+I am thinking about visiting London. = Razmišljam da posetim London.
+There will be an exibition at the art gallery. = Biće otvorena izložba u umetničkoj galeriji.
+It is said it will clear up tonight. = Rečeno je da će se večeras razvedriti.
+Will it snow next week? = Da li će padati sneg sledeće nedelje?
+But we had a lot of snow last year. = Ali imali smo puno snega prošle godine.
+I will buy food on my way home. = Kupiću hranu na putu kući.
+I heard the clock, but I did not get up until eight. = Čuo sam sat, ali nisam ustao do osam.
 
-Can you tell me how to get to the post office? = Možete li mi reći kako da dođem do pošte? Go on for about 200 meters it will be on your left side. = Idite oko dvesta metara bi će na vašoj levoj strani.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

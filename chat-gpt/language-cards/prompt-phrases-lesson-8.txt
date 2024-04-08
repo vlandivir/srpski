@@ -48,4 +48,3 @@ Will it rain tomorrow? = Da li će padati kiša sutra?
 No, I don't think so. = Mislim da neće.
 How is the weather today? = Kakvo je vreme danas?
 The weather is nice today. = Vreme je lepo danas.
-* snowman = Sneško Belić
