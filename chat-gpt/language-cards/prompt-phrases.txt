@@ -161,8 +161,6 @@ What do you want to do after graduation? = Šta želiš da radiš nakon diplomir
 I will study more. = Učiću još.
 What time are you going to leave for the airport? = U koliko sati ideš na aerodrom?
 Is he coming to dinner? = Da li on dolazi na večeru?
-I am going to the post office. = Idem u poštu.
-Will you go with me? = Da li ćeš ići sa mnom?
 They will discuss it at the meeting next Monday. = Oni će razgovarati o tome na sastanku sledećeg ponedeljka.
 I will be waiting for you at the restaurant. = Čekaću te u restoranu.
 I will call you when I get home. = Nazvaću te kad dođem kući.
@@ -176,6 +174,7 @@ But we had a lot of snow last year. = Ali imali smo puno snega prošle godine.
 I will buy food on my way home. = Kupiću hranu na putu kući.
 I heard the clock, but I did not get up until eight. = Čuo sam sat, ali nisam ustao do osam.
 
+I am going to the post office. = Idem u poštu. Will you go with me? = Da li ćeš ići sa mnom?
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции

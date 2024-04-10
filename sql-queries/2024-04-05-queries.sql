@@ -21,7 +21,7 @@ select c.*, card_weight, user_response,
     end as corrected_weight
     from public.local_cards c
     left join public.local_user_card_responses ucr
-    on c.id = ucr.card_id and ucr.user_id = '150847737'
+    on c.id = ucr.card_id
     where c.id = 1712270743
     order by ucr.created_at desc
     limit 1
