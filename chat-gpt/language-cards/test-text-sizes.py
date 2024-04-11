@@ -1,4 +1,7 @@
 import os
+import re
+
+from functools import cache
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
 #https://levelup.gitconnected.com/how-to-properly-calculate-text-size-in-pil-images-17a2cc6f51fd
@@ -11,71 +14,127 @@ def get_text_dimensions(text_string, font):
 
     return (text_width, text_height)
 
-def split_string_into_parts(s, n_parts):
-    if n_parts <= 1:
-        return [s]
+def split_text_into_sentences(text, num_sentences=None):
+    sentences = re.split(r'(?<!\w\.\w.)(?<=\.|\?|!)\s', text)
 
-    # Общая длина строки без учета пробелов для более равномерного деления
-    total_length = len(s.replace(" ", ""))
-    part_length = total_length / n_parts
+    if num_sentences is None or len(sentences) <= num_sentences:
+        return sentences
 
-    parts = []
-    last_index = 0
-    accumulated_length = 0  # Длина накопленных символов без пробелов
+    while len(sentences) > num_sentences:
+        shortest = min(sentences, key=len)
+        index = sentences.index(shortest)
+        if index > 0:
+            sentences[index - 1] += ' ' + sentences.pop(index)
+        elif index < len(sentences) - 1:
+            sentences[index] += ' ' + sentences.pop(index + 1)
+        else:
+            break
 
-    for i in range(1, n_parts):
-        # Планируемая длина для текущей части
-        current_target = part_length * i
+    return sentences
 
-        while accumulated_length < current_target and last_index < len(s):
-            if s[last_index] != " ":
-                accumulated_length += 1
-            last_index += 1
+def if_fits_to_width(text, font, width):
+    text_width, text_height = get_text_dimensions(text, font)
+    return text_width < width
 
-        # Находим ближайший пробел для разделения
-        space_index = s.find(" ", last_index)
-        if space_index == -1:  # Если пробел не найден, используем длину строки
-            space_index = len(s)
+def split_by_two_sentences(text, font, color, width, rows, colors, fonts):
+    sentences = split_text_into_sentences(text, 2)
+    s1, s2 = sentences[0], sentences[1] if len(sentences) == 2 else 0
+    print(sentences)
 
-        # Добавляем часть строки до найденного пробела
-        parts.append(s[:space_index].strip())
-        # Обновляем строку, удаляя добавленную часть
-        s = s[space_index:]
-
-        last_index = 0  # Сбрасываем индекс для новой подстроки
-
-    # Добавляем оставшуюся часть строки
-    parts.append(s.strip())
-
-    return parts
-
-def add_text_properties(text, color, gap, image_width, font_48, rows, gaps, colors, fonts):
-    text_width, text_height = get_text_dimensions(text, font_48)
-    rows_count = text_width / (image_width - 128)
-
-    if rows_count > 2:
-        font_size = 40
-        rows.extend(split_string_into_parts(text, 2))
-        gaps.extend([(gap + 8, font_size + 2), (0, font_size + 2)])
+    if if_fits_to_width(s1, font, width) and if_fits_to_width(s2, font, width):
+        rows.extend([s1, s2])
+        fonts.extend([font, font])
         colors.extend([color, color])
-        fonts.extend([font_size, font_size])
-    elif rows_count > 1:
-        font_size = 48
-        rows.extend(split_string_into_parts(text, 2))
-        gaps.extend([(gap + 8, font_size + 2), (0, font_size + 2)])
+        print(f'2 sentences {font.size}')
+        return True
+
+    return False
+
+def split_on_two_strings_by_words(text, font, color, width, rows, colors, fonts):
+    words = text.split()
+
+    k = 1
+    while k < len(words) and if_fits_to_width(' '.join(words[:k]), font, width) :
+        k += 1
+    k -= 1
+
+    if if_fits_to_width(' '.join(words[k:]), font, width):
+        rows.extend([' '.join(words[:k]), ' '.join(words[k:])])
+        fonts.extend([font, font])
         colors.extend([color, color])
-        fonts.extend([font_size, font_size])
-    else:
-        font_size = 48
+        print(f'2 words {font.size}')
+        return True
+
+    return False
+
+def add_text_properties(text, color, gap, width, rows, gaps, colors, fonts):
+    f36, f42, f48 = get_fonts()
+
+    if if_fits_to_width(text, f48, width):
         rows.extend([text])
-        gaps.extend([(gap + font_size * 0.5, font_size * 1.5 + 2)])
+        gaps.extend([(gap + 24, 48 + 40)])
+        fonts.extend([f48])
         colors.extend([color])
-        fonts.extend([font_size])
+        print('1 all 48')
+        return
 
-def add_text_to_image(output_path, texts, font_path):
+    if split_by_two_sentences(text, f48, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 8, 48), (8, 48)])
+        return
+
+    if split_by_two_sentences(text, f42, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 14, 42), (8, 48)])
+        return
+
+    if split_on_two_strings_by_words(text, f48, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 8, 48), (8, 48)])
+        return
+
+    if split_on_two_strings_by_words(text, f42, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 14, 42), (8, 48)])
+        return
+
+    if split_by_two_sentences(text, f36, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 20, 36), (8, 48)])
+        return
+
+    if split_on_two_strings_by_words(text, f36, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 20, 36), (8, 48)])
+        return
+
+    words = text.split()
+
+    k = 1
+    while k < len(words) and if_fits_to_width(' '.join(words[:k]), f36, width):
+        k += 1
+    k -= 1
+
+    n = k + 1
+    while n < len(words) and if_fits_to_width(' '.join(words[k:n]), f36, width):
+        n += 1
+    n -= 1
+
+    rows.extend([' '.join(words[:k]), ' '.join(words[k:n]), ' '.join(words[n:])])
+    fonts.extend([f36, f36, f36])
+    colors.extend([color, color, color])
+
+    gaps.extend([(gap + 2, 38), (2, 38), (2, 38)])
+
+@cache
+def get_fonts():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    font_path = os.path.join(script_dir, 'NimbusSanLRegular.ttf')
+
+    font_36 = ImageFont.truetype(font_path, 36)
+    font_42 = ImageFont.truetype(font_path, 42)
+    font_48 = ImageFont.truetype(font_path, 48)
+
+    return (font_36, font_42, font_48)
+
+def add_text_to_image(output_path, texts):
 
     width = 1024
-    height = int(1024 * 2)
+    height = int(1024 * 2.4)
     new_image = Image.new("RGB", (width, height))
 
     # Initialize the drawing context
@@ -96,9 +155,6 @@ def add_text_to_image(output_path, texts, font_path):
     # Blend this rectangle with the base image
     new_image.paste(rect_image, (0, 0), rect_image)
 
-    font_40 = ImageFont.truetype(font_path, 40)
-    font_48 = ImageFont.truetype(font_path, 48)
-
     text_x = 32
 
     # Инициализация списков
@@ -115,13 +171,14 @@ def add_text_to_image(output_path, texts, font_path):
     text_colors = [lavender, pale_blue, pastel_peach]
 
     for i, text in enumerate(texts):
-        print(f"{text}")
-        add_text_properties(text, text_colors[i % 3], 0 if i % 3 else 16, new_image.width, font_48, rows, gaps, colors, fonts)
+        print('')
+        print(text)
+        add_text_properties(text, text_colors[i % 3], 0 if i % 3 else 32, new_image.width - 64, rows, gaps, colors, fonts)
 
     for i, r in enumerate(rows):
         top, bottom = gaps[i]
         text_y += top
-        draw.text((text_x, text_y), r, fill=colors[i], font=(font_48 if fonts[i] == 48 else font_40))
+        draw.text((text_x, text_y), r, fill=colors[i], font=fonts[i])
         text_y += bottom
 
     # Save the image
@@ -129,12 +186,11 @@ def add_text_to_image(output_path, texts, font_path):
     new_image.save(output_path)
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-
-font_path = os.path.join(script_dir, 'NimbusSanLRegular.ttf')
+# font_path = os.path.join(script_dir, 'NimbusSanLRegular.ttf')
 
 texts = [
     "Short message",
-    "Two string message. Сообщение в две строки",
+    "Two string message. Сообщение в две строки. Делим по словам!",
     "In Belgrade, the snow that has been falling since last night has slowed down and disrupted traffic.",
     "Short message",
     "Madam could you tell me where the supermarket is? Go straight ahead and turn right at the third intersection.",
@@ -149,11 +205,12 @@ texts = [
     "Da li se radnja otvara u osam ujutru radnim danima? Otvara se u devet ujutru radnim danima.",
     "Would you help me move the fridge? I am glad to but I am afraid I don't have the time.",
     "Ты поможешь мне переставить холодильник? Я бы с удовольствием, но боюсь, у меня нет времени.",
-    "Two string message. Сообщение в две строки",
+    "Two string message. Короткий текст. Сообщение в две строки",
     "Hoćeš li mi pomoći da pomerim frižider? Drage volje ali bojim se da nemam vremena.",
+    "Мадам, не могли бы вы сказать мне, где находится супермаркет? Идите прямо и поверните направо на третьем перекрёстке.",
 ]
 
 release_folder = os.path.join(script_dir)
 output_path = release_folder + '/test-text-sizes.webp'
 
-add_text_to_image(output_path, texts, font_path)
+add_text_to_image(output_path, texts)
