@@ -153,7 +153,6 @@ def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     # Blend this rectangle with the base image
     new_image.paste(rect_image, (0, 0), rect_image)
 
-    text_x = 24
 
     rows = []
     colors = []
@@ -164,11 +163,11 @@ def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     lavender = (230, 230, 250, 225)  # Лавандовый
     pastel_peach = (255, 218, 185, 225)  # Пастельный персик
 
-    text_y -= 4
+    add_text_properties(text_sr, font_path, pale_blue,    0, new_image.width - 64, rows, gaps, colors, fonts)
+    add_text_properties(text_ru, font_path, lavender,     0, new_image.width - 64, rows, gaps, colors, fonts)
+    add_text_properties(text_en, font_path, pastel_peach, 0, new_image.width - 64, rows, gaps, colors, fonts)
 
-    add_text_properties(text_sr, font_path, pale_blue,    0, new_image.width - 48, rows, gaps, colors, fonts)
-    add_text_properties(text_ru, font_path, lavender,     0, new_image.width - 48, rows, gaps, colors, fonts)
-    add_text_properties(text_en, font_path, pastel_peach, 0, new_image.width - 48, rows, gaps, colors, fonts)
+    text_x = 24
 
     print('\n')
     for i, r in enumerate(rows):
