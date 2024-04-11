@@ -4,8 +4,13 @@ import json
 from dotenv import load_dotenv
 from datetime import datetime
 
-from do_space import file_exists_in_do_space
-from postgres_db import get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response, get_new_cards_pack, get_user_stats
+from do_space import file_exists_in_do_space, add_text_to_image_do
+
+from postgres_db import (
+    get_or_create_user, update_user_current_set, get_all_cards, update_user_card_response,
+    get_new_cards_pack, get_user_stats
+)
+from postgres_db_cards import update_card
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
@@ -113,6 +118,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         keyboard_markup.append([
             InlineKeyboardButton('🔄 Ref', callback_data=f'button_new_cards'),
             InlineKeyboardButton('➕ Add', callback_data=f'button_add_card'),
+            InlineKeyboardButton('♻️ Up', callback_data=f'button_update_image:{file_id}'),
         ])
 
     keyboard_markup.append(second_row)
@@ -181,3 +187,19 @@ async def button_stats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         chat_id=chat_id,
         text=text or 'Ответьте на несколько карточек, чтобы получить статистику'
     )
+
+async def button_update_image(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    query = update.callback_query
+    user, chat_id = await common_button_handler(update)
+
+    data = query.data.split(':')
+    card_id = int(data[1])
+    card = get_card_by_id(card_id)
+    if card is not None:
+        image = update_card(card_id, {'sr': card['sr'], 'ru': card['ru'], 'en': card['en']})
+
+        print(image)
+        if image:
+            add_text_to_image_do(
+                'vlandivir', 'srpski-sources/', 'srpski/', image, {'image': image, **data}
+            )

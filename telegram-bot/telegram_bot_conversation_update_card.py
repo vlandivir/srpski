@@ -6,7 +6,7 @@ from do_space import add_text_to_image_do
 
 from telegram import Update
 from telegram.ext import (
-    CommandHandler, ContextTypes, ConversationHandler, CallbackQueryHandler, MessageHandler, filters
+    ContextTypes, ConversationHandler, CallbackQueryHandler, MessageHandler, filters
 )
 
 # Состояние для ConversationHandler, ожидающее JSON

@@ -18,7 +18,8 @@ from telegram_bot_conversation_update_card import get_update_card_conversation_h
 from telegram_bot_messages import create_progress_bar
 from telegram_bot_cards import (
     init_cards_cache, get_card_by_id, update_cards,
-    say_hello, button_next_card, button_card_response, button_new_cards, button_stats
+    say_hello, button_next_card, button_card_response, button_new_cards, button_stats,
+    button_update_image
 )
 
 from postgres_create_or_update_db import create_or_update_db
@@ -135,6 +136,7 @@ def main():
 
     app.add_handler(CallbackQueryHandler(button_stats, pattern='^button_stats$'))
     app.add_handler(CallbackQueryHandler(button_new_cards, pattern='^button_new_cards$'))
+    app.add_handler(CallbackQueryHandler(button_update_image, pattern='^button_update_image$'))
 
     app.add_handler(get_new_card_conversation_handler())
     app.add_handler(get_hide_card_conversation_handler())
