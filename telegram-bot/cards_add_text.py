@@ -33,19 +33,20 @@ def split_text_into_sentences(text, num_sentences=None):
     return sentences
 
 def if_fits_to_width(text, font, width):
+    print(text, type(text), type(str(text)), font, width)
     text_width, text_height = get_text_dimensions(text, font)
     return text_width < width
 
 def split_by_two_sentences(text, font, color, width, rows, colors, fonts):
     sentences = split_text_into_sentences(text, 2)
-    s1, s2 = sentences[0], sentences[1] if len(sentences) == 2 else 0
-    print(sentences)
+    if len(sentences) != 2:
+        return False
+    s1, s2 = sentences[0], sentences[1]
 
     if if_fits_to_width(s1, font, width) and if_fits_to_width(s2, font, width):
         rows.extend([s1, s2])
         fonts.extend([font, font])
         colors.extend([color, color])
-        print(f'2 sentences {font.size}')
         return True
 
     return False
@@ -62,7 +63,6 @@ def split_on_two_strings_by_words(text, font, color, width, rows, colors, fonts)
         rows.extend([' '.join(words[:k]), ' '.join(words[k:])])
         fonts.extend([font, font])
         colors.extend([color, color])
-        print(f'2 words {font.size}')
         return True
 
     return False
@@ -77,7 +77,6 @@ def add_text_properties(text, font_path, color, gap, width, rows, gaps, colors, 
         gaps.extend([(gap + 24, 48 + 40)])
         fonts.extend([f48])
         colors.extend([color])
-        print('1 all 48')
         return
 
     if split_by_two_sentences(text, f48, color, width, rows, colors, fonts):
@@ -143,7 +142,8 @@ def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     rect_draw = ImageDraw.Draw(rect_image)
 
     opacity = int(255 * 0.8)
-    text_y = new_image.height * 3 / 4 - 8
+    text_y = new_image.height * 3 / 4 - 24
+
     rect_draw.rounded_rectangle(
         [8, text_y, new_image.width - 8, new_image.height - 8],
         fill=(0, 0, 0, opacity),
@@ -153,21 +153,22 @@ def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     # Blend this rectangle with the base image
     new_image.paste(rect_image, (0, 0), rect_image)
 
-    text_x = 32
-    text_y += 0
+    text_x = 24
 
     rows = []
     colors = []
     gaps = []
     fonts = []
 
-    lavender = (230, 230, 250, 225)  # Лавандовый
     pale_blue = (175, 238, 238, 225)  # Бледно-голубой
+    lavender = (230, 230, 250, 225)  # Лавандовый
     pastel_peach = (255, 218, 185, 225)  # Пастельный персик
 
-    add_text_properties(text_sr, font_path, lavender,     0, new_image.width - 64, rows, gaps, colors, fonts)
-    add_text_properties(text_ru, font_path, pale_blue,    0, new_image.width - 64, rows, gaps, colors, fonts)
-    add_text_properties(text_en, font_path, pastel_peach, 0, new_image.width - 64, rows, gaps, colors, fonts)
+    text_y -= 4
+
+    add_text_properties(text_sr, font_path, pale_blue,    0, new_image.width - 48, rows, gaps, colors, fonts)
+    add_text_properties(text_ru, font_path, lavender,     0, new_image.width - 48, rows, gaps, colors, fonts)
+    add_text_properties(text_en, font_path, pastel_peach, 0, new_image.width - 48, rows, gaps, colors, fonts)
 
     print('\n')
     for i, r in enumerate(rows):

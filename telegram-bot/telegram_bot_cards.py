@@ -196,10 +196,18 @@ async def button_update_image(update: Update, context: ContextTypes.DEFAULT_TYPE
     card_id = int(data[1])
     card = get_card_by_id(card_id)
     if card is not None:
-        image = update_card(card_id, {'sr': card['sr'], 'ru': card['ru'], 'en': card['en']})
+        data = {'sr': str(card['sr']), 'ru': str(card['ru']), 'en': str(card['en'])}
+        image = update_card(card_id, data)
 
         print(image)
         if image:
             add_text_to_image_do(
                 'vlandivir', 'srpski-sources/', 'srpski/', image, {'image': image, **data}
+            )
+
+            upts = str(int(card['updated_at'].timestamp())) if isinstance(card['updated_at'], datetime) else ''
+
+            await context.bot.send_photo(
+                chat_id=chat_id,
+                photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{card['image']}?upts={upts}',
             )

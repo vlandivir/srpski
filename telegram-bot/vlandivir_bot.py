@@ -136,7 +136,7 @@ def main():
 
     app.add_handler(CallbackQueryHandler(button_stats, pattern='^button_stats$'))
     app.add_handler(CallbackQueryHandler(button_new_cards, pattern='^button_new_cards$'))
-    app.add_handler(CallbackQueryHandler(button_update_image, pattern='^button_update_image$'))
+    app.add_handler(CallbackQueryHandler(button_update_image, pattern='^button_update_image:'))
 
     app.add_handler(get_new_card_conversation_handler())
     app.add_handler(get_hide_card_conversation_handler())

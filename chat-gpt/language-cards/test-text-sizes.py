@@ -38,8 +38,10 @@ def if_fits_to_width(text, font, width):
 
 def split_by_two_sentences(text, font, color, width, rows, colors, fonts):
     sentences = split_text_into_sentences(text, 2)
-    s1, s2 = sentences[0], sentences[1] if len(sentences) == 2 else 0
-    print(sentences)
+    if len(sentences) != 2:
+        return False
+    s1, s2 = sentences[0], sentences[1]
+
 
     if if_fits_to_width(s1, font, width) and if_fits_to_width(s2, font, width):
         rows.extend([s1, s2])
