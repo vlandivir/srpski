@@ -1,3 +1,7 @@
+import os
+import re
+
+from functools import cache
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
 #https://levelup.gitconnected.com/how-to-properly-calculate-text-size-in-pil-images-17a2cc6f51fd
@@ -10,60 +14,113 @@ def get_text_dimensions(text_string, font):
 
     return (text_width, text_height)
 
-def split_string_into_parts(s, n_parts):
-    if n_parts <= 1:
-        return [s]
+def split_text_into_sentences(text, num_sentences=None):
+    sentences = re.split(r'(?<!\w\.\w.)(?<=\.|\?|!)\s', text)
 
-    total_length = len(s.replace(" ", ""))
-    part_length = total_length / n_parts
+    if num_sentences is None or len(sentences) <= num_sentences:
+        return sentences
 
-    parts = []
-    last_index = 0
-    accumulated_length = 0
+    while len(sentences) > num_sentences:
+        shortest = min(sentences, key=len)
+        index = sentences.index(shortest)
+        if index > 0:
+            sentences[index - 1] += ' ' + sentences.pop(index)
+        elif index < len(sentences) - 1:
+            sentences[index] += ' ' + sentences.pop(index + 1)
+        else:
+            break
 
-    for i in range(1, n_parts):
-        current_target = part_length * i
+    return sentences
 
-        while accumulated_length < current_target and last_index < len(s):
-            if s[last_index] != " ":
-                accumulated_length += 1
-            last_index += 1
+def if_fits_to_width(text, font, width):
+    text_width, text_height = get_text_dimensions(text, font)
+    return text_width < width
 
-        space_index = s.find(" ", last_index)
-        if space_index == -1:
-            space_index = len(s)
+def split_by_two_sentences(text, font, color, width, rows, colors, fonts):
+    sentences = split_text_into_sentences(text, 2)
+    s1, s2 = sentences[0], sentences[1] if len(sentences) == 2 else 0
+    print(sentences)
 
-        parts.append(s[:space_index].strip())
-        s = s[space_index:]
-
-        last_index = 0
-
-    parts.append(s.strip())
-
-    return parts
-
-def add_text_properties(text, color, new_image_width, font_48, rows, gaps, colors, fonts):
-    text_width, text_height = get_text_dimensions(text, font_48)
-    rows_count = text_width / (new_image_width - 64)
-
-    if rows_count > 2:
-        font_size = 40
-        rows.extend(split_string_into_parts(text, 2))
-        gaps.extend([(8, font_size + 2), (0, font_size + 2), (0, font_size + 2)])
+    if if_fits_to_width(s1, font, width) and if_fits_to_width(s2, font, width):
+        rows.extend([s1, s2])
+        fonts.extend([font, font])
         colors.extend([color, color])
-        fonts.extend([font_size, font_size])
-    elif rows_count > 1:
-        font_size = 48
-        rows.extend(split_string_into_parts(text, 2))
-        gaps.extend([(8, font_size + 2), (0, font_size + 2)])
+        print(f'2 sentences {font.size}')
+        return True
+
+    return False
+
+def split_on_two_strings_by_words(text, font, color, width, rows, colors, fonts):
+    words = text.split()
+
+    k = 1
+    while k < len(words) and if_fits_to_width(' '.join(words[:k]), font, width) :
+        k += 1
+    k -= 1
+
+    if if_fits_to_width(' '.join(words[k:]), font, width):
+        rows.extend([' '.join(words[:k]), ' '.join(words[k:])])
+        fonts.extend([font, font])
         colors.extend([color, color])
-        fonts.extend([font_size, font_size])
-    else:
-        font_size = 48
+        print(f'2 words {font.size}')
+        return True
+
+    return False
+
+def add_text_properties(text, font_path, color, gap, width, rows, gaps, colors, fonts):
+    f36 = ImageFont.truetype(font_path, 36)
+    f42 = ImageFont.truetype(font_path, 42)
+    f48 = ImageFont.truetype(font_path, 48)
+
+    if if_fits_to_width(text, f48, width):
         rows.extend([text])
-        gaps.extend([(font_size * 0.5, font_size * 1.5 + 2)])
+        gaps.extend([(gap + 24, 48 + 40)])
+        fonts.extend([f48])
         colors.extend([color])
-        fonts.extend([font_size])
+        print('1 all 48')
+        return
+
+    if split_by_two_sentences(text, f48, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 8, 48), (8, 48)])
+        return
+
+    if split_by_two_sentences(text, f42, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 14, 42), (8, 48)])
+        return
+
+    if split_on_two_strings_by_words(text, f48, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 8, 48), (8, 48)])
+        return
+
+    if split_on_two_strings_by_words(text, f42, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 14, 42), (8, 48)])
+        return
+
+    if split_by_two_sentences(text, f36, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 20, 36), (8, 48)])
+        return
+
+    if split_on_two_strings_by_words(text, f36, color, width, rows, colors, fonts):
+        gaps.extend([(gap + 20, 36), (8, 48)])
+        return
+
+    words = text.split()
+
+    k = 1
+    while k < len(words) and if_fits_to_width(' '.join(words[:k]), f36, width):
+        k += 1
+    k -= 1
+
+    n = k + 1
+    while n < len(words) and if_fits_to_width(' '.join(words[k:n]), f36, width):
+        n += 1
+    n -= 1
+
+    rows.extend([' '.join(words[:k]), ' '.join(words[k:n]), ' '.join(words[n:])])
+    fonts.extend([f36, f36, f36])
+    colors.extend([color, color, color])
+
+    gaps.extend([(gap + 2, 38), (2, 38), (2, 38)])
 
 def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     new_height = int(original_image.height * 4 / 3)
@@ -96,34 +153,27 @@ def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     # Blend this rectangle with the base image
     new_image.paste(rect_image, (0, 0), rect_image)
 
-    font_40 = ImageFont.truetype(font_path, 40)
-    font_48 = ImageFont.truetype(font_path, 48)
-
     text_x = 32
     text_y += 0
 
-    # Инициализация списков
     rows = []
     colors = []
     gaps = []
     fonts = []
 
-    # Параметры
     lavender = (230, 230, 250, 225)  # Лавандовый
     pale_blue = (175, 238, 238, 225)  # Бледно-голубой
     pastel_peach = (255, 218, 185, 225)  # Пастельный персик
 
-    # Вызов функции для каждого блока текста
-    add_text_properties(text_sr, pale_blue, new_image.width, font_48, rows, gaps, colors, fonts)
-    add_text_properties(text_ru, lavender, new_image.width, font_48, rows, gaps, colors, fonts)
-    add_text_properties(text_en, pastel_peach, new_image.width, font_48, rows, gaps, colors, fonts)
+    add_text_properties(text_sr, font_path, lavender,     0, new_image.width - 64, rows, gaps, colors, fonts)
+    add_text_properties(text_ru, font_path, pale_blue,    0, new_image.width - 64, rows, gaps, colors, fonts)
+    add_text_properties(text_en, font_path, pastel_peach, 0, new_image.width - 64, rows, gaps, colors, fonts)
 
-    print('\n\n')
+    print('\n')
     for i, r in enumerate(rows):
         top, bottom = gaps[i]
         text_y += top
-        draw.text((text_x, text_y), r, fill=colors[i], font=(font_48 if fonts[i] == 48 else font_40))
+        draw.text((text_x, text_y), r, fill=colors[i], font=fonts[i])
         text_y += bottom
-        print (r, top, bottom, fonts[i])
 
     return new_image
