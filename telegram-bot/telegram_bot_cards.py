@@ -135,7 +135,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     await context.bot.send_photo(
         chat_id=chat_id,
-        photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{filename}?upts={upts}',
+        photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/srpski/{filename}?upts={datetime.now()}',
         reply_markup=keyboard,
         caption=caption,
         has_spoiler=True,
