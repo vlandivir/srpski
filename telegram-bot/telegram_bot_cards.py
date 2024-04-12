@@ -205,6 +205,8 @@ async def button_update_image(update: Update, context: ContextTypes.DEFAULT_TYPE
                 'vlandivir', 'srpski-sources/', 'srpski/', image, {'image': image, **data}
             )
 
+            init_cards_cache()
+
             upts = str(int(card['updated_at'].timestamp())) if isinstance(card['updated_at'], datetime) else ''
 
             await context.bot.send_photo(
