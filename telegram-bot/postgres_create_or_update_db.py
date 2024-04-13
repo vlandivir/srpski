@@ -4,6 +4,7 @@ from postgres_db import get_pg_engine, get_table_name
 
 import migrations.migrations_001_initial
 import migrations.migrations_002_card_id
+import migrations.migrations_003_card_author
 
 select_db_version =  text(f"""
     select max(version) from {get_table_name('db_history')};
@@ -31,3 +32,7 @@ def create_or_update_db():
 
         if current_version == 1:
             connection.execute(migrations.migrations_002_card_id.add_card_id)
+
+        if current_version == 2;
+            connection.execute(migrations.migrations_003_card_author.run)
+
