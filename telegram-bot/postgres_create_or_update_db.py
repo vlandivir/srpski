@@ -33,6 +33,5 @@ def create_or_update_db():
         if current_version == 1:
             connection.execute(migrations.migrations_002_card_id.add_card_id)
 
-        if current_version == 2;
+        if current_version == 2:
             connection.execute(migrations.migrations_003_card_author.run)
-

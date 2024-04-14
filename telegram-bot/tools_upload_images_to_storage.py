@@ -17,3 +17,4 @@ upload_files_to_digital_ocean_spaces(bucket_name, do_folder, cards_path)
 
 cards_path = os.path.join(current_dir, '..', 'chat-gpt', 'language-cards', 'release-images')
 upload_files_to_digital_ocean_spaces(bucket_name, do_folder, cards_path)
+

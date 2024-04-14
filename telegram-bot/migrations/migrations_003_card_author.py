@@ -10,5 +10,6 @@ run = text(f"""
 
     ALTER TABLE {get_table_name('cards')} ADD CONSTRAINT fk_author FOREIGN KEY (author_id) REFERENCES {get_table_name('users')} ON DELETE SET NULL;
 
+    INSERT INTO {get_table_name('db_history')} (version) VALUES (3);
     COMMIT;
 """)

@@ -119,6 +119,7 @@ async def send_card(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             InlineKeyboardButton('🔄 Ref', callback_data=f'button_new_cards'),
             InlineKeyboardButton('➕ Add', callback_data=f'button_add_card'),
             InlineKeyboardButton('♻️ Up', callback_data=f'button_update_image:{file_id}'),
+            InlineKeyboardButton('👤➕ Add', callback_data=f'button_add_user_card'),
         ])
 
     keyboard_markup.append(second_row)

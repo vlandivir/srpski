@@ -14,6 +14,7 @@ from telegram_bot_helpers import common_button_handler
 from telegram_bot_conversation_new_card import get_new_card_conversation_handler
 from telegram_bot_conversation_hide_card import get_hide_card_conversation_handler
 from telegram_bot_conversation_update_card import get_update_card_conversation_handler
+from telegram_bot_conversation_add_card_by_user import get_add_card_by_user_conversation_handler
 
 from telegram_bot_messages import create_progress_bar
 from telegram_bot_cards import (
@@ -141,6 +142,7 @@ def main():
     app.add_handler(get_new_card_conversation_handler())
     app.add_handler(get_hide_card_conversation_handler())
     app.add_handler(get_update_card_conversation_handler())
+    app.add_handler(get_add_card_by_user_conversation_handler())
 
     app.add_handler(MessageHandler(filters.ALL, default_handler))
 
