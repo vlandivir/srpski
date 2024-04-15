@@ -3,9 +3,6 @@ import re
 import time
 import io
 
-from PIL import Image
-from tempfile import NamedTemporaryFile
-
 from telegram import Update
 from telegram.ext import (
     CallbackContext,
@@ -18,6 +15,7 @@ from telegram.ext import (
 
 from do_space import add_text_to_image_do, get_do_space_client
 from postgres_db_cards import insert_new_card
+from telegram_bot_tools import prepare_source_image
 
 WAITING_FOR_TEXT, WAITING_FOR_IMAGE = range(2)
 
@@ -55,24 +53,14 @@ async def photo_received(update: Update, context: CallbackContext) -> int:
     photo = update.message.photo[-1]
     photo_file = await context.bot.get_file(photo.file_id)
 
-    with NamedTemporaryFile(delete=False) as tmp_file:
-        await photo_file.download_to_drive(
-            tmp_file.name,
-            read_timeout=3000,
-            write_timeout=3000,
-            connect_timeout=3000,
-        )
-        image = Image.open(tmp_file.name)
+    image, error = await prepare_source_image(photo_file)
 
-    if image.width < 800 or image.height < 800:
-        await update.message.reply_text('Размер изображения должен быть не менее 800x800px.')
+    if error is not None:
+        await update.message.reply_text(error)
         return ConversationHandler.END
 
-    side_length = min(image.width, image.height)
-    image_cropped = image.crop((0, 0, side_length, side_length))
-
     output_stream = io.BytesIO()
-    image_cropped.save(output_stream, format='WEBP')
+    image.save(output_stream, format='WEBP')
     output_stream.seek(0)
 
     client = get_do_space_client()
