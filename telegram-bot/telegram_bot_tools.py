@@ -1,4 +1,8 @@
+import time
+
 from PIL import Image
+from noise import pnoise2
+
 from tempfile import NamedTemporaryFile
 
 async def prepare_source_image(photo_file):
@@ -17,7 +21,26 @@ async def prepare_source_image(photo_file):
     width, height = image.size
     max_side = max(width, height)
 
-    square_image = Image.new('RGB', (max_side, max_side), (0, 0, 0))
+    square_image = Image.new('RGB', (max_side, max_side))
+
+    scale = 100.0  # Чем больше число, тем "глаже" шум
+    octaves = 6  # Количество октав влияет на детализацию шума
+    persistence = 0.5
+    lacunarity = 2.0
+
+    base = int(time.time() / 1000)
+    print(f'Base for noise {base}')
+
+    # Генерация шума Перлина и заполнение изображения
+    for i in range(max_side):
+        for j in range(max_side):
+            # r = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, repeatx=width, repeaty=max_side, base=1) + 1) * 127.5)
+            r = 0
+            g = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, base = base + 2) + 1) * 127.5)
+            b = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, base = base + 3) + 1) * 127.5)
+
+            square_image.putpixel((j, i), (r, g, b))
+
     left = (max_side - width) // 2
     top = (max_side - height) // 2
     square_image.paste(image, (left, top))
