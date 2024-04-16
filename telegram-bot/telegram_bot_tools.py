@@ -1,6 +1,6 @@
 import time
 
-from PIL import Image
+from PIL import Image, ImageFilter
 from noise import pnoise2
 
 from tempfile import NamedTemporaryFile
@@ -21,6 +21,7 @@ async def prepare_source_image(photo_file):
     width, height = image.size
     max_side = max(width, height)
 
+    blurred_image = image.filter(ImageFilter.GaussianBlur(32))
     square_image = Image.new('RGB', (max_side, max_side))
 
     scale = 100.0  # Чем больше число, тем "глаже" шум
@@ -32,14 +33,17 @@ async def prepare_source_image(photo_file):
     print(f'Base for noise {base}')
 
     # Генерация шума Перлина и заполнение изображения
-    for i in range(max_side):
-        for j in range(max_side):
-            # r = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, repeatx=width, repeaty=max_side, base=1) + 1) * 127.5)
-            r = 0
-            g = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, base = base + 2) + 1) * 127.5)
-            b = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, base = base + 3) + 1) * 127.5)
+    # for i in range(max_side):
+    #     for j in range(max_side):
+    #         # r = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, repeatx=width, repeaty=max_side, base=1) + 1) * 127.5)
+    #         r = 0
+    #         g = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, base = base + 2) + 1) * 127.5)
+    #         b = int((pnoise2(i / scale, j / scale, octaves=octaves, persistence=persistence, lacunarity=lacunarity, base = base + 3) + 1) * 127.5)
 
-            square_image.putpixel((j, i), (r, g, b))
+    #         square_image.putpixel((j, i), (r, g, b))
+
+    square_image.paste(blurred_image, (0, 0))
+    square_image.paste(blurred_image, (max_side - width, max_side - height))
 
     left = (max_side - width) // 2
     top = (max_side - height) // 2
