@@ -19,30 +19,12 @@ from telegram_bot_helpers import get_user_from_update
 from telegram_bot_tools import prepare_source_image
 
 
-WAITING_FOR_IMAGE, WAITING_FOR_RU, WAITING_FOR_SR = range(3)
+WAITING_FOR_IMAGE, WAITING_FOR_SR, WAITING_FOR_RU = range(3)
 
 async def start(update: Update, context: CallbackContext) -> int:
     await update.callback_query.answer()
     await update.callback_query.message.reply_text('Пожалуйста, отправьте картинку')
     return WAITING_FOR_IMAGE
-
-# async def text_received(update: Update, context: CallbackContext) -> int:
-#     try:
-#         data = json.loads(update.message.text)
-
-#         if all(key in data for key in ["en", "ru", "sr"]) and all(type(data[key]) == str and data[key] for key in ["en", "ru", "sr"]):
-#             sanitized_en = re.sub(r'[^a-z0-9\s]', '', data['en'].lower())
-#             image_filename = f"{'-'.join(sanitized_en.split())}-{int(time.time())}.webp"
-#             data['image'] = image_filename
-#             context.user_data['data'] = data
-#             await update.message.reply_text(f'JSON корректный. Теперь отправьте картинку.\n{json.dumps(data, indent=2)}')
-#             return WAITING_FOR_IMAGE
-#         else:
-#             await update.message.reply_text('JSON не соответствует требуемой структуре.')
-#             return ConversationHandler.END
-#     except json.JSONDecodeError:
-#         await update.message.reply_text('Ошибка в формате JSON. Попробуйте снова.')
-#         return ConversationHandler.END
 
 async def photo_received(update: Update, context: CallbackContext) -> int:
     user = get_user_from_update(update)
@@ -73,22 +55,44 @@ async def photo_received(update: Update, context: CallbackContext) -> int:
     except Exception as e:
         print(f"Ошибка при загрузке файла: {e}")
 
-    # add_text_to_image_do(bucket_name, 'srpski-sources/', 'srpski/', filename, data)
-    # insert_new_card(data)
-
-    # await update.message.reply_text(f'Картинка получена и обработана - {filename}. Можно снова отправить текст')
-
-    print(f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/{folder}/{filename}?upts={int(time.time())}')
+    imagename = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/{folder}/{filename}?upts={int(time.time())}'
 
     chat_id = update.effective_chat.id
     await context.bot.send_photo(
-        chat_id=chat_id,
-        photo = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/{folder}/{filename}?upts={int(time.time())}',
-        caption='Полученная картинка',
+        chat_id = chat_id,
+        photo = imagename,
+        caption = 'Полученная картинка. Теперь отправьте предложение на сербском языке',
     )
+
+    context.user_data['filename'] = filename
+
+    return WAITING_FOR_SR
+
+async def serbian_received(update: Update, context: CallbackContext) -> int:
+    filename = context.user_data.get('filename')
+    text = update.message.text
+
+    bucket_name = 'vlandivir'
+    new_filename = f'sr-{filename}'
+    folder = 'user-sources'
+
+    add_text_to_image_do(bucket_name, f'{folder}/{filename}', f'{folder}/', new_filename, {'sr': text, 'en': '...', 'ru': '...'})
+
+    imagename = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/{folder}/{new_filename}?upts={int(time.time())}'
+
+    chat_id = update.effective_chat.id
+    await context.bot.send_photo(
+        chat_id = chat_id,
+        photo = imagename,
+        caption = 'Теперь карточка выглядит так. Теперь отправьте предложение на русском языке',
+    )
+
+    context.user_data['filename'] = filename
+    context.user_data['sr'] = text
+
     return ConversationHandler.END
 
-# Обработчик команды /cancel
+
 async def cancel(update: Update, context: CallbackContext) -> int:
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
@@ -102,7 +106,7 @@ def get_add_card_by_user_conversation_handler():
         entry_points=[CallbackQueryHandler(start, pattern='^button_add_user_card$')],
         states={
             WAITING_FOR_IMAGE: [MessageHandler(filters.PHOTO, photo_received)],
-            # WAITING_FOR_TEXT: [MessageHandler(filters.TEXT & ~filters.COMMAND, text_received)],
+            WAITING_FOR_SR: [MessageHandler(filters.TEXT & ~filters.COMMAND, serbian_received)],
         },
         fallbacks=[CommandHandler('cancel', cancel)],
     )

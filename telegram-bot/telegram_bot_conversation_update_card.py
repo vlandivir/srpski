@@ -33,7 +33,7 @@ async def json_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
             print(image)
             if image:
                 add_text_to_image_do(
-                    'vlandivir', 'srpski-sources/', 'srpski/', image, {'image': image, **data}
+                    'vlandivir', f'srpski-sources/{image}', 'srpski/', image, {'image': image, **data}
                 )
                 await update.message.reply_text(f'JSON корректный. Карточка обновлена')
             else:

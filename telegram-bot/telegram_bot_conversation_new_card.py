@@ -73,7 +73,7 @@ async def photo_received(update: Update, context: CallbackContext) -> int:
     except Exception as e:
         print(f"Ошибка при загрузке файла: {e}")
 
-    add_text_to_image_do(bucket_name, 'srpski-sources/', 'srpski/', filename, data)
+    add_text_to_image_do(bucket_name, f'srpski-sources/{filename}', 'srpski/', filename, data)
     insert_new_card(data)
 
     await update.message.reply_text(f'Картинка получена и обработана - {filename}. Можно снова отправить текст')

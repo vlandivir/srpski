@@ -203,7 +203,7 @@ async def button_update_image(update: Update, context: ContextTypes.DEFAULT_TYPE
         print(image)
         if image:
             add_text_to_image_do(
-                'vlandivir', 'srpski-sources/', 'srpski/', image, {'image': image, **data}
+                'vlandivir', f'srpski-sources/{image}', 'srpski/', image, {'image': image, **data}
             )
 
             init_cards_cache()
