@@ -70,13 +70,13 @@ async def photo_received(update: Update, context: CallbackContext) -> int:
 
 async def serbian_received(update: Update, context: CallbackContext) -> int:
     filename = context.user_data.get('filename')
-    text = update.message.text
+    sr = update.message.text
 
     bucket_name = 'vlandivir'
     new_filename = f'sr-{filename}'
     folder = 'user-sources'
 
-    add_text_to_image_do(bucket_name, f'{folder}/{filename}', f'{folder}/', new_filename, {'sr': text, 'en': '...', 'ru': '...'})
+    add_text_to_image_do(bucket_name, f'{folder}/{filename}', f'{folder}/', new_filename, {'sr': sr, 'en': ' ', 'ru': ' '})
 
     imagename = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/{folder}/{new_filename}?upts={int(time.time())}'
 
@@ -88,10 +88,36 @@ async def serbian_received(update: Update, context: CallbackContext) -> int:
     )
 
     context.user_data['filename'] = filename
-    context.user_data['sr'] = text
+    context.user_data['sr'] = sr
+
+    return WAITING_FOR_RU
+
+async def russian_received(update: Update, context: CallbackContext) -> int:
+    filename = context.user_data.get('filename')
+    sr = context.user_data.get('sr')
+
+    ru = update.message.text
+
+    bucket_name = 'vlandivir'
+    new_filename = f'ru-{filename}'
+    folder = 'user-sources'
+
+    add_text_to_image_do(bucket_name, f'{folder}/{filename}', f'{folder}/', new_filename, {'sr': sr, 'en': ' ', 'ru': ru})
+
+    imagename = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/{folder}/{new_filename}?upts={int(time.time())}'
+
+    chat_id = update.effective_chat.id
+    await context.bot.send_photo(
+        chat_id = chat_id,
+        photo = imagename,
+        caption = 'Теперь карточка выглядит так. Теперь отправьте предложение на русском языке',
+    )
+
+    context.user_data['filename'] = filename
+    context.user_data['sr'] = sr
+    context.user_data['ru'] = ru
 
     return ConversationHandler.END
-
 
 async def cancel(update: Update, context: CallbackContext) -> int:
     await context.bot.send_message(
@@ -107,6 +133,7 @@ def get_add_card_by_user_conversation_handler():
         states={
             WAITING_FOR_IMAGE: [MessageHandler(filters.PHOTO, photo_received)],
             WAITING_FOR_SR: [MessageHandler(filters.TEXT & ~filters.COMMAND, serbian_received)],
+            WAITING_FOR_RU: [MessageHandler(filters.TEXT & ~filters.COMMAND, russian_received)],
         },
         fallbacks=[CommandHandler('cancel', cancel)],
     )

@@ -163,9 +163,12 @@ def add_text_to_image(original_image, text_sr, text_en, text_ru, font_path):
     lavender = (230, 230, 250, 225)  # Лавандовый
     pastel_peach = (255, 218, 185, 225)  # Пастельный персик
 
-    add_text_properties(text_sr, font_path, pale_blue,    0, new_image.width - 48, rows, gaps, colors, fonts)
-    add_text_properties(text_ru, font_path, lavender,     0, new_image.width - 48, rows, gaps, colors, fonts)
-    add_text_properties(text_en, font_path, pastel_peach, 0, new_image.width - 48, rows, gaps, colors, fonts)
+    if(len(text_sr.strip()) > 0):
+        add_text_properties(text_sr, font_path, pale_blue,    0, new_image.width - 48, rows, gaps, colors, fonts)
+    if(len(text_ru.strip()) > 0):
+        add_text_properties(text_ru, font_path, lavender,     0, new_image.width - 48, rows, gaps, colors, fonts)
+    if(len(text_en.strip()) > 0):
+        add_text_properties(text_en, font_path, pastel_peach, 0, new_image.width - 48, rows, gaps, colors, fonts)
 
     text_x = 24
 
