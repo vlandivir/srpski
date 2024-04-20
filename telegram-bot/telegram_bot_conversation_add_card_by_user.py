@@ -1,9 +1,7 @@
-import json
-import re
 import time
 import io
 
-from telegram import Update
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import (
     CallbackContext,
     CallbackQueryHandler,
@@ -19,7 +17,7 @@ from telegram_bot_helpers import get_user_from_update
 from telegram_bot_tools import prepare_source_image
 
 
-WAITING_FOR_IMAGE, WAITING_FOR_SR, WAITING_FOR_RU = range(3)
+WAITING_FOR_IMAGE, WAITING_FOR_SR, WAITING_FOR_RU, WAITING_FOR_SAVE = range(4)
 
 async def start(update: Update, context: CallbackContext) -> int:
     await update.callback_query.answer()
@@ -95,7 +93,6 @@ async def serbian_received(update: Update, context: CallbackContext) -> int:
 async def russian_received(update: Update, context: CallbackContext) -> int:
     filename = context.user_data.get('filename')
     sr = context.user_data.get('sr')
-
     ru = update.message.text
 
     bucket_name = 'vlandivir'
@@ -106,16 +103,36 @@ async def russian_received(update: Update, context: CallbackContext) -> int:
 
     imagename = f'https://vlandivir.fra1.cdn.digitaloceanspaces.com/{folder}/{new_filename}?upts={int(time.time())}'
 
+    keyboard_markup = [[
+        InlineKeyboardButton('Сохранить / Save', callback_data=f'button_save_user_card'),
+        InlineKeyboardButton('Отменить / Cancel', callback_data=f'button_cancel_user_card'),
+    ]]
+
+    keyboard = InlineKeyboardMarkup(keyboard_markup)
+
     chat_id = update.effective_chat.id
     await context.bot.send_photo(
         chat_id = chat_id,
         photo = imagename,
-        caption = 'Теперь карточка выглядит так. Теперь отправьте предложение на русском языке',
+        caption = 'Теперь карточка выглядит так. Её можно сохранить. Она будет сразу доступна для вас, а после будет доступна другим пользователям бота',
+        reply_markup=keyboard,
     )
 
     context.user_data['filename'] = filename
     context.user_data['sr'] = sr
     context.user_data['ru'] = ru
+
+    return WAITING_FOR_SAVE
+
+async def save_card(update: Update, context: CallbackContext):
+    filename = context.user_data.get('filename')
+    sr = context.user_data.get('sr')
+    ru = context.user_data.get('ru')
+
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text=f'{filename}, {sr}, {ru}',
+    )
 
     return ConversationHandler.END
 
@@ -134,6 +151,10 @@ def get_add_card_by_user_conversation_handler():
             WAITING_FOR_IMAGE: [MessageHandler(filters.PHOTO, photo_received)],
             WAITING_FOR_SR: [MessageHandler(filters.TEXT & ~filters.COMMAND, serbian_received)],
             WAITING_FOR_RU: [MessageHandler(filters.TEXT & ~filters.COMMAND, russian_received)],
+            WAITING_FOR_SAVE: [
+                CallbackQueryHandler(save_card, pattern='^button_save_user_card$'),
+                CallbackQueryHandler(cancel, pattern='^button_cancel_user_card$'),
+            ],
         },
         fallbacks=[CommandHandler('cancel', cancel)],
     )
