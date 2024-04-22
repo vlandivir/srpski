@@ -3,7 +3,7 @@ import re
 import time
 import io
 
-from telegram import Update
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import (
     CallbackContext,
     CallbackQueryHandler,
@@ -17,7 +17,7 @@ from do_space import add_text_to_image_do, get_do_space_client
 from postgres_db_cards import insert_new_card
 from telegram_bot_tools import prepare_source_image
 
-WAITING_FOR_TEXT, WAITING_FOR_IMAGE = range(2)
+WAITING_FOR_TEXT, WAITING_FOR_IMAGE, WAITING_FOR_NEXT = range(3)
 
 async def start(update: Update, context: CallbackContext) -> int:
     await update.callback_query.answer()
@@ -76,8 +76,21 @@ async def photo_received(update: Update, context: CallbackContext) -> int:
     add_text_to_image_do(bucket_name, f'srpski-sources/{filename}', 'srpski/', filename, data)
     insert_new_card(data)
 
-    await update.message.reply_text(f'Картинка получена и обработана - {filename}. Можно снова отправить текст')
-    return WAITING_FOR_TEXT
+    keyboard_markup = [[
+        InlineKeyboardButton('Доавить ещё / Add next', callback_data=f'button_restart'),
+        InlineKeyboardButton('Отменить / Cancel', callback_data=f'button_cancel_user_card'),
+    ]]
+
+    keyboard = InlineKeyboardMarkup(keyboard_markup)
+
+    chat_id = update.effective_chat.id
+    await context.bot.send_message(
+        chat_id = chat_id,
+        text = f'Картинка получена и обработана - {filename}. Хотите добавить ещё одну?',
+        reply_markup=keyboard,
+    )
+
+    return WAITING_FOR_NEXT
 
 # Обработчик команды /cancel
 async def cancel(update: Update, context: CallbackContext) -> int:
@@ -94,6 +107,10 @@ def get_new_card_conversation_handler():
         states={
             WAITING_FOR_TEXT: [MessageHandler(filters.TEXT & ~filters.COMMAND, text_received)],
             WAITING_FOR_IMAGE: [MessageHandler(filters.PHOTO, photo_received)],
+            WAITING_FOR_NEXT: [
+                CallbackQueryHandler(start, pattern='^button_restart$'),
+                CallbackQueryHandler(cancel, pattern='^button_cancel$'),
+            ],
         },
         fallbacks=[CommandHandler('cancel', cancel)],
     )
