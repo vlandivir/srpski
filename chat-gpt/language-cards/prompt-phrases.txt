@@ -147,10 +147,8 @@ His wife died a year ago, now he lives alone. = Žena mu je umrla pre godinu dan
 How will you spend the evening? = Kako ćeš provesti veče?
 I will probably stay home and watch TV. = Verovatno ću ostati kod kuće i gledati TV.
 What will you do about it? = Šta ćeš uraditi povodom toga?
-What time are you going to leave for the airport? = U koliko sati ideš na aerodrom?
 Is he coming to dinner? = Da li on dolazi na večeru?
 I will be waiting for you at the restaurant. = Čekaću te u restoranu.
-What is your plan for the summer holiday? = Kakav je tvoj plan za letnji raspust?
 Will you go to Greece? = Da li ćeš ići u Grčku?
 Will it snow next week? = Da li će padati sneg sledeće nedelje?
 
