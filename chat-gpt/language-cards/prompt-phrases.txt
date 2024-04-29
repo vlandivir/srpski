@@ -134,9 +134,7 @@ It is room 893 on the 23rd floor. = To je soba 893 na 23. spratu.
 Thank you for the directions. = Hvala Vam na uputstvima.
 Are you married? = Jesi li u braku?
 I am single. = Ja sam singl.
-I have rented a small apartment. = Iznajmio sam mali stan.
 I live in a house. = Ja živim u kući.
-You have a younger sister, don't you? = Imaš mlađu sestru, zar ne?
 How is your family? = Kako je tvoja porodica?
 She is engaged to Charlie. = Ona je verena za Čarlija.
 She is married. = Ona je udata.
@@ -144,18 +142,16 @@ They are divorced. = Oni su razvedeni.
 My parents got married in 1994. = Moji roditelji su se venčali 1994.
 Charlie has his own family now. = Čarli sada ima svoju porodicu.
 His wife died a year ago, now he lives alone. = Žena mu je umrla pre godinu dana, sada živi sam.
-How will you spend the evening? = Kako ćeš provesti veče?
-I will probably stay home and watch TV. = Verovatno ću ostati kod kuće i gledati TV.
 What will you do about it? = Šta ćeš uraditi povodom toga?
 Is he coming to dinner? = Da li on dolazi na večeru?
-I will be waiting for you at the restaurant. = Čekaću te u restoranu.
 Will you go to Greece? = Da li ćeš ići u Grčku?
 Will it snow next week? = Da li će padati sneg sledeće nedelje?
+
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
 
-1. Возьми ВЕСЬ текст из первых строк, до ИНСТРУКЦИИ. Это пара фраз на английском и сербском языках или маленький диалог
+1. Возьми ВЕСЬ текст из первых строк, до ИНСТРУКЦИИ. Объедени фразы по языку
 
 2. Проверь, есть ли в исходных фразах ошибки и исправь их. Напиши какие ошибки ты нашёл.
 
