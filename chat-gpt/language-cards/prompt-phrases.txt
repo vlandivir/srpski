@@ -67,7 +67,6 @@ Do you have a digital camera? = Da li imaš digitalnu kameru?
 Do you have my book? = Da li je kod tebe moja knjiga?
 Yes, I have your pen, too. = Da, kod mene je i tvoja olovka.
 Did you bring a toothbrush? = Da li si poneo četkicu za zube?
-What a beautiful house you have! = Kako imate lepu kuću!
 I had thought he knew the time of the meeting. = Mislio sam da on zna vreme sastanka.
 We have known each other for ten years. = Znamo se deset godina.
 Have you seen Mr. Smith recently? = Da li si skoro video gospodina Smita?
@@ -114,7 +113,6 @@ Why don't you agree? = Zašto se ne slažeš?
 Why not go out for a walk? = Zašto ne izaći u šetnju?
 How are you doing these days? = Kako si ovih dana?
 Where is the apartment? = Gde je stan?
-How much does the tiger weigh? = Koliko je težak tigar?
 This metal is harder than that one. = Ovaj metal je tvrđi od onog.
 What is the size of your shoes? = Koja je veličina tvojih cipela?
 What is the shape of your balloon? = Koji je oblik tvog balona?
@@ -128,8 +126,6 @@ Go down the street and it will be on your right side. = Idite niz ulicu i biće
 Which one is Mr. Smith's office? = Koja je kancelarija gospodina Smita?
 It is room 893 on the 23rd floor. = To je soba 893 na 23. spratu.
 Thank you for the directions. = Hvala Vam na uputstvima.
-Are you married? = Jesi li u braku?
-I am single. = Ja sam singl.
 I live in a house. = Ja živim u kući.
 How is your family? = Kako je tvoja porodica?
 She is engaged to Charlie. = Ona je verena za Čarlija.
@@ -138,11 +134,12 @@ They are divorced. = Oni su razvedeni.
 My parents got married in 1994. = Moji roditelji su se venčali 1994.
 Charlie has his own family now. = Čarli sada ima svoju porodicu.
 His wife died a year ago, now he lives alone. = Žena mu je umrla pre godinu dana, sada živi sam.
-What will you do about it? = Šta ćeš uraditi povodom toga?
 Is he coming to dinner? = Da li on dolazi na večeru?
 Will you go to Greece? = Da li ćeš ići u Grčku?
 Will it snow next week? = Da li će padati sneg sledeće nedelje?
 
+Are you married? = Jesi li u braku?
+I am single. = Ja sam singl.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
@@ -160,6 +157,6 @@ Will it snow next week? = Da li će padati sneg sledeće nedelje?
     "sr": "[SERBIAN_PHRASE]"
 }
 
-5. Сделай иллюстрацию в формате JPG к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате JPG. На картинке не используй надписи. Отношение сторон 1 к 1. Стиль рисования должен быть простым, но детализированным, с акцентом на чёткие линии и контрастные цвета, чтобы подчеркнуть основные черты и создать лёгкое ощущение глубины. Фон оставьте минималистичным или однотонным, чтобы основной объект оставался в фокусе внимания. Этот стиль идеально подходит для создания изображений, которые должны быть весёлыми, живыми и легко узнаваемыми.
+5. Сделай иллюстрацию к этой фразе в виде скетча, который может нарисовать начинающий художник. Картинка должна быть в формате JPG. На картинке не используй надписи. Отношение сторон 1 к 1. Стиль рисования должен быть простым, но детализированным, с акцентом на чёткие линии и контрастные цвета, чтобы подчеркнуть основные черты и создать лёгкое ощущение глубины. Фон оставьте минималистичным или однотонным, чтобы основной объект оставался в фокусе внимания. Этот стиль идеально подходит для создания изображений, которые должны быть весёлыми, живыми и легко узнаваемыми.
 
-6. Если картинка не в формате JPG, то конвертируй её в этот формат. Дай ссылку на скачивание картинки.
+6. Конвертируй картинку в формат JPG. Дай ссылку на скачивание картинки.
