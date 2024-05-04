@@ -117,12 +117,9 @@ What is the size of your shoes? = Koja je veličina tvojih cipela?
 What is the shape of your balloon? = Koji je oblik tvog balona?
 How big is the book? = Koliko je velika knjiga?
 Kate is smarter than I am. = Kejt je pametnija od mene.
-My brother is twice as tall as your sister. = Moj brat je duplo viši od tvoje sestre.
 My grandma is 50 years older than I am. = Moja baka je pedeset godina starija od mene.
 Where are the stairs? = Gde su stepenice?
 Go down the street and it will be on your right side. = Idite niz ulicu i biće sa vaše desne strane.
-Which one is Mr. Smith's office? = Koja je kancelarija gospodina Smita?
-It is room 893 on the 23rd floor. = To je soba 893 na 23. spratu.
 Thank you for the directions. = Hvala Vam na uputstvima.
 I live in a house. = Ja živim u kući.
 How is your family? = Kako je tvoja porodica?
@@ -130,10 +127,10 @@ She is engaged to Charlie. = Ona je verena za Čarlija.
 They are divorced. = Oni su razvedeni.
 My parents got married in 1994. = Moji roditelji su se venčali 1994.
 Charlie has his own family now. = Čarli sada ima svoju porodicu.
-His wife died a year ago, now he lives alone. = Žena mu je umrla pre godinu dana, sada živi sam.
 Is he coming to dinner? = Da li on dolazi na večeru?
 Will you go to Greece? = Da li ćeš ići u Grčku?
 Will it snow next week? = Da li će padati sneg sledeće nedelje?
+
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
