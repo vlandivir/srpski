@@ -96,7 +96,6 @@ I'm sure we will have a good time. = Siguran sam da ćemo se dobro provesti.
 Where are you going? = Gde ideš?
 Where did you go for dinner? = Gde si otišao na večeru?
 What did you have for dinner? = Šta si večerao?
-When will he come to see you? = Kada će doći da te vidi?
 I was about to leave. = Hteo sam da odem.
 When did you buy the car? = Kada si kupio auto?
 How did you spend your holiday? = Kako ste proveli odmor?
@@ -107,12 +106,9 @@ What will you do with the books? = Šta ćeš uraditi sa knjigama?
 Who will accompany you to the station? = Ko će te pratiti do stanice?
 Why don't you agree? = Zašto se ne slažeš?
 Why not go out for a walk? = Zašto ne izaći u šetnju?
-How are you doing these days? = Kako si ovih dana?
 Where is the apartment? = Gde je stan?
 This metal is harder than that one. = Ovaj metal je tvrđi od onog.
-What is the size of your shoes? = Koja je veličina tvojih cipela?
 What is the shape of your balloon? = Koji je oblik tvog balona?
-How big is the book? = Koliko je velika knjiga?
 Kate is smarter than I am. = Kejt je pametnija od mene.
 My grandma is 50 years older than I am. = Moja baka je pedeset godina starija od mene.
 Where are the stairs? = Gde su stepenice?
@@ -120,12 +116,12 @@ Thank you for the directions. = Hvala Vam na uputstvima.
 I live in a house. = Ja živim u kući.
 How is your family? = Kako je tvoja porodica?
 She is engaged to Charlie. = Ona je verena za Čarlija.
-They are divorced. = Oni su razvedeni.
 My parents got married in 1994. = Moji roditelji su se venčali 1994.
 Charlie has his own family now. = Čarli sada ima svoju porodicu.
 Is he coming to dinner? = Da li on dolazi na večeru?
 Will you go to Greece? = Da li ćeš ići u Grčku?
 Will it snow next week? = Da li će padati sneg sledeće nedelje?
+
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
