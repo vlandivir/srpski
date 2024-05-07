@@ -36,7 +36,6 @@ I go downstairs and have my breakfast. = Silazim dole i doručkujem.
 I get to my office at 8:30. = Dolazim u kancelariju u pola devet.
 I leave the office at 6. = Izlazim iz kancelarije u šest.
 I go to bed at 11:30. = Idem u krevet u pola dvanaest.
-I like playing basketball. = Volim da igram košarku.
 Where do you have lunch? = Gde ručaš?
 What did you have for lunch? = Šta si ručao?
 I had fried chicken and a hot dog. = Jeo sam prženu piletinu i viršlu.
@@ -104,11 +103,9 @@ Who told you? = Ko ti je rekao?
 What are you going to do with them? = Šta ćeš uraditi sa njima?
 What will you do with the books? = Šta ćeš uraditi sa knjigama?
 Who will accompany you to the station? = Ko će te pratiti do stanice?
-Why don't you agree? = Zašto se ne slažeš?
 Why not go out for a walk? = Zašto ne izaći u šetnju?
 Where is the apartment? = Gde je stan?
 This metal is harder than that one. = Ovaj metal je tvrđi od onog.
-What is the shape of your balloon? = Koji je oblik tvog balona?
 Kate is smarter than I am. = Kejt je pametnija od mene.
 My grandma is 50 years older than I am. = Moja baka je pedeset godina starija od mene.
 Where are the stairs? = Gde su stepenice?
@@ -122,6 +119,7 @@ Is he coming to dinner? = Da li on dolazi na večeru?
 Will you go to Greece? = Da li ćeš ići u Grčku?
 Will it snow next week? = Da li će padati sneg sledeće nedelje?
 
+Why don't you agree? = Zašto se ne slažeš?
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
