@@ -36,9 +36,32 @@ flowchart LR
     BUTTON_HELP["Подробная справка"]:::class_button
   end
 
+  subgraph LEARN_SCREEN [LEARN SCREEN]
+    direction LR
+    subgraph LEARN_SCREEN_IMAGE [LEARN SCREEN IMAGE]
+      IMAGE["<Скрытая картинка>"]
+    end
+    subgraph LEARN_SCREEN_PROGRESS [LEARN SCREEN PROGRESS]
+      PROGRESS["<Прогресс изучения карточки>"]
+    end
+    subgraph LEARN_SCREEN_BUTTONS_ROW1 [" "]
+      ???
+      Hard
+      Ok
+      Easy
+    end
+  end
+
 BUTTON_HELP -.-> HELP_SCREEN
+BUTTON_LEARN -.-> LEARN_SCREEN
+
+%% style SCREEN_HELP_TEXT width: 400px, text-oveflow: hidden
 
 style SCREEN_START_TEXT text-align: left;
 style SCREEN_HELP_TEXT text-align: left;
 
+style LEARN_SCREEN_IMAGE width: 400px;
+style LEARN_SCREEN_PROGRESS width: 400px;
+
 classDef class_button color: blue;
+
