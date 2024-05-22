@@ -9,7 +9,14 @@ function exportIndexedDB(dbName, storeName) {
             let allRecords = objectStore.getAll();
 
             allRecords.onsuccess = function() {
-                let data = JSON.stringify(allRecords.result);
+                // Сортировка объектов по числовому значению в конце id
+                let sortedData = allRecords.result.sort((a, b) => {
+                    let idA = a.id.match(/\d+$/);
+                    let idB = b.id.match(/\d+$/);
+                    return idA - idB;
+                });
+
+                let data = JSON.stringify(sortedData);
                 let blob = new Blob([data], { type: 'application/json' });
                 let url = URL.createObjectURL(blob);
                 let a = document.createElement('a');
@@ -34,6 +41,6 @@ function exportIndexedDB(dbName, storeName) {
 }
 
 // Использование:
-exportIndexedDB('https%3A%2F%2Fweb.telegram.org%2Fa%2F%23-1001113344905_1716317322987', 'contentStore')
+exportIndexedDB('https%3A%2F%2Fweb.telegram.org%2Fa%2F%23-1001113344905_1716364763950', 'contentStore')
     .then(() => console.log('Data export complete'))
     .catch((error) => console.error('Error exporting data:', error));

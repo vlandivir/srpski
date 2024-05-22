@@ -33,7 +33,7 @@ async function saveContentAndScroll() {
         elements.forEach((element, index) => {
             let id = element.getAttribute('id') || index.toString(); // Use element's id or index if id is not available
             if (!processedIds.has(id)) {
-                let content = element.innerHTML;
+                let content = element.innerText;
                 let request = store.put({ id: id, content: content });
                 request.onsuccess = function() {
                     processedIds.add(id);
@@ -61,7 +61,7 @@ async function saveContentAndScroll() {
             setTimeout(() => {
                 let newElements = document.querySelectorAll('.Message');
                 let newElementsProcessed = Array.from(newElements).filter(
-                    element => !processedIds.has(element.getAttribute('id') || element.index.toString())
+                    element => !processedIds.has(element.getAttribute('id'))
                 );
 
                 if (newElementsProcessed.length > 0) {
