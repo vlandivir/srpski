@@ -140,8 +140,9 @@ Does it hurt? = Da li boli?
 I have a headache. = Imam glavobolju.
 What do you think about it? = Šta misliš o tome?
 Do you have any idea? = Da li imaš neku ideju?
-Please give me some advice. = Molim te daj mi neki savet.
 Is that right? = Je l’ tako?
+
+Please give me some advice. = Molim te daj mi neki savet.
 
 ИНСТРУКЦИИ:
 Выполняй иструкции ниже в точно том порядке, в котором они описаны! Пиши о выполнении каждой инструкции
