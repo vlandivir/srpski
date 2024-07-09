@@ -25,25 +25,31 @@ vector_store = get_vector_store(STORE_NAME)
 pprint.pprint(vector_store.to_dict())
 print('\n')
 
-all_files = list(client.beta.vector_stores.files.list(vector_store.id))
-pprint.pprint(all_files)
-print('\n')
-
 script_dir = os.path.dirname(os.path.abspath(__file__))
 dairy_dir = os.path.join(script_dir, '..', 'dnevnik')
 
-file_paths = []
+local_file_paths = []
 for filename in os.listdir(dairy_dir):
-    file_paths.append(os.path.join(dairy_dir, filename))
-pprint.pprint(file_paths)
-pprint.pprint(len(file_paths))
+    local_file_paths.append(os.path.join(dairy_dir, filename))
 
-file_streams = [open(path, "rb") for path in file_paths]
-file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
-   vector_store_id=vector_store.id, files=file_streams,
-)
 
-# pprint.pprint(file_batch.to_dict())
+if vector_store.file_counts.total != len(local_file_paths):
+    print(vector_store.file_counts.total, len(local_file_paths), 'Update vector store')
+    store_files = list(client.beta.vector_stores.files.list(vector_store.id))
+
+    for file in store_files:
+        client.beta.vector_stores.files.delete(
+            vector_store_id=vector_store.id, file_id=file.id
+        )
+        client.files.delete(file.id)
+    print('\n')
+
+    file_streams = [open(path, "rb") for path in local_file_paths]
+    file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+        vector_store_id=vector_store.id, files=file_streams,
+    )
+
+    pprint.pprint(file_batch.to_dict())
 
 # gpt-3.5-turbo-1106
 # gpt-4o
