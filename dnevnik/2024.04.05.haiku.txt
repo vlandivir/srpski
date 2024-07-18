@@ -1,39 +1,3 @@
-5. Легко без гречки
-7. Сырников и пельменей
-6. Живу месяцами
-7. Скучаю лишь о воде.
-7. Бесконечной! Горячей!
-
-5. Легко без гречки
-7. Сырников и пельменей
-5. Живу без проблем
-7. Скучаю лишь о воде.
-7. Бесконечной! Горячей!
-
-Без гречки, кваса
-Сырников и пельменей
-Живу без проблем.
-Скучаю лишь о воде!
-Бесконечной! Горячей!
-
-GPT
-
-5. Bez heljde, kvasa
-?. Syrnika i pelmeni
-6. Živim bez problema
-9. Nedostaje mi samo voda.
-5. Beskrajna! Vruća!
-
-FINAL
-
-Bez heljde, kvasa
-I druge ruske hrane
-Živim baš dobro
-Nedostaje mi samo
-Voda! Beskrajna! Vruća!
-
-==
-
 2024.04.05
 
 Без гречки, кваса
