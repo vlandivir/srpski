@@ -1,0 +1,15 @@
+2024.07.19
+
+Вчера OpenAI опубликовал новую версию для API – GPT-4o mini. Это большое обновление, так как новая версия стоит меньше, чем GPT-3.5 turbo.
+
+Теперь я могу использовать его для поиска в своем дневнике. До этого дня каждый вопрос стоил 5-7 центов, а теперь эта сумма достаточна для ста вопросов.
+
+Много раз я пытался вести дневник. Я использовал разные приложения. Надеюсь, что теперь нашел лучший инструмент.
+
+==
+
+Juče je OpenAI objavio novu verziju za API – GPT-4o mini. Ovo je veliko ažuriranje, jer nova verzija košta manje nego GPT-3.5 turbo.
+
+Sada mogu da ga koristim za pretragu u svom dnevniku. Do ovog dana svako pitanje je koštalo 5-7 centi, a sada ovaj iznos je dovoljan za stotinu pitanja.
+
+Mnogo puta sam pokušavao da pišem dnevnik. Koristio sam različite aplikacije. Nadam se da sam sada našao najbolji instrument.
