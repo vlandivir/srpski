@@ -26,7 +26,7 @@ async function saveContentAndScroll() {
     };
 
     async function processContent() {
-        let elements = document.querySelectorAll('.Message');
+        let elements = document.querySelectorAll('.message');
         let transaction = db.transaction(collectionName, 'readwrite');
         let store = transaction.objectStore(collectionName);
 
@@ -54,12 +54,13 @@ async function saveContentAndScroll() {
         };
     }
 
+    let prevTriggerElement;
     function scrollAndRepeat() {
-        let triggerElement = document.querySelector('.backwards-trigger');
-        if (triggerElement) {
+        let triggerElement = document.querySelector('.sticky_sentinel--top');
+        if (triggerElement !== prevTriggerElement) {
             triggerElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
             setTimeout(() => {
-                let newElements = document.querySelectorAll('.Message');
+                let newElements = document.querySelectorAll('.message');
                 let newElementsProcessed = Array.from(newElements).filter(
                     element => !processedIds.has(element.getAttribute('id'))
                 );
@@ -70,11 +71,12 @@ async function saveContentAndScroll() {
                     db.close(); // Close the connection before resolving
                     resolvePromise();
                 }
-            }, 1000);
+            }, 3000);
         } else {
             db.close(); // Close the connection before resolving
             resolvePromise();
         }
+        prevTriggerElement = triggerElement;
     }
 
     let resolvePromise;
